@@ -1,0 +1,488 @@
+[
+  {
+    "id": 1,
+    "mode": "fix_prompt",
+    "level": 1,
+    "title": "Remove the Filler",
+    "difficulty": "beginner",
+    "villain": "verbosity_vampire",
+    "originalPrompt": "Can you please maybe help me write something kind of like a professional email to my boss about the thing we talked about yesterday and make it sound nice but also not too long and maybe include something about the meeting?",
+    "idealPrompt": "Write a concise professional email to my boss summarizing yesterday's meeting and next steps.",
+    "options": [
+      "Can you help me write a professional email to my boss about our meeting yesterday and the next steps we need to take?",
+      "Write a concise professional email to my boss summarizing yesterday's meeting and next steps.",
+      "Email my boss about the meeting."
+    ],
+    "correctOption": 1,
+    "maxTokens": 22,
+    "requiredConcepts": ["email", "boss", "professional"],
+    "rewardCoins": 100,
+    "hint": "Remove filler words like 'kind of', 'maybe', 'something like'. Be direct!"
+  },
+  {
+    "id": 2,
+    "mode": "fix_prompt",
+    "level": 1,
+    "title": "Code Help Gone Wrong",
+    "difficulty": "beginner",
+    "villain": "verbosity_vampire",
+    "originalPrompt": "Hey so I have this Python thing and it's not really working and I was wondering if you could maybe look at it and tell me what the issue is because I'm kind of stuck and I've been trying for a while now and it just doesn't work.",
+    "idealPrompt": "Debug this Python code and explain the error.",
+    "options": [
+      "Debug this Python code and explain the error.",
+      "Please look at my Python code, it isn't working properly and I would like to know what the problem is so I can fix it.",
+      "Help me fix my code."
+    ],
+    "correctOption": 0,
+    "maxTokens": 12,
+    "requiredConcepts": ["python", "debug", "error"],
+    "rewardCoins": 100,
+    "hint": "Cut everything after 'Python'. What do you actually need?"
+  },
+  {
+    "id": 3,
+    "mode": "choose_best",
+    "level": 1,
+    "title": "Pick the Best Prompt",
+    "difficulty": "beginner",
+    "villain": "history_hog",
+    "originalPrompt": "Write me something about machine learning",
+    "options": [
+      "Can you write something about machine learning for me please?",
+      "Explain the difference between supervised and unsupervised learning with 2 examples each.",
+      "I want to learn about machine learning, can you tell me about it in a nice way?"
+    ],
+    "correctOption": 1,
+    "requiredConcepts": ["machine learning"],
+    "rewardCoins": 80,
+    "hint": "The best prompt specifies exactly what to explain and asks for examples."
+  },
+  {
+    "id": 4,
+    "mode": "fix_prompt",
+    "level": 2,
+    "title": "Add an Output Format",
+    "difficulty": "beginner",
+    "villain": "deja_vu_demon",
+    "originalPrompt": "Tell me about the benefits of exercise and how it helps the body and mind and what kind of exercise is best and how often should I do it and what happens if I don't exercise.",
+    "idealPrompt": "List 5 key benefits of regular exercise (physical and mental) with recommended frequency.",
+    "options": [
+      "Tell me the benefits of exercise for the body and mind and how often I should work out.",
+      "What are the main benefits of exercise and what kind is best for me?",
+      "List 5 key benefits of regular exercise (physical and mental) with recommended frequency."
+    ],
+    "correctOption": 2,
+    "maxTokens": 20,
+    "requiredConcepts": ["exercise", "benefits"],
+    "rewardCoins": 110,
+    "hint": "Add a number, output format (list), and scope the question."
+  },
+  {
+    "id": 5,
+    "mode": "token_budget",
+    "level": 2,
+    "title": "Under 15 Tokens",
+    "difficulty": "beginner",
+    "villain": "context_goblin",
+    "originalPrompt": "I want you to summarize the main idea of blockchain technology for me in simple terms that are easy to understand for someone who has never heard of it before.",
+    "options": [
+      "What is blockchain and how does it work in simple terms for beginners?",
+      "Blockchain for beginners.",
+      "Summarize blockchain in simple terms for a beginner."
+    ],
+    "correctOption": 2,
+    "maxTokens": 15,
+    "requiredConcepts": ["blockchain", "summary", "simple"],
+    "rewardCoins": 120,
+    "hint": "Target audience + task + format = complete prompt. Skip the pleasantries."
+  },
+  {
+    "id": 6,
+    "mode": "fix_prompt",
+    "level": 2,
+    "title": "The Vague Request",
+    "difficulty": "beginner",
+    "villain": "deja_vu_demon",
+    "originalPrompt": "Make my resume better. I need a job and my resume isn't great and I want it to be more impressive and professional and maybe add some things that make it stand out.",
+    "idealPrompt": "Rewrite my resume summary to be concise, ATS-friendly, and highlight leadership skills.",
+    "options": [
+      "Improve my resume to make it more professional and help me get the job I want.",
+      "Rewrite my resume summary to be concise, ATS-friendly, and highlight leadership skills.",
+      "Fix my resume so it looks better."
+    ],
+    "correctOption": 1,
+    "maxTokens": 22,
+    "requiredConcepts": ["resume", "rewrite"],
+    "rewardCoins": 110,
+    "hint": "Specify which section, what improvement, and what matters to you."
+  },
+  {
+    "id": 7,
+    "mode": "choose_best",
+    "level": 2,
+    "title": "API Documentation",
+    "difficulty": "intermediate",
+    "villain": "history_hog",
+    "originalPrompt": "Help me with API docs",
+    "options": [
+      "Write API documentation for me",
+      "Generate REST API documentation for a /users endpoint: GET all users, POST create user. Include request/response examples in JSON.",
+      "Can you help me write some kind of documentation for my API that has users?"
+    ],
+    "correctOption": 1,
+    "requiredConcepts": ["api", "documentation"],
+    "rewardCoins": 90,
+    "hint": "The best prompt specifies the endpoint, HTTP methods, and desired output format."
+  },
+  {
+    "id": 8,
+    "mode": "fix_prompt",
+    "level": 3,
+    "title": "Lost Intent",
+    "difficulty": "intermediate",
+    "villain": "file_loop_phantom",
+    "originalPrompt": "I run a small bakery and I want to post something on Instagram and I need it to look good and be catchy and get people to come in and maybe mention our new croissants and our coffee and the weekend specials and make it fun.",
+    "idealPrompt": "Write 3 Instagram captions for a bakery promoting new croissants, coffee, and weekend specials. Tone: warm and playful, under 150 characters each.",
+    "options": [
+      "Write an Instagram post for my bakery about our new croissants, coffee, and weekend specials.",
+      "Create 3 Instagram captions for my bakery in a fun, engaging style about our new products.",
+      "Write 3 Instagram captions for a bakery promoting new croissants, coffee, and weekend specials. Tone: warm and playful, under 150 characters each."
+    ],
+    "correctOption": 2,
+    "maxTokens": 35,
+    "requiredConcepts": ["instagram", "bakery", "croissant"],
+    "rewardCoins": 130,
+    "hint": "Specify quantity (3 captions), tone, format, and character limit."
+  },
+  {
+    "id": 9,
+    "mode": "fix_prompt",
+    "level": 3,
+    "title": "The Repetition Trap",
+    "difficulty": "intermediate",
+    "villain": "verbosity_vampire",
+    "originalPrompt": "Can you translate this text from English to Spanish? The text is in English and I need it in Spanish. Please translate it accurately and make sure the translation is good Spanish translation from English.",
+    "idealPrompt": "Translate the following text from English to Spanish, preserving formal tone.",
+    "options": [
+      "Please translate this English text to Spanish accurately.",
+      "Can you translate this text from English into Spanish for me?",
+      "Translate the following text from English to Spanish, preserving formal tone."
+    ],
+    "correctOption": 2,
+    "maxTokens": 14,
+    "requiredConcepts": ["translate", "spanish"],
+    "rewardCoins": 105,
+    "hint": "The prompt repeats 'translate' and 'English/Spanish' 4 times. Say it once."
+  },
+  {
+    "id": 10,
+    "mode": "token_budget",
+    "level": 3,
+    "title": "Under 18 Tokens",
+    "difficulty": "intermediate",
+    "villain": "context_goblin",
+    "originalPrompt": "I need help creating a SQL query that can select all users from the users table where their account was created in the last 30 days and they have made at least one purchase and I also want to see their email addresses and names.",
+    "options": [
+      "Write a SQL query to find all users created in the last 30 days who have made at least one purchase and return their name and email.",
+      "SQL query: users from last 30 days with purchases, return name and email.",
+      "Get recent users with purchases from the database."
+    ],
+    "correctOption": 1,
+    "maxTokens": 18,
+    "requiredConcepts": ["sql", "users", "query"],
+    "rewardCoins": 135,
+    "hint": "Use SQL keywords directly. A tightly scoped query beats a paragraph of description."
+  },
+  {
+    "id": 11,
+    "mode": "fix_prompt",
+    "level": 3,
+    "title": "Tech Explanation",
+    "difficulty": "intermediate",
+    "villain": "overengineered_overlord",
+    "originalPrompt": "I want to understand what Docker is and how it works and why people use it and how it is different from a virtual machine and when should I use it and what are some good use cases for it.",
+    "idealPrompt": "Explain Docker vs VMs in 3 bullet points. Include one practical use case.",
+    "options": [
+      "What is Docker and how is it different from a virtual machine? Please explain with examples of when I should use it.",
+      "Explain Docker vs VMs in 3 bullet points. Include one practical use case.",
+      "Tell me about Docker."
+    ],
+    "correctOption": 1,
+    "maxTokens": 18,
+    "requiredConcepts": ["docker", "vm", "explain"],
+    "rewardCoins": 120,
+    "hint": "Bullet points + a number + one specific comparison = focused, efficient prompt."
+  },
+  {
+    "id": 12,
+    "mode": "choose_best",
+    "level": 3,
+    "title": "Data Analysis Ask",
+    "difficulty": "intermediate",
+    "villain": "history_hog",
+    "originalPrompt": "Analyse my sales data",
+    "options": [
+      "Look at my sales data and tell me things about it",
+      "Identify the top 3 revenue-driving products from this sales dataset and explain the trend in 2 sentences.",
+      "Can you analyze my sales data for me and find some insights and patterns?"
+    ],
+    "correctOption": 1,
+    "requiredConcepts": ["sales", "analysis"],
+    "rewardCoins": 95,
+    "hint": "The best prompt defines a specific output (top 3), metric (revenue), and limits the response length."
+  },
+  {
+    "id": 13,
+    "mode": "fix_prompt",
+    "level": 4,
+    "title": "The Oversharing Brief",
+    "difficulty": "advanced",
+    "villain": "memory_hoarder",
+    "originalPrompt": "So I'm building a SaaS product and my co-founder and I have been thinking about pricing and we've been debating between freemium and free trial and we have some competitors and I want to know what pricing model would work and also maybe what price points and if there's a way to test it.",
+    "idealPrompt": "Compare freemium vs free-trial for a B2B SaaS. Recommend a model with 2 key pricing principles. 150 words max.",
+    "options": [
+      "Compare freemium vs free-trial for a B2B SaaS. Recommend a model with 2 key pricing principles. 150 words max.",
+      "What SaaS pricing model should I use? My startup is early and we are deciding between freemium and free trial options.",
+      "Which is better for SaaS: freemium or free trial?"
+    ],
+    "correctOption": 0,
+    "maxTokens": 28,
+    "requiredConcepts": ["saas", "pricing", "freemium"],
+    "rewardCoins": 145,
+    "hint": "Cut the backstory. Define the comparison, your decision type, and word limit."
+  },
+  {
+    "id": 14,
+    "mode": "fix_prompt",
+    "level": 4,
+    "title": "Meeting Summary Request",
+    "difficulty": "advanced",
+    "villain": "file_loop_phantom",
+    "originalPrompt": "I just had a really long meeting and there were a lot of things discussed and I want to know if you can help me write a summary of it and make sure the key decisions are in there and also the action items and who is responsible for them and when they are due.",
+    "idealPrompt": "Summarize the meeting transcript below. Format: key decisions (bullets), action items with owner and due date.",
+    "options": [
+      "Write a meeting summary with the main decisions and action items including who is responsible and the deadlines.",
+      "Please summarize the meeting, highlighting key decisions, action items, who is responsible, and when each is due.",
+      "Summarize the meeting transcript below. Format: key decisions (bullets), action items with owner and due date."
+    ],
+    "correctOption": 2,
+    "maxTokens": 25,
+    "requiredConcepts": ["summary", "decisions", "action items"],
+    "rewardCoins": 130,
+    "hint": "Define the exact output structure upfront — decisions + action items table."
+  },
+  {
+    "id": 15,
+    "mode": "token_budget",
+    "level": 4,
+    "title": "Under 20 Tokens",
+    "difficulty": "advanced",
+    "villain": "overkill_oracle",
+    "originalPrompt": "Write a function in JavaScript that takes an array of numbers and returns a new array containing only the numbers that are even, and the function should be named filterEven and it should be well-commented and easy to understand.",
+    "options": [
+      "Write a JavaScript filterEven function: input number array, return even numbers only.",
+      "Create a well-documented JavaScript function named filterEven that accepts an array of numbers and returns only the even ones.",
+      "JS filter for even numbers."
+    ],
+    "correctOption": 0,
+    "maxTokens": 20,
+    "requiredConcepts": ["javascript", "function", "array", "even"],
+    "rewardCoins": 150,
+    "hint": "Specify language, function name, input type, and output. Comments are implied."
+  },
+  {
+    "id": 16,
+    "mode": "fix_prompt",
+    "level": 4,
+    "title": "Brand Voice Confusion",
+    "difficulty": "advanced",
+    "villain": "analysis_paralytic",
+    "originalPrompt": "I need a tagline for my startup that sells eco-friendly water bottles and it should be catchy and memorable and appeal to young people who care about the environment and sustainability and it should be short and punchy and inspire action.",
+    "idealPrompt": "Write 5 catchy taglines for an eco-friendly water bottle brand targeting Gen Z. Tone: bold, optimistic. Under 8 words each.",
+    "options": [
+      "Write 5 catchy taglines for an eco-friendly water bottle brand targeting Gen Z. Tone: bold, optimistic. Under 8 words each.",
+      "Create some short, catchy taglines for my eco-friendly water bottle startup that appeal to young environmentally conscious people.",
+      "What's a good tagline for my eco-friendly water bottle company?"
+    ],
+    "correctOption": 0,
+    "maxTokens": 28,
+    "requiredConcepts": ["tagline", "eco", "water bottle"],
+    "rewardCoins": 140,
+    "hint": "Quantity + audience + tone + word limit = complete creative brief."
+  },
+  {
+    "id": 17,
+    "mode": "choose_best",
+    "level": 4,
+    "title": "Legal Document Review",
+    "difficulty": "advanced",
+    "villain": "history_hog",
+    "originalPrompt": "Check my contract",
+    "options": [
+      "Review my contract document please",
+      "Identify clauses in this contract that could create liability for the service provider. List each clause, risk level (high/medium/low), and a one-line explanation.",
+      "Can you look at this contract I have and find any problematic parts and explain them?"
+    ],
+    "correctOption": 1,
+    "requiredConcepts": ["contract", "clauses", "liability"],
+    "rewardCoins": 105,
+    "hint": "The best prompt defines scope (liability), output format, and granularity."
+  },
+  {
+    "id": 18,
+    "mode": "fix_prompt",
+    "level": 5,
+    "title": "The Chatty Developer",
+    "difficulty": "expert",
+    "villain": "overengineered_overlord",
+    "originalPrompt": "I'm working on a Node.js backend and I've been trying to set up authentication and I was thinking of using JWT tokens and I need to know how to implement it properly and also make sure it's secure and maybe explain middleware and also show me some code.",
+    "idealPrompt": "Show Node.js Express JWT auth middleware with: token generation, validation, and error handling. Include TypeScript types.",
+    "options": [
+      "Show Node.js Express JWT auth middleware with: token generation, validation, and error handling. Include TypeScript types.",
+      "How do I set up JWT authentication in Node.js with Express? I need middleware, token handling, and security best practices with code examples.",
+      "Show JWT auth code for Node.js."
+    ],
+    "correctOption": 0,
+    "maxTokens": 22,
+    "requiredConcepts": ["node", "jwt", "middleware", "auth"],
+    "rewardCoins": 160,
+    "hint": "One code example with components listed beats three vague asks."
+  },
+  {
+    "id": 19,
+    "mode": "fix_prompt",
+    "level": 5,
+    "title": "Customer Research Overload",
+    "difficulty": "expert",
+    "villain": "memory_hoarder",
+    "originalPrompt": "I want to understand my customers better and I want to know what they think about my product and why they buy it and what problems they have and what they like and don't like and how I can improve it and what features they want and how to market it better to them.",
+    "idealPrompt": "Create a 5-question customer interview script to discover unmet needs, purchase motivations, and top pain points.",
+    "options": [
+      "Create a 5-question customer interview script to discover unmet needs, purchase motivations, and top pain points.",
+      "Write some questions I can ask my customers about my product, what they like or don't like, and how I can improve it.",
+      "Help me interview customers about my product."
+    ],
+    "correctOption": 0,
+    "maxTokens": 22,
+    "requiredConcepts": ["customer", "interview", "questions"],
+    "rewardCoins": 155,
+    "hint": "An interview script has finite questions. Define the number and goal."
+  },
+  {
+    "id": 20,
+    "mode": "token_budget",
+    "level": 5,
+    "title": "Under 16 Tokens",
+    "difficulty": "expert",
+    "villain": "overkill_oracle",
+    "originalPrompt": "Please help me understand the difference between React's useEffect hook and the useLayoutEffect hook, when to use each one, what the performance implications are, and whether there are any common mistakes developers make with these hooks.",
+    "options": [
+      "What is the difference between React useEffect and useLayoutEffect, when to use each, and what the performance trade-offs are?",
+      "React hooks useEffect vs useLayoutEffect: when to use which.",
+      "Compare useEffect vs useLayoutEffect in React: differences, timing, and use cases."
+    ],
+    "correctOption": 2,
+    "maxTokens": 16,
+    "requiredConcepts": ["useeffect", "uselayouteffect", "react", "difference"],
+    "rewardCoins": 165,
+    "hint": "Format: 'Compare X vs Y: [specific aspects].' Pack meaning, not filler."
+  },
+  {
+    "id": 21,
+    "mode": "fix_prompt",
+    "level": 5,
+    "title": "The Loaded Question",
+    "difficulty": "expert",
+    "villain": "infinite_reflector",
+    "originalPrompt": "Can you tell me everything about TypeScript generics and how they work and what they're useful for and show me some examples and also explain constraints and also conditional types and mapped types and maybe some advanced patterns too?",
+    "idealPrompt": "Explain TypeScript generics: definition, constraints, conditional & mapped types. Include one practical example for each. Use code blocks.",
+    "options": [
+      "Explain TypeScript generics: definition, constraints, conditional & mapped types. Include one practical example for each. Use code blocks.",
+      "Can you explain TypeScript generics and how they work? I want to understand constraints, conditional types, and mapped types with examples.",
+      "What are TypeScript generics?"
+    ],
+    "correctOption": 0,
+    "maxTokens": 25,
+    "requiredConcepts": ["typescript", "generics", "constraints"],
+    "rewardCoins": 155,
+    "hint": "List the 4 topics upfront, then ask for one example each. 'Everything' = wasted tokens."
+  },
+  {
+    "id": 22,
+    "mode": "choose_best",
+    "level": 5,
+    "title": "UX Research Brief",
+    "difficulty": "expert",
+    "villain": "analysis_paralytic",
+    "originalPrompt": "Help with user research",
+    "options": [
+      "I need help with user research for my app",
+      "Create a usability test plan for a mobile checkout flow: 3 tasks, success metrics, and a 5-point rating scale. Target: first-time users.",
+      "Can you help me create some kind of user research thing for my mobile app checkout?"
+    ],
+    "correctOption": 1,
+    "requiredConcepts": ["usability", "test", "checkout"],
+    "rewardCoins": 110,
+    "hint": "The best prompt specifies the deliverable (test plan), scope (3 tasks), metrics, and user segment."
+  },
+  {
+    "id": 23,
+    "mode": "fix_prompt",
+    "level": 6,
+    "title": "The Recursive Ramble",
+    "difficulty": "expert",
+    "villain": "agent_anarchist",
+    "originalPrompt": "So basically I need a marketing strategy and I've been thinking about social media and also email marketing and content marketing and paid ads and SEO and influencer partnerships and I want to know what's best for a startup with a limited budget and also how to prioritize and what to do first.",
+    "idealPrompt": "Prioritize 3 marketing channels for a bootstrapped B2B SaaS startup under $2K/month. Rank by ROI. Output as table.",
+    "options": [
+      "Prioritize 3 marketing channels for a bootstrapped B2B SaaS startup under $2K/month. Rank by ROI. Output as table.",
+      "What marketing channels should a bootstrapped startup with a limited budget focus on? Please rank them by effectiveness and explain how to prioritize.",
+      "Best marketing strategy for a startup?"
+    ],
+    "correctOption": 0,
+    "maxTokens": 25,
+    "requiredConcepts": ["marketing", "startup", "budget"],
+    "rewardCoins": 170,
+    "hint": "Give a budget constraint, a number of channels, a metric (ROI), and a format (table)."
+  },
+  {
+    "id": 24,
+    "mode": "fix_prompt",
+    "level": 6,
+    "title": "AI Prompt About AI",
+    "difficulty": "expert",
+    "villain": "infinite_reflector",
+    "originalPrompt": "I want to understand how large language models work and what transformers are and how attention works and what training data is and how fine-tuning works and what prompt engineering is and how to use AI better and what the limitations are and what the future looks like.",
+    "idealPrompt": "Explain LLM architecture in 4 components: transformer, attention, training data, fine-tuning. 2 sentences each. ELI-grad-student level.",
+    "options": [
+      "How do large language models work? Explain transformers, attention, training data, and fine-tuning in an accessible way with examples.",
+      "Explain LLM architecture in 4 components: transformer, attention, training data, fine-tuning. 2 sentences each. ELI-grad-student level.",
+      "What are LLMs and how do transformers work?"
+    ],
+    "correctOption": 1,
+    "maxTokens": 24,
+    "requiredConcepts": ["llm", "transformer", "attention"],
+    "rewardCoins": 170,
+    "hint": "Define the structure (4 components), depth (2 sentences), and audience level."
+  },
+  {
+    "id": 25,
+    "mode": "fix_prompt",
+    "level": 6,
+    "title": "The Final Boss Prep",
+    "difficulty": "expert",
+    "villain": "agent_anarchist",
+    "originalPrompt": "I want to build a full-stack web application with user authentication and a dashboard and a database and an API and I need help with the tech stack and the architecture and the folder structure and the deployment and also testing and security best practices.",
+    "idealPrompt": "Design a full-stack architecture for a SaaS dashboard: stack recommendations, folder structure, auth approach, and deployment. Output as a structured checklist.",
+    "options": [
+      "Design a full-stack architecture for a SaaS dashboard: stack recommendations, folder structure, auth approach, and deployment. Output as a structured checklist.",
+      "Help me plan a full-stack web app with authentication, database, API, and deployment. What tech stack should I use and how should I structure the project?",
+      "What's the best tech stack for building a web app?"
+    ],
+    "correctOption": 0,
+    "maxTokens": 30,
+    "requiredConcepts": ["fullstack", "architecture", "auth", "deployment"],
+    "rewardCoins": 180,
+    "hint": "Replace 'and also' lists with a structured output format and scoped deliverable."
+  }
+]
