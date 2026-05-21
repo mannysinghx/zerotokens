@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
 import ScoreRing from '../ui/ScoreRing.jsx'
@@ -47,7 +47,16 @@ export default function ResultsScreen() {
     soundEnabled, getBadges, challenge,
   } = useGameStore()
 
-  const score = lastScore
+  // Freeze all display data in local state on mount. When the user clicks
+  // "Next Challenge", nextChallenge() clears lastScore/challenge/newBadges in
+  // the store while AnimatePresence still holds this component alive for its
+  // exit animation — without these snapshots the component would crash or
+  // re-navigate mid-animation.
+  const [score]          = useState(lastScore)
+  const [frozenBadges]   = useState(newBadges)
+  const [frozenChallenge]= useState(challenge)
+  const [frozenCompleted]= useState(() => useGameStore.getState().completedChallenges)
+
   if (!score) {
     goTo('levelMap')
     return null
@@ -59,12 +68,11 @@ export default function ResultsScreen() {
     : 'idle'
 
   const allBadges = getBadges()
-  const unlockedBadgeObjects = newBadges.map(id => allBadges.find(b => b.id === id)).filter(Boolean)
+  const unlockedBadgeObjects = frozenBadges.map(id => allBadges.find(b => b.id === id)).filter(Boolean)
 
   // Villain progress for this challenge
-  const completedChallenges = useGameStore(s => s.completedChallenges)
-  const villain = challenge?.villain ? VILLAINS.find(v => v.id === challenge.villain) : null
-  const villainProgress = villain ? getVillainProgress(villain.id, completedChallenges) : null
+  const villain = frozenChallenge?.villain ? VILLAINS.find(v => v.id === frozenChallenge.villain) : null
+  const villainProgress = villain ? getVillainProgress(villain.id, frozenCompleted) : null
   const villainJustDefeated = villainProgress?.defeated && score.totalScore >= 40
 
   useEffect(() => {
@@ -102,8 +110,8 @@ export default function ResultsScreen() {
         >
           {getMessage(score.grade)}
         </motion.h1>
-        {challenge && (
-          <p className="text-slate-500 text-sm">{challenge.title}</p>
+        {frozenChallenge && (
+          <p className="text-slate-500 text-sm">{frozenChallenge.title}</p>
         )}
       </div>
 
@@ -224,7 +232,7 @@ export default function ResultsScreen() {
       </AnimatePresence>
 
       {/* Villain damage card */}
-      {villain && score.totalScore >= 40 && (
+      {villain && frozenChallenge && score.totalScore >= 40 && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
