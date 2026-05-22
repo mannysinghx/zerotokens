@@ -161,7 +161,7 @@ export default function CertificateViewScreen() {
       </motion.div>
 
       {/* ── Print-only layer (white, clean, professional) ── */}
-      <div className="certificate-print print-only" style={{ display: 'none' }}>
+      <div className="certificate-print print-only">
         <div className="cert-print-inner">
 
           {/* Header bar */}

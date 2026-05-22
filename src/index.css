@@ -375,20 +375,39 @@ body.theme-retro {
 }
 
 /* ── Print helpers (screen) ── */
-.print-only { display: none !important; }
+/* No !important here so the print query can override cleanly */
+.print-only { display: none; }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    PRINT / PDF  —  Certificate only
-   Everything with .no-print is hidden; .print-only becomes block.
-   The .certificate-print div renders a clean white professional document.
+   Uses visibility (not display) so a child element can override a parent's
+   hidden state — display:none on a parent cannot be undone by a child.
 ───────────────────────────────────────────────────────────────────────────── */
 @media print {
-  /* Hide everything except the certificate */
-  body > *,
-  #root > * { display: none !important; }
+  /* Make everything invisible (preserves layout flow, unlike display:none) */
+  body * { visibility: hidden; }
 
-  /* Show the print certificate */
-  .certificate-print { display: block !important; }
+  /* Show only the certificate and all its children */
+  .certificate-print,
+  .certificate-print * { visibility: visible !important; }
+
+  /* Position the certificate to fill the page */
+  .certificate-print {
+    display:  flex !important;
+    position: fixed !important;
+    top:    0 !important;
+    left:   0 !important;
+    right:  0 !important;
+    bottom: 0 !important;
+    width:  100% !important;
+    height: 100% !important;
+    align-items: center;
+    justify-content: center;
+    background: white !important;
+    z-index: 99999 !important;
+    margin: 0 !important;
+    padding: 20px !important;
+  }
 
   /* Reset body for print */
   body, html {
@@ -399,8 +418,7 @@ body.theme-retro {
     padding: 0;
   }
 
-  .print-only { display: block !important; }
-  .no-print   { display: none  !important; }
+  .no-print { display: none !important; }
 
   /* ── Certificate print layout ── */
   .certificate-print {
