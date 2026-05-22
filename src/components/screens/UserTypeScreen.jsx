@@ -121,6 +121,20 @@ export default function UserTypeScreen() {
       >
         Master AI prompts · Save tokens · Climb the leaderboard
       </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7 }}
+        className="text-xs font-mono mt-4 text-center"
+      >
+        <a
+          href="/about"
+          className="text-slate-700 hover:text-slate-400 transition-colors"
+        >
+          About Token Quest →
+        </a>
+      </motion.p>
     </motion.div>
   )
 }

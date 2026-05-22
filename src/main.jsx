@@ -7,6 +7,7 @@ import './index.css'
 const AdminApp        = lazy(() => import('./admin/AdminApp.jsx'))
 const CompanyAdminApp = lazy(() => import('./company-admin/CompanyAdminApp.jsx'))
 const VerifyEmail     = lazy(() => import('./components/screens/VerifyEmailScreen.jsx'))
+const AboutScreen     = lazy(() => import('./components/screens/AboutScreen.jsx'))
 
 const Loader = () => (
   <div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">
@@ -37,6 +38,14 @@ function Root() {
             <div className="min-h-screen bg-slate-950 relative">
               <div className="scanlines" />
               <Suspense fallback={<Loader />}><VerifyEmail /></Suspense>
+            </div>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <div className="min-h-screen bg-slate-950 relative">
+              <Suspense fallback={<Loader />}><AboutScreen /></Suspense>
             </div>
           }
         />
