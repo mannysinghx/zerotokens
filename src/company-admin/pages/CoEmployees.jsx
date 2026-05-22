@@ -1,27 +1,29 @@
 /**
  * CoEmployees.jsx
  * Full employee management for the company admin:
- *   - View employees with assigned course
- *   - Invite new employees (email)
- *   - Resend invitation email for pending employees
+ *   - View employees with status, assigned course, admin badge
+ *   - Add new employees (username + email + password → auto-verified email flow)
+ *   - Resend verification email for pending employees
  *   - Assign / reassign courses (Category → Sub-function → Role)
- *   - Disable / enable accounts
- *   - Change password
- *   - Delete accounts
+ *   - Promote / demote company admin
+ *   - View full employee profile (edit name/email, stats, certs)
+ *   - Disable / enable / change password / delete accounts
  */
 import { useEffect, useState, useCallback } from 'react'
 import {
   coAdminFetchEmployees,
-  coAdminInviteEmployee,
   coAdminManageUser,
   coAdminAssignEmployee,
   coAdminResendInvite,
+  coAdminToggleAdmin,
 } from '../../utils/api.js'
 import { FIELD_CATEGORY_MAP } from '../../data/fieldCategories.js'
-import AssignmentModal from '../../admin/components/AssignmentModal.jsx'
-import UserActionModal from '../../admin/components/UserActionModal.jsx'
+import AssignmentModal      from '../../admin/components/AssignmentModal.jsx'
+import UserActionModal      from '../../admin/components/UserActionModal.jsx'
+import AddEmployeeModal     from '../components/AddEmployeeModal.jsx'
+import EmployeeProfileModal from '../components/EmployeeProfileModal.jsx'
 
-// ── helpers ──────────────────────────────────────────────────────────────────
+// ── helpers ───────────────────────────────────────────────────────────────────
 
 function StatusBadge({ emp }) {
   if (emp.is_active === false)
@@ -56,17 +58,20 @@ export default function CoEmployees({ token, adminUser }) {
   const [loading,      setLoading]      = useState(true)
   const [error,        setError]        = useState(null)
   const [search,       setSearch]       = useState('')
-  const [showInvite,   setShowInvite]   = useState(false)
-  const [assignModal,  setAssignModal]  = useState(null)   // employee object
-  const [actionModal,  setActionModal]  = useState(null)   // { user, action }
-  const [resending,    setResending]    = useState(null)   // userId being resent
-  const [resendMsg,    setResendMsg]    = useState(null)   // { ok, text, userId }
 
-  // Invite form
-  const [invEmail,     setInvEmail]     = useState('')
-  const [invUsername,  setInvUsername]  = useState('')
-  const [inviting,     setInviting]     = useState(false)
-  const [inviteMsg,    setInviteMsg]    = useState(null)
+  // Modals
+  const [showAdd,      setShowAdd]      = useState(false)       // AddEmployeeModal
+  const [profileModal, setProfileModal] = useState(null)        // employee object
+  const [assignModal,  setAssignModal]  = useState(null)        // employee object
+  const [actionModal,  setActionModal]  = useState(null)        // { user, action }
+
+  // Resend invite
+  const [resending,    setResending]    = useState(null)        // userId
+  const [resendMsg,    setResendMsg]    = useState(null)        // { ok, text, userId }
+
+  // Admin toggle
+  const [togglingAdmin, setTogglingAdmin] = useState(null)      // userId
+  const [adminToggleMsg, setAdminToggleMsg] = useState(null)    // { ok, text, userId }
 
   const load = useCallback(() => {
     setLoading(true)
@@ -86,20 +91,6 @@ export default function CoEmployees({ token, adminUser }) {
 
   // ── handlers ────────────────────────────────────────────────────────────────
 
-  async function handleInvite(e) {
-    e.preventDefault()
-    if (!invEmail.trim() || !invUsername.trim()) return
-    setInviting(true); setInviteMsg(null)
-    try {
-      await coAdminInviteEmployee(token, { email: invEmail.trim(), username: invUsername.trim() })
-      setInviteMsg({ ok: true, text: `Invitation sent to ${invEmail.trim()}` })
-      setInvEmail(''); setInvUsername('')
-      load()
-    } catch (err) {
-      setInviteMsg({ ok: false, text: err.message })
-    } finally { setInviting(false) }
-  }
-
   async function handleResendInvite(emp) {
     setResending(emp.id); setResendMsg(null)
     try {
@@ -116,6 +107,20 @@ export default function CoEmployees({ token, adminUser }) {
 
   async function handleAssign({ userId, categoryId, subFunction, role }) {
     await coAdminAssignEmployee(token, { userId, categoryId, subFunction, role })
+  }
+
+  async function handleToggleAdmin(emp) {
+    const next = !emp.is_company_admin
+    const verb = next ? `promote ${emp.username} to Company Admin` : `remove admin access from ${emp.username}`
+    if (!window.confirm(`Are you sure you want to ${verb}?`)) return
+    setTogglingAdmin(emp.id); setAdminToggleMsg(null)
+    try {
+      await coAdminToggleAdmin(token, { userId: emp.id, makeAdmin: next })
+      setAdminToggleMsg({ ok: true, text: next ? `👑 ${emp.username} is now a Company Admin.` : `Admin access removed.`, userId: emp.id })
+      load()
+    } catch (err) {
+      setAdminToggleMsg({ ok: false, text: err.message, userId: emp.id })
+    } finally { setTogglingAdmin(null) }
   }
 
   // ── render ──────────────────────────────────────────────────────────────────
@@ -139,56 +144,21 @@ export default function CoEmployees({ token, adminUser }) {
             className="bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-slate-100 font-mono text-sm outline-none focus:border-purple-500 w-56"
           />
           <button
-            onClick={() => { setShowInvite(v => !v); setInviteMsg(null) }}
+            onClick={() => setShowAdd(true)}
             className="text-sm font-mono px-4 py-2 rounded-xl border transition-colors"
-            style={{
-              background: showInvite ? '#581c87' : '#3b0764',
-              borderColor: '#7c3aed',
-              color: '#e9d5ff',
-            }}
+            style={{ background: '#3b0764', borderColor: '#7c3aed', color: '#e9d5ff' }}
           >
-            {showInvite ? '✕ Close' : '➕ Invite Employee'}
+            ➕ Add Employee
           </button>
         </div>
       </div>
-
-      {/* Invite form */}
-      {showInvite && (
-        <div className="bg-slate-900 border rounded-xl p-5 mb-5" style={{ borderColor: '#7c3aed55' }}>
-          <h2 className="text-sm font-mono font-bold mb-4" style={{ color: '#a855f7' }}>Invite New Employee</h2>
-          <form onSubmit={handleInvite} className="flex flex-wrap gap-3 items-end">
-            <div className="flex-1 min-w-[180px]">
-              <label className="block text-xs uppercase tracking-widest font-mono mb-1" style={{ color: '#a855f7' }}>Email</label>
-              <input type="email" value={invEmail} onChange={e => setInvEmail(e.target.value)}
-                placeholder="employee@company.com" required
-                className="w-full bg-slate-800 border border-slate-700 focus:border-purple-500 rounded-xl px-3 py-2 text-slate-100 font-mono text-sm outline-none transition-colors" />
-            </div>
-            <div className="flex-1 min-w-[160px]">
-              <label className="block text-xs uppercase tracking-widest font-mono mb-1" style={{ color: '#a855f7' }}>Username</label>
-              <input type="text" value={invUsername} onChange={e => setInvUsername(e.target.value)}
-                placeholder="jsmith" required
-                className="w-full bg-slate-800 border border-slate-700 focus:border-purple-500 rounded-xl px-3 py-2 text-slate-100 font-mono text-sm outline-none transition-colors" />
-            </div>
-            <button type="submit" disabled={inviting || !invEmail.trim() || !invUsername.trim()}
-              className="px-5 py-2 rounded-xl text-sm font-mono font-bold text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-              style={{ background: 'linear-gradient(90deg, #7c3aed, #a855f7)' }}>
-              {inviting ? 'Sending…' : '📧 Send Invite'}
-            </button>
-          </form>
-          {inviteMsg && (
-            <p className={`mt-3 text-xs font-mono ${inviteMsg.ok ? 'text-emerald-400' : 'text-red-400'}`}>
-              {inviteMsg.ok ? '✓' : '⚠'} {inviteMsg.text}
-            </p>
-          )}
-        </div>
-      )}
 
       {loading && <p className="text-slate-500 font-mono text-sm">Loading…</p>}
       {error   && <p className="text-red-400 font-mono text-sm">Error: {error}</p>}
 
       {!loading && !error && (
         <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden overflow-x-auto">
-          <table className="w-full text-sm min-w-[760px]">
+          <table className="w-full text-sm min-w-[820px]">
             <thead>
               <tr className="border-b border-slate-800">
                 {['Employee', 'Status', 'Assigned Course', 'Joined', 'Actions'].map(h => (
@@ -198,14 +168,16 @@ export default function CoEmployees({ token, adminUser }) {
             </thead>
             <tbody>
               {filtered.map(emp => {
-                const disabled = emp.is_active === false
-                const isPending = !emp.email_verified
-                const isResendingThis = resending === emp.id
-                const thisResendMsg = resendMsg?.userId === emp.id ? resendMsg : null
+                const disabled          = emp.is_active === false
+                const isPending         = !emp.email_verified
+                const isResendingThis   = resending === emp.id
+                const thisResendMsg     = resendMsg?.userId === emp.id ? resendMsg : null
+                const isTogglingThis    = togglingAdmin === emp.id
+                const thisAdminMsg      = adminToggleMsg?.userId === emp.id ? adminToggleMsg : null
 
                 return (
                   <tr key={emp.id}
-                    className={`border-b border-slate-800/50 transition-colors ${disabled ? 'opacity-50' : 'hover:bg-slate-800/30'}`}>
+                    className={`border-b border-slate-800/50 transition-colors ${disabled ? 'opacity-50' : 'hover:bg-slate-800/20'}`}>
 
                     {/* Employee */}
                     <td className="px-4 py-3">
@@ -215,10 +187,14 @@ export default function CoEmployees({ token, adminUser }) {
                         {emp.username}
                       </div>
                       <div className="text-xs text-slate-500 font-mono">{emp.email ?? '—'}</div>
-                      {/* Resend feedback inline */}
                       {thisResendMsg && (
                         <p className={`text-xs font-mono mt-0.5 ${thisResendMsg.ok ? 'text-emerald-400' : 'text-red-400'}`}>
                           {thisResendMsg.ok ? '✓' : '⚠'} {thisResendMsg.text}
+                        </p>
+                      )}
+                      {thisAdminMsg && (
+                        <p className={`text-xs font-mono mt-0.5 ${thisAdminMsg.ok ? 'text-violet-400' : 'text-red-400'}`}>
+                          {thisAdminMsg.text}
                         </p>
                       )}
                     </td>
@@ -237,6 +213,15 @@ export default function CoEmployees({ token, adminUser }) {
                     {/* Actions */}
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-1.5 flex-wrap">
+
+                        {/* View profile */}
+                        <button
+                          onClick={() => setProfileModal(emp)}
+                          title="View full profile"
+                          className="text-xs px-2.5 py-1 rounded-lg font-mono border transition-colors bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-700"
+                        >
+                          👁 Profile
+                        </button>
 
                         {/* Assign / Reassign course */}
                         <button
@@ -259,6 +244,20 @@ export default function CoEmployees({ token, adminUser }) {
                             {isResendingThis ? '…' : '📧 Resend'}
                           </button>
                         )}
+
+                        {/* Toggle admin */}
+                        <button
+                          onClick={() => handleToggleAdmin(emp)}
+                          disabled={isTogglingThis}
+                          title={emp.is_company_admin ? 'Remove admin access' : 'Make Company Admin'}
+                          className={`text-xs px-2.5 py-1 rounded-lg font-mono border transition-colors disabled:opacity-40 ${
+                            emp.is_company_admin
+                              ? 'bg-amber-900/30 text-amber-400 hover:bg-amber-800/50 border-amber-800/50'
+                              : 'bg-violet-900/20 text-violet-400 hover:bg-violet-900/40 border-violet-800/40'
+                          }`}
+                        >
+                          {isTogglingThis ? '…' : emp.is_company_admin ? '👤 Demote' : '👑'}
+                        </button>
 
                         {/* Disable / Enable */}
                         <button
@@ -299,13 +298,33 @@ export default function CoEmployees({ token, adminUser }) {
               {filtered.length === 0 && (
                 <tr>
                   <td colSpan={5} className="px-4 py-8 text-center text-slate-600 font-mono text-sm">
-                    {search ? 'No employees match your search.' : 'No employees yet — invite some above!'}
+                    {search ? 'No employees match your search.' : 'No employees yet — add one above!'}
                   </td>
                 </tr>
               )}
             </tbody>
           </table>
         </div>
+      )}
+
+      {/* Add employee modal */}
+      {showAdd && (
+        <AddEmployeeModal
+          token={token}
+          onClose={() => setShowAdd(false)}
+          onCreated={load}
+        />
+      )}
+
+      {/* Employee profile modal */}
+      {profileModal && (
+        <EmployeeProfileModal
+          emp={profileModal}
+          token={token}
+          onClose={() => setProfileModal(null)}
+          onAction={(user, action) => setActionModal({ user, action })}
+          onRefresh={load}
+        />
       )}
 
       {/* Course assignment modal */}

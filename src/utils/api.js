@@ -197,6 +197,36 @@ export async function coAdminResendInvite(token, { userId }) {
   })
 }
 
+export async function coAdminAddEmployee(token, { username, email, password }) {
+  return request('/company-admin/add-employee', {
+    method:  'POST',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ username, email, password }),
+  })
+}
+
+export async function coAdminUpdateEmployee(token, { userId, username, email }) {
+  return request('/company-admin/update-employee', {
+    method:  'PATCH',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ userId, username, email }),
+  })
+}
+
+export async function coAdminToggleAdmin(token, { userId, makeAdmin }) {
+  return request('/company-admin/toggle-admin', {
+    method:  'POST',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ userId, makeAdmin }),
+  })
+}
+
+export async function coAdminGetEmployeeProfile(token, userId) {
+  return request(`/company-admin/employee-profile?userId=${encodeURIComponent(userId)}`, {
+    headers: coAdminHeaders(token),
+  })
+}
+
 // ── Legacy (kept for backward compat, no-op on server) ───────────────────────
 export async function upsertEmployee() {
   return { success: true }
