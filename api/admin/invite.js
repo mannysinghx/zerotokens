@@ -6,7 +6,7 @@
  * Requires x-admin-password header.
  * Node.js runtime (req/res style) — SMTP requires TCP/TLS.
  */
-import { sql } from '../_db.js'
+import { sql } from '../_db_node.js'
 import { generateToken } from '../_auth.js'
 import { sendInvitationEmail } from '../_email.js'
 

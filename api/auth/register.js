@@ -6,7 +6,7 @@
  * Company employees are created via /api/admin/invite.
  * Node.js runtime (req/res style) — SMTP requires TCP/TLS.
  */
-import { sql } from '../_db.js'
+import { sql } from '../_db_node.js'
 import { generateSalt, hashPassword, generateToken } from '../_auth.js'
 import { sendVerificationEmail } from '../_email.js'
 
