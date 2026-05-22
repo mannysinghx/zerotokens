@@ -58,8 +58,10 @@ export default async function handler(req, res) {
     const expiresAt = new Date(Date.now() + 7 * 86_400_000).toISOString()
     await sql`INSERT INTO email_verifications (user_id, token, expires_at) VALUES (${user.id}, ${token}, ${expiresAt})`
 
-    // Send invitation email
-    await sendInvitationEmail({ to: user.email, username: user.username, companyName, verifyToken: token })
+    // Send invitation email — credentials read here where process.env is guaranteed
+    const smtpUser = (process.env.SMTP_USER     ?? '').trim()
+    const smtpPass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '').trim()
+    await sendInvitationEmail({ to: user.email, username: user.username, companyName, verifyToken: token, smtpUser, smtpPass })
 
     const appUrl = process.env.APP_URL ?? 'https://www.zerotokens.ai'
     return res.status(201).json({ user, inviteUrl: `${appUrl}/verify?token=${token}` })

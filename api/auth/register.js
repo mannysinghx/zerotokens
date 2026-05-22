@@ -53,8 +53,10 @@ export default async function handler(req, res) {
     const expiresAt   = new Date(Date.now() + 24 * 60 * 60_000).toISOString()
     await sql`INSERT INTO email_verifications (user_id, token, expires_at) VALUES (${user.id}, ${verifyToken}, ${expiresAt})`
 
-    // Send verification email
-    await sendVerificationEmail({ to: user.email, username: user.username, verifyToken })
+    // Send verification email — credentials read here where process.env is guaranteed
+    const smtpUser = (process.env.SMTP_USER     ?? '').trim()
+    const smtpPass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '').trim()
+    await sendVerificationEmail({ to: user.email, username: user.username, verifyToken, smtpUser, smtpPass })
 
     return res.status(201).json({ message: 'Check your email to verify your account.' })
   } catch (err) {

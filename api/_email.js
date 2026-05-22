@@ -11,39 +11,34 @@
  *   SMTP_FROM      e.g. "Token Quest <zerotokensai@gmail.com>"
  *   APP_URL        e.g. https://www.zerotokens.ai
  */
-import { createRequire } from 'module'
-const require  = createRequire(import.meta.url)
-const nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
 
-function makeTransport() {
-  const user = (process.env.SMTP_USER     ?? '').trim()
-  const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '').trim()
-
-  if (!user || !pass) throw new Error(`SMTP env vars missing (user:${!!user} pass:${!!pass})`)
-
+/**
+ * Credentials are passed in by the caller (register.js / invite.js) so they
+ * are read from process.env in the Lambda handler where they are guaranteed
+ * to be available, not inside this shared module.
+ */
+function makeTransport(user, pass) {
+  if (!user || !pass) throw new Error(`SMTP credentials not provided (user:${!!user} pass:${!!pass})`)
   return nodemailer.createTransport({
     host:   'smtp.gmail.com',
     port:   465,
     secure: true,
-    auth: {
-      type: 'LOGIN',
-      user,
-      pass,
-    },
+    auth:   { user, pass },
   })
 }
 
+const APP_URL = process.env.APP_URL ?? 'https://www.zerotokens.ai'
 const FROM    = process.env.SMTP_FROM ?? 'Token Quest <noreply@zerotokens.ai>'
-const APP_URL = process.env.APP_URL   ?? 'https://www.zerotokens.ai'
 
 // ── Exported senders ──────────────────────────────────────────────────────────
 
 /**
  * Company employee invitation email.
  */
-export async function sendInvitationEmail({ to, username, companyName, verifyToken }) {
+export async function sendInvitationEmail({ to, username, companyName, verifyToken, smtpUser, smtpPass }) {
   const link = `${APP_URL}/verify?token=${verifyToken}`
-  const transport = makeTransport()
+  const transport = makeTransport(smtpUser, smtpPass)
   await transport.sendMail({
     from:    FROM,
     to,
@@ -93,9 +88,9 @@ export async function sendInvitationEmail({ to, username, companyName, verifyTok
 /**
  * Individual user email verification email.
  */
-export async function sendVerificationEmail({ to, username, verifyToken }) {
+export async function sendVerificationEmail({ to, username, verifyToken, smtpUser, smtpPass }) {
   const link = `${APP_URL}/verify?token=${verifyToken}`
-  const transport = makeTransport()
+  const transport = makeTransport(smtpUser, smtpPass)
   await transport.sendMail({
     from:    FROM,
     to,
@@ -141,9 +136,9 @@ export async function sendVerificationEmail({ to, username, verifyToken }) {
 /**
  * Password reset email.
  */
-export async function sendPasswordResetEmail({ to, username, resetToken }) {
+export async function sendPasswordResetEmail({ to, username, resetToken, smtpUser, smtpPass }) {
   const link = `${APP_URL}/verify?token=${resetToken}&mode=reset`
-  const transport = makeTransport()
+  const transport = makeTransport(smtpUser, smtpPass)
   await transport.sendMail({
     from:    FROM,
     to,
