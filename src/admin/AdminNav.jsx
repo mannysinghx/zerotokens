@@ -1,18 +1,39 @@
 /**
  * AdminNav.jsx
  * Sidebar navigation for the admin panel.
+ * Employees is nested under Companies.
  */
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
-const NAV_ITEMS = [
-  { to: '/admin',            icon: '📊', label: 'Dashboard'  },
-  { to: '/admin/companies',  icon: '🏢', label: 'Companies'  },
-  { to: '/admin/employees',  icon: '👥', label: 'Employees'  },
-  { to: '/admin/questions',  icon: '📚', label: 'Questions'  },
-  { to: '/admin/responses',  icon: '📋', label: 'Responses'  },
+const TOP_ITEMS = [
+  { to: '/admin',           icon: '📊', label: 'Dashboard' },
+  { to: '/admin/questions', icon: '📚', label: 'Questions' },
+  { to: '/admin/responses', icon: '📋', label: 'Responses' },
 ]
 
+function NavItem({ to, icon, label, end = false }) {
+  return (
+    <NavLink
+      to={to}
+      end={end}
+      className={({ isActive }) =>
+        `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-mono transition-colors ${
+          isActive
+            ? 'bg-cyan-900/40 text-cyan-400 border border-cyan-800/60'
+            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+        }`
+      }
+    >
+      <span>{icon}</span>
+      <span>{label}</span>
+    </NavLink>
+  )
+}
+
 export default function AdminNav({ onLogout }) {
+  const { pathname } = useLocation()
+  const companyActive = pathname.startsWith('/admin/companies') || pathname.startsWith('/admin/employees')
+
   return (
     <nav
       className="w-52 shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col"
@@ -28,23 +49,48 @@ export default function AdminNav({ onLogout }) {
 
       {/* Nav links */}
       <div className="flex-1 py-4 space-y-1 px-3">
-        {NAV_ITEMS.map(({ to, icon, label }) => (
+        {/* Dashboard */}
+        <NavItem to="/admin" icon="📊" label="Dashboard" end />
+
+        {/* Companies — with Employees nested underneath */}
+        <div>
           <NavLink
-            key={to}
-            to={to}
-            end={to === '/admin'}
-            className={({ isActive }) =>
+            to="/admin/companies"
+            className={() =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-mono transition-colors ${
-                isActive
+                companyActive
                   ? 'bg-cyan-900/40 text-cyan-400 border border-cyan-800/60'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
               }`
             }
           >
-            <span>{icon}</span>
-            <span>{label}</span>
+            <span>🏢</span>
+            <span>Companies</span>
           </NavLink>
-        ))}
+
+          {/* Employees sub-item — always visible, indented */}
+          <div className="ml-4 mt-0.5 pl-3 border-l border-slate-700">
+            <NavLink
+              to="/admin/employees"
+              className={({ isActive }) =>
+                `flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono transition-colors ${
+                  isActive
+                    ? 'bg-cyan-900/40 text-cyan-400 border border-cyan-800/60'
+                    : 'text-slate-500 hover:text-slate-200 hover:bg-slate-800'
+                }`
+              }
+            >
+              <span>👥</span>
+              <span>Employees</span>
+            </NavLink>
+          </div>
+        </div>
+
+        {/* Questions */}
+        <NavItem to="/admin/questions" icon="📚" label="Questions" />
+
+        {/* Responses */}
+        <NavItem to="/admin/responses" icon="📋" label="Responses" />
       </div>
 
       {/* Logout */}
