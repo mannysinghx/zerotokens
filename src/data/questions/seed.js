@@ -106,7 +106,10 @@ if (!connectionString) {
   process.exit(1)
 }
 
-const sql = postgres(connectionString, { ssl: 'require' })
+const sql = postgres(connectionString, {
+  ssl:     'require',
+  prepare: false,   // required for Neon pooled connections (PgBouncer)
+})
 
 async function seed() {
   console.log('🌱 Seeding TokenQuest database…\n')
