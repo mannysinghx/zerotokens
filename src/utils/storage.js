@@ -26,6 +26,14 @@ const DEFAULT_SAVE = {
   // ── Field training (Supabase-backed) ────────────────────────────────────
   assignment:   null,       // { categoryId, subFunction, role, categoryName } — from DB
   fieldSession: [],         // shuffled question objects for current field session
+  // ── Auth (server-side session) ───────────────────────────────────────────────
+  userId:          null,    // UUID from users table
+  userType:        null,    // 'individual' | 'company'
+  email:           null,    // user's email address
+  companyId:       null,    // UUID — set for company employees
+  companyName:     null,    // company display name
+  sessionToken:    null,    // Bearer token for session restore
+  isAuthenticated: false,   // true when sessionToken is valid
 }
 
 // ── Active save ─────────────────────────────────────────────────────────────

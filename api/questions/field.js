@@ -7,7 +7,7 @@ import { sql, jsonResponse, handleOptions } from '../_db.js'
 export const config = { runtime: 'edge' }
 
 export default async function handler(request) {
-  if (request.method === 'OPTIONS') return handleOptions()
+  if (request.method === 'OPTIONS') return handleOptions(request)
   if (request.method !== 'GET') return jsonResponse({ error: 'Method not allowed' }, 405)
 
   try {

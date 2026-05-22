@@ -1,6 +1,6 @@
 /**
  * src/utils/api.js
- * Frontend HTTP client for all Neon database operations.
+ * Frontend HTTP client for all Neon database + auth operations.
  * All DB work goes through /api serverless functions — the browser
  * never touches the database directly.
  */
@@ -17,88 +17,128 @@ async function request(path, options = {}) {
   return data
 }
 
-// ── Employee ──────────────────────────────────────────────────────────────────
+function authHeaders(token) {
+  return { Authorization: `Bearer ${token}` }
+}
 
-/**
- * Sync a localStorage save to the employees table.
- * @param {{ id: string, username: string, team?: string, company?: string }} save
- */
-export async function upsertEmployee(save) {
-  return request('/employees/upsert', {
+function adminHeaders(password) {
+  return { 'x-admin-password': password }
+}
+
+// ── Auth ─────────────────────────────────────────────────────────────────────
+
+/** Register a new individual user. Returns { user, sessionToken }. */
+export async function apiRegister(username, email, password) {
+  return request('/auth/register', {
     method: 'POST',
-    body: JSON.stringify({
-      id:       save.employeeId,
-      username: save.username,
-      team:     save.team    ?? null,
-      company:  save.company ?? null,
-    }),
+    body:   JSON.stringify({ username, email, password }),
   })
 }
 
-/**
- * Fetch the active assignment for an employee.
- * @param {string} employeeId
- * @returns {{ assignment: object|null }}
- */
-export async function fetchAssignment(employeeId) {
-  return request(`/employees/assignment?employeeId=${encodeURIComponent(employeeId)}`)
+/** Log in with email + password. Returns { user, sessionToken }. */
+export async function apiLogin(email, password) {
+  return request('/auth/login', {
+    method: 'POST',
+    body:   JSON.stringify({ email, password }),
+  })
+}
+
+/** Invalidate the current session. */
+export async function apiLogout(sessionToken) {
+  return request('/auth/logout', {
+    method:  'POST',
+    headers: authHeaders(sessionToken),
+  })
+}
+
+/** Validate a session token and return the current user. */
+export async function apiMe(sessionToken) {
+  return request('/auth/me', { headers: authHeaders(sessionToken) })
+}
+
+// ── Game progress ─────────────────────────────────────────────────────────────
+
+/** Persist the full game state JSON to the server for the logged-in user. */
+export async function apiSaveProgress(sessionToken, gameState) {
+  return request('/game/progress', {
+    method:  'POST',
+    headers: authHeaders(sessionToken),
+    body:    JSON.stringify({ gameState }),
+  })
+}
+
+// ── Assignment ────────────────────────────────────────────────────────────────
+
+/** Fetch the active field assignment for the logged-in user. */
+export async function fetchAssignment(sessionToken) {
+  return request('/employees/assignment', { headers: authHeaders(sessionToken) })
 }
 
 // ── Questions ─────────────────────────────────────────────────────────────────
 
-/**
- * Fetch `count` randomly-shuffled field questions for a category.
- * @param {string} categoryId
- * @param {number} [count=15]
- * @returns {{ questions: object[] }}
- */
+/** Fetch `count` randomly-shuffled field questions for a category. */
 export async function fetchFieldQuestions(categoryId, count = 15) {
   return request(`/questions/field?categoryId=${encodeURIComponent(categoryId)}&count=${count}`)
 }
 
-// ── Responses ─────────────────────────────────────────────────────────────────
+// ── Responses (field training) ────────────────────────────────────────────────
 
-/**
- * Save a completed question response.
- * @param {{
- *   employeeId: string, questionId: string, categoryId: string,
- *   userAnswer: string, correctAnswer: string, isCorrect: boolean,
- *   totalScore: number, grade: string, tokensSaved: number
- * }} payload
- */
-export async function saveResponse(payload) {
+/** Save a completed question response (auth required). */
+export async function saveResponse(sessionToken, payload) {
   return request('/responses/save', {
-    method: 'POST',
-    body: JSON.stringify(payload),
+    method:  'POST',
+    headers: authHeaders(sessionToken),
+    body:    JSON.stringify(payload),
   })
 }
 
-// ── Admin (requires password header) ─────────────────────────────────────────
+// ── Admin ─────────────────────────────────────────────────────────────────────
 
-function adminHeaders(password) {
-  return { 'x-admin-password': password }
+export async function adminFetchStats(password) {
+  return request('/admin/stats', { headers: adminHeaders(password) })
 }
 
 export async function adminFetchEmployees(password) {
   return request('/admin/employees', { headers: adminHeaders(password) })
 }
 
-export async function adminAssignEmployee(password, { employeeId, categoryId, subFunction, role }) {
+export async function adminAssignEmployee(password, { userId, categoryId, subFunction, role }) {
   return request('/admin/assign', {
     method:  'POST',
     headers: adminHeaders(password),
-    body:    JSON.stringify({ employeeId, categoryId, subFunction, role }),
+    body:    JSON.stringify({ userId, categoryId, subFunction, role }),
   })
 }
 
-export async function adminFetchResponses(password, { employeeId, categoryId, limit } = {}) {
+export async function adminFetchResponses(password, { userId, categoryId, limit } = {}) {
   const params = new URLSearchParams()
-  if (employeeId) params.set('employeeId', employeeId)
+  if (userId)     params.set('userId',     userId)
   if (categoryId) params.set('categoryId', categoryId)
   if (limit)      params.set('limit',      limit)
   return request(`/admin/responses?${params}`, { headers: adminHeaders(password) })
 }
 
-export async function adminFetchStats(password) {
-  return request('/admin/stats', { headers: adminHeaders(password) })
+export async function adminFetchCompanies(password) {
+  return request('/admin/companies', { headers: adminHeaders(password) })
+}
+
+export async function adminCreateCompany(password, { name, domain = null }) {
+  return request('/admin/companies', {
+    method:  'POST',
+    headers: adminHeaders(password),
+    body:    JSON.stringify({ name, domain }),
+  })
+}
+
+export async function adminInviteEmployee(password, { email, username, companyId }) {
+  return request('/admin/invite', {
+    method:  'POST',
+    headers: adminHeaders(password),
+    body:    JSON.stringify({ email, username, companyId }),
+  })
+}
+
+// ── Legacy (kept for backward compat, no-op on server) ───────────────────────
+export async function upsertEmployee() {
+  return { success: true }
 }

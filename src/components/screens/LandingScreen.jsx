@@ -21,8 +21,9 @@ function WelcomeBack() {
     totalTokensSaved, badges, sessions, joinedAt,
     team, company, certifications = [], newCerts = [],
     assignment, fieldLoading, fieldError,
+    isAuthenticated, userType, companyName, email,
     startChallenge, goTo, soundEnabled, resetProgress, recordSession,
-    initEmployee, startFieldSession,
+    initEmployee, startFieldSession, logout,
   } = useGameStore()
 
   const [confirmReset, setConfirmReset] = useState(false)
@@ -76,10 +77,33 @@ function WelcomeBack() {
             Welcome back,{' '}
             <span className="text-neon-blue neon-text">{username}</span>!
           </h1>
+          {/* Auth badge + logout */}
+          {isAuthenticated && (
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <span
+                className="px-2 py-0.5 rounded-full text-xs font-mono border"
+                style={{
+                  borderColor: userType === 'company' ? '#00d4ff44' : '#a855f744',
+                  background:  userType === 'company' ? '#00d4ff11' : '#a855f711',
+                  color:       userType === 'company' ? '#00d4ff'   : '#a855f7',
+                }}
+              >
+                {userType === 'company' ? '🏢 Company' : '🎮 Individual'}
+              </span>
+              <button
+                onClick={logout}
+                className="text-xs text-slate-600 hover:text-neon-red font-mono transition-colors"
+                title="Log out"
+              >
+                Sign out
+              </button>
+            </div>
+          )}
+
           {/* Team + Company */}
-          {(team || company) && (
+          {(team || company || companyName) && (
             <p className="text-slate-400 text-sm font-mono mt-1">
-              {[team, company].filter(Boolean).join(' · ')}
+              {[team, companyName || company].filter(Boolean).join(' · ')}
             </p>
           )}
           {joinDate && (
@@ -361,7 +385,7 @@ function FirstTimeLanding() {
 
   function handleStart() {
     if (soundEnabled) playLevelUp()
-    goTo('register')   // → EmployeeRegistrationScreen (corporate onboarding)
+    goTo('userType')
   }
 
   return (
@@ -418,7 +442,7 @@ function FirstTimeLanding() {
           transition={{ delay: 0.5 }}
           className="text-xs text-slate-600 mt-4"
         >
-          No login · No API keys · 100% client-side · Open source
+          Free forever · No credit card · Progress saved across devices
         </motion.p>
       </div>
 
@@ -459,6 +483,7 @@ function FirstTimeLanding() {
 
 // ── Root export: decides which to show ─────────────────────────────────────
 export default function LandingScreen() {
-  const { username } = useGameStore()
-  return username ? <WelcomeBack /> : <FirstTimeLanding />
+  const { username, isAuthenticated } = useGameStore()
+  // Show welcome-back if user has a username (local or DB-authenticated)
+  return (username || isAuthenticated) ? <WelcomeBack /> : <FirstTimeLanding />
 }

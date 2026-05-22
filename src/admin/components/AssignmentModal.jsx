@@ -22,7 +22,7 @@ export default function AssignmentModal({ employee, password, onClose, onSaved }
     setError('')
     try {
       await adminAssignEmployee(password, {
-        employeeId:  employee.id,
+        userId:      employee.id,
         categoryId,
         subFunction: subFunction || null,
         role:        role        || null,
@@ -44,8 +44,8 @@ export default function AssignmentModal({ employee, password, onClose, onSaved }
           <h2 className="text-lg font-black text-slate-100">Assign Course</h2>
           <p className="text-sm text-slate-400 font-mono mt-0.5">
             {employee.username}
-            {(employee.team || employee.company) && (
-              <span className="text-slate-600"> · {[employee.team, employee.company].filter(Boolean).join(' / ')}</span>
+            {(employee.email || employee.company_name) && (
+              <span className="text-slate-600"> · {[employee.email, employee.company_name].filter(Boolean).join(' / ')}</span>
             )}
           </p>
         </div>

@@ -16,28 +16,32 @@ import EmployeeRegistrationScreen from './components/screens/EmployeeRegistratio
 import CertificationScreen  from './components/screens/CertificationScreen.jsx'
 import CertificateViewScreen from './components/screens/CertificateViewScreen.jsx'
 import LeaderboardScreen from './components/screens/LeaderboardScreen.jsx'
+import UserTypeScreen        from './components/screens/UserTypeScreen.jsx'
+import CompanyLoginScreen    from './components/screens/CompanyLoginScreen.jsx'
+import IndividualSignupScreen from './components/screens/IndividualSignupScreen.jsx'
+
+const AUTH_SCREENS = new Set(['userType', 'companyLogin', 'individualSignup'])
+const NO_HEADER    = new Set(['landing', 'username', 'userType', 'companyLogin', 'individualSignup'])
 
 export default function App() {
-  const { screen, theme } = useGameStore()
+  const { screen, theme, restoreSession } = useGameStore()
 
   useEffect(() => {
     document.body.className = theme ? `theme-${theme}` : ''
   }, [theme])
 
-  const showHeader = screen !== 'landing' && screen !== 'username'
+  // Validate stored session token on every app load
+  useEffect(() => {
+    restoreSession()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen bg-bg-primary relative">
-      {/* Subtle CRT scanlines */}
       <div className="scanlines" />
-
-      {/* Starfield background */}
       <Starfield />
 
-      {/* Header */}
-      {showHeader && <Header />}
+      {!NO_HEADER.has(screen) && <Header />}
 
-      {/* Screens */}
       <AnimatePresence mode="wait">
         {screen === 'landing'  && <LandingScreen  key="landing"  />}
         {screen === 'levelMap' && <LevelMapScreen key="levelMap" />}
@@ -46,12 +50,15 @@ export default function App() {
         {screen === 'results'  && <ResultsScreen  key="results"  />}
         {screen === 'badges'   && <BadgeShelfScreen key="badges"   />}
         {screen === 'villains' && <VillainsScreen   key="villains" />}
-        {screen === 'username'      && <UsernameScreen            key="username"      />}
-        {screen === 'register'      && <EmployeeRegistrationScreen key="register"      />}
-        {screen === 'stats'         && <AnalyticsScreen            key="stats"         />}
-        {screen === 'certifications'&& <CertificationScreen        key="certifications"/>}
-        {screen === 'certificate'   && <CertificateViewScreen      key="certificate"   />}
-        {screen === 'leaderboard'   && <LeaderboardScreen          key="leaderboard"   />}
+        {screen === 'username'       && <UsernameScreen             key="username"      />}
+        {screen === 'register'       && <EmployeeRegistrationScreen key="register"      />}
+        {screen === 'stats'          && <AnalyticsScreen             key="stats"         />}
+        {screen === 'certifications' && <CertificationScreen         key="certifications"/>}
+        {screen === 'certificate'    && <CertificateViewScreen       key="certificate"   />}
+        {screen === 'leaderboard'    && <LeaderboardScreen           key="leaderboard"   />}
+        {screen === 'userType'       && <UserTypeScreen              key="userType"      />}
+        {screen === 'companyLogin'   && <CompanyLoginScreen          key="companyLogin"  />}
+        {screen === 'individualSignup' && <IndividualSignupScreen    key="signup"        />}
       </AnimatePresence>
     </div>
   )

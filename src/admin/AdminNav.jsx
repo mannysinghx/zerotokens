@@ -5,10 +5,11 @@
 import { NavLink } from 'react-router-dom'
 
 const NAV_ITEMS = [
-  { to: '/admin',           icon: '📊', label: 'Dashboard'  },
-  { to: '/admin/employees', icon: '👥', label: 'Employees'  },
-  { to: '/admin/questions', icon: '📚', label: 'Questions'  },
-  { to: '/admin/responses', icon: '📋', label: 'Responses'  },
+  { to: '/admin',            icon: '📊', label: 'Dashboard'  },
+  { to: '/admin/companies',  icon: '🏢', label: 'Companies'  },
+  { to: '/admin/employees',  icon: '👥', label: 'Employees'  },
+  { to: '/admin/questions',  icon: '📚', label: 'Questions'  },
+  { to: '/admin/responses',  icon: '📋', label: 'Responses'  },
 ]
 
 export default function AdminNav({ onLogout }) {

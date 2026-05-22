@@ -4,7 +4,10 @@ import { calcNewElo, ELO_START } from '../utils/elo.js'
 import { sm2Update, defaultProgress } from '../utils/spacedRepetition.js'
 import { checkCertifications } from '../data/certifications.js'
 import { addOrUpdateLeaderboard, buildSnapshot } from '../utils/leaderboard.js'
-import { upsertEmployee, fetchAssignment, fetchFieldQuestions, saveResponse } from '../utils/api.js'
+import {
+  apiLogin, apiRegister, apiLogout, apiMe, apiSaveProgress,
+  fetchAssignment, fetchFieldQuestions, saveResponse,
+} from '../utils/api.js'
 import challenges from '../data/challenges.json'
 
 const BADGES = [
@@ -40,6 +43,15 @@ const useGameStore = create((set, get) => {
   return {
     // ── Screen routing ──
     screen: 'landing',   // landing | levelMap | game | boss | results | badges | fieldTraining
+
+    // ── Auth state ──
+    userId:          initialSave.userId          ?? null,
+    userType:        initialSave.userType         ?? null,
+    email:           initialSave.email            ?? null,
+    companyId:       initialSave.companyId        ?? null,
+    companyName:     initialSave.companyName      ?? null,
+    sessionToken:    initialSave.sessionToken     ?? null,
+    isAuthenticated: Boolean(initialSave.sessionToken),
 
     // ── Field training state ──
     assignment:    initialSave.assignment   ?? null,
@@ -362,29 +374,157 @@ const useGameStore = create((set, get) => {
       set({ ...fresh, screen: 'landing', challenge: null, lastScore: null, combo: 0 })
     },
 
+    // ── Auth actions ──────────────────────────────────────────────────────────
+
+    /**
+     * Called on app boot. If a sessionToken is in localStorage, validate it
+     * against the server and restore DB state (game_state merges with local).
+     */
+    async restoreSession() {
+      const save = loadSave()
+      if (!save.sessionToken) return
+      try {
+        const { user } = await apiMe(save.sessionToken)
+        const dbState   = user.game_state ?? {}
+        const merged    = { ...save, ...dbState }
+        const updated   = {
+          ...merged,
+          userId:          user.id,
+          userType:        user.user_type,
+          email:           user.email,
+          companyId:       user.company_id  ?? null,
+          companyName:     user.company_name ?? null,
+          username:        user.username,
+          sessionToken:    save.sessionToken,
+          isAuthenticated: true,
+        }
+        writeSave(updated)
+        set({ ...updated, isAuthenticated: true })
+      } catch {
+        // Token expired or network error — quietly clear auth
+        const cleared = { ...save, sessionToken: null, isAuthenticated: false }
+        writeSave(cleared)
+        set({ sessionToken: null, isAuthenticated: false })
+      }
+    },
+
+    /**
+     * Used by VerifyEmailScreen after set-password succeeds.
+     * The server returns { user, sessionToken } — store everything.
+     */
+    restoreFromSession(user, token) {
+      const save      = loadSave()
+      const dbState   = user.game_state ?? {}
+      const updated   = {
+        ...save,
+        ...dbState,
+        userId:          user.id,
+        userType:        user.user_type,
+        email:           user.email,
+        companyId:       user.company_id  ?? null,
+        companyName:     user.company_name ?? null,
+        username:        user.username,
+        sessionToken:    token,
+        isAuthenticated: true,
+      }
+      writeSave(updated)
+      set({ ...updated, isAuthenticated: true })
+    },
+
+    /**
+     * Email + password login (used by CompanyLoginScreen and IndividualSignupScreen).
+     * Returns { success, error? }.
+     */
+    async login(email, password) {
+      try {
+        const { user, sessionToken } = await apiLogin(email, password)
+        const save    = loadSave()
+        const dbState = user.game_state ?? {}
+        const updated = {
+          ...save,
+          ...dbState,
+          userId:          user.id,
+          userType:        user.user_type,
+          email:           user.email,
+          companyId:       user.company_id  ?? null,
+          companyName:     user.company_name ?? null,
+          username:        user.username,
+          sessionToken,
+          isAuthenticated: true,
+        }
+        writeSave(updated)
+        set({ ...updated, isAuthenticated: true })
+        return { success: true }
+      } catch (err) {
+        return { success: false, error: err.message }
+      }
+    },
+
+    /**
+     * Email + password registration for individual learners.
+     * Returns { success, error? }.
+     */
+    async register(username, email, password) {
+      try {
+        const { user, sessionToken } = await apiRegister(username, email, password)
+        const save    = loadSave()
+        const updated = {
+          ...save,
+          userId:          user.id,
+          userType:        user.user_type,
+          email:           user.email,
+          companyId:       null,
+          companyName:     null,
+          username:        user.username,
+          sessionToken,
+          isAuthenticated: true,
+        }
+        writeSave(updated)
+        set({ ...updated, isAuthenticated: true })
+        return { success: true }
+      } catch (err) {
+        return { success: false, error: err.message }
+      }
+    },
+
+    /** Log out: invalidate server session, clear local auth state. */
+    async logout() {
+      const save = loadSave()
+      if (save.sessionToken) {
+        try { await apiLogout(save.sessionToken) } catch { /* ignore */ }
+      }
+      const cleared = {
+        ...save,
+        userId:          null,
+        userType:        null,
+        email:           null,
+        companyId:       null,
+        companyName:     null,
+        sessionToken:    null,
+        isAuthenticated: false,
+      }
+      writeSave(cleared)
+      set({ ...cleared, screen: 'userType', isAuthenticated: false })
+    },
+
     // ── Field training — corporate Neon-backed actions ──
 
     /**
-     * Called on app load (once username is set).
-     * Syncs employee to DB and loads their assignment.
+     * Called on the landing screen when user is authenticated.
+     * Fetches their active field assignment from the server.
      */
     async initEmployee() {
       const save = loadSave()
-      if (!save.username || !save.employeeId) return
+      if (!save.sessionToken) return
 
       try {
-        // Sync to DB (upsert is idempotent)
-        await upsertEmployee(save)
-
-        // Fetch assignment
-        const { assignment } = await fetchAssignment(save.employeeId)
+        const { assignment } = await fetchAssignment(save.sessionToken)
         if (assignment) {
           const updated = { ...save, assignment }
           writeSave(updated)
           set({ assignment })
         }
       } catch (err) {
-        // Non-fatal — app works fine offline
         console.warn('initEmployee failed (offline?):', err.message)
       }
     },
@@ -453,11 +593,10 @@ const useGameStore = create((set, get) => {
       const state = get()
       const save  = loadSave()
       const c     = state.challenge
-      if (!c?._fieldQuestion || !save.employeeId) return
+      if (!c?._fieldQuestion || !save.sessionToken) return
 
       try {
-        await saveResponse({
-          employeeId:    save.employeeId,
+        await saveResponse(save.sessionToken, {
           questionId:    c.id,
           categoryId:    c.categoryId,
           userAnswer:    score._meta?.userInput        ?? null,
@@ -467,6 +606,8 @@ const useGameStore = create((set, get) => {
           grade:         score.grade                   ?? 'D',
           tokensSaved:   score.tokensSaved             ?? 0,
         })
+        // Also sync game state to server after each field answer
+        apiSaveProgress(save.sessionToken, save).catch(() => {})
       } catch (err) {
         console.warn('saveFieldResponse failed:', err.message)
       }

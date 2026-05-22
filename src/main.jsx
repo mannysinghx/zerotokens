@@ -4,8 +4,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
-// Admin app is code-split — only loads when /admin is visited
-const AdminApp = lazy(() => import('./admin/AdminApp.jsx'))
+const AdminApp      = lazy(() => import('./admin/AdminApp.jsx'))
+const VerifyEmail   = lazy(() => import('./components/screens/VerifyEmailScreen.jsx'))
+
+const Loader = () => (
+  <div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">
+    Loading…
+  </div>
+)
 
 function Root() {
   return (
@@ -13,10 +19,15 @@ function Root() {
       <Routes>
         <Route
           path="/admin/*"
+          element={<Suspense fallback={<Loader />}><AdminApp /></Suspense>}
+        />
+        <Route
+          path="/verify"
           element={
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">Loading admin…</div>}>
-              <AdminApp />
-            </Suspense>
+            <div className="min-h-screen bg-slate-950 relative">
+              <div className="scanlines" />
+              <Suspense fallback={<Loader />}><VerifyEmail /></Suspense>
+            </div>
           }
         />
         <Route path="/*" element={<App />} />

@@ -27,9 +27,10 @@ export default function EmployeeManager({ password }) {
 
   const filtered = employees.filter(e =>
     !search ||
-    e.username.toLowerCase().includes(search.toLowerCase()) ||
-    (e.team    ?? '').toLowerCase().includes(search.toLowerCase()) ||
-    (e.company ?? '').toLowerCase().includes(search.toLowerCase()),
+    (e.username ?? '').toLowerCase().includes(search.toLowerCase()) ||
+    (e.email    ?? '').toLowerCase().includes(search.toLowerCase()) ||
+    (e.team     ?? '').toLowerCase().includes(search.toLowerCase()) ||
+    (e.company_name ?? '').toLowerCase().includes(search.toLowerCase()),
   )
 
   return (
@@ -41,7 +42,7 @@ export default function EmployeeManager({ password }) {
         </div>
         <input
           type="search"
-          placeholder="Search name, team, company…"
+          placeholder="Search name, email, company…"
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-slate-100 font-mono text-sm outline-none focus:border-cyan-500 w-64"
@@ -56,7 +57,7 @@ export default function EmployeeManager({ password }) {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-800">
-                {['Employee', 'Team / Company', 'Assigned Course', 'Role', 'Joined', ''].map(h => (
+                {['Employee', 'Company / Type', 'Assigned Course', 'Role', 'Joined', ''].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-xs uppercase tracking-wider text-slate-500 font-mono">{h}</th>
                 ))}
               </tr>
@@ -68,10 +69,19 @@ export default function EmployeeManager({ password }) {
                   <tr key={emp.id} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
                     <td className="px-4 py-3">
                       <div className="font-mono text-slate-200">{emp.username}</div>
-                      <div className="text-xs text-slate-600 font-mono">{emp.id}</div>
+                      <div className="text-xs text-slate-500 font-mono">{emp.email ?? '—'}</div>
+                      {!emp.email_verified && (
+                        <span className="text-xs text-amber-500 font-mono">⏳ invite pending</span>
+                      )}
                     </td>
-                    <td className="px-4 py-3 font-mono text-slate-400">
-                      {[emp.team, emp.company].filter(Boolean).join(' · ') || <span className="text-slate-700">—</span>}
+                    <td className="px-4 py-3 font-mono text-slate-400 text-sm">
+                      {emp.company_name
+                        ? <span className="text-cyan-400">{emp.company_name}</span>
+                        : <span className="text-slate-700">—</span>}
+                      {' '}
+                      <span className="text-xs text-slate-600">
+                        ({emp.user_type === 'company' ? '🏢' : '🎮'})
+                      </span>
                     </td>
                     <td className="px-4 py-3">
                       {cat
