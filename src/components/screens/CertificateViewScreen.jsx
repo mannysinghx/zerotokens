@@ -1,16 +1,297 @@
 /**
  * CertificateViewScreen.jsx
- * Full-page certificate — two layers:
- *   Screen: dark neon preview (game design)
- *   Print:  white, clean, professional (via @media print CSS in index.css)
+ * Shows the certificate both in-app (white professional card) and on print.
  *
- * The `.certificate-print` div is the only thing shown when printing.
+ * Layout:
+ *   1. Toolbar (back / print buttons) — hidden on print
+ *   2. In-app certificate (white card, always visible) — hidden on print
+ *   3. Print-only certificate (identical content, triggered by window.print())
  */
 import { motion } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
 import { CERT_TIERS } from '../../data/certifications.js'
 import { getEloRank } from '../../utils/elo.js'
 
+// ── Shared stat data builder ─────────────────────────────────────────────────
+function useStats(cert, totalTokensSaved, playerElo) {
+  const rank = getEloRank(playerElo)
+  return [
+    { label: 'Challenges Completed', value: cert.completedCount },
+    { label: 'Average Score',        value: `${cert.avgScore}%` },
+    { label: 'Tokens Saved',         value: totalTokensSaved.toLocaleString() },
+    { label: 'Elo Rating',           value: `${playerElo} · ${rank.label}` },
+  ]
+}
+
+// ── In-app certificate card (white, professional) ────────────────────────────
+function CertificateCard({ cert, tier, username, team, company, earnedDate, stats }) {
+  const tierColorHex = tier.color
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0  }}
+      transition={{ delay: 0.15 }}
+      /* Outer frame — dark background with tier-coloured glow */
+      style={{
+        padding:      '3px',
+        borderRadius: '16px',
+        background:   `linear-gradient(135deg, ${tierColorHex}88, ${tierColorHex}22, ${tierColorHex}88)`,
+        boxShadow:    `0 0 40px ${tierColorHex}33, 0 0 80px ${tierColorHex}11`,
+      }}
+    >
+      {/* White certificate surface */}
+      <div
+        style={{
+          background:   '#ffffff',
+          borderRadius: '14px',
+          overflow:     'hidden',
+          fontFamily:   'Georgia, "Times New Roman", serif',
+          color:        '#1e293b',
+        }}
+      >
+
+        {/* ── Top colour bar ── */}
+        <div style={{
+          background:  `linear-gradient(90deg, #0f172a, ${tierColorHex}, #0f172a)`,
+          padding:     '14px 28px',
+          display:     'flex',
+          alignItems:  'center',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '22px' }}>🤖</span>
+            <div>
+              <div style={{
+                fontFamily:    '"Exo 2", Arial, sans-serif',
+                fontWeight:    900,
+                fontSize:      '16px',
+                letterSpacing: '2px',
+                color:         '#00d4ff',
+              }}>
+                TOKEN<span style={{ color: '#a855f7' }}>QUEST</span>
+              </div>
+              <div style={{
+                fontFamily: 'monospace',
+                fontSize:   '10px',
+                color:      '#10b981',
+                letterSpacing: '1px',
+              }}>
+                by ZeroTokens.ai
+              </div>
+            </div>
+          </div>
+          <div style={{
+            fontFamily:    'monospace',
+            fontSize:      '10px',
+            color:         '#94a3b8',
+            letterSpacing: '1px',
+            textAlign:     'right',
+          }}>
+            AI PROMPT OPTIMISATION<br />TRAINING PROGRAMME
+          </div>
+        </div>
+
+        {/* ── Certificate body ── */}
+        <div style={{ padding: '36px 48px', textAlign: 'center', position: 'relative' }}>
+
+          {/* Watermark */}
+          <div style={{
+            position:      'absolute',
+            top:           '50%',
+            left:          '50%',
+            transform:     'translate(-50%, -50%)',
+            fontSize:      '140px',
+            opacity:       0.03,
+            pointerEvents: 'none',
+            userSelect:    'none',
+            lineHeight:    1,
+          }}>
+            {tier.emoji}
+          </div>
+
+          {/* CERTIFICATE OF ACHIEVEMENT */}
+          <div style={{
+            fontFamily:    'Arial, sans-serif',
+            fontSize:      '11px',
+            letterSpacing: '4px',
+            textTransform: 'uppercase',
+            color:         '#64748b',
+            marginBottom:  '12px',
+          }}>
+            Certificate of Achievement
+          </div>
+
+          {/* Tier badge */}
+          <div style={{
+            display:       'inline-flex',
+            alignItems:    'center',
+            gap:           '8px',
+            background:    tierColorHex + '14',
+            border:        `2px solid ${tierColorHex}44`,
+            borderRadius:  '32px',
+            padding:       '6px 20px',
+            marginBottom:  '20px',
+          }}>
+            <span style={{ fontSize: '20px' }}>{tier.emoji}</span>
+            <span style={{
+              fontFamily:  'Arial, sans-serif',
+              fontWeight:  900,
+              fontSize:    '16px',
+              color:       tierColorHex,
+              letterSpacing: '0.5px',
+            }}>
+              {tier.name}
+            </span>
+          </div>
+
+          {/* Subtitle */}
+          <div style={{
+            fontSize:     '12px',
+            color:        '#64748b',
+            fontStyle:    'italic',
+            marginBottom: '24px',
+          }}>
+            {tier.subtitle}
+          </div>
+
+          {/* Divider */}
+          <div style={{
+            border:        'none',
+            borderTop:     `1px solid ${tierColorHex}44`,
+            width:         '50%',
+            margin:        '0 auto 20px',
+          }} />
+
+          {/* This certifies that */}
+          <div style={{ fontSize: '13px', color: '#64748b', fontStyle: 'italic', marginBottom: '10px' }}>
+            This is to certify that
+          </div>
+
+          {/* Employee name */}
+          <div style={{
+            fontFamily:   'Georgia, serif',
+            fontSize:     '38px',
+            fontWeight:   'bold',
+            color:        '#0f172a',
+            marginBottom: '8px',
+            letterSpacing: '0.5px',
+            lineHeight:   1.1,
+          }}>
+            {username}
+          </div>
+
+          {/* Team + Company */}
+          {(team || company) && (
+            <div style={{
+              fontFamily:   'monospace',
+              fontSize:     '12px',
+              color:        '#475569',
+              marginBottom: '18px',
+            }}>
+              {[team && `Team: ${team}`, company && `Company: ${company}`].filter(Boolean).join('  ·  ')}
+            </div>
+          )}
+          {!team && !company && <div style={{ marginBottom: '18px' }} />}
+
+          {/* Statement */}
+          <div style={{
+            fontSize:     '13px',
+            color:        '#334155',
+            lineHeight:   1.8,
+            maxWidth:     '480px',
+            margin:       '0 auto 28px',
+          }}>
+            has successfully demonstrated competency in AI prompt optimisation
+            by completing{' '}
+            <strong style={{ color: tierColorHex }}>{cert.completedCount} challenges</strong>
+            {' '}with an average score of{' '}
+            <strong style={{ color: tierColorHex }}>{cert.avgScore}%</strong>.
+          </div>
+
+          {/* Stats row */}
+          <div style={{
+            display:       'flex',
+            justifyContent:'center',
+            border:        '1px solid #e2e8f0',
+            borderRadius:  '8px',
+            overflow:      'hidden',
+            maxWidth:      '520px',
+            margin:        '0 auto 24px',
+          }}>
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                style={{
+                  flex:        1,
+                  padding:     '14px 8px',
+                  textAlign:   'center',
+                  borderRight: i < stats.length - 1 ? '1px solid #e2e8f0' : 'none',
+                }}
+              >
+                <div style={{
+                  fontFamily:  'Arial, sans-serif',
+                  fontWeight:  900,
+                  fontSize:    '17px',
+                  color:       tierColorHex,
+                  marginBottom:'3px',
+                }}>
+                  {s.value}
+                </div>
+                <div style={{
+                  fontFamily:    'monospace',
+                  fontSize:      '9px',
+                  color:         '#94a3b8',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                }}>
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div style={{
+            border:    'none',
+            borderTop: '1px solid #e2e8f0',
+            width:     '60%',
+            margin:    '0 auto 16px',
+          }} />
+
+          {/* Date */}
+          <div style={{
+            fontFamily:    'monospace',
+            fontSize:      '11px',
+            color:         '#94a3b8',
+            letterSpacing: '1px',
+          }}>
+            Date Issued: {earnedDate}
+          </div>
+        </div>
+
+        {/* ── Footer bar ── */}
+        <div style={{
+          background:    '#f8fafc',
+          borderTop:     '1px solid #e2e8f0',
+          padding:       '12px 28px',
+          textAlign:     'center',
+          fontFamily:    'monospace',
+          fontSize:      '10px',
+          color:         '#94a3b8',
+          letterSpacing: '0.5px',
+          lineHeight:    1.8,
+        }}>
+          <div>Token Quest by ZeroTokens.ai · AI Prompt Optimisation Training</div>
+          <div>This certificate confirms successful completion of the {tier.name} training programme.</div>
+        </div>
+
+      </div>
+    </motion.div>
+  )
+}
+
+// ── Main screen ───────────────────────────────────────────────────────────────
 export default function CertificateViewScreen() {
   const {
     goTo,
@@ -35,19 +316,20 @@ export default function CertificateViewScreen() {
     )
   }
 
-  const rank       = getEloRank(playerElo)
   const earnedDate = new Date(cert.earnedAt).toLocaleDateString('en-GB', {
     day: 'numeric', month: 'long', year: 'numeric',
   })
+  const rank  = getEloRank(playerElo)
+  const stats = useStats(cert, totalTokensSaved, playerElo)
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="relative z-10 min-h-screen px-4 py-8 max-w-3xl mx-auto no-print-wrapper"
+      className="relative z-10 min-h-screen px-4 py-8 max-w-3xl mx-auto"
     >
-      {/* Toolbar — hidden on print */}
+      {/* ── Toolbar — hidden on print ── */}
       <div className="no-print flex items-center justify-between mb-6 flex-wrap gap-3">
         <button
           onClick={() => goTo('certifications')}
@@ -57,7 +339,7 @@ export default function CertificateViewScreen() {
         </button>
         <div className="flex gap-3">
           <button
-            className="btn-neon text-sm px-4 py-2"
+            className="btn-primary text-sm px-5 py-2"
             onClick={() => window.print()}
           >
             🖨 Print / Save PDF
@@ -71,160 +353,67 @@ export default function CertificateViewScreen() {
         </div>
       </div>
 
-      {/* ── Screen preview (neon dark) ── */}
-      <motion.div
-        initial={{ scale: 0.97, opacity: 0 }}
-        animate={{ scale: 1,    opacity: 1 }}
-        transition={{ delay: 0.1 }}
-        className="no-print card p-8 text-center relative overflow-hidden"
-        style={{ borderColor: tier.borderColor, background: tier.bgColor }}
-      >
-        {/* Corner watermark */}
-        <div className="absolute -right-6 -top-6 text-9xl opacity-5 pointer-events-none select-none">
-          {tier.emoji}
-        </div>
-        <div className="absolute -left-6 -bottom-6 text-9xl opacity-5 pointer-events-none select-none rotate-180">
-          {tier.emoji}
-        </div>
+      {/* ── In-app certificate display — hidden on print ── */}
+      <div className="no-print">
+        <CertificateCard
+          cert={cert}
+          tier={tier}
+          username={username}
+          team={team}
+          company={company}
+          earnedDate={earnedDate}
+          stats={stats}
+        />
 
-        {/* Logo row */}
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <span className="text-2xl">🤖</span>
-          <div>
-            <span
-              className="font-black text-xl tracking-wider neon-text"
-              style={{ fontFamily: 'Exo 2', color: '#00d4ff' }}
-            >
-              TOKEN<span style={{ color: '#a855f7' }}>QUEST</span>
-            </span>
-            <div className="text-xs font-mono text-slate-500 tracking-widest">
-              by <span style={{ color: '#10b981' }}>ZeroTokens.ai</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Certificate type */}
-        <p className="text-xs uppercase tracking-widest text-slate-500 font-mono mb-2">
-          Certificate of Achievement
-        </p>
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <span className="text-4xl">{tier.emoji}</span>
-          <h2 className="text-2xl font-black" style={{ fontFamily: 'Exo 2', color: tier.color }}>
-            {tier.name}
-          </h2>
-        </div>
-
-        {/* Divider */}
-        <div className="w-24 h-px mx-auto mb-6" style={{ background: tier.color + '55' }} />
-
-        {/* "This certifies that" */}
-        <p className="text-slate-500 text-sm font-mono mb-3">This certifies that</p>
-
-        {/* Employee name — LARGE */}
-        <h1
-          className="text-4xl font-black mb-2"
-          style={{ fontFamily: 'Exo 2', color: '#f1f5f9' }}
+        {/* Share nudge */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="text-center text-xs text-slate-600 font-mono mt-4"
         >
-          {username}
-        </h1>
+          🖨 Use "Print / Save PDF" to download a copy · Share it with your team!
+        </motion.p>
+      </div>
 
-        {/* Team + Company */}
-        {(team || company) && (
-          <p className="text-sm font-mono text-slate-400 mb-6">
-            {[team, company].filter(Boolean).join(' · ')}
-          </p>
-        )}
-        {!team && !company && <div className="mb-6" />}
-
-        {/* Description */}
-        <p className="text-slate-400 text-sm max-w-md mx-auto mb-8 leading-relaxed">
-          has demonstrated proficiency in AI prompt optimisation, completing{' '}
-          <span style={{ color: tier.color }}>{cert.completedCount} challenges</span>{' '}
-          with an average score of{' '}
-          <span style={{ color: tier.color }}>{cert.avgScore}%</span>.
-        </p>
-
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          {[
-            { icon: '🎯', label: 'Challenges',    value: cert.completedCount },
-            { icon: '📈', label: 'Avg Score',     value: `${cert.avgScore}%` },
-            { icon: '💾', label: 'Tokens Saved',  value: totalTokensSaved.toLocaleString() },
-            { icon: rank.emoji, label: 'Elo Rank', value: playerElo },
-          ].map(({ icon, label, value }) => (
-            <div key={label} className="card p-3 text-center">
-              <div className="text-lg mb-0.5">{icon}</div>
-              <div className="font-bold font-mono text-sm" style={{ color: tier.color }}>{value}</div>
-              <div className="text-xs text-slate-600 font-mono">{label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Date */}
-        <p className="text-xs text-slate-600 font-mono">Issued {earnedDate}</p>
-        <p className="text-xs text-slate-700 font-mono mt-1">Token Quest by ZeroTokens.ai</p>
-      </motion.div>
-
-      {/* ── Print-only layer (white, clean, professional) ── */}
+      {/* ── Print-only layer — shown only when window.print() is called ── */}
       <div className="certificate-print print-only">
         <div className="cert-print-inner">
 
-          {/* Header bar */}
           <div className="cert-header">
             <div className="cert-logo">🤖 TOKEN QUEST</div>
             <div className="cert-platform">by ZeroTokens.ai · AI Prompt Optimisation Training</div>
           </div>
 
           <div className="cert-body">
-            {/* Title */}
             <div className="cert-achievement-label">CERTIFICATE OF ACHIEVEMENT</div>
             <div className="cert-tier-badge">{tier.emoji} {tier.name.toUpperCase()}</div>
             <div className="cert-subtitle">{tier.subtitle}</div>
-
             <div className="cert-divider" />
-
             <div className="cert-certifies">This is to certify that</div>
-
             <div className="cert-name">{username}</div>
-
             {(team || company) && (
               <div className="cert-identity">
                 {[team && `Team: ${team}`, company && `Company: ${company}`].filter(Boolean).join('  ·  ')}
               </div>
             )}
-
             <div className="cert-statement">
               has successfully demonstrated competency in AI prompt optimisation by completing{' '}
               <strong>{cert.completedCount} challenges</strong> with an average score of{' '}
               <strong>{cert.avgScore}%</strong>.
             </div>
-
-            {/* Stats row */}
             <div className="cert-stats">
-              <div className="cert-stat">
-                <div className="cert-stat-value">{cert.completedCount}</div>
-                <div className="cert-stat-label">Challenges Completed</div>
-              </div>
-              <div className="cert-stat">
-                <div className="cert-stat-value">{cert.avgScore}%</div>
-                <div className="cert-stat-label">Average Score</div>
-              </div>
-              <div className="cert-stat">
-                <div className="cert-stat-value">{totalTokensSaved.toLocaleString()}</div>
-                <div className="cert-stat-label">Tokens Saved</div>
-              </div>
-              <div className="cert-stat">
-                <div className="cert-stat-value">{playerElo}</div>
-                <div className="cert-stat-label">Elo Rating</div>
-              </div>
+              {stats.map(s => (
+                <div key={s.label} className="cert-stat">
+                  <div className="cert-stat-value">{s.value}</div>
+                  <div className="cert-stat-label">{s.label}</div>
+                </div>
+              ))}
             </div>
-
             <div className="cert-divider" />
-
             <div className="cert-date">Date Issued: {earnedDate}</div>
           </div>
 
-          {/* Footer */}
           <div className="cert-footer">
             <div>Token Quest by ZeroTokens.ai · AI Prompt Optimisation Training</div>
             <div>This certificate confirms successful completion of the {tier.name} training programme.</div>
