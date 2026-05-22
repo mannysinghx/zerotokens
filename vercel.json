@@ -1,5 +1,13 @@
 {
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/admin/invite.js": {
+      "includeFiles": "node_modules/nodemailer/**"
+    },
+    "api/auth/register.js": {
+      "includeFiles": "node_modules/nodemailer/**"
+    }
+  }
 }
