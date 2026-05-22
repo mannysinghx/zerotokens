@@ -338,6 +338,16 @@ function WelcomeBack() {
           </button>
         </motion.div>
 
+        {/* Arcade game panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mb-5"
+        >
+          <ArcadePanel delay={0.5} />
+        </motion.div>
+
         {/* Reset / danger zone */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -391,6 +401,112 @@ function WelcomeBack() {
           </AnimatePresence>
         </motion.div>
 
+      </div>
+    </motion.div>
+  )
+}
+
+// ── Arcade panel (shared between both views) ────────────────────────────────
+const ARCADE_ENEMIES = [
+  { label: 'Token Drainer',  color: '#ff4455' },
+  { label: 'Hallucinator',   color: '#ff8800' },
+  { label: 'Context Bloater',color: '#9933ff' },
+  { label: 'MAX_TOKENS',     color: '#ff0066' },
+]
+
+function ArcadePanel({ delay = 0.5 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 22 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay }}
+      className="w-full"
+    >
+      <div
+        className="relative overflow-hidden rounded-2xl border p-5 sm:p-6"
+        style={{
+          borderColor: '#f59e0b55',
+          background: 'linear-gradient(135deg, #0d0d22 0%, #130d1f 100%)',
+          boxShadow: '0 0 40px #f59e0b18, inset 0 0 60px #0000aa08',
+        }}
+      >
+        {/* Background glow orb */}
+        <div
+          className="absolute right-0 top-0 w-64 h-64 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #f59e0b0a 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
+        />
+
+        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          {/* Left — info */}
+          <div className="flex-1 min-w-0">
+            {/* Badges row */}
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
+              <span
+                className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                style={{ background: 'linear-gradient(90deg, #00ff88, #00ccff)', color: '#000' }}
+              >
+                FREE
+              </span>
+              <span className="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-0.5 rounded-full">
+                No Login Needed
+              </span>
+              <span className="text-xs font-mono text-yellow-600 border border-yellow-900/40 px-2 py-0.5 rounded-full">
+                K – 12
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3
+              className="text-2xl sm:text-3xl font-black text-white mb-1 leading-tight"
+              style={{ fontFamily: 'Exo 2', textShadow: '0 0 24px #f59e0b66' }}
+            >
+              ⚡ Token Wars
+            </h3>
+            <p className="text-sm text-slate-400 leading-relaxed mb-3 max-w-md">
+              A 3-D space battle where <span className="text-yellow-400 font-semibold">AI models try to drain your token budget</span>.
+              Slash them with your Prompt Sword, fire Token Beams, and survive the boss.
+            </p>
+
+            {/* Enemy chips */}
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {ARCADE_ENEMIES.map(e => (
+                <span
+                  key={e.label}
+                  className="text-xs font-mono px-2 py-0.5 rounded"
+                  style={{ background: e.color + '1a', color: e.color, border: `1px solid ${e.color}44` }}
+                >
+                  {e.label}
+                </span>
+              ))}
+            </div>
+
+            {/* Age mode row */}
+            <div className="flex gap-4 text-xs text-slate-500 font-mono">
+              <span>🌟 Token Pals — Kindergarten to Grade 5</span>
+              <span className="hidden sm:inline">⚡ Token Master — Grades 6–12</span>
+            </div>
+            <div className="sm:hidden text-xs text-slate-500 font-mono mt-0.5">
+              ⚡ Token Master — Grades 6–12
+            </div>
+          </div>
+
+          {/* Right — CTA */}
+          <div className="flex flex-col items-center gap-2 shrink-0 w-full sm:w-auto">
+            <a
+              href="/arcade"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-black text-sm transition-transform hover:scale-105 active:scale-95"
+              style={{
+                background: 'linear-gradient(90deg, #f59e0b, #f97316)',
+                color: '#000',
+                boxShadow: '0 0 24px #f59e0b55',
+                fontFamily: 'Exo 2',
+              }}
+            >
+              ⚔ Play Token Wars
+            </a>
+            <span className="text-xs text-slate-600 font-mono">For students · always free</span>
+          </div>
+        </div>
       </div>
     </motion.div>
   )
@@ -484,7 +600,7 @@ function FirstTimeLanding() {
         ))}
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto mb-8">
         {features.map((f, i) => (
           <motion.div
             key={i}
@@ -500,6 +616,19 @@ function FirstTimeLanding() {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* ── Arcade game panel ── */}
+      <div className="w-full max-w-2xl mx-auto">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.65 }}
+          className="text-xs text-center font-mono text-slate-600 mb-3 uppercase tracking-widest"
+        >
+          Also on Token Quest
+        </motion.p>
+        <ArcadePanel delay={0.7} />
       </div>
     </motion.div>
   )
