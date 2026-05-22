@@ -332,40 +332,6 @@ export default function AboutScreen() {
 
         <Divider />
 
-        {/* ── Architecture (Tech) ────────────────────────────────────────────── */}
-        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-          <motion.div variants={fadeUp}>
-            <SectionLabel>Built to Scale</SectionLabel>
-            <SectionHeading>
-              The tech that{' '}
-              <span style={{ color: '#a855f7' }}>runs it</span>
-            </SectionHeading>
-          </motion.div>
-
-          <motion.div variants={fadeUp}
-            className="bg-slate-900 border border-slate-800 rounded-2xl p-6 font-mono text-sm">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
-              {[
-                ['Frontend',      'React 18 + Vite 5 — lazy-loaded per route'],
-                ['Styling',       'Tailwind CSS + Framer Motion animations'],
-                ['Game State',    'Zustand with localStorage cloud-save sync'],
-                ['Backend',       'Vercel Serverless — Edge + Node.js hybrid'],
-                ['Database',      'Neon PostgreSQL (serverless, always-on)'],
-                ['Auth',          'PBKDF2 via Web Crypto — no bcrypt, edge-safe'],
-                ['Email',         'Nodemailer + Gmail SMTP on Node.js Lambdas'],
-                ['Sessions',      '30-day Bearer tokens, idle-logout at 30 min'],
-              ].map(([label, value]) => (
-                <div key={label} className="flex gap-3">
-                  <span className="text-slate-600 w-24 shrink-0">{label}</span>
-                  <span className="text-slate-300">{value}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.section>
-
-        <Divider />
-
         {/* ── Contact / CTA ──────────────────────────────────────────────────── */}
         <motion.section
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}
