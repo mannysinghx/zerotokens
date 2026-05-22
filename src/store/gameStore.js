@@ -1,10 +1,10 @@
 import { create } from 'zustand'
-import { loadSave, writeSave, updateStreak, archiveSession, logAttempt } from '../utils/storage.js'
+import { loadSave, writeSave, updateStreak, archiveSession, logAttempt, loadArchive } from '../utils/storage.js'
 import { calcNewElo, ELO_START } from '../utils/elo.js'
 import { sm2Update, defaultProgress } from '../utils/spacedRepetition.js'
 import { checkCertifications } from '../data/certifications.js'
 import { addOrUpdateLeaderboard, buildSnapshot } from '../utils/leaderboard.js'
-import { loadArchive } from '../utils/storage.js'
+import { upsertEmployee, fetchAssignment, fetchFieldQuestions, saveResponse } from '../utils/api.js'
 import challenges from '../data/challenges.json'
 
 const BADGES = [
@@ -39,7 +39,13 @@ const useGameStore = create((set, get) => {
   const initialSave = loadSave()
   return {
     // ── Screen routing ──
-    screen: 'landing',   // landing | levelMap | game | boss | results | badges
+    screen: 'landing',   // landing | levelMap | game | boss | results | badges | fieldTraining
+
+    // ── Field training state ──
+    assignment:    initialSave.assignment   ?? null,
+    fieldSession:  initialSave.fieldSession ?? [],
+    fieldLoading:  false,
+    fieldError:    null,
 
     // ── Current challenge ──
     challenge:    null,
@@ -156,6 +162,12 @@ const useGameStore = create((set, get) => {
 
       // ── Leaderboard snapshot ────────────────────────────────────────────
       addOrUpdateLeaderboard(buildSnapshot(updatedSave, allAttempts))
+      // ────────────────────────────────────────────────────────────────────
+
+      // ── Field training: save response to Neon (fire-and-forget) ────────
+      if (state.challenge?._fieldQuestion) {
+        get()._saveFieldResponse(score)
+      }
       // ────────────────────────────────────────────────────────────────────
 
       // ── Hidden training-data log (never shown to user) ──────────────────
@@ -348,6 +360,116 @@ const useGameStore = create((set, get) => {
       }
       writeSave(fresh)
       set({ ...fresh, screen: 'landing', challenge: null, lastScore: null, combo: 0 })
+    },
+
+    // ── Field training — corporate Neon-backed actions ──
+
+    /**
+     * Called on app load (once username is set).
+     * Syncs employee to DB and loads their assignment.
+     */
+    async initEmployee() {
+      const save = loadSave()
+      if (!save.username || !save.employeeId) return
+
+      try {
+        // Sync to DB (upsert is idempotent)
+        await upsertEmployee(save)
+
+        // Fetch assignment
+        const { assignment } = await fetchAssignment(save.employeeId)
+        if (assignment) {
+          const updated = { ...save, assignment }
+          writeSave(updated)
+          set({ assignment })
+        }
+      } catch (err) {
+        // Non-fatal — app works fine offline
+        console.warn('initEmployee failed (offline?):', err.message)
+      }
+    },
+
+    /**
+     * Fetch 15 fresh randomised questions for the employee's assigned category
+     * and store them as the field session queue.
+     */
+    async startFieldSession() {
+      const state = get()
+      const assignment = state.assignment
+      if (!assignment?.category_id) {
+        set({ fieldError: 'No course assigned yet. Ask your admin to assign you a course.' })
+        return
+      }
+
+      set({ fieldLoading: true, fieldError: null })
+      try {
+        const { questions } = await fetchFieldQuestions(assignment.category_id, 15)
+        if (!questions || questions.length === 0) {
+          set({ fieldLoading: false, fieldError: 'No questions found for your category.' })
+          return
+        }
+
+        // Map DB question shape to the game's challenge shape
+        const mapped = questions.map(q => ({
+          id:             q.id,
+          _fieldQuestion: true,         // flag so submitAnswer knows to also call saveResponse
+          categoryId:     q.category_id,
+          subFunction:    q.sub_function,
+          mode:           q.mode,
+          difficulty:     q.difficulty,
+          title:          q.title,
+          originalPrompt: q.original_prompt,
+          options:        q.options,
+          correctOption:  q.correct_option,
+          rewardCoins:    q.reward_coins,
+          hint:           q.hint,
+          maxTokens:      q.max_tokens ?? undefined,
+          // Level map compatibility
+          level: 1,
+        }))
+
+        const save = loadSave()
+        const updated = { ...save, fieldSession: mapped }
+        writeSave(updated)
+
+        // Start the first question
+        set({
+          fieldLoading:  false,
+          fieldSession:  mapped,
+          challenge:     mapped[0],
+          screen:        'game',
+          lastScore:     null,
+        })
+      } catch (err) {
+        set({ fieldLoading: false, fieldError: `Could not load questions: ${err.message}` })
+      }
+    },
+
+    /**
+     * After a field question is answered, save the response to Neon.
+     * Called internally from submitAnswer when challenge._fieldQuestion is true.
+     */
+    async _saveFieldResponse(score) {
+      const state = get()
+      const save  = loadSave()
+      const c     = state.challenge
+      if (!c?._fieldQuestion || !save.employeeId) return
+
+      try {
+        await saveResponse({
+          employeeId:    save.employeeId,
+          questionId:    c.id,
+          categoryId:    c.categoryId,
+          userAnswer:    score._meta?.userInput        ?? null,
+          correctAnswer: score._meta?.correctAnswer    ?? null,
+          isCorrect:     score._meta?.isCorrect        ?? false,
+          totalScore:    score.totalScore              ?? 0,
+          grade:         score.grade                   ?? 'D',
+          tokensSaved:   score.tokensSaved             ?? 0,
+        })
+      } catch (err) {
+        console.warn('saveFieldResponse failed:', err.message)
+      }
     },
 
     getBadges() {

@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague job description prompt",
+    "originalPrompt": "Write a job description for a marketing manager. Make it good and attract the right people.",
+    "options": [
+      "Write a job description for a B2B Marketing Manager at a 150-person SaaS company. Include: 3-sentence role summary, 5 key responsibilities (demand gen focus), 5 required qualifications, 2 nice-to-haves, and a salary range (\u00a355k\u2013\u00a370k). Tone: direct, inclusive, no jargon.",
+      "Please write a very detailed and compelling job description for a Marketing Manager that will attract great candidates and fully explains everything the role involves and what kind of person we are looking for.",
+      "Write a job description for a Marketing Manager."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying company size, specialisation (demand gen), exact section structure, and a salary range means the JD attracts the right candidates and passes a diversity audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best interview question generation prompt",
+    "originalPrompt": "You are hiring a Senior Product Manager. You need behavioural interview questions to assess candidates.",
+    "options": [
+      "Generate 5 behavioural interview questions for a Senior Product Manager role focused on stakeholder management and cross-functional influence. Use the STAR format cue. Include one follow-up probe per question. Avoid questions that could reveal age, family status, or nationality.",
+      "Write some interview questions for a Senior Product Manager.",
+      "Please create a comprehensive list of interview questions for a Senior Product Manager role that covers all the important competencies and skills we need to assess including product thinking, stakeholder management, data analysis, leadership, and communication."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing the count at 5, specifying the competency focus, requiring follow-up probes, and flagging equality law constraints produces a legally sound, structured interview guide.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite candidate rejection email prompt",
+    "originalPrompt": "Write a rejection email for the candidates we interviewed but won't be progressing. Keep it nice.",
+    "options": [
+      "Draft a post-interview rejection email for candidates who reached final-stage but were unsuccessful. Acknowledge their time, give one specific positive observation, state the decision clearly without false hope, offer constructive feedback option, and leave the door open for future roles. Warm, professional tone. Max 150 words.",
+      "Write a nice rejection email for candidates we interviewed who didn't get the job that will leave them feeling good about our company.",
+      "Write a rejection email."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying five structural elements and a 150-word cap produces an email that protects employer brand without being a generic form letter.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise offer letter key terms prompt",
+    "originalPrompt": "You need a short prompt to generate the key terms section of a job offer letter.",
+    "options": [
+      "Write the Key Terms section of a job offer letter. Cover: job title, start date, salary (\u00a3X), working hours (37.5h/week), notice period (3 months both sides), holiday entitlement (25 days + bank holidays), probation period (6 months), and location (hybrid, 3 days office). Plain English, list format.",
+      "Write a job offer letter.",
+      "Please write a comprehensive and complete job offer letter that covers all the important terms and conditions of employment including salary, benefits, working arrangements, and all the other key contractual terms the new employee needs to know about."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing all eight terms with exact values means no follow-up clarification is needed and the section can be pasted directly into a contract template.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Candidate evaluation rubric prompt",
+    "originalPrompt": "You need to create a structured scoring rubric to evaluate candidates consistently for a Data Analyst role.",
+    "options": [
+      "Create a candidate evaluation rubric for a Data Analyst role. Competencies: SQL proficiency, data visualisation, business communication, analytical thinking, and stakeholder management. For each competency: 4-level rating scale (1=Below Expectations to 4=Exceeds), behavioural anchors per level, and interview evidence expected. Table format.",
+      "Build a candidate scoring rubric for our Data Analyst interviews.",
+      "Create a comprehensive candidate evaluation framework that covers all the important skills and competencies for the Data Analyst role with clear descriptions of what good and bad performance looks like at interview."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining behavioural anchors at each of four levels and specifying the evidence type per competency produces a rubric that ensures inter-rater reliability across a hiring panel.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite headcount approval business case",
+    "originalPrompt": "I need to write a business case to hire two more people on my team. Help me put something together.",
+    "options": [
+      "Write a headcount approval business case for 2 additional FTE in the Customer Success team. Include: current workload gap (accounts per CSM vs benchmark), revenue at risk (\u00a3X churn attributable to coverage gap), cost of hire (fully loaded \u00a3X per FTE), payback via NRR improvement, and 3-month ramp plan. Max 1 page.",
+      "Write a business case to hire two more people for our Customer Success team explaining why we need them and what value they will add.",
+      "Create a detailed business case for adding headcount to our team."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Quantifying the workload gap against a benchmark, linking the hire to churn revenue, and including a ramp plan makes the case finance-committee ready rather than a request without numbers.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick recruiter screening prompt",
+    "originalPrompt": "You need a short prompt to generate phone screen questions for an entry-level sales role.",
+    "options": [
+      "Write 5 phone screen questions for an entry-level Sales Development Representative role. Cover: motivation for sales, resilience to rejection, communication style, availability, and salary expectation. One question per topic, no leading questions.",
+      "Write phone screen questions for a sales role.",
+      "Please create a comprehensive list of phone screening questions for our entry-level SDR role that covers all the important areas we need to assess including motivation, skills, experience, culture fit, and logistics."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing five questions with one named topic per question and banning leading questions produces a structured screen that every recruiter runs consistently.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Diversity sourcing strategy prompt",
+    "originalPrompt": "You want to increase diversity in your engineering hiring pipeline. You need a sourcing strategy.",
+    "options": [
+      "Design a diverse sourcing strategy for engineering roles. Cover: 5 non-traditional sourcing channels (bootcamps, return-to-work programmes, HBCUs, coding non-profits, military transition schemes), adjustments to JD language (remove credential inflation, gender-neutral language audit), structured screening criteria to reduce bias, and a 90-day implementation plan. Practical, specific.",
+      "Help me increase diversity in our engineering hiring pipeline.",
+      "Write a comprehensive diversity hiring strategy for our engineering team that covers sourcing, job descriptions, interview processes, assessment methods, and all the other changes we need to make to attract and hire more diverse talent."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming five specific sourcing channels, requiring JD language adjustments, and a 90-day plan transforms a general diversity goal into a concrete action plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague LinkedIn job post prompt",
+    "originalPrompt": "Write something to post on LinkedIn about our open job. Make it catchy and get people to apply.",
+    "options": [
+      "Write a LinkedIn job post for a Senior UX Designer role at [Company]. Hook: one compelling sentence about the product challenge. Highlight: remote-first culture, equity, and career growth. Call to action: link to apply. Max 150 words. No buzzwords like 'rockstar' or 'ninja'.",
+      "Please write a really engaging and exciting LinkedIn post for our open Senior UX Designer position that will attract talented candidates and communicate why our company is a great place to work.",
+      "Write a LinkedIn job post."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the hook, three highlight topics, a word count, and banning specific buzzwords produces a post that resonates with qualified candidates rather than every job seeker.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Reference check question prompt",
+    "originalPrompt": "You are about to make an offer to a candidate but need to complete reference checks first.",
+    "options": [
+      "Generate 6 structured reference check questions for a [Job Title] candidate. Cover: confirmation of role and dates, key strengths relevant to this role, areas for development, management or teamwork style, reason for leaving, and whether the referee would rehire. Open-ended format, no closed yes/no questions.",
+      "Write reference check questions for our candidate.",
+      "Create a comprehensive reference check question guide that covers all the important areas we should explore with a referee including performance, competencies, team fit, development areas, and anything else that might be relevant."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Fixing six topics in open-ended format and including the re-hire question produces a reference that yields substantive insights rather than dates-of-employment confirmation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Talent acquisition metrics summary",
+    "originalPrompt": "You need a prompt that produces a monthly talent acquisition dashboard in under 100 tokens.",
+    "options": [
+      "Create a talent acquisition metrics table for last month. Rows: roles open, applications received, phone screens, interviews, offers made, offers accepted, time-to-fill (days), and cost-per-hire. Three columns: This Month, Last Month, Target. No narrative.",
+      "Give me a hiring metrics summary.",
+      "Please provide a comprehensive monthly talent acquisition dashboard that covers all our key recruiting metrics including applications, pipeline conversion rates, time-to-fill, offer acceptance rates, source of hire, diversity metrics, and cost-per-hire with comparisons to our targets and prior periods."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Fixing eight metric rows with three comparison columns and banning narrative produces a dashboard the CHRO can review in two minutes.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite succession planning framework",
+    "originalPrompt": "We need a succession planning process for our senior leadership team. Help me build one.",
+    "options": [
+      "Design a succession planning framework for the top 10 leadership roles. For each role: identify 1-2 internal successors (ready now vs 1-2 years), assess development gaps, create a 12-month acceleration plan (assignments, coaching, exposure), and define external pipeline fallback. Output: nine-box readiness grid + individual development table. Annual review cadence.",
+      "Help me create a succession planning process for our senior leaders that identifies who could step up into each role if needed.",
+      "Build a comprehensive succession planning framework that covers all our key leadership positions and identifies potential successors, assesses their readiness, and creates development plans to prepare them for future roles."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying a nine-box readiness grid, a 12-month acceleration plan per successor, and an external fallback produces a succession plan that drives real development activity rather than just a list of names.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Hiring manager briefing prompt",
+    "originalPrompt": "Before starting a search for a new hire, you need to brief the recruiting team on the role.",
+    "options": [
+      "Write a hiring manager briefing document for a [Job Title] role. Include: business reason for the hire, team context, must-have vs nice-to-have skills, compensation range, interview process stages, and top 3 qualities that will make someone successful in this role. 1 page max.",
+      "Write a briefing for the recruiter about the role we want to fill.",
+      "Create a comprehensive hiring manager briefing that covers everything the recruitment team needs to know about the role including the full job requirements, competencies, culture fit factors, compensation, interview process, timeline, and business context."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing six specific elements including must-have vs nice-to-have and a success profile gives recruiters a precise brief that improves sourcing accuracy from day one.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague training module prompt",
+    "originalPrompt": "Create a training module for our new managers. Cover the important management skills they need.",
+    "options": [
+      "Create a training module outline for first-time managers. Sections: (1) Transitioning from individual contributor to manager, (2) Giving and receiving feedback, (3) Running effective 1:1s, (4) Setting goals and managing performance, (5) Managing conflict. Each section: learning objective, 3 key content points, one activity, and estimated duration. Total module: 3 hours.",
+      "Please create a comprehensive and detailed training module for our new managers that covers all the essential management skills they need to be successful in their roles.",
+      "Write a new manager training programme."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining five specific sections with four elements per section and a total time budget means the module is ready for an instructional designer to build, not plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Learning objective generation prompt",
+    "originalPrompt": "You are designing a data literacy workshop for non-technical employees.",
+    "options": [
+      "Write 4 learning objectives for a 2-hour data literacy workshop for non-technical employees. Use Bloom's taxonomy action verbs (understand, apply, analyse, evaluate). Each objective: 'By the end of this session, participants will be able to [verb] [specific skill or knowledge].' Focus on reading charts, spotting trends, and questioning data sources.",
+      "Write learning objectives for our data literacy workshop.",
+      "Create comprehensive learning objectives for our data literacy training programme that covers all the data skills our non-technical employees need to develop to be effective in a data-driven organisation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Using Bloom's taxonomy verbs, the standard learning objective stem, and naming the three skill focus areas produces objectives that can be directly assessed at the end of the session.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite onboarding checklist prompt",
+    "originalPrompt": "Create an onboarding checklist for new hires. Make sure it's thorough and covers everything they need.",
+    "options": [
+      "Create a 90-day onboarding checklist for a new hire. Phases: Week 1 (admin, access, meet the team), Month 1 (role foundations, shadow key processes, first deliverable), Day 30\u201390 (own workstream, build relationships, 30/60/90 check-in with manager). Each phase: 5\u20137 concrete checkbox actions with responsible party (new hire or manager).",
+      "Please write a very comprehensive and thorough onboarding checklist that covers absolutely everything a new employee needs to do and know in their first few months to get up to speed quickly.",
+      "Write a new hire onboarding checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A three-phase structure with 5\u20137 actions per phase and a responsible party column makes the checklist usable by both the new hire and the manager without ambiguity.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise workshop facilitation guide",
+    "originalPrompt": "You need a tight prompt to generate a workshop facilitation guide section in under 75 tokens.",
+    "options": [
+      "Write a facilitator guide section for a 45-min workshop activity on 'giving effective feedback'. Include: setup instructions (time, materials, group size), activity steps (numbered), facilitator prompts (2 discussion questions), and debrief (key takeaway to land). Concise, facilitator-facing language.",
+      "Write a facilitation guide for our feedback workshop activity.",
+      "Please write a comprehensive and detailed facilitator guide for this workshop activity that gives the facilitator everything they need to run the session effectively including all the setup requirements, step-by-step instructions, discussion questions, and debrief guidance."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Fixing four structural elements (setup, steps, prompts, debrief) and specifying facilitator-facing language produces a guide that works as a run-of-show reference.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Skills gap analysis prompt",
+    "originalPrompt": "Your organisation wants to build a future skills capability map to identify training priorities.",
+    "options": [
+      "Create a skills gap analysis framework for a 200-person professional services firm. Steps: (1) define future-state skills required per role family (list 3 role families), (2) current state self-assessment scale (1\u20134 per skill), (3) gap identification (target vs current), (4) prioritisation matrix (impact on business vs ease of build), (5) learning pathway recommendations per gap. Output as a structured framework with example data.",
+      "Build a skills gap analysis for our organisation.",
+      "Create a comprehensive skills gap analysis that identifies all the skill gaps across our organisation and recommends training and development actions to close them."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A five-step framework with specific outputs at each step (prioritisation matrix, learning pathways) and example data produces a tool the L&D team can populate, not design from scratch.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite e-learning course outline prompt",
+    "originalPrompt": "Write an e-learning course on unconscious bias. It should be good for all staff.",
+    "options": [
+      "Write an e-learning course outline on unconscious bias for a diverse corporate workforce. Modules: (1) What is unconscious bias (with 3 real-world examples), (2) Types (affinity, attribution, confirmation), (3) Impact on hiring and performance reviews, (4) Practical mitigation strategies (structured decisions, diverse panels). Each module: learning objective, content outline, one interactive element, estimated time (total course \u226445 min).",
+      "Create a comprehensive e-learning course on unconscious bias that covers all aspects of the topic and engages all staff regardless of their background or experience.",
+      "Write an unconscious bias e-learning course for all employees."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining four modules with specific bias types, a work-context application (hiring, reviews), and a 45-minute cap means the course is focused and commercially deliverable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick pre-reading prompt for a training",
+    "originalPrompt": "You need a short prompt to generate a pre-reading brief for an upcoming leadership training day.",
+    "options": [
+      "Write a pre-reading brief for a leadership training day on psychological safety. Cover: definition (1 sentence), why it matters (1 statistic or example), 3 reflection questions for participants to consider before attending. Max 200 words.",
+      "Write pre-reading for our leadership training.",
+      "Please create a comprehensive pre-reading pack for participants attending our leadership training day on psychological safety that covers the background theory, key research, practical examples, and reflection exercises to help them get the most out of the session."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A definition, one evidence anchor, and three reflection questions in 200 words is enough to prime participants without replacing the session content.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "L&D ROI measurement prompt",
+    "originalPrompt": "Your L&D team is under pressure to demonstrate the return on investment of training programmes.",
+    "options": [
+      "Design an ROI measurement framework for a sales training programme. Apply Kirkpatrick Levels 1\u20134: Level 1 (participant satisfaction survey, 5 questions), Level 2 (pre/post knowledge test, 10 MCQ), Level 3 (manager observation form at 30/90 days, 5 behaviours), Level 4 (sales metrics: quota attainment, ramp time before/after). Include data collection timing and owner per level.",
+      "Help me measure the ROI of our training programmes.",
+      "Create a comprehensive learning evaluation framework that covers all four levels of the Kirkpatrick model and shows how we can measure the impact of our training investments on business performance."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming specific measurement instruments at each Kirkpatrick level with data collection timing and owners means the framework is implementable from day one, not just theoretically sound.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague coaching conversation prompt",
+    "originalPrompt": "Help me have a coaching conversation with an employee about their performance. Give me some questions to ask.",
+    "options": [
+      "Generate a coaching conversation guide for a manager discussing performance concerns with a direct report. Use the GROW model: 5 Goal-setting questions, 3 Reality questions (to understand current state), 3 Options questions (to explore solutions), 2 Will questions (to confirm commitment). Avoid leading or judgmental language.",
+      "Write some coaching questions I can use when talking to my employee about their performance issues.",
+      "Create a comprehensive set of coaching questions for a performance conversation that covers all the important areas including understanding the employee's perspective, exploring options for improvement, and agreeing on an action plan."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Structuring questions around the GROW model with specific counts per stage and a language directive produces a coaching guide that follows evidence-based methodology.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Manager development programme prompt",
+    "originalPrompt": "You are designing a 6-month development programme for high-potential mid-level managers.",
+    "options": [
+      "Design a 6-month manager development programme for 15 high-potential managers. Structure: monthly learning themes (strategic thinking, commercial acumen, leading change, coaching skills, exec presence, innovation), format per month (workshop, peer group, senior leader session, self-directed), expected commitment (4h/month), and cohort size justification. Output: programme calendar table.",
+      "Create a development programme for our high-potential managers.",
+      "Design a comprehensive management development programme for our high-potential leaders that covers all the important leadership and management skills they need to develop to be ready for senior roles."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming six specific monthly themes, specifying format variety per month, and requesting a programme calendar table produces a proposal the L&D team can cost and schedule.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague policy update comms prompt",
+    "originalPrompt": "Write a message to tell staff about the changes to our holiday policy. Keep it short and clear.",
+    "options": [
+      "Write a staff announcement about a change to the annual leave policy. Cover: what is changing (entitlement increasing from 25 to 28 days), effective date, how to apply the change (update in [HR system]), any carryover rule change, and who to contact for questions. Plain English, max 200 words, positive tone.",
+      "Please write a clear and comprehensive communication to all staff explaining the changes we are making to our holiday policy and why we are making them and how it will affect them.",
+      "Announce the holiday policy change to staff."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including the specific change (25 to 28 days), effective date, action required, and contact info means staff have everything they need in one message without needing to follow up.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "HR process documentation prompt",
+    "originalPrompt": "You need to document your grievance procedure so employees and managers can follow it correctly.",
+    "options": [
+      "Document the employee grievance procedure as a step-by-step process guide. Cover: informal resolution (who, what, when), formal grievance submission (form required, 5-day acknowledgement), investigation steps (impartial manager, right to be accompanied), outcome and appeal rights, and timeline (max 28 days end-to-end). Include a flowchart in text. Both employee and manager versions.",
+      "Write a grievance procedure document for employees and managers.",
+      "Create a comprehensive grievance procedure document that covers every step of the formal and informal grievance process in detail so both employees and managers know exactly what to do when a grievance is raised."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Covering informal and formal routes, specifying the legal right to accompaniment, fixing a 28-day timeline, and requesting both employee and manager versions means the document is legally compliant and usable by both parties.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite offboarding checklist prompt",
+    "originalPrompt": "Create an offboarding checklist for employees who are leaving. Make sure we cover everything.",
+    "options": [
+      "Create an offboarding checklist for a departing employee. Phases: Notice period (knowledge transfer plan, handover document), Final week (system access revocation, equipment return, payroll finalisation), Post-departure (reference request process, alumni network invite, exit interview). Responsible party per item (HR, IT, Line Manager, Employee). Checkbox format.",
+      "Please create a comprehensive offboarding checklist that covers all the tasks and activities that need to happen when an employee leaves our company.",
+      "Write an employee offboarding checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Three time-phased sections with responsible parties per item means the checklist drives action across IT, HR, and management without tasks falling through the gaps.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Quick absence management policy",
+    "originalPrompt": "You need a short prompt to draft the Scope section of an absence management policy.",
+    "options": [
+      "Write the Scope section of an absence management policy. Cover: who it applies to (all UK employees, excluding contractors), types of absence covered (sick leave, unauthorised, persistent short-term), what triggers a formal process (Bradford Factor score >200), and who is responsible (line manager and HR). Max 150 words.",
+      "Write a scope section for our absence policy.",
+      "Please write a comprehensive scope section for our absence management policy that clearly defines all the different types of employees it covers, all the categories of absence it applies to, the thresholds that trigger formal action, and all the responsibilities of managers, HR, and employees."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming a specific trigger threshold (Bradford Factor >200) and defining four content elements in 150 words produces a scope section that is precise and legally auditable.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "HRIS configuration requirements prompt",
+    "originalPrompt": "You are about to implement a new HRIS and need to specify your requirements for the vendor demo.",
+    "options": [
+      "Write an HRIS requirements specification for a 300-person company. Sections: core HR (employee records, org chart, document management), payroll integration (bi-directional sync with [payroll system]), self-service (employee leave requests, manager approvals), reporting (headcount, attrition, pay equity), and compliance (UK right-to-work checks, GDPR data residency). For each section: must-have requirements and nice-to-haves.",
+      "Write requirements for our new HR system.",
+      "Create a comprehensive HRIS requirements document that covers all the functional and technical requirements we need our new HR information system to meet across all areas of HR and people operations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five named modules with must-have vs nice-to-have classification and specific compliance requirements gives the vendor enough detail to run a meaningful demo rather than a generic walkthrough.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite redundancy process prompt",
+    "originalPrompt": "We might need to make some redundancies. Help me think through the process we need to follow.",
+    "options": [
+      "Outline a UK statutory redundancy consultation process for a proposed reduction of 12 roles across two departments. Cover: at-risk notification requirements, collective consultation threshold (20+ roles = 45-day minimum), selection criteria (skills-based, objective), alternative roles offer obligation, statutory redundancy pay calculation formula, and appeal process. Legal compliance first, practical format.",
+      "Help me understand the redundancy process we need to follow when making employees redundant.",
+      "Create a comprehensive guide to the redundancy process covering all the legal requirements, consultation obligations, selection criteria, notification requirements, and financial entitlements."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying 12 roles, the collective consultation trigger at 20+, and requiring the statutory pay formula means the outline is legally accurate for the specific scenario rather than generically correct.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick parental leave policy summary",
+    "originalPrompt": "You need a concise prompt to summarise your enhanced parental leave policy for a new joiner.",
+    "options": [
+      "Summarise our enhanced parental leave policy for a new employee in 5 bullets. Cover: maternity (weeks at full pay vs statutory), paternity (weeks and pay), shared parental leave eligibility, adoption leave, and how to notify HR. Plain English, no legalese.",
+      "Summarise our parental leave policy.",
+      "Please write a comprehensive summary of our enhanced parental leave policy that covers all aspects of maternity, paternity, shared parental leave, adoption leave, and any other family leave entitlements for new employees joining our company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Five bullets with named leave types, specific pay comparisons, and a process step means the summary is self-contained for a new joiner without referencing the full policy document.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "People analytics dashboard prompt",
+    "originalPrompt": "The CHRO wants a monthly people analytics dashboard to spot workforce trends early.",
+    "options": [
+      "Design a monthly people analytics dashboard for a CHRO. Metrics: headcount (total, by department, by tenure band), voluntary attrition (rolling 12-month, by department, regrettable vs non-regrettable), time-to-fill (by role level), engagement score (eNPS trend), and pay equity ratio (gender and ethnicity). For each metric: definition, data source, RAG threshold, and visualisation type. Executive-facing format.",
+      "Build a people analytics dashboard for our CHRO.",
+      "Create a comprehensive people analytics dashboard that covers all the important workforce metrics the CHRO needs to monitor including headcount, attrition, hiring, engagement, performance, and pay equity."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining five specific metrics with four sub-elements each (definition, source, RAG threshold, visualisation) means the dashboard specification is ready for a data team to build without further scoping.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague flexible working policy prompt",
+    "originalPrompt": "Write a flexible working policy. It should explain what options we offer and how to request them.",
+    "options": [
+      "Write a flexible working policy for a hybrid-first company. Cover: eligible arrangements (compressed hours, part-time, remote-first, job share), eligibility criteria (minimum 26 weeks' service), request process (written application, 3-month trial), grounds for refusal (UK Flexible Working Act basis), and manager responsibilities. Clear, plain English, numbered clauses.",
+      "Please write a comprehensive flexible working policy that clearly explains all the flexible working options available and how employees can apply for them.",
+      "Write a flexible working policy."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming four arrangement types, the 26-week eligibility threshold, and citing the legal grounds for refusal produces a policy that is both employee-friendly and legally sound.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Exit interview questions prompt",
+    "originalPrompt": "You want to gather meaningful insights from departing employees. You need structured exit interview questions.",
+    "options": [
+      "Generate 8 exit interview questions to diagnose turnover drivers. Cover: primary reason for leaving, what would have made them stay, rating of manager relationship, experience of company culture, adequacy of growth and development opportunities, recommendation likelihood (NPS-style), and feedback on the onboarding experience. Open-ended, non-leading, 1 question per topic.",
+      "Write exit interview questions for employees leaving our company.",
+      "Create a comprehensive exit interview questionnaire that covers all the important areas we want to understand about why employees are leaving and what we could do to improve retention."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Fixing eight questions mapped to seven specific turnover drivers and including an NPS-style question produces data that feeds directly into a retention analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague engagement survey prompt",
+    "originalPrompt": "Write some questions for our employee engagement survey. We want to know how people feel.",
+    "options": [
+      "Write 10 employee engagement survey questions across 5 dimensions: role clarity (2 questions), manager effectiveness (2 questions), team collaboration (2 questions), growth and development (2 questions), and wellbeing (2 questions). Use a 1\u20135 Likert scale. One of each pair should be positively and one negatively framed to reduce acquiescence bias.",
+      "Please write comprehensive and varied employee engagement survey questions that cover all the important aspects of the employee experience and will give us useful insights into how our people are feeling.",
+      "Write employee engagement survey questions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining five dimensions with two questions each, specifying the Likert scale, and requiring paired positive/negative framing produces a survey with built-in bias control.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Team retrospective prompt generation",
+    "originalPrompt": "Your team has just completed a major project and you want to run a retrospective to learn from the experience.",
+    "options": [
+      "Design a 60-minute team retrospective session for a post-project review with 8 people. Activities: (1) 'Sailboat' exercise (10 min): wind = what helped, anchor = what slowed us, rocks = risks ahead; (2) Dot voting on top 3 improvements (10 min); (3) Action planning (20 min): 3 actions with owner and deadline; (4) Appreciation round (5 min). Facilitator instructions per activity.",
+      "Create a retrospective agenda for our team to review the completed project.",
+      "Write a comprehensive team retrospective plan that covers all the different aspects of the project we want to reflect on and includes activities that will help the team identify what went well, what to improve, and what actions to take going forward."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the specific retrospective technique (Sailboat), fixing timing per activity, and including facilitator instructions means the session can be run without additional preparation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite values communication prompt",
+    "originalPrompt": "Write something to communicate our company values to the team. We want them to live the values.",
+    "options": [
+      "Write an internal communication to bring our 4 company values to life for employees. For each value [list values]: one concrete example of the behaviour in action at our company, one behaviour that would contradict it, and one question employees can ask themselves daily to live it. Tone: authentic, not corporate. Max 400 words.",
+      "Write an inspiring communication about our company values that will motivate employees to embrace and demonstrate the values in their daily work.",
+      "Create a communication about our company values."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Asking for a positive example, a counter-example, and a daily self-check question per value produces a communication that translates abstract values into observable behaviours.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick pulse survey prompt",
+    "originalPrompt": "You need a short prompt to generate a 5-question monthly pulse survey for employees.",
+    "options": [
+      "Write a 5-question monthly pulse survey for employees. Topics: overall engagement (NPS-style), workload manageability, clarity on priorities, confidence in leadership, and one open-ended question. Likert scale (1\u20135) for closed questions. Max 1 sentence per question.",
+      "Write a pulse survey.",
+      "Please create a comprehensive monthly pulse survey that covers all the important aspects of employee experience and engagement including satisfaction, wellbeing, manager relationships, workload, growth, and company direction."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing five topics with specified question types (Likert vs open-ended) and a one-sentence cap per question produces a pulse survey that takes under 2 minutes to complete.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Recognition programme design prompt",
+    "originalPrompt": "You want to launch a peer recognition programme to improve team morale and reinforce company values.",
+    "options": [
+      "Design a peer recognition programme for a 200-person company. Cover: recognition mechanics (peer nominations via [tool], monthly cadence), reward tiers (spot recognition = \u00a325 gift card, monthly winner = \u00a3150 experience, annual winner = \u00a3500 + exec lunch), values linkage (nomination must cite one of 4 company values + specific behaviour), manager visibility, and success metrics (participation rate target 70%). Implementation plan: 90 days.",
+      "Design a peer recognition programme for our company.",
+      "Create a comprehensive employee recognition programme that includes both peer and manager recognition, monetary and non-monetary rewards, links to company values, and clear processes for nominations, selection, and communication."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying three reward tiers with exact values, a values-linkage requirement, a 70% participation target, and a 90-day plan produces a programme the People team can launch, not concept from scratch.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite employer brand campaign prompt",
+    "originalPrompt": "We need to improve our employer brand. Help me think through a campaign to attract talent.",
+    "options": [
+      "Design a 3-month employer brand campaign for a 300-person tech company targeting senior software engineers. Channels: LinkedIn (4 posts/week), Glassdoor (review response strategy), engineering blog (2 posts/month), and referral programme. Content themes: engineering culture, tech stack, flexibility. Success metrics: Glassdoor score improvement, LinkedIn follower growth, referral hire rate. Output: campaign calendar and messaging framework.",
+      "Help me create an employer brand campaign to attract better talent to our company.",
+      "Create a comprehensive employer branding strategy that covers all the channels we need to use and all the content we need to create to improve how we are perceived as an employer in the market."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the target persona (senior engineers), four named channels with frequency, three content themes, and three success metrics means the campaign has a measurable brief from day one.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "DEI initiative proposal prompt",
+    "originalPrompt": "You need a tight prompt to propose a new DEI initiative to your leadership team in under 100 tokens.",
+    "options": [
+      "Write a one-page DEI initiative proposal for leadership. Include: problem statement (1 sentence with data), proposed initiative name and description, target population, success metric (with baseline and 12-month target), resource required (\u00a3 and FTE), and risk if we do not act. Factual, no jargon.",
+      "Propose a DEI initiative for our company.",
+      "Please write a comprehensive and detailed proposal for a new diversity, equity, and inclusion initiative that covers the business case, the specific initiative design, the target groups it will benefit, the resource requirements, the success metrics, the implementation plan, and the risks of inaction."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A six-element structure in one-page format with baseline and target metrics gives leadership the information needed for a go/no-go decision without a lengthy appendix.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Culture diagnostic framework prompt",
+    "originalPrompt": "Post-merger, you need to assess the cultural alignment between two organisations before designing an integration programme.",
+    "options": [
+      "Design a post-merger culture diagnostic framework for two organisations. Dimensions: values alignment, leadership style (command-control vs empowering), decision-making norms, collaboration and communication patterns, and attitudes to risk and innovation. Methods per dimension: leader interviews (5 questions), all-staff survey (3 Likert items), and artefact review (policies, rituals). Output: RAG scoring matrix and integration risk summary.",
+      "Help me assess the cultural alignment between our two companies after the merger.",
+      "Create a comprehensive culture assessment framework that compares all aspects of the two organisations' cultures and identifies the key areas of alignment and conflict that will need to be addressed during the integration."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Five named culture dimensions with three data collection methods each and a RAG scoring matrix produces a diagnostic that generates actionable integration recommendations, not just a description of differences.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague team event ideas prompt",
+    "originalPrompt": "Give me some ideas for team events. We want to do something to improve morale and bring the team together.",
+    "options": [
+      "Suggest 5 team engagement activities for a remote-first team of 20 people with a budget of \u00a3500. For each: activity name, format (virtual/in-person), duration, why it builds connection, and estimated cost. Mix of social and development-focused activities.",
+      "Please give me lots of creative ideas for team events and activities that will improve morale and help our team bond and feel more connected to each other.",
+      "Give me team event ideas."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing the team size, budget, and format mix (virtual/in-person), and asking for a 'why it works' rationale per idea makes each suggestion evaluable rather than just a brainstorm.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague salary band explanation prompt",
+    "originalPrompt": "Explain our salary bands to employees. Some of them don't understand how the pay system works.",
+    "options": [
+      "Write a plain-English guide to our salary banding system for employees. Cover: what a salary band is, why bands exist (internal equity, market alignment), how your position in band is determined (performance, experience), how and when bands are reviewed, and what to do if you think your pay is wrong. Max 300 words, no jargon.",
+      "Please write a clear and helpful explanation of how our salary band system works for employees who are not familiar with how pay structures work in organisations.",
+      "Explain salary bands to employees."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Covering five specific questions employees actually ask about pay bands and setting a 300-word jargon-free cap means the guide reduces HR inbox volume without undermining transparency.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Benefits package comparison prompt",
+    "originalPrompt": "You are benchmarking your benefits package against competitors to identify gaps that may be affecting retention.",
+    "options": [
+      "Create a benefits benchmarking comparison for a UK tech company. Benefits categories: health insurance (cover level, family inclusion), pension (employer match %), annual leave (days + carry-over), equity (options, LTIP, SAYE), wellbeing (budget per employee), and L&D (annual allowance). Compare: our current offering vs [Competitor A] vs market median. Gap column. Table format.",
+      "Compare our benefits package to our competitors so we can see what we are missing.",
+      "Create a comprehensive benefits benchmarking analysis that covers all the different types of benefits we offer and compares them to what our competitors are providing and what the market standard is."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Six named benefit categories with a gap column and a three-way comparison (us, competitor, median) means the table directly feeds a benefits refresh proposal.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite compensation philosophy prompt",
+    "originalPrompt": "Write our compensation philosophy. We need something that explains our approach to pay.",
+    "options": [
+      "Draft a company compensation philosophy statement covering: market positioning (we pay at median to 75th percentile vs [sector] market data), pay equity commitment (annual audit, transparent banding), performance linkage (how variable pay is allocated), total rewards view (base + equity + benefits), and review cadence. Tone: confident, transparent, 400 words max.",
+      "Please write a detailed and comprehensive compensation philosophy statement that explains our overall approach to pay and benefits and how we think about rewarding our employees.",
+      "Write a compensation philosophy for our company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining market positioning with a specific percentile target, pay equity commitment, and a review cadence produces a philosophy that is operationally specific and communicable to candidates.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise bonus calculation explainer",
+    "originalPrompt": "You need a tight prompt to explain how the annual bonus is calculated to a non-finance employee.",
+    "options": [
+      "Explain our annual bonus calculation in plain English. Cover: eligibility criteria (employed on 31 Dec, not on PIP), how the bonus pool is funded (% of company EBITDA), individual allocation (salary x target % x personal performance multiplier), example (\u00a350k salary, 10% target, 1.2x multiplier = \u00a36,000), and payment date. Max 200 words.",
+      "Explain the bonus calculation to employees.",
+      "Please write a comprehensive and detailed explanation of how our annual bonus scheme works including all the factors that influence the bonus pool size, how individual allocations are determined, all the eligibility criteria, and how the performance multipliers are calculated."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A concrete worked example with real numbers and eligibility criteria in 200 words produces a communication employees can use to estimate their own bonus without needing to call HR.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Pay equity audit prompt",
+    "originalPrompt": "You need to run a pay equity audit to check for unexplained pay gaps across gender and ethnicity.",
+    "options": [
+      "Design a pay equity audit methodology for a 400-person company. Steps: (1) define comparator groups (role, grade, function, tenure band), (2) run regression analysis controlling for grade, performance rating, and tenure, (3) flag individuals with unexplained gap >10% vs group median, (4) review flagged cases for legitimate vs unexplained factors, (5) remediation budget estimate. Output: audit plan table with owner, data source, and timeline per step.",
+      "Help me run a pay equity audit for our company.",
+      "Create a comprehensive pay equity audit plan that covers all the steps we need to take to identify and address any unexplained pay gaps across all protected characteristics in our workforce."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A five-step methodology with a specific regression control set, a 10% flagging threshold, and an audit plan table with owners and timelines is a defensible process if challenged by a regulator.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite equity plan design prompt",
+    "originalPrompt": "We want to introduce a share option scheme for employees. Help me think through what we need.",
+    "options": [
+      "Design an EMI share option scheme for a UK startup with 80 employees. Cover: eligibility criteria (all employees with 6+ months tenure), grant sizes by level (\u00a3X\u2013\u00a3Y notional value), vesting schedule (4-year, 1-year cliff), exercise conditions (exit event or IPO), and key tax advantages of EMI. Flag HMRC valuation requirement and 250-employee limit. Legal language not required; decision-making framework format.",
+      "Help me set up a share options scheme for our employees that is fair and motivating.",
+      "Create a comprehensive employee share option scheme design covering eligibility, grant sizes, vesting, exercise conditions, tax treatment, and all the other factors we need to consider."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the specific scheme type (EMI), flagging the HMRC valuation requirement and 250-employee cap, and using a decision-making framework format gives advisers a scoped brief rather than a blank canvas.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick total rewards overview",
+    "originalPrompt": "You need a short prompt to generate a total rewards overview for a new joiner welcome pack.",
+    "options": [
+      "Write a total rewards overview for a new joiner welcome pack. Cover: base salary (and review cycle), annual bonus (target %), pension (employer match), health insurance, annual leave, equity (if applicable), and L&D budget. One line per element, plain English, no jargon. Max 200 words.",
+      "Write a total rewards summary for new employees.",
+      "Please create a comprehensive and detailed total rewards overview that explains every element of our compensation and benefits package to new employees joining our company, covering base pay, variable pay, equity, benefits, wellbeing, and development opportunities."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "One line per reward element with jargon-free language and a 200-word cap means new joiners get a scannable overview rather than a policy document.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Executive reward framework prompt",
+    "originalPrompt": "Your Remuneration Committee needs to review and redesign the executive reward framework ahead of the AGM.",
+    "options": [
+      "Draft an executive reward framework for a UK-listed company Remuneration Committee review. Components: base salary benchmarking (FTSE 350 peer group, target median), annual bonus structure (max 100% salary, metrics: revenue 40%, EBITDA 35%, ESG 25%), LTIP design (3-year vesting, performance conditions, holding period), and share ownership guidelines (3x salary requirement). Proxy adviser alignment (ISS, Glass Lewis). Formal RemCo tone.",
+      "Write an executive compensation framework for our Remuneration Committee.",
+      "Create a comprehensive executive reward framework that covers all aspects of executive pay including base salary, annual bonus, long-term incentives, benefits, pensions, and share ownership requirements."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming specific proxy advisers (ISS, Glass Lewis), defining the metric split for the annual bonus, and including share ownership guidelines produces a draft RemCo paper that withstands shareholder scrutiny.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite global mobility policy prompt",
+    "originalPrompt": "We are sending someone to our Singapore office for a year. Help me write the international assignment policy.",
+    "options": [
+      "Draft an international assignment policy for a UK employee relocating to Singapore for 12 months. Cover: assignment type (secondment vs permanent transfer), salary approach (home or host country basis), international housing allowance (cap \u00a3X/month), tax equalisation (company bears differential), social security (bilateral agreement status UK\u2013Singapore), and repatriation rights. Legal and compliant language, HR policy format.",
+      "Write an international assignment policy for our employee relocating to Singapore.",
+      "Create a comprehensive international assignment policy that covers all aspects of sending an employee to work overseas including compensation, benefits, housing, tax, immigration, and repatriation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying home-vs-host salary basis, tax equalisation, and noting the UK-Singapore social security treaty position means the policy addresses the three biggest cost and compliance risks in international assignments.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite background check process prompt",
+    "originalPrompt": "Tell me what background checks we should run on new hires and how we should do them.",
+    "options": [
+      "Write a background screening process for new hires in a UK financial services firm. Cover: checks required (DBS enhanced, credit check, employment history 5 years, right to work), timing (conditional offer stage vs pre-start), candidate consent process, adverse result escalation path (HR + legal review), and data retention (GDPR basis). Checklist format with responsible party.",
+      "Explain what background checks we need to do for new employees and the process for carrying them out.",
+      "Create a comprehensive background screening policy covering all the different types of checks we should run on candidates before they join and the process for managing the results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the four specific checks required for regulated roles, specifying the consent and GDPR basis, and including an adverse result escalation path means the process is both operationally complete and legally defensible.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight training needs analysis prompt",
+    "originalPrompt": "You need a prompt to produce a targeted training needs analysis in under 100 tokens.",
+    "options": [
+      "Conduct a training needs analysis for [team]. Identify: top 3 skill gaps (with evidence source), priority level (H/M/L), recommended learning format (e-learning/workshop/coaching), and estimated time-to-competency. Table format. No preamble.",
+      "Do a training needs analysis for our team.",
+      "Please conduct a comprehensive training needs analysis for our team that identifies all the skill gaps across all competency areas, explores the root causes of each gap, recommends the most appropriate learning interventions, and provides a prioritised implementation plan."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Fixing three skill gaps with four defined columns and banning preamble produces a decision-ready TNA output that fits in a management presentation.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Restructure communication strategy prompt",
+    "originalPrompt": "You are communicating a company restructure affecting 3 departments. You need a communication strategy.",
+    "options": [
+      "Design a restructure communication strategy for a change affecting Finance, Operations, and Marketing departments. Sequence: CEO all-hands (day 1, key message + rationale), department head briefings (day 1 afternoon, Q&A sessions), line manager communication pack (day 2, FAQs, talking points), all-staff written update (day 3), and external comms (day 5 if required). For each touchpoint: key message, channel, owner, and anticipated questions to pre-answer.",
+      "Help me plan how to communicate the company restructure to employees.",
+      "Create a comprehensive communication strategy for our restructure that covers all the different audiences, messages, channels, and timing we need to think about to communicate the changes effectively and maintain employee trust."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A day-numbered communication cascade with owners and pre-answered questions per touchpoint means the People team executes the plan rather than improvises it on the day.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "All-hands meeting script prompt",
+    "originalPrompt": "You need to prepare the CEO for a quarterly all-hands meeting covering company performance and culture.",
+    "options": [
+      "Write a CEO script outline for a 45-minute all-hands meeting. Sections: company performance update (5 min: 3 KPIs vs target), strategic priorities for next quarter (10 min: 3 priorities with brief rationale), culture spotlight (5 min: one employee story), Q&A open forum (20 min), and closing rallying statement (5 min). Tone: transparent, energising, human. Include transition phrases between sections.",
+      "Write a script for our CEO's all-hands meeting.",
+      "Create a comprehensive all-hands meeting agenda and script that covers all the important topics including company performance, strategy, culture, and employee recognition in a way that will engage and motivate the whole organisation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Timed sections with specific content per section, a tone directive, and transition phrases means the CEO has a facilitator guide, not just an agenda.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite wellbeing programme prompt",
+    "originalPrompt": "We want to improve employee wellbeing. Help me design a programme for this.",
+    "options": [
+      "Design a 12-month employee wellbeing programme for a 250-person hybrid company. Pillars: mental health (EAP promotion, mental health first aiders), physical health (subsidised fitness benefit \u00a330/month), financial wellbeing (3 workshops: budgeting, mortgage, pension), social connection (quarterly in-person events), and manager training (spotting signs of burnout). Budget: \u00a350k. Success metrics: EAP usage rate, sick day reduction, pulse survey wellbeing score. Implementation timeline.",
+      "Help me create an employee wellbeing programme for our company.",
+      "Design a comprehensive employee wellbeing programme that covers all aspects of wellbeing including mental, physical, financial, and social wellbeing with appropriate initiatives and resources for each area."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five named pillars with specific initiatives, a budget figure, and three measurable success metrics produces a business case as well as a programme design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Manager communication toolkit prompt",
+    "originalPrompt": "You need a tight prompt to generate a manager talking points toolkit for a difficult company announcement.",
+    "options": [
+      "Write a manager talking points toolkit for communicating [announcement]. Cover: headline message (1 sentence), top 3 FAQs with suggested answers, what managers should NOT say, and how to close the conversation. Format: scannable bullets. Max 300 words.",
+      "Write talking points for managers.",
+      "Please create a comprehensive manager communication toolkit for this announcement that covers all the different questions and concerns employees might raise, all the talking points managers should use, the background information they need to understand, and guidance on how to handle difficult conversations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A headline message, FAQs, don't-say guidance, and a conversation close in 300 words gives managers everything they need to navigate a difficult conversation without over-preparing.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Concise HR KPI report prompt",
+    "originalPrompt": "You need a prompt to produce a quarterly HR KPI report summary in under 100 tokens.",
+    "options": [
+      "Write a quarterly HR KPI summary. Metrics: headcount (actual vs plan), voluntary attrition (% and n), time-to-fill (days), eNPS score, and training hours per employee. Format: table with Q3 actual, Q2 actual, and Q3 target. RAG status per metric. No narrative.",
+      "Write an HR KPI report.",
+      "Please provide a comprehensive quarterly HR KPI report that covers all our key people metrics including headcount, attrition, hiring performance, engagement, learning and development, pay equity, and diversity metrics with full analysis and commentary."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five named metrics with a three-column comparison and RAG status per metric produces an exec-ready dashboard in table form with no narrative to write.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Microlearning content prompt",
+    "originalPrompt": "You want to create a short e-learning module on email best practices for all employees.",
+    "options": [
+      "Write a microlearning module script on professional email best practices. Structure: hook (common email mistake, 20 sec), 3 key tips (subject lines, reply-all etiquette, tone in written communication), one scenario quiz question per tip, and a 1-sentence takeaway. Total duration: 5 minutes. Conversational, engaging tone.",
+      "Create an e-learning module on email best practices for employees.",
+      "Write a comprehensive e-learning course on professional email communication that covers all aspects of writing effective business emails including structure, tone, formatting, subject lines, attachments, response times, and cultural considerations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A hook, three tips with a quiz question per tip, and a total 5-minute duration produces a microlearning module that employees will actually complete rather than skip.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Workforce planning model prompt",
+    "originalPrompt": "You need to build a 2-year workforce plan to support a doubling of revenue.",
+    "options": [
+      "Build a 2-year workforce planning model for a company targeting 2x revenue growth from \u00a320M to \u00a340M. Steps: (1) revenue-to-headcount ratio analysis (current and target), (2) department-level headcount delta by half-year, (3) hiring timeline (account for ramp periods per role level), (4) total fully-loaded cost projection (salary + benefits + recruitment), (5) risk scenarios (higher attrition, slower ramp). Output: headcount and cost table by half-year.",
+      "Help me build a workforce plan for our growth targets.",
+      "Create a comprehensive workforce plan that supports our growth ambitions by identifying all the roles we need to hire across all departments with a timeline, cost, and approach for building the team we need."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A five-step model with revenue anchors, ramp periods, and risk scenarios produces a plan that finance can cost and the board can pressure-test.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite psychological safety assessment",
+    "originalPrompt": "We want to assess psychological safety in our teams. Help me understand how to measure it.",
+    "options": [
+      "Design a psychological safety assessment tool for team-level measurement. Basis: Amy Edmondson's 7-item scale adapted for a corporate context. For each item: original scale question, adapted version for our setting, Likert scale (1\u20135), and scoring interpretation (team score <3.0 = at risk, 3.0\u20133.9 = developing, 4.0+ = high). Include: anonymisation method, team debrief protocol (manager reviews aggregate data only), and 3 intervention recommendations per score band.",
+      "Help me measure psychological safety in our teams.",
+      "Create a comprehensive psychological safety assessment methodology that covers how to measure safety levels in teams, how to analyse the results, and how to improve safety where it is low."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Citing Edmondson's scale, defining the three score bands with interpretation thresholds, and requiring intervention recommendations per band produces a tool that drives action rather than just producing scores.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite leadership pipeline prompt",
+    "originalPrompt": "We need to build a leadership pipeline. Help me design a programme to grow our future leaders.",
+    "options": [
+      "Design a 3-tier leadership pipeline programme for a 500-person company. Tier 1: Emerging Leaders (ICs showing potential, 6-month programme, 3 competencies). Tier 2: New Managers (promoted in last 12 months, 6-month programme, transition-to-management focus). Tier 3: Senior Leaders (Director+, 12-month cohort, strategic leadership). For each tier: selection criteria, programme structure (80/20 experiential/formal), key milestones, and graduation criteria. Talent board review process.",
+      "Help me design a leadership pipeline programme for developing our future leaders.",
+      "Create a comprehensive leadership development programme that builds a strong pipeline of future leaders across all levels of the organisation with clear development pathways and assessment criteria."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Three tiers with distinct target populations, an 80/20 learning mix rule, and graduation criteria creates a pipeline architecture that connects selection, development, and promotion decisions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Internship programme prompt",
+    "originalPrompt": "You are designing a 10-week summer internship programme for 20 university students.",
+    "options": [
+      "Design a 10-week summer internship programme for 20 students across 4 departments (Engineering, Sales, Marketing, Finance). Structure: Week 1 orientation, Weeks 2\u20138 department rotations and live project work, Week 9 project presentations, Week 10 feedback and conversion decisions. Include: mentor assignment, weekly check-in cadence, and conversion criteria for graduate offers. Output: programme calendar and assessment criteria.",
+      "Write a plan for our summer internship programme.",
+      "Create a comprehensive internship programme that gives students meaningful work experience and helps us identify the best candidates for graduate positions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A week-by-week structure with four named departments, a mentor cadence, and explicit conversion criteria means the programme delivers talent pipeline value rather than just work experience.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague interview confirmation email",
+    "originalPrompt": "Write an email to confirm the interview with the candidate. Make sure they have all the information.",
+    "options": [
+      "Write an interview confirmation email to a candidate. Include: interview date/time/format (video or in-person address), panel names and titles, interview duration, format (competency-based, case study, or both), what to prepare, and a contact for any questions. Professional, welcoming tone. Max 200 words.",
+      "Write a confirmation email for the candidate's interview with all the details they need.",
+      "Please write a comprehensive interview confirmation email that provides the candidate with all the information they need including all the logistical details, interview format, what to prepare, and everything they need to know to perform at their best."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including panel names, format, duration, and preparation guidance in 200 words means candidates arrive prepared, reducing no-shows and improving assessment quality.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Short job advert intro prompt",
+    "originalPrompt": "You need a tight prompt to write the opening paragraph of a job advertisement.",
+    "options": [
+      "Write a 3-sentence job advert opening for a [Job Title] at [Company]. Sentence 1: compelling hook about the company mission. Sentence 2: what makes this role exciting right now. Sentence 3: who will thrive in it. No clich\u00e9s like 'fast-paced' or 'passionate'.",
+      "Write a job advert intro.",
+      "Please write an engaging and inspiring opening paragraph for our job advertisement that will excite and attract top candidates by telling them about our company, the opportunity, and why this is a great place to work."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing three sentences with distinct purposes and banning specific clich\u00e9s produces an advert opening that differentiates the role from thousands of similar postings.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Talent pipeline review prompt",
+    "originalPrompt": "You want to review the health of your talent pipeline for critical roles at VP level and above.",
+    "options": [
+      "Create a talent pipeline review template for VP+ roles. For each of 5 critical roles: current role holder (name/tenure), internal successors at ready-now and 1-2 year readiness, development actions in progress, external talent being tracked, and succession risk rating (H/M/L based on coverage). Output: pipeline health table. Quarterly review cadence.",
+      "Review our talent pipeline for senior roles.",
+      "Create a comprehensive talent pipeline analysis for all our senior leadership roles that assesses our bench strength and identifies where we have gaps in our succession planning."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five defined columns per role with explicit ready-now vs 1\u20132 year categorisation and a risk rating produces a pipeline table that drives immediate development action.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague compliance training prompt",
+    "originalPrompt": "Create some training content on data protection for our staff. Everyone needs to understand the basics.",
+    "options": [
+      "Write a 10-minute data protection awareness training script for all employees. Cover: what counts as personal data (with 3 examples), the 2 most common data breaches in the workplace (email misdirection, lost device), what employees must do if they suspect a breach (report within 24h to IT security), and one quiz question to test understanding. Conversational tone.",
+      "Please create comprehensive data protection training content for all our staff that covers everything they need to know about GDPR and how to handle personal data correctly in their day-to-day work.",
+      "Write data protection training for employees."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing 10-minute duration, naming two specific breach scenarios, and requiring a quiz question produces training that is focused and testable rather than a GDPR overview lecture.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "360 feedback design prompt",
+    "originalPrompt": "You are implementing a 360-degree feedback process for senior managers.",
+    "options": [
+      "Design a 360-degree feedback questionnaire for senior managers. Competencies: strategic thinking, stakeholder influence, team development, decision-making under ambiguity, and inclusive leadership. For each: 2 behavioural questions (Likert 1\u20135) and 1 open question ('What should this person do more/less of?'). Rater groups: direct reports, peers, skip-level, external stakeholders. Anonymity threshold: min 3 raters per group.",
+      "Create a 360 feedback questionnaire for our senior managers.",
+      "Write a comprehensive 360-degree feedback tool that assesses all aspects of senior leadership performance through the perspectives of all key stakeholder groups."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Five competencies with mixed question types, four rater groups, and an anonymity threshold produces a 360 tool that generates actionable feedback without exposing individual raters.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite mentoring programme prompt",
+    "originalPrompt": "We want to start a mentoring programme. Help me design something that will actually work.",
+    "options": [
+      "Design a 6-month internal mentoring programme for 20 mentee-mentor pairs. Cover: matching criteria (role level gap, cross-functional, opt-in), programme structure (bi-monthly 1h sessions, kickoff workshop, midpoint check-in, closing reflection), conversation guide (3 session themes: career goals, skill development, network building), and success metrics (mentee goal achievement rate, programme NPS). Voluntary participation, no HR monitoring of sessions.",
+      "Help me design a mentoring programme for our organisation.",
+      "Create a comprehensive mentoring programme that pairs employees with more experienced mentors to support career development and knowledge transfer across the organisation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying session frequency, three conversation themes, and a confidentiality commitment (no HR monitoring) produces a programme people actually want to participate in.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Course evaluation survey prompt",
+    "originalPrompt": "You need a tight prompt to generate a post-training survey in under 75 tokens.",
+    "options": [
+      "Write a 5-question post-training survey. Q1: content relevance (Likert 1\u20135), Q2: facilitator effectiveness (Likert 1\u20135), Q3: will you apply this at work? (Y/Maybe/No), Q4: what was most valuable? (open text), Q5: what would you improve? (open text). Max 1 sentence per question.",
+      "Write a training feedback survey.",
+      "Please create a comprehensive post-training evaluation survey that assesses the quality of the content, the facilitator's performance, the relevance of the learning to participants' roles, the likelihood of application, and any suggestions for improvement."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Mixing Likert, categorical, and open questions with a one-sentence cap produces a survey that takes under 3 minutes and yields both quantitative and qualitative improvement data.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague disciplinary process prompt",
+    "originalPrompt": "Write something about our disciplinary process so managers know what to do when there is a problem.",
+    "options": [
+      "Write a manager's guide to the disciplinary process. Cover: informal discussion first (minor issues), formal process stages (verbal warning, first written, final written, dismissal), evidence required at each stage, right to be accompanied, appeal rights, and what records to keep. Format: numbered steps with callout boxes for key rules. Plain English.",
+      "Please write a comprehensive guide for managers explaining how to handle disciplinary issues with employees and what process to follow to ensure we deal with matters fairly and legally.",
+      "Write a disciplinary process guide for managers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Covering both informal and formal routes, specifying the right to accompaniment, and requesting callout boxes for key rules means managers have a reference they can use during a live situation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Remote work policy communication prompt",
+    "originalPrompt": "Your company is finalising its hybrid work policy and needs to communicate it clearly to all staff.",
+    "options": [
+      "Write a staff communication announcing our hybrid work policy update. Cover: the hybrid model (3 days office, 2 days remote), which days are mandatory in-office (Tuesday, Wednesday, Thursday), equipment and home office setup support (\u00a3300 allowance), process to request an exception, and effective date. Positive, clear tone. Max 250 words.",
+      "Write a communication about our new hybrid working policy for all staff.",
+      "Create a comprehensive communication to all employees about our hybrid working arrangements covering all aspects of the policy including the number of office days, which days, the business rationale, the exceptions process, and all the support we are providing to employees."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the specific in-office days, the exact allowance amount, and capping at 250 words means staff get a clear, actionable policy update rather than a lengthy document to read.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite HR audit preparation prompt",
+    "originalPrompt": "We have an HR audit coming up. Help me think through what I need to prepare.",
+    "options": [
+      "Create an HR audit preparation checklist for a UK employment law compliance review. Areas: right-to-work documentation (all employees checked, stored securely), written statements of employment (issued within 1 day of start), pay compliance (NLW, equal pay, gender pay reporting), disciplinary and grievance records, and data protection (employee data retention schedule, DPO details). For each area: document required, where stored, and date last reviewed. Table format.",
+      "Help me prepare for our HR audit by identifying all the things we need to have in order.",
+      "Create a comprehensive HR audit checklist that covers all the areas of employment law and HR practice we need to have documented and compliant for the audit."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming five specific audit areas with exact document and storage requirements produces a checklist an HR team can complete in two hours rather than improvise during the audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight TUPE summary prompt",
+    "originalPrompt": "You need a concise prompt to explain TUPE obligations to a manager whose team is being transferred.",
+    "options": [
+      "Explain TUPE 2006 obligations to a manager whose team of 12 is transferring to a new employer. Cover: what automatically transfers (contracts, terms, and continuity of service), what the outgoing employer must do (measures letter, ELI), employee consultation obligations, and what employees cannot be dismissed for. Plain English. Max 250 words.",
+      "Explain TUPE to a manager.",
+      "Please provide a comprehensive explanation of TUPE regulations for a manager whose team is being transferred, covering all the legal requirements, employee rights, employer obligations, and practical steps involved in a TUPE transfer."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the team size, the four TUPE obligations in order, and a 250-word plain English cap gives the manager exactly what they need without a legal lecture.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague onboarding welcome message",
+    "originalPrompt": "Write a welcome message for new starters. We want them to feel welcome and excited.",
+    "options": [
+      "Write a CEO welcome message for a new starter's first-day email. Include: personal welcome (mention the new hire's name placeholder), why their role matters to company mission (one specific sentence), one practical tip for the first week, an encouragement to ask questions, and a direct link to the buddy programme. Warm, human tone. Max 150 words.",
+      "Please write a really warm and inspiring welcome message for new employees joining our company that will make them feel excited to be part of the team and give them a sense of our culture.",
+      "Write a welcome message for new starters."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Five specific elements in 150 words produces a welcome that feels personal and actionable rather than a generic corporate greeting.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Inclusion audit framework prompt",
+    "originalPrompt": "You want to audit the inclusivity of your people processes to identify where bias may be occurring.",
+    "options": [
+      "Design an inclusion audit framework for key HR processes. Processes: job adverts (language analysis), shortlisting (demographic pass-through rate), promotion decisions (representation at each level), performance ratings (distribution by gender and ethnicity), and pay equity (regression-adjusted gap). For each: data source, analysis method, bias risk indicator, and recommended action if bias detected. Output: audit plan table.",
+      "Help me audit our HR processes for inclusion gaps.",
+      "Create a comprehensive inclusion and diversity audit that reviews all our people processes to identify where bias and inequality might be occurring and what we can do to address it."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five named processes with specific analysis methods and bias risk indicators per process means the audit generates evidence-based recommendations rather than general diversity goals.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick culture values definition",
+    "originalPrompt": "You need a short prompt to generate a definition and behavioural example for one company value.",
+    "options": [
+      "Write a definition and one behavioural example for the company value 'Customer Obsession'. Definition: 2 sentences on what it means for us. Behavioural example: one specific action an employee took that demonstrates this value. Keep total under 100 words.",
+      "Define our company value.",
+      "Please write a comprehensive and detailed explanation of what our 'Customer Obsession' company value means, including its origins, what it looks like in practice across different teams, how it connects to our business strategy, and examples of it being lived out at all levels of the organisation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A two-sentence definition plus one specific behavioural example in under 100 words produces a values card entry that is memorable rather than abstract.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite manager effectiveness survey prompt",
+    "originalPrompt": "We want to measure manager effectiveness. Can you help me write a survey for this?",
+    "options": [
+      "Write a manager effectiveness survey for direct reports to complete anonymously. 8 questions across dimensions: clarity of direction (2 questions), feedback quality (2 questions), psychological safety (2 questions), and growth support (2 questions). Likert scale 1\u20135. Include one open-text question: 'What one thing could your manager do differently to better support you?' Minimum 3 responses before manager sees results.",
+      "Write a survey to measure how effective our managers are.",
+      "Create a comprehensive manager effectiveness survey that assesses all aspects of manager performance from the perspective of their direct reports including communication, feedback, coaching, performance management, and team culture."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Four dimensions with two questions each, one open-text question, and a minimum response threshold balances coverage with the anonymity protection needed for honest feedback.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Employee listening strategy prompt",
+    "originalPrompt": "You need to design a comprehensive employee listening strategy that goes beyond an annual survey.",
+    "options": [
+      "Design a year-round employee listening strategy. Components: annual engagement survey (60 questions, external benchmarked), quarterly pulse (5 questions, eNPS), monthly team retrospectives (manager-led, local action), always-on feedback channel (Slack bot or suggestion tool), exit and stay interviews (structured, HR-conducted), and focus groups (2 per year, hot topics). For each: frequency, owner, action-close loop process, and reporting audience. Calendar view.",
+      "Create an employee listening strategy for our company.",
+      "Design a comprehensive employee listening programme that uses a variety of tools and methods to gather regular feedback from employees and ensure their voices are heard at all levels of the organisation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Six named listening methods with frequency, owner, and action-close loop per method produces a strategy where every piece of feedback has a defined path to action, not just a reporting slide.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Job levelling framework prompt",
+    "originalPrompt": "You need to build a job levelling framework to create consistency in how roles are graded across the company.",
+    "options": [
+      "Design a job levelling framework with 8 levels (Individual Contributor L1\u2013L5 and Manager M1\u2013M3). For each level: scope of impact (self/team/department/company), decision-making authority, experience expectation, and example job titles. Include: levelling criteria table and a one-page guide for managers doing calibrations. Compatible with market salary data.",
+      "Build a job levelling framework for our company.",
+      "Create a comprehensive job levelling system that clearly defines the criteria for each level, helps managers grade roles consistently, and supports our career development and compensation programmes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Eight levels with four defined criteria each, example titles, and a manager calibration guide produces a framework that drives both compensation decisions and career conversations.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite pension communication prompt",
+    "originalPrompt": "Write something to explain our pension scheme to employees. A lot of them don't engage with it.",
+    "options": [
+      "Write a plain-English pension guide for employees under 35 who are not actively engaged with their pension. Cover: how auto-enrolment works, employer match (5% employer, 3% employee), what the money is invested in (default fund), how to increase contributions, and how a \u00a3100/month increase now could affect retirement pot (use a 25-year compound growth example). Engaging, future-focused tone.",
+      "Write a guide to our pension scheme for employees that explains how it works and encourages them to engage with it.",
+      "Create a comprehensive pension education resource that explains all aspects of the company pension scheme including contribution rates, investment options, tax advantages, retirement projections, and how to make changes to contributions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Targeting under-35s specifically, using a concrete compound growth example, and specifying the exact match rates makes the pension communication relevant and motivating for the least-engaged cohort.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise market pricing summary",
+    "originalPrompt": "You need a tight prompt to produce a market pay analysis summary for one role.",
+    "options": [
+      "Summarise market pay data for [Job Title] in [City]. Show: P25, P50, P75, and P90 base salary from [data source], our current midpoint (\u00a3X), and whether we are above/below/at market. One recommendation sentence. Table format. No narrative.",
+      "Give me market pay data for this role.",
+      "Please provide a comprehensive market pay analysis for this role including all available salary data points, comparison to our internal pay ranges, analysis of the talent market, and recommendations for any pay adjustments needed to remain competitive."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Four percentile points, a comparison to internal midpoint, and a one-sentence recommendation in table format gives the HR business partner everything needed for a pay review discussion in minimal tokens.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Flexible benefits platform brief prompt",
+    "originalPrompt": "You are briefing a benefits platform vendor on your requirements for a flexible benefits scheme.",
+    "options": [
+      "Write a flexible benefits platform requirements brief for a 300-person company. Required features: benefit allowance management (\u00a3X per employee per year), choice of 10+ benefit categories (health, wellbeing, financial, lifestyle), P11D reporting, SSO integration with existing HR system, employee mobile app, and real-time utilisation dashboard for HR. Must-have vs nice-to-have classification. Procurement tone.",
+      "Write a brief for a flexible benefits platform vendor.",
+      "Create a comprehensive requirements document for our flexible benefits platform that covers all the functionality we need and all the technical and integration requirements the vendor needs to meet."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Six named features with must-have/nice-to-have classification and specific technical requirements (P11D, SSO) means vendors can confirm fit before a demo rather than wasting everyone's time.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Probation review meeting guide prompt",
+    "originalPrompt": "You need to prepare line managers to run structured probation review meetings.",
+    "options": [
+      "Write a manager guide for conducting a 3-month probation review meeting. Structure: review objectives set at start, assess performance against each (Met/Partially Met/Not Met), discuss one strength and one development area with specific behavioural examples, confirm probation outcome (pass/extend/fail) with clear rationale, and document agreed actions. Include: what to say for each outcome, legal considerations (right to appeal), and HR escalation triggers. 1 page.",
+      "Write a guide for managers running probation reviews.",
+      "Create a comprehensive probation review guide for managers that covers how to prepare for and conduct the review meeting, how to assess performance fairly, how to communicate the outcome, and how to support employees who need additional time."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Scripting what to say for each outcome and flagging the appeal right means managers are legally prepared as well as conversationally equipped.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite HR project update email",
+    "originalPrompt": "Write an update email about our HR transformation project for the team. Keep them in the loop.",
+    "options": [
+      "Write a project update email to the HR team about the HRIS implementation. Cover: progress this month (3 bullet milestones achieved), what is happening next month (2 upcoming milestones), one risk and mitigation, any decisions or input needed from the team, and a thank you to contributors. Max 200 words, engaging tone.",
+      "Write an update email about our HR project for the team.",
+      "Please write a comprehensive and detailed update email about our HR transformation project that covers all the progress we have made, all the upcoming activities, all the risks and issues, and what the team needs to do next."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Three achieved milestones, two upcoming milestones, one risk, and a clear call for input in 200 words keeps the team informed without burying them in status updates.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick HR metric definition",
+    "originalPrompt": "You need a short prompt to get clear definitions for three HR metrics.",
+    "options": [
+      "Define these 3 HR metrics: voluntary attrition rate, time-to-fill, and eNPS. For each: definition, formula (if applicable), and why it matters. One paragraph per metric. Plain English.",
+      "Define our HR metrics.",
+      "Please provide comprehensive and detailed explanations of all our key HR metrics including how they are calculated, what they tell us about the health of our workforce, how they compare to industry benchmarks, and what actions we can take to improve them."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the three metrics and requiring definition, formula, and business relevance per metric produces a usable HR glossary entry in minimal output.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite internal mobility policy prompt",
+    "originalPrompt": "Write a policy on internal mobility. We want employees to be able to move around the company.",
+    "options": [
+      "Draft an internal mobility policy for a 400-person company. Cover: eligibility to apply for internal roles (minimum 12 months in current role, manager notification required), application process (via internal job board, priority over external candidates), transfer package (no change to terms unless promotion, no re-probation), and what happens if the application is unsuccessful (feedback within 5 days, one appeal right). Encouraging, transparent tone.",
+      "Write an internal mobility policy that makes it easy for employees to move between teams and roles.",
+      "Create a comprehensive internal mobility policy that covers all the rules and processes for employees who want to apply for other roles within the company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 12-month tenure requirement, a priority-over-external policy, and a defined feedback timeline gives employees clarity on the process and encourages them to use it.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite EVP development prompt",
+    "originalPrompt": "Help me define our employer value proposition. We need to be able to tell candidates why they should join us.",
+    "options": [
+      "Develop an Employer Value Proposition (EVP) for a 300-person B2B SaaS company. Framework: (1) research inputs (exit interview themes, engagement survey top drivers, candidate feedback), (2) 5 EVP pillars (mission impact, career growth, flexibility, team quality, reward), (3) differentiated proof points per pillar (specific, not generic), (4) one-sentence EVP statement, (5) activation plan (careers site, JDs, interview conversations). Output: EVP framework and statement.",
+      "Help me write our employer value proposition that explains why people should work here.",
+      "Create a comprehensive employer value proposition that clearly articulates what makes our company a great place to work and differentiates us from our competitors in the talent market."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A five-stage framework ending in a one-sentence EVP statement and an activation plan means the EVP is both strategically grounded and operationally deployable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Coaching culture programme prompt",
+    "originalPrompt": "Your organisation wants to shift from a directive management style to a coaching culture.",
+    "options": [
+      "Design a 12-month coaching culture programme for 50 people managers. Phased approach: Phase 1 (Months 1\u20133): coaching skills workshop (GROW model, active listening, 16 hours), Phase 2 (Months 4\u20139): peer coaching triads (bi-monthly, observed practice), Phase 3 (Months 10\u201312): measure and embed (360 feedback on coaching behaviours, integration into PDR process). Senior leader sponsorship required. Success metric: 30% improvement in 'growth and development' pulse question.",
+      "Design a coaching culture programme for our managers.",
+      "Create a comprehensive programme to develop coaching skills across our management population that will help them shift from telling to asking and create a more empowering and developmental culture."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A three-phase structure with hours, methods, and a specific success metric (30% pulse improvement) means the programme has clear investment, activity, and outcome expectations.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite new manager transition prompt",
+    "originalPrompt": "Write content for new managers who have just been promoted from individual contributor. Help them with the transition.",
+    "options": [
+      "Write a first-30-days guide for a newly promoted manager transitioning from individual contributor. Week 1: listen and observe (do not change anything), Week 2: 1:1s with each team member (questions: workload, blockers, what to keep/change), Week 3: share initial priorities with team, Week 4: first team meeting as facilitator (not presenter). Common pitfalls sidebar: still doing IC work, over-supervising, not asking for help. Practical, direct tone.",
+      "Write advice for our new managers who have been promoted from individual contributor roles.",
+      "Create a comprehensive guide for employees who have been promoted to management that covers all the mindset shifts and practical changes they need to make to be successful in their new role."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A week-by-week structure with a specific focus per week and a common pitfalls sidebar produces a guide that prevents the most damaging new-manager mistakes rather than describing what good looks like.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite HR strategy document prompt",
+    "originalPrompt": "Write our HR strategy for next year. We need something to present to the leadership team.",
+    "options": [
+      "Draft a 3-year HR strategy document for a 400-person company targeting 2x growth. Structure: context (talent market headwinds, growth implications for headcount), strategic pillars (attract: EVP and sourcing; develop: skills and leadership pipeline; retain: culture and reward; operate: HRIS and HR service model), OKRs per pillar (2 objectives, 3 KRs each), investment summary (headcount and budget), and quick wins in Year 1. Exec presentation format, 10 slides.",
+      "Write our HR strategy for leadership.",
+      "Create a comprehensive HR strategy that covers all aspects of people management and development for the next 3 years and demonstrates how the HR function will support the company's growth ambitions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Four named strategic pillars with OKRs, an investment summary, and a 10-slide format constraint means the strategy is boardroom-ready and finance-approved before presentation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague benefits FAQ prompt",
+    "originalPrompt": "Write a FAQ about our employee benefits so people know what they are entitled to.",
+    "options": [
+      "Write a benefits FAQ for employees covering the 8 most common questions. Include: how to enrol, who is eligible for health insurance (employee only vs family), pension opt-out process, when salary review happens, how to claim expenses, gym benefit activation, parental leave request process, and who to contact for benefits queries. Q&A format, plain English.",
+      "Please write a comprehensive and helpful FAQ document about all our employee benefits that answers all the questions employees might have about their entitlements.",
+      "Write a benefits FAQ."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing eight specific questions based on real employee queries means the FAQ reduces HR inbox volume by addressing the actual pain points rather than what HR thinks employees ask.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Change management comms prompt",
+    "originalPrompt": "You need to prepare employees for a significant change to the performance management process.",
+    "options": [
+      "Write an all-staff communication introducing a change from annual performance reviews to continuous feedback and quarterly check-ins. Cover: why the process is changing (research on annual reviews), what the new process looks like (quarterly manager 1:1 with structured agenda, peer feedback option), what employees need to do now (book Q1 1:1 with manager), and where to get support (L&D resource hub). Tone: confident, change-positive. Max 300 words.",
+      "Communicate the change to our performance management process to all employees.",
+      "Write a comprehensive communication about our new performance management approach that explains all the changes, the reasons behind them, how the new process works, what training is available, and what employees and managers need to do."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Giving the evidence basis for the change, the specific new mechanics, and one clear action ('book your Q1 1:1') with a support signpost produces a communication that builds buy-in rather than just announcing a change.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise sourcing channel comparison",
+    "originalPrompt": "You need a tight prompt to compare recruiting channels for a specific role.",
+    "options": [
+      "Compare 4 sourcing channels for a Senior Data Engineer role: LinkedIn Recruiter, specialist job board (e.g. Otta), employee referral programme, and direct approach via GitHub. For each: typical cost-per-hire, quality of candidates, time-to-first-response, and fit for this role (H/M/L). Table format. No narrative.",
+      "Compare our recruiting channels for this role.",
+      "Please provide a comprehensive analysis of all the different sourcing channels available for recruiting a Senior Data Engineer, including their costs, effectiveness, quality of candidates produced, time requirements, and fit with our employer brand."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Four channels with four defined columns and a table-only constraint produces a sourcing decision matrix in a fraction of the tokens a narrative analysis would require.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "HR operating model design prompt",
+    "originalPrompt": "You are redesigning the HR operating model to support a company scaling from 200 to 600 employees over 3 years.",
+    "options": [
+      "Design an HR operating model for scaling from 200 to 600 employees over 3 years. Components: HRBP model (ratio, responsibilities at each headcount milestone), HR shared services (centralised admin, tier-0 self-service, tier-1 HR ops), CoE structure (Talent Acquisition, L&D, Reward, People Analytics), HRIS infrastructure requirements, and HR headcount plan (current 4 FTE to future X FTE by year). Output: operating model diagram in text + implementation roadmap.",
+      "Help me design our HR operating model for our scale-up.",
+      "Create a comprehensive HR operating model that covers all aspects of how the HR function should be structured and resourced to support our organisation as we grow significantly over the next few years."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining three model components (HRBP, shared services, CoE), headcount milestones, and requesting a roadmap produces an operating model that the board can fund and the HR team can build against.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Learning & Development",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Induction schedule design prompt",
+    "originalPrompt": "You need to design the first day schedule for a new employee joining a remote-first company.",
+    "options": [
+      "Design a first-day schedule for a remote new joiner. Agenda: 9am IT setup call with IT (45 min), 10am 1:1 with manager (30 min, welcome and role overview), 11am virtual team intro (30 min), 12pm lunch break, 1pm company overview session (L&D recorded video, 1h), 2:30pm buddy introduction call (30 min), 3pm self-directed reading (handbook, tools, org chart). Include: prework manager must complete before day 1.",
+      "Write a first day plan for a new remote employee.",
+      "Create a comprehensive first day onboarding schedule for our new remote employee that ensures they feel welcomed and informed and covers all the introductions, systems setup, company orientation, and other activities they need to complete."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A timed agenda with specific session formats and a pre-work callout for the manager means the new joiner's first day runs smoothly without last-minute scrambling.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "People Operations",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague return to work prompt",
+    "originalPrompt": "Write a return to work plan for an employee coming back from long-term sick leave. Make sure it's supportive.",
+    "options": [
+      "Write a phased return-to-work plan for an employee returning after 3 months' long-term sickness absence. Cover: phased hours schedule (Week 1: 50%, Week 2: 75%, Week 3: full time), adjusted duties during phased return, weekly check-in with manager, trigger for referral to occupational health, and employee's right to request adjustments under the Equality Act. Supportive, non-judgmental tone.",
+      "Please write a comprehensive and supportive return to work plan for our employee who has been on long-term sick leave that covers how we will support them back into the workplace gradually and considerately.",
+      "Write a return to work plan."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A three-week phased hours schedule with specific percentages and an Equality Act reference means the plan is both practically workable and legally compliant.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Culture & Engagement",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise values storybook entry",
+    "originalPrompt": "You need a tight prompt to create a values storybook entry based on a real employee example.",
+    "options": [
+      "Write a values storybook entry for our internal comms. Format: employee name and role (placeholder), situation they faced (1 sentence), action they took that demonstrates [Value Name], and outcome for the business or customer (1 sentence). Total: 4 sentences, engaging and authentic tone.",
+      "Write a values story.",
+      "Please write a comprehensive and inspiring values story about an employee who demonstrated one of our company values in an exceptional way, including the background context, the specific actions they took, the challenges they overcame, and the positive impact their actions had on the company and its customers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A four-sentence structure (role, situation, action, outcome) produces a storybook entry that is specific and memorable rather than a vague 'great job' anecdote.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "Compensation & Benefits",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Benefits enrolment reminder prompt",
+    "originalPrompt": "You need to remind employees to enrol in the annual benefits window before it closes.",
+    "options": [
+      "Write a benefits enrolment reminder email for employees. Cover: enrolment deadline (Friday 5pm), what happens if they miss it (defaulting to last year's choices), link to the benefits portal, top 3 benefits most employees change at this time (health cover level, pension contribution, dental add-on), and contact for help. Urgent but friendly tone. Max 150 words.",
+      "Write a reminder email about benefits enrolment.",
+      "Please write a comprehensive and informative email reminding employees that the annual benefits enrolment window is open and encouraging them to review all their benefits choices and make any changes they want before the deadline closes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A specific deadline, a consequence for inaction (default to last year), and three highlighted changes reduces the number of employees who miss the window or need to call HR.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "people_culture",
+    "subFunction": "HR & Recruiting",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Global talent mobility strategy prompt",
+    "originalPrompt": "Your company operates in 8 countries and wants to build a global internal mobility programme.",
+    "options": [
+      "Design a global internal mobility strategy for a company operating in the UK, US, Germany, Singapore, Australia, Canada, France, and India. Components: mobility pathways (developmental rotations vs permanent transfers vs project-based), policy framework (compensation approach, immigration support, relocation package tiers), tax and social security coordination (shadow payroll model), governance (HRBP network, mobility team), and employee experience (pre-move support, buddy network, repatriation plan). 2-year implementation roadmap.",
+      "Design a global mobility strategy for our international operations.",
+      "Create a comprehensive global talent mobility programme that allows employees to work across our international locations and covers all the policy, legal, tax, and logistical requirements."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming all eight countries, five programme components with specific sub-elements (shadow payroll, buddy network, repatriation), and a 2-year roadmap means the strategy is scoped and executable rather than aspirational.",
+    "maxTokens": null
+  }
+]

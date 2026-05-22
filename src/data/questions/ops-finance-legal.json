@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague SOP generation prompt",
+    "originalPrompt": "Can you please help me write a standard operating procedure? I need one for my team and it should be good and cover everything we do.",
+    "options": [
+      "Write a standard operating procedure for our 6-step invoice approval process. Include: purpose, scope, step-by-step instructions with responsible role per step, and exception-handling rules. Format as numbered sections.",
+      "Please write a very detailed and comprehensive standard operating procedure document for our team that covers all the things we do every day in great detail so everyone knows what to do.",
+      "Write an SOP document."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A good SOP prompt names the specific process, lists the sections you need, and specifies the output format.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Choose best vendor comparison prompt",
+    "originalPrompt": "You need to compare three logistics vendors for a new warehouse contract. You have pricing, delivery SLA, and insurance coverage data for each.",
+    "options": [
+      "Compare these three logistics vendors for me please.",
+      "Create a comparison table for three logistics vendors with columns: Vendor Name, Monthly Cost, Delivery SLA (days), Insurance Coverage (\u00a3), and a final Recommendation row. Highlight the best value option.",
+      "Tell me which vendor is best and give me all the details about each one including everything I need to know to make my decision about which logistics vendor to choose."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying exact column headers and a recommendation row means the AI produces a table you can use immediately without editing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Improve process documentation prompt",
+    "originalPrompt": "Write process documentation for how we handle customer complaints. Make it detailed and useful for staff.",
+    "options": [
+      "Document our customer complaint handling process as a flowchart in text form. Cover: intake (phone/email/chat), triage by severity (P1\u2013P3), resolution steps per tier, escalation path, and closure criteria. Target audience: frontline support staff.",
+      "Write very detailed and comprehensive process documentation for our customer complaint handling process that will be useful for our staff members to understand what they need to do when they receive a complaint from a customer.",
+      "Create a customer complaint process document with all the steps."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining the audience, coverage areas, and output format (flowchart in text) produces documentation that is immediately usable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise workflow automation prompt",
+    "originalPrompt": "You want to ask an AI to help design a Zapier automation for routing support tickets.",
+    "options": [
+      "I need you to help me think through and design a Zapier workflow automation solution for our support ticket routing system. Please consider all the different trigger types we might use and all the possible action steps and filters we could implement, and walk me through every consideration in great detail.",
+      "Design a Zapier automation: Trigger = new Zendesk ticket; Filter = tag contains 'billing'; Action = assign to Billing team queue and send Slack alert to #billing-ops. List each step with the Zapier app, event, and field mappings.",
+      "Help with Zapier for tickets."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the exact apps (Zendesk, Zapier, Slack), trigger condition, and required output fields means the response is directly actionable.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Operations metrics dashboard prompt",
+    "originalPrompt": "You are setting up a weekly operations metrics review. You want AI to help structure a dashboard summary for leadership.",
+    "options": [
+      "Write a weekly operations dashboard summary template for leadership. Sections: (1) 3 key metrics vs target (on-time delivery, cost per unit, inventory turns), (2) top 2 risks with RAG status, (3) recommended actions. Max 1 page.",
+      "Can you write me a nice-looking operations dashboard summary? I want it to be good for our leadership team and cover the important metrics we track every week in our operations department.",
+      "Summarise our operations performance this week including all the KPIs and metrics we track and make it suitable for leadership to read and understand what is happening in the business."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Listing exact sections, naming the three specific KPIs, and constraining length produces a reusable template rather than a generic draft.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite vague automation analysis prompt",
+    "originalPrompt": "Look at our processes and tell me which ones could be automated. I want to know what we should automate first.",
+    "options": [
+      "Review the following 5 business processes [list them] and score each on: automation feasibility (1\u20135), estimated hours saved per week, and implementation complexity (Low/Med/High). Output a prioritised table ranked by ROI.",
+      "Tell me which of our business processes could be automated and which ones should be the highest priority for automation based on the potential return on investment and other factors you think are relevant.",
+      "Analyse our processes for automation opportunities."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the actual process list and defining scoring criteria transforms a vague request into an actionable prioritisation exercise.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Efficient SOP section prompt",
+    "originalPrompt": "You need a short prompt to generate the 'Purpose' section of an SOP for the purchasing approval process.",
+    "options": [
+      "I would really appreciate it if you could please write the Purpose section of a Standard Operating Procedure document for our purchasing approval process, explaining what the process is for and why it exists and what it is meant to achieve for our organisation.",
+      "Write the Purpose section for an SOP on purchasing approval. 2\u20133 sentences covering: what the process governs, why it exists (financial control), and who it applies to (all staff submitting purchase requests over \u00a3500).",
+      "Write purpose section for purchasing SOP."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the target length, the three points to cover, and the scope threshold produces a ready-to-paste section with no back-and-forth.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Supply chain risk mapping prompt",
+    "originalPrompt": "You need to map supply chain risks for a new product launch with a 12-week timeline, single-source components, and three contract manufacturers.",
+    "options": [
+      "Map supply chain risks for a 12-week product launch with single-source components across 3 contract manufacturers. Output: risk register table with columns Risk Event, Likelihood (H/M/L), Impact (H/M/L), Risk Owner, and Mitigation Action. Group by category: supplier, logistics, quality.",
+      "Tell me all the supply chain risks we should be thinking about for our new product launch given we have a 12-week timeline and some single-source components and three manufacturers.",
+      "Create a comprehensive and exhaustive analysis of all possible supply chain risks associated with our upcoming product launch, including supplier risks, logistics risks, quality control risks, and any other risks you can think of across our three contract manufacturers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining exact table columns and risk groupings means the output is a structured register ready for a project planning tool, not a narrative essay.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague vendor onboarding prompt",
+    "originalPrompt": "Write something for onboarding new vendors. We need to make sure they know what to do.",
+    "options": [
+      "Write a vendor onboarding checklist for new suppliers. Include sections: required documents (insurance, W-9, bank details), system access setup, compliance acknowledgements, and first-order process steps. Format as a numbered checklist.",
+      "Create a really thorough and comprehensive vendor onboarding document that covers everything a new vendor needs to know about working with us including all the documentation, systems, processes, and requirements they will need to follow.",
+      "Write a vendor onboarding guide."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the four specific sections and requesting checklist format means the output requires no restructuring before use.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Process improvement analysis prompt",
+    "originalPrompt": "Your team has mapped a 14-step order fulfilment process. You want AI to identify inefficiencies.",
+    "options": [
+      "Here is our 14-step order fulfilment process [steps listed]. Identify steps that are: (a) redundant or duplicated, (b) manual and automatable, (c) bottlenecks with wait time >24h. Output three labelled lists, max 2 bullet points each.",
+      "Analyse our order fulfilment process for inefficiencies and tell me where we can improve things and make the process faster and more efficient for our team and our customers.",
+      "Look at these 14 steps in our process and give me a detailed and thorough analysis of all the inefficiencies, redundancies, bottlenecks, automation opportunities, and improvement recommendations across every step."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Categorising findings into three labelled lists with a cap per list forces the AI to prioritise rather than pad with every minor observation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Lean process review summary",
+    "originalPrompt": "You need to ask AI to summarise findings from a lean process review workshop in under 75 tokens.",
+    "options": [
+      "Summarise the lean process review workshop findings.",
+      "Summarise the lean review workshop in 3 bullet points: (1) top waste identified with process name, (2) agreed quick-win action with owner, (3) next review date. Be specific, no filler.",
+      "Please provide me with a comprehensive summary of all the key findings, outcomes, decisions, and action items that came out of our lean process review workshop, covering all the wastes identified and all the improvement actions agreed upon by the team."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Three structured bullet points with defined content per bullet produces a dense, scannable summary that fits token and time budgets.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite facilities audit checklist prompt",
+    "originalPrompt": "I need a checklist for our facilities audit. Please help me make a good one that we can use.",
+    "options": [
+      "Generate a facilities safety audit checklist for a 200-person office. Sections: fire safety (extinguishers, exits, drills), electrical compliance, ergonomics (workstation setup), and housekeeping. Each item as a Y/N checkbox with a Notes column.",
+      "Create a really comprehensive and detailed facilities audit checklist that covers absolutely everything we need to check in our office building including all safety, compliance, and maintenance items.",
+      "Make a facilities audit checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying site size, four named sections, and a Y/N + Notes format means the checklist is audit-ready without manual reformatting.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Capacity planning model prompt",
+    "originalPrompt": "You need to model staffing capacity for a call centre that handles 3,000 calls per day with an AHT of 6 minutes.",
+    "options": [
+      "Help me work out staffing for our call centre.",
+      "Model call centre staffing for 3,000 calls/day, 6-min AHT, 8-hour shifts, 85% occupancy target, 10% shrinkage. Show: required agents, agents per shift, and headcount with/without shrinkage. Use an Erlang-C assumption and show calculations.",
+      "Calculate the number of staff needed for our call centre that handles around 3,000 calls per day with an average handle time of about 6 minutes, taking into account shift patterns and occupancy targets and any other relevant factors."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing all four input parameters plus the method (Erlang-C) and output format means the AI can produce a complete, reproducible calculation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick onboarding task list",
+    "originalPrompt": "You need a concise prompt to generate the first week's tasks for a new operations coordinator.",
+    "options": [
+      "List the first-week tasks for a new operations coordinator. Format: Day 1\u20135 with 2\u20133 bullet tasks per day. Focus on system access, team introductions, process shadowing, and one independent task by Friday.",
+      "Tell me what a new operations coordinator should do in their first week on the job.",
+      "Please create a very detailed and comprehensive day-by-day onboarding schedule for a new operations coordinator joining our team that covers everything they need to learn and do and all the people they need to meet in their first week."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A Day 1\u20135 structure with a cap of 2\u20133 bullets per day keeps the output scannable and avoids an overwhelming wall of tasks.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite outsourcing business case prompt",
+    "originalPrompt": "Write a business case for outsourcing our logistics function. Include all the important stuff.",
+    "options": [
+      "Draft a business case for outsourcing logistics operations. Structure: (1) Executive Summary (2 sentences), (2) Current State Costs (\u00a3X internal), (3) Outsourced Cost Comparison (3 vendor quotes), (4) Qualitative Benefits and Risks, (5) Recommendation with payback period. Tone: board-ready, factual.",
+      "Write a full and comprehensive business case document for the proposed outsourcing of our logistics function that covers all the financial analysis, qualitative benefits, risks, and strategic considerations relevant to this major decision.",
+      "Create a business case for logistics outsourcing."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Numbered sections with defined content per section and a specified tone means you get a board-ready structure, not a first draft that needs full restructuring.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "KPI reporting email prompt",
+    "originalPrompt": "You need to email your operations team weekly KPI results. You want AI to draft the message.",
+    "options": [
+      "Draft a weekly KPI results email to the operations team. Include: 3 metrics (on-time delivery 94%, defect rate 1.2%, cost per unit \u00a34.30), comparison to last week, one shout-out for strong performance, and one improvement focus for next week. Friendly but professional tone.",
+      "Write a weekly update email for the operations team about our KPIs.",
+      "Write a very detailed and comprehensive weekly KPI email for our operations team covering all our performance metrics and how they compare to last week and last month and our targets."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Inserting the actual metric values and requesting a shout-out plus one improvement focus gives the email a human, actionable feel without being generic.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Reorder point calculation prompt",
+    "originalPrompt": "You need a short prompt to calculate the reorder point for an inventory item.",
+    "options": [
+      "Calculate the reorder point for an item with daily demand of 50 units, lead time of 7 days, and safety stock of 100 units. Show the formula and the result.",
+      "Help me calculate reorder point.",
+      "Please provide a comprehensive explanation of reorder point calculation methodology and help me calculate the reorder point for our inventory item taking into account all relevant factors including demand variability, lead time variability, service level targets, and safety stock requirements."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing all three input variables and asking for formula plus result means the output is both a learning resource and an immediately usable calculation.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite OKR setting prompt",
+    "originalPrompt": "Help me write OKRs for our operations team for next quarter. They should be ambitious but achievable.",
+    "options": [
+      "Write 3 OKRs for an operations team for Q3. For each OKR: one Objective (aspirational, one sentence) and 3 Key Results (measurable, with specific numeric target and baseline). Focus areas: cost reduction, process quality, and team capacity. SMART criteria.",
+      "Help me write some OKRs for our operations team for next quarter that are ambitious and will motivate the team to achieve great things.",
+      "Create OKRs for the operations team covering their main performance areas."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Fixing three OKRs, specifying the structure (one Objective + 3 KRs), naming the focus areas, and requiring baselines plus targets produces OKRs that pass a SMART check.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Make-or-buy analysis prompt",
+    "originalPrompt": "You need to decide whether to build an in-house data analytics team or outsource to a consultancy. You have cost, speed, and quality data.",
+    "options": [
+      "Conduct a make-or-buy analysis for an in-house data analytics function vs outsourcing. Evaluate on: 5-year total cost (include hiring, benefits, tools for build; retainer + project fees for buy), time to capability (months), quality control, and IP/data security. Output: scored comparison table + one-paragraph recommendation.",
+      "Help me decide whether to build or outsource our data analytics team.",
+      "Write a thorough make-or-buy analysis for our data analytics function that covers all the financial and strategic considerations we need to weigh up when deciding whether to build an internal team or work with external consultants."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining the four evaluation dimensions with specific cost components and requesting a scored table plus a recommendation paragraph gives decision-makers everything they need.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight supplier scorecard prompt",
+    "originalPrompt": "You need a concise prompt to generate a quarterly supplier scorecard in under 100 tokens.",
+    "options": [
+      "Generate a quarterly supplier scorecard template. Rows: 5 performance criteria (quality, on-time delivery, price adherence, responsiveness, sustainability). Columns: Criterion, Weight (%), Score (1\u20135), Weighted Score. Include a total row. No explanatory text.",
+      "Create a supplier scorecard.",
+      "Please create a comprehensive quarterly supplier performance scorecard that covers all the important criteria we use to evaluate our suppliers and includes detailed descriptions of each criterion, how to score them, and guidance on how to interpret the overall results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming all five criteria, specifying four columns with data types, and banning explanatory text produces a table the procurement team can populate immediately.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague meeting minutes prompt",
+    "originalPrompt": "Can you write up the minutes from our operations meeting? We discussed a lot of things.",
+    "options": [
+      "Write formal meeting minutes from these notes [paste notes]. Format: Date/Attendees, then for each agenda item: discussion summary (2 sentences max), decision made (yes/no), and action items (owner + due date). Omit small talk.",
+      "Please write up comprehensive and detailed minutes from our operations meeting that capture everything that was discussed and decided and all the action items that were agreed.",
+      "Write meeting minutes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining the exact structure per agenda item (2-sentence summary, decision flag, action with owner and date) produces minutes that are directly usable for follow-up.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Shift handover report prompt",
+    "originalPrompt": "You manage a manufacturing shift and need to prompt AI to help create a shift handover report template.",
+    "options": [
+      "Create a shift handover report template for a manufacturing environment. Sections: production output vs target, equipment status (any downtime/issues), quality incidents (scrap rate, NCRs), safety events (near misses), open actions from previous shift, and priorities for incoming shift. Each section: 3\u20135 bullet-point fields.",
+      "Write a shift handover template for our factory.",
+      "Create a comprehensive and detailed shift handover report template that covers all the important information the outgoing shift needs to communicate to the incoming shift including all production metrics, equipment status, quality issues, safety events, and any other relevant information."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming six sections with specified field types (bullet-point fields vs free text) means the template structures information consistently across every handover.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite RFP evaluation framework prompt",
+    "originalPrompt": "We got responses to our RFP and need to evaluate them. Can you help me build a way to compare them fairly?",
+    "options": [
+      "Build an RFP evaluation scorecard for [service category] with 5 weighted criteria: technical capability (30%), price (25%), implementation plan (20%), references and experience (15%), and commercial terms (10%). Score each vendor 1\u20135 per criterion. Output: weighted scoring matrix with a total score row.",
+      "Help me create a fair and objective way to evaluate all the RFP responses we received from vendors so we can identify the best option for our business.",
+      "Create an RFP evaluation framework."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining five criteria with exact weights that sum to 100% and a 1\u20135 scale makes the evaluation defensible and consistent across evaluators.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Process owner accountability prompt",
+    "originalPrompt": "You need a short prompt to assign accountability for a process using a RACI format.",
+    "options": [
+      "Create a RACI matrix for our [process name] process. Roles: Process Owner, Operations Manager, Finance, IT, and Compliance. Activities: initiate, approve, execute, monitor, and report. One R per row. Table format.",
+      "Write a RACI chart.",
+      "Please help me create a very detailed RACI matrix for our business process that clearly defines the Responsible, Accountable, Consulted, and Informed parties for every single activity and decision point in the process across all of our relevant teams and departments."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing the exact roles and activities with the one-R-per-row constraint and requesting a table produces a RACI that is usable and follows the methodology correctly.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague budget variance prompt",
+    "originalPrompt": "Explain the budget variances in my report. We are over on some things and under on others.",
+    "options": [
+      "Analyse these budget variances for Q3: [paste table]. For each line item that is >5% off budget, write one sentence explaining the likely cause and one sentence on the corrective action. Format as a two-column table.",
+      "Please help me explain all the budget variances in my quarterly financial report in a way that will be clear and understandable for people who are not accountants, covering all the over-budget and under-budget items.",
+      "Explain my budget variances."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the data, setting a materiality threshold (>5%), and specifying a two-column output means the analysis is ready to paste into a report.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best cash flow summary prompt",
+    "originalPrompt": "You need to prepare a one-page cash flow summary for a monthly CFO review. You have 13-week rolling forecast data.",
+    "options": [
+      "Write a cash flow narrative summary for CFO review. Use this 13-week rolling forecast data [data]. Structure: opening cash position, top 3 inflow drivers this month, top 3 outflow drivers, closing position vs prior month, and one risk flag. Max 200 words.",
+      "Summarise our cash flow for the CFO please. Make it clear and professional.",
+      "Write a comprehensive and detailed narrative explanation of our 13-week rolling cash flow forecast including all inflows and outflows and movements and a full comparison against our prior period and budget."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A defined structure with specific elements (top 3 inflows/outflows, risk flag) and a word count cap produces a summary the CFO can read in 90 seconds.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite financial model explanation prompt",
+    "originalPrompt": "Explain our three-statement financial model to someone who doesn't understand finance. Make it easy to understand.",
+    "options": [
+      "Explain how a three-statement financial model works to a non-finance business owner. Use an analogy in the first paragraph. Then describe each statement in 2 sentences: what it shows and how it links to the other two. Avoid accounting jargon.",
+      "Please write a really clear and simple explanation of what a three-statement financial model is and how it works for someone who has no financial background, making sure to explain all the accounting terms in plain English.",
+      "Explain a three-statement model simply."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requesting an analogy, setting a 2-sentence limit per statement, and banning jargon gives the AI clear guardrails that produce a genuinely accessible explanation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise board report finance section",
+    "originalPrompt": "You need to write a prompt that generates the finance section of a board report in under 100 tokens.",
+    "options": [
+      "Write the finance section of our board report.",
+      "Write the Finance section for a board report. Cover: (1) Revenue vs budget (\u00a3X actual, \u00a3Y budget, Z% variance), (2) EBITDA margin (actual vs prior year), (3) one forward-looking risk. Max 150 words, formal tone, no bullet lists.",
+      "Please write a very comprehensive and detailed finance section for our upcoming board report that covers all of our key financial metrics and performance indicators including revenue, costs, margins, cash position, forecasts, and any financial risks or opportunities we are facing."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Defining the three specific topics, inserting placeholder data markers, and setting format rules (no bullets, 150-word cap) means the response integrates cleanly into a board pack.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Expense policy drafting prompt",
+    "originalPrompt": "You need to draft an updated corporate expense policy covering travel, meals, and entertainment.",
+    "options": [
+      "Write a corporate expense policy for travel, meals, and entertainment. For each category include: per-diem rates (\u00a3X/day), approval thresholds, prohibited expenses, and receipt requirements. Format as numbered policy clauses. Tone: clear, directive, no passive voice.",
+      "Help me draft a corporate expense policy that is clear and easy for employees to understand covering the main expense categories our employees need to claim.",
+      "Draft a comprehensive and thorough corporate expense policy document covering all types of business expenses our employees might incur including travel, accommodation, meals, entertainment, equipment, and any other relevant categories."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the four required elements per category, specifying numbered policy clauses, and setting a tone directive produces policy language ready for legal review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite scenario modelling prompt",
+    "originalPrompt": "I need to model different scenarios for our revenue forecast. Can you help me build something for this?",
+    "options": [
+      "Build a three-scenario revenue model (Base/Bull/Bear) for FY2025. Inputs: current ARR \u00a35M, monthly churn rate, new logo win rate, and average contract value. For each scenario, vary churn \u00b12% and win rate \u00b110%. Output: table with 12-month ending ARR per scenario.",
+      "Help me create a scenario model for our revenue forecast that looks at a few different scenarios depending on how things go with our sales and churn and other factors that affect our revenue.",
+      "Build a revenue scenario model with base case, optimistic case, and pessimistic case showing how our revenue could change under different assumptions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the four specific inputs, defining the variance ranges, and specifying the output table format means the model is parameterised and immediately usable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick P&L explanation prompt",
+    "originalPrompt": "You need a short prompt to get a plain-English explanation of a P&L statement.",
+    "options": [
+      "Explain a P&L statement in plain English, no jargon. Cover: revenue, gross profit, operating expenses, and net profit. One sentence per term. Total response under 100 words.",
+      "Explain P&L.",
+      "Please write me a detailed and thorough explanation of what a Profit and Loss statement is, how it works, what each line item means, how to read it, and how it relates to other financial statements like the balance sheet and cash flow statement."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing the four terms, setting one sentence per term, and capping at 100 words produces a response usable as a training snippet without editing.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Invoice discrepancy email prompt",
+    "originalPrompt": "You received an invoice with an amount \u00a3500 higher than the PO. You need to email the vendor.",
+    "options": [
+      "Write an email to a vendor about an invoice.",
+      "Draft a professional email to [Vendor] flagging invoice #[XXXX] is \u00a3500 over PO #[YYYY]. State: the PO amount, invoice amount, and request a corrected invoice or itemised explanation within 5 business days. Tone: firm, professional, no apology.",
+      "Write a really professional and politely worded email to our vendor explaining that we have received their invoice and noticed a discrepancy between the invoice amount and the purchase order amount and asking them to look into this and get back to us when they can."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Including placeholders for invoice number, PO number, the exact \u00a3500 difference, and a 5-day deadline makes the email immediately actionable for any invoice dispute.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Fix vague financial due diligence prompt",
+    "originalPrompt": "I need to do financial due diligence on a potential acquisition target. Help me with this.",
+    "options": [
+      "Generate a financial due diligence checklist for acquiring a \u00a320M revenue SaaS company. Sections: (1) Revenue quality (ARR, churn, top-10 customer concentration), (2) Cost structure (COGS, R&D, S&M ratios), (3) Balance sheet (debt, deferred revenue, working capital), (4) Red flags. Max 5 bullets per section.",
+      "Create a financial due diligence checklist for our acquisition target that covers all the important financial areas we need to review and assess.",
+      "Help me put together a very comprehensive financial due diligence checklist that covers every aspect of financial analysis we should undertake when evaluating a potential acquisition including all the financial statements, ratios, metrics, and qualitative factors we need to consider."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the company type, revenue size, four named sections with specific metrics, and a 5-bullet cap produces a focused checklist rather than a generic template.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Treasury policy prompt",
+    "originalPrompt": "You are drafting a treasury management policy for a company with \u00a350M in cash reserves and operations in 5 currencies.",
+    "options": [
+      "Draft a treasury management policy for a company with \u00a350M cash reserves and FX exposure in USD, EUR, AUD, SGD, and GBP. Sections: investment mandate (approved instruments, credit ratings), liquidity ratio target, FX hedging policy (threshold for forward contracts), and bank counterparty limits. Formal regulatory tone.",
+      "Write a treasury policy for our company that covers how we manage our cash and foreign exchange exposure.",
+      "Create a comprehensive treasury management policy covering all aspects of how we manage our cash, investments, foreign exchange, banking relationships, and liquidity in a way that protects the company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Listing all five currencies and naming the four required policy sections with specific content per section (e.g. credit ratings, FX threshold) produces a draft that a CFO can mark up, not rewrite from scratch.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight cost reduction options summary",
+    "originalPrompt": "You need to prompt AI to produce a cost reduction options summary for a business unit in under 100 tokens.",
+    "options": [
+      "List 5 cost reduction options for a mid-size operations team. For each: option name, estimated saving (\u00a3 or %), implementation effort (L/M/H), and time to impact (months). Table format. No explanatory text.",
+      "Give me cost reduction ideas for our operations business unit.",
+      "Please provide a comprehensive analysis of all the potential cost reduction opportunities available to our operations business unit including both short-term quick wins and longer-term structural changes with full details on each option."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A table with four defined columns, a fixed row count of 5, and no explanatory text maximises information density within a tight token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite month-end close checklist prompt",
+    "originalPrompt": "Make a checklist for closing the month end accounts. We want to make sure nothing gets missed.",
+    "options": [
+      "Generate a month-end close checklist for a mid-market company. Sections: pre-close (accruals, prepayments, bank reconciliation), close day (journal postings, intercompany eliminations), post-close (P&L review, balance sheet sign-off, management accounts distribution). Owner column and due date per item.",
+      "Create a comprehensive and thorough month-end close checklist that covers all the tasks the finance team needs to complete to close off the accounts at the end of each month.",
+      "Make a month-end close checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Three time-sequenced phases with specific task types per phase and an owner/date column produces an operational close schedule, not just a list of tasks.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Audit preparation prompt",
+    "originalPrompt": "Your team is preparing for an external audit. You need AI to help organise the information request list.",
+    "options": [
+      "Organise this external audit information request list [paste list] into a tracker with columns: Document Requested, Responsible Owner, Due Date, Status (Not Started/In Progress/Complete), and Auditor Reference. Sort by due date.",
+      "Help me get ready for our external audit.",
+      "Please help me create a comprehensive audit preparation plan that covers everything we need to do to get ready for our external audit including all the documents we need to gather, the people responsible, and the timeline for completing everything."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining five tracker columns, specifying a sort order, and including a status enum means the output is a live document the team can update immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "expert",
+    "title": "Compact working capital analysis",
+    "originalPrompt": "You need to prompt AI for a concise working capital analysis in under 100 tokens.",
+    "options": [
+      "Analyse working capital using these figures: AR days 45, AP days 30, inventory days 60. Calculate cash conversion cycle, flag whether it is above or below a 60-day benchmark, and state one lever to improve it. Three sentences max.",
+      "Give me a working capital analysis.",
+      "Please provide a comprehensive and detailed analysis of our working capital position including accounts receivable days, accounts payable days, inventory days, cash conversion cycle, and recommendations for improving our working capital efficiency."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the three input numbers, asking for the CCC calculation, a benchmark comparison, and one recommendation in three sentences forces maximum information density.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague budget template prompt",
+    "originalPrompt": "Help me make a budget template for next year. I want it to be easy to use.",
+    "options": [
+      "Create an annual budget template for a 50-person professional services firm. Rows: Revenue (by service line), Headcount costs (salaries, benefits, recruitment), Operating costs (office, software, marketing, T&E), and EBITDA. Columns: monthly Jan\u2013Dec + Full Year Total. Include a prior year comparison column.",
+      "Please help me create a really easy-to-use annual budget template that covers all our main income and cost categories and is suitable for our business.",
+      "Build a budget template."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the row categories, the monthly + full-year column structure, and a prior year comparison column means the template works for both planning and variance tracking.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Fundraising deck finance slide prompt",
+    "originalPrompt": "You are preparing a Series A fundraising deck. You need the financial slide content.",
+    "options": [
+      "Draft content for the Financials slide of a Series A pitch deck. Include: current ARR (\u00a32.4M), MoM growth rate (8%), gross margin (72%), burn rate (\u00a3180k/month), runway (14 months), and use-of-funds breakdown (40% eng hiring, 35% sales, 25% opex). Bullet format, investor-ready language.",
+      "Write the financial section for our fundraising deck.",
+      "Help me put together a really compelling financials slide for our Series A pitch deck that shows all our key financial metrics and performance data in a way that will impress investors."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Supplying all six actual metrics and specifying investor-ready language plus the use-of-funds split produces a slide-ready bullet list with no placeholder data.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague NDA summary prompt",
+    "originalPrompt": "Can you summarise this NDA for me so I know what it says? I need to understand it.",
+    "options": [
+      "Summarise this NDA [paste text]. Highlight: (1) definition of Confidential Information, (2) obligations of each party, (3) exclusions and carve-outs, (4) term and termination, (5) any unusual or one-sided clauses. Bullet points, plain English.",
+      "Please read through this Non-Disclosure Agreement and give me a really clear and comprehensive summary of all the key points, terms, conditions, and obligations it contains in plain English so I can understand what I would be agreeing to.",
+      "Summarise this NDA for me."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing five specific elements to extract and requesting plain English bullet points means the summary is structured and surfaces the clauses that need legal attention.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "GDPR compliance checklist prompt",
+    "originalPrompt": "Your company is launching a new customer data platform and needs a GDPR compliance checklist.",
+    "options": [
+      "Generate a GDPR compliance checklist for a B2B SaaS platform launching in the EU. Cover: lawful basis for processing, data minimisation, consent mechanisms, DSAR process, breach notification (72-hour rule), and DPA requirements. Format: checkbox list with the relevant GDPR article per item.",
+      "Create a GDPR checklist for our new data platform.",
+      "Write a very thorough and comprehensive GDPR compliance checklist for our new customer data platform that covers every single requirement under the GDPR regulation in great detail."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the six specific GDPR areas and requesting the relevant article per item produces a checklist that doubles as a legal reference, not just a to-do list.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite contract clause drafting prompt",
+    "originalPrompt": "I need a limitation of liability clause for our software services agreement. Please write one for me.",
+    "options": [
+      "Draft a limitation of liability clause for a B2B SaaS agreement. Cap liability at 12 months' fees paid. Exclude: gross negligence, wilful misconduct, IP infringement, and data breach. Include mutual application. UK law, formal contract language.",
+      "Please write a limitation of liability clause for our software services contract that protects our company while being fair to the customer and covers all the usual exceptions.",
+      "Draft a limitation of liability clause for a software agreement."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the cap basis (12 months' fees), four named exclusions, mutual application, and governing law produces a clause a lawyer reviews rather than rewrites entirely.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise data processing agreement summary",
+    "originalPrompt": "You need a tight prompt to summarise the key obligations in a Data Processing Agreement.",
+    "options": [
+      "Summarise a Data Processing Agreement.",
+      "Summarise this DPA's key obligations in 5 bullets: processor instructions, sub-processor rules, security measures required, data subject rights support, and breach notification timeline. Plain English. No legal caveats.",
+      "Please provide a very detailed and comprehensive summary of all the key obligations, requirements, provisions, and terms contained in this Data Processing Agreement including the obligations on both the data controller and the data processor."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Fixing exactly 5 bullets with named topics and banning legal caveats forces the AI to be specific rather than hedging every point.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Regulatory breach response plan prompt",
+    "originalPrompt": "Your company may have had a GDPR data breach. You need to prompt AI to help draft an initial response plan.",
+    "options": [
+      "Draft a GDPR data breach response plan for an incident where customer email addresses may have been exposed. Cover: (1) immediate containment steps (first 2 hours), (2) internal notification chain (DPO, legal, exec), (3) ICO notification decision criteria (72-hour rule), (4) customer communication template. Practical, action-oriented.",
+      "Help me write a data breach response plan for our GDPR incident.",
+      "Create a very thorough and comprehensive data breach response plan that covers every step we need to take following a potential GDPR incident including all the legal requirements, notification obligations, investigation steps, and remediation actions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Describing the specific incident type, naming four time-sequenced sections, and requesting action-oriented language produces a usable incident response playbook.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague policy review prompt",
+    "originalPrompt": "Review our data protection policy and tell me if it's okay or if there is anything I should change.",
+    "options": [
+      "Review this data protection policy [paste text] against UK GDPR requirements. Flag any gaps in: lawful basis documentation, retention schedule, data subject rights procedures, and third-party sharing disclosures. Output as a gap table: Requirement | Current State | Recommended Change.",
+      "Please review our data protection policy and let me know if it meets all the legal requirements and if there is anything that needs to be updated or improved to ensure we are fully compliant with all relevant data protection laws.",
+      "Is this data protection policy compliant? [paste policy]"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the four regulatory areas to check and requesting a gap table with three columns means the review is structured and directly actionable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Competition law risk assessment prompt",
+    "originalPrompt": "You are preparing a competition law risk assessment for a proposed joint venture between two market competitors.",
+    "options": [
+      "Conduct a competition law risk assessment for a JV between two competitors with combined UK market share of approximately 35%. Cover: horizontal agreement risk, information-sharing restrictions, market definition considerations, and CMA notification threshold analysis. Flag high/medium/low risk per issue.",
+      "Assess the competition law risks for our proposed joint venture with a competitor.",
+      "Write a comprehensive competition law analysis for our proposed joint venture covering all relevant UK and EU competition law issues including market definition, market share thresholds, notification requirements, and all possible competition concerns."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the combined market share figure, naming four specific legal risk areas, and requesting risk ratings per issue gives the AI the inputs needed for a structured legal analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick compliance training topic list",
+    "originalPrompt": "You need a short prompt to get a list of mandatory compliance training topics for new starters.",
+    "options": [
+      "List 6 mandatory compliance training topics for new employees in a UK financial services firm. One line per topic, no explanations.",
+      "What compliance training should new starters do?",
+      "Please give me a very thorough and complete list of all the mandatory compliance training topics and modules that new employees joining a UK financial services company should complete including detailed descriptions of what each training covers and why it is required."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing the count at 6, specifying the industry context, and banning explanations produces a scannable list in minimal tokens.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite third-party risk prompt",
+    "originalPrompt": "Help me assess the risk of our third-party suppliers. I want to make sure we have covered all the bases.",
+    "options": [
+      "Create a third-party risk assessment template for IT vendors. Risk categories: data security (ISO 27001/SOC 2 status), financial stability (credit rating, years trading), business continuity (DR plan, single point of failure), and contractual (SLA penalties, exit clauses). Score each 1\u20135 with weighting. Output as a scoring matrix.",
+      "Help me build a comprehensive third-party risk assessment framework that covers all the different types of risk we need to evaluate for our suppliers and vendors.",
+      "Assess the risk of our third-party suppliers across all risk areas."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining four risk categories with specific standards/criteria per category and requesting a weighted scoring matrix means the template is ready to use as a vendor due diligence tool.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Whistleblowing policy summary prompt",
+    "originalPrompt": "You need to summarise a whistleblowing policy for an all-staff communication.",
+    "options": [
+      "Summarise our whistleblowing policy for an all-staff email. Cover: what counts as reportable concerns, how to report (channels + confidentiality), protections for reporters, and what happens after a report. Plain English, friendly but serious tone. Max 200 words.",
+      "Summarise the whistleblowing policy so all staff can understand it.",
+      "Write a detailed summary of the whistleblowing policy that explains all the different types of concerns employees can raise, all the reporting channels available, the confidentiality protections in place, and the full investigation process."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying four topics, tone guidance, and a 200-word cap ensures the summary is appropriate for a staff email rather than a legal briefing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite IP assignment clause prompt",
+    "originalPrompt": "We need an IP assignment clause in our contractor agreements to make sure we own what they build.",
+    "options": [
+      "Draft an IP assignment clause for a contractor agreement. Cover: assignment of all work product and deliverables (including pre-existing IP incorporated with licence-back), moral rights waiver, obligation to execute further documents, and scope limited to work performed under this agreement. UK law, formal language.",
+      "Write an IP ownership clause for our contractor agreement that makes sure we own all the work contractors produce for us.",
+      "Draft a comprehensive IP assignment clause that covers all aspects of intellectual property ownership for work done by contractors including all types of IP, moral rights, and any other relevant IP considerations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the four specific IP elements (assignment, licence-back, moral rights waiver, further documents) and governing law produces a clause that protects real IP risks in contractor relationships.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Anti-bribery policy summary prompt",
+    "originalPrompt": "You need a tight prompt to summarise your anti-bribery policy for a supplier onboarding pack.",
+    "options": [
+      "Summarise our anti-bribery and corruption policy for a supplier onboarding pack in 4 bullets: (1) zero-tolerance stance, (2) what is prohibited (gifts, facilitation payments, third-party bribes), (3) how to report concerns, (4) consequences of breach. Max 120 words, plain English.",
+      "Summarise our anti-bribery policy.",
+      "Please write a comprehensive summary of our anti-bribery and corruption policy that clearly explains our stance, all the prohibited activities, the due diligence requirements for suppliers, the reporting mechanism, and the consequences for any breach of the policy."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Fixing 4 bullets with named content per bullet and a 120-word cap produces a supplier-ready summary that is proportionate and easy to read.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Regulatory change alert prompt",
+    "originalPrompt": "A new employment law change is coming into effect. You want AI to help draft a staff briefing note.",
+    "options": [
+      "Draft a staff briefing note on [specific employment law change]. Cover: what is changing, effective date, who is affected, what employees need to do (if anything), and where to get more information. Plain English, max 250 words, no legal jargon.",
+      "Write a note for staff about the employment law change.",
+      "Create a comprehensive staff briefing document about the upcoming employment law changes that explains all the legal background, the full details of what is changing, the implications for different employee groups, and all the actions the company is taking."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining five specific topics, capping length, and banning jargon produces a note employees will actually read and understand.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague project status report prompt",
+    "originalPrompt": "Write a project status report for our ERP implementation. Make it good for the steering committee.",
+    "options": [
+      "Write a steering committee status report for our ERP implementation project. Sections: RAG status (overall + per workstream), milestone summary (completed this period, due next period), top 3 risks with mitigation owner, budget vs actuals (\u00a3X spent of \u00a3Y), and decisions required. One page.",
+      "Please write a comprehensive and detailed project status report for our ERP implementation project that covers all aspects of the project and is suitable for presenting to our steering committee.",
+      "Write a project status update."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming five specific sections with the exact content format per section (RAG, milestone split, risk owner, budget figures) means the report needs data filled in, not structural rework.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Sprint planning prompt selection",
+    "originalPrompt": "You are a project manager preparing a 2-week sprint for a software development team of 6.",
+    "options": [
+      "Create a sprint planning agenda for a 2-week sprint, 6-person dev team. Include: velocity review (last sprint points), backlog refinement (top 10 items from product backlog), sprint goal statement, story point allocation per developer (assume 40 points total capacity), and definition of done. Duration: 2 hours.",
+      "Help me plan our next sprint for our software team.",
+      "Write a comprehensive sprint planning document for our two-week sprint that covers everything the team needs to know including all the backlog items, capacity planning, sprint goals, and all the ceremonies we need to conduct."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Including team size, capacity in story points, agenda items, and meeting duration produces a facilitation guide the scrum master can run without further preparation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite risk register generation prompt",
+    "originalPrompt": "Create a risk register for our new office fit-out project. Include the main risks we should be watching.",
+    "options": [
+      "Generate a risk register for a 6-month office fit-out project. For each risk include: Risk ID, Description, Category (construction/regulatory/supplier/safety), Likelihood (1\u20135), Impact (1\u20135), Risk Score, Current Mitigation, and Risk Owner. Pre-populate with 8 realistic risks for this project type.",
+      "Create a comprehensive risk register for our office fit-out project that covers all the different types of risks we might face across the entire project lifecycle.",
+      "Build a risk register for the office fit-out project."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying eight columns, four risk categories, a 1\u20135 scoring scale, and asking for 8 pre-populated risks means the output is a complete starting register, not a blank template.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise stakeholder comms prompt",
+    "originalPrompt": "You need a tight prompt to generate a stakeholder communication about a project delay.",
+    "options": [
+      "Write stakeholder communication about project delay.",
+      "Draft a stakeholder email notifying of a 3-week delay to [Project Name]. Cover: reason for delay (one sentence), revised go-live date, impact on stakeholders, and next update date. Tone: professional, transparent, solution-focused. Max 150 words.",
+      "Write a very detailed and comprehensive stakeholder communication explaining all the reasons for the project delay, the full impact analysis, all the steps we are taking to recover the schedule, and our detailed mitigation plan."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Fixing four required elements, specifying tone with three adjectives, and capping at 150 words ensures the communication is clear and proportionate to the message.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Change management plan prompt",
+    "originalPrompt": "You are implementing a new HR system affecting 500 employees across 3 departments. You need a change management plan.",
+    "options": [
+      "Create a change management plan for implementing a new HR system for 500 employees across Finance, Operations, and People teams. Structure: stakeholder impact matrix (department, change impact H/M/L, resistance risk), communication plan (what, who, when, channel), training plan (role-based, format, timing), and success metrics. 90-day horizon.",
+      "Write a change management plan for our new HR system rollout.",
+      "Create a comprehensive and detailed change management plan for implementing our new HR system that covers all aspects of change management including stakeholder engagement, communication, training, resistance management, and measurement across all affected departments."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the three departments, defining four plan sections with specific content per section, and setting a 90-day horizon produces an executable plan structure.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Portfolio prioritisation prompt",
+    "originalPrompt": "Help me prioritise our project portfolio for next year. We have too many projects and not enough resources.",
+    "options": [
+      "Create a project portfolio prioritisation model for 12 proposed initiatives. Score each on: strategic alignment (1\u20135), NPV or cost saving (\u00a3), resource requirement (FTE weeks), dependencies on other projects, and risk (H/M/L). Weight strategic alignment at 40%, NPV at 30%, resource at 20%, risk at 10%. Output: ranked table with composite score.",
+      "Help me prioritise all our projects for next year based on strategic importance and available resources.",
+      "Build a project prioritisation framework that helps us decide which projects to approve for next year taking into account strategic value, financial return, resource constraints, risk, and other relevant factors."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the exact scoring dimensions, weights, and units (FTE weeks, \u00a3 NPV) means the AI produces a model you can populate with real data immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Brief meeting agenda prompt",
+    "originalPrompt": "You need a short prompt to generate a project kick-off meeting agenda.",
+    "options": [
+      "Draft a project kick-off meeting agenda.",
+      "Create a 60-min project kick-off agenda. Items: welcome and introductions (5 min), project overview and objectives (15 min), roles and RACI (10 min), timeline and milestones (15 min), risks and assumptions (10 min), Q&A and next steps (5 min). Include time per slot.",
+      "I need you to write a very comprehensive and detailed project kick-off meeting agenda that covers every important topic we need to discuss with the team at the start of the project including introductions, objectives, scope, timeline, risks, governance, communication, and all other relevant kick-off topics."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Fixing the total meeting time, listing named agenda items with individual time allocations produces a directly usable meeting guide.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Benefits realisation plan prompt",
+    "originalPrompt": "You completed a \u00a32M digital transformation. You need a benefits realisation plan to track whether the investment paid off.",
+    "options": [
+      "Create a benefits realisation plan for a \u00a32M digital transformation. For each of 4 benefits (cost saving, productivity gain, customer satisfaction, revenue uplift), define: baseline measurement, target value, measurement method, tracking frequency, and responsible owner. Output as a table. 12-month review horizon.",
+      "Write a benefits realisation plan for our digital transformation project.",
+      "Create a comprehensive benefits realisation framework for our digital transformation investment that covers all the financial and non-financial benefits we expect to achieve and how we will measure and track them over time."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming four specific benefit types and defining five measurement elements per benefit with a 12-month horizon produces a plan that feeds directly into governance reviews.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite lessons learned report prompt",
+    "originalPrompt": "Write up the lessons learned from our project. We want to capture what went well and what didn't.",
+    "options": [
+      "Write a project lessons learned report for [project name]. Structure: (1) What went well (max 5 bullets with why it worked), (2) What to improve (max 5 bullets with root cause), (3) Recommendations for future projects (3 action statements with owner). Factual, no blame language.",
+      "Please write a comprehensive lessons learned document for our project that captures all the positive outcomes and all the things that went wrong and what we can do better next time.",
+      "Write lessons learned for the project."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Three sections with bullet caps, a root cause requirement, and a no-blame directive produces a lessons learned document that is constructive and consistently structured.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague risk assessment prompt",
+    "originalPrompt": "Write a risk assessment for our company. Make sure it covers everything we might be worried about.",
+    "options": [
+      "Write an enterprise risk assessment for a 200-person UK professional services firm. Risk categories: operational, financial, cyber, regulatory, and reputational. For each category, list 2 key risks with Likelihood (H/M/L), Impact (H/M/L), and one existing control. Table format.",
+      "Please create a comprehensive and thorough enterprise risk assessment that covers all the different types of risk our organisation faces across all business areas and functions.",
+      "Write a risk assessment for our company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining the company type, five risk categories, and the exact columns per risk (Likelihood, Impact, Control) produces a structured assessment rather than a generic narrative.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Business continuity plan prompt",
+    "originalPrompt": "Your company needs a business continuity plan for a potential data centre outage affecting core systems.",
+    "options": [
+      "Draft a business continuity plan for a data centre outage affecting CRM, ERP, and payment systems. Cover: RTO and RPO targets per system, immediate response steps (first 4 hours), workaround procedures (manual fallbacks), communication tree (IT, exec, customers), and recovery testing schedule. Practical, tabular where possible.",
+      "Write a business continuity plan for a potential data centre outage.",
+      "Create a very comprehensive business continuity plan that covers all the steps we need to take to keep the business running if our data centre goes down, including all the systems that would be affected and all the recovery procedures."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the three affected systems, requiring RTO/RPO per system, and specifying a 4-hour response window structures the BCP around real recovery targets.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite mitigation plan prompt",
+    "originalPrompt": "We have identified a key man risk in our business. Can you help me write a mitigation plan for this?",
+    "options": [
+      "Draft a key person dependency risk mitigation plan for a role where one individual holds critical client relationships and technical knowledge. Cover: knowledge transfer plan (documentation, shadowing), succession pipeline (internal vs external), contractual protections (notice period, non-solicit), and monitoring trigger points. 90-day implementation horizon.",
+      "Help me write a mitigation plan for our key man risk that reduces our dependency on critical individuals in the business.",
+      "Create a comprehensive mitigation plan for the key person risk we have identified that covers all the different ways we can reduce our dependence on this individual including knowledge transfer, succession planning, and contractual protections."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the nature of the dependency (relationships + technical knowledge), four mitigation areas, and a 90-day horizon makes the plan specific and time-bound.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact risk heatmap prompt",
+    "originalPrompt": "You need a tight prompt to produce a risk heatmap summary for an executive audience.",
+    "options": [
+      "Create a 5x5 risk heatmap summary for an exec audience. List 10 risks positioned by Likelihood (1\u20135) and Impact (1\u20135). Group into Red (score \u226515), Amber (8\u201314), Green (\u22647). No narrative text, table only.",
+      "Create a risk heatmap.",
+      "Please write a comprehensive risk heatmap summary for our executive leadership team that covers all of our key enterprise risks positioned on a likelihood and impact matrix with full descriptions of each risk and the controls in place."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying a 5x5 grid, fixing 10 risks, defining the RAG thresholds, and requesting table-only output means the heatmap is immediately presentable.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Cyber risk scenario planning prompt",
+    "originalPrompt": "You need to run a cyber risk scenario planning exercise for the board. Focus on a ransomware scenario.",
+    "options": [
+      "Facilitate a ransomware scenario planning exercise for a board audience. Structure: (1) scenario narrative (ransomware hits ERP, 48-hour encryption of financial data), (2) board-level decisions required at T+2h, T+24h, T+72h, (3) key questions for the CISO, (4) financial impact range (low/mid/high). 90-minute session design.",
+      "Help me plan a cyber risk scenario exercise about ransomware for our board.",
+      "Design a comprehensive ransomware cyber risk scenario planning exercise for our board of directors that covers all aspects of a ransomware attack including technical response, business impact, stakeholder communication, financial implications, and regulatory obligations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining the scenario concretely (ERP, 48-hour encryption), structuring decision points at T+2h/24h/72h, and specifying a session duration creates a facilitator-ready exercise.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite ERM framework prompt",
+    "originalPrompt": "Help me build an enterprise risk management framework. We need something proper that the board will approve.",
+    "options": [
+      "Design an ERM framework for a 500-person professional services firm aligned to ISO 31000. Sections: risk governance structure (board, audit committee, risk function roles), risk appetite statement (qualitative categories + quantitative thresholds), risk identification and assessment methodology (probability x impact, heat map), monitoring and reporting cadence (monthly ops, quarterly board). Output: one-page framework diagram in text, then section-by-section detail.",
+      "Build a comprehensive enterprise risk management framework that covers all aspects of risk governance, risk appetite, risk identification, assessment, monitoring, and reporting for our organisation.",
+      "Create an ERM framework aligned to ISO 31000 for our business."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying company size, ISO 31000 alignment, four named sections with specific content, and requesting a diagram then detail means the output is a structured framework proposal rather than a generic description.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick risk mitigation options",
+    "originalPrompt": "You need a concise prompt to get risk mitigation options for a single identified risk.",
+    "options": [
+      "List 4 mitigation options for this risk: [describe risk]. For each: option name, how it reduces likelihood or impact, and estimated cost (Low/Medium/High). Bullet format.",
+      "Give me risk mitigation options.",
+      "Please provide me with a comprehensive and detailed analysis of all the possible risk mitigation strategies and approaches we could take to address this specific risk, covering risk avoidance, risk transfer, risk reduction, and risk acceptance options."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing the count at 4, requiring the risk-reduction mechanism per option, and using relative cost banding keeps the response dense and comparable.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Operational resilience assessment prompt",
+    "originalPrompt": "You are preparing an operational resilience assessment for FCA regulatory submission covering your firm's important business services.",
+    "options": [
+      "Draft an operational resilience self-assessment for FCA PS21/3 compliance. Cover: mapping of Important Business Services (IBS) with end-to-end process flows, impact tolerance statements (metric + threshold per IBS), scenario testing results (3 disruption scenarios), and identified vulnerabilities with remediation plan. Formal regulatory tone, structured sections.",
+      "Write an operational resilience assessment for our FCA submission.",
+      "Create a comprehensive operational resilience assessment for regulatory purposes that covers all our important business services, impact tolerances, scenario testing, vulnerabilities, and remediation plans in line with FCA requirements."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Citing the specific regulatory reference (PS21/3), naming four required sections with exact content (e.g. metric + threshold per IBS), and specifying regulatory tone produces a submission-ready structure.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite fraud risk assessment prompt",
+    "originalPrompt": "We need to assess our fraud risk. Can you help me think through where our exposure is?",
+    "options": [
+      "Conduct a fraud risk assessment for a B2B SaaS company. Categories: revenue fraud (billing manipulation, refund abuse), procurement fraud (vendor kickbacks, fictitious invoices), employee fraud (expense fraud, payroll ghost employees), and cyber fraud (account takeover, payment diversion). For each: fraud scheme description, existing control, control gap, and recommended enhancement. Table format.",
+      "Help me identify all the different ways fraud could occur in our business and what we should do about it.",
+      "Create a comprehensive fraud risk assessment covering all possible fraud scenarios in our business."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming four specific fraud categories with concrete scheme types and requiring a four-column assessment per category means every cell contains actionable information.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Risk appetite statement prompt",
+    "originalPrompt": "You need a risk appetite statement for your annual report. It should explain how much risk the company is willing to take.",
+    "options": [
+      "Draft a risk appetite statement for an annual report. Cover: overall stance (risk-seeking/neutral/averse by category), specific appetite thresholds (e.g. max acceptable financial loss \u00a3X, zero tolerance for regulatory breach), and link to strategic objectives. Max 200 words, formal tone.",
+      "Write a risk appetite statement for our annual report that explains our approach to risk.",
+      "Create a comprehensive and detailed risk appetite statement that covers every category of risk we face and explains our tolerance levels and thresholds for each one in a way that is clear to shareholders and other stakeholders."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining the three components of a risk appetite statement (stance, thresholds, link to strategy) and a 200-word cap produces a statement that belongs in an annual report, not a risk policy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Operations & Process",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Escalation matrix design prompt",
+    "originalPrompt": "Your support team needs a clear escalation matrix so issues reach the right person at the right time.",
+    "options": [
+      "Design an escalation matrix for a B2B SaaS support team. Rows: issue severity (P1\u2013P4). Columns: definition, response SLA, first responder, escalation to (L2/L3/exec), and communication channel. Pre-fill with realistic SLAs (P1=15 min, P2=1h, P3=4h, P4=next business day).",
+      "Create an escalation matrix for our support team.",
+      "Write a comprehensive escalation matrix that covers all the different types of issues our support team might encounter and who needs to be informed at each stage of the escalation process."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming rows and columns explicitly, providing pre-filled SLAs, and specifying communication channels means the matrix works as a live reference document.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague payroll reconciliation prompt",
+    "originalPrompt": "Help me reconcile our payroll. There are some differences I can't explain.",
+    "options": [
+      "Reconcile payroll for [month] using these two data sets: HR headcount report [paste] and payroll run output [paste]. Identify: employees in HR not in payroll, employees in payroll not in HR, and salary discrepancies >\u00a3100. Output as three separate lists.",
+      "Please help me reconcile our payroll data and identify all the differences and discrepancies between our HR records and our payroll system so we can understand what has gone wrong.",
+      "Find the payroll reconciliation differences."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining three specific discrepancy types and a materiality threshold (>\u00a3100) means the AI produces an actionable exception list rather than a narrative.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Depreciation explanation prompt",
+    "originalPrompt": "A non-finance manager needs to understand depreciation for a capital request. You need to explain it clearly.",
+    "options": [
+      "Explain straight-line depreciation to a non-finance manager in plain English. Use a \u00a320,000 piece of equipment with a 5-year life as a concrete example. Show the annual charge, net book value at year 3, and why it matters for budget planning. Max 150 words.",
+      "Explain what depreciation is in simple terms.",
+      "Please write a comprehensive and detailed explanation of depreciation for a manager who does not have a finance background, covering the different methods of depreciation, the accounting entries involved, and the tax implications."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A concrete example with real numbers and a connection to budget planning makes depreciation tangible rather than abstract for a non-finance reader.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite capital expenditure justification",
+    "originalPrompt": "Write a CapEx justification for buying new warehouse equipment. It needs to go to the CFO.",
+    "options": [
+      "Write a CapEx justification for purchasing \u00a385,000 of warehouse automation equipment. Include: current state problem (manual pick rate 200 units/hr), proposed solution, financial case (ROI, payback period using \u00a3X labour saving/year), risk of not investing, and approval being sought. Max 1 page, CFO audience.",
+      "Please write a detailed and compelling capital expenditure justification for the warehouse equipment purchase that covers all the financial and operational benefits and gets approval from the CFO.",
+      "Write a CapEx request for new warehouse equipment."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the actual cost figure, the baseline performance metric, and the four required sections with a one-page constraint means the justification is investment-committee ready.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick gross margin calculation",
+    "originalPrompt": "You need a prompt that gets AI to calculate and explain gross margin from raw figures.",
+    "options": [
+      "Calculate gross margin from these figures: Revenue \u00a31.2M, COGS \u00a3720k. Show the formula, the result as both \u00a3 and %, and one sentence on what this margin means for a SaaS business benchmark.",
+      "Calculate gross margin.",
+      "Please help me calculate our gross margin from our revenue and cost of goods sold figures and explain what the result means for our business and how it compares to industry benchmarks and what we should do to improve it."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the two figures, requesting both absolute and percentage output, and adding a benchmark sentence produces a complete analytical response in under 75 tokens.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Deferred revenue explanation prompt",
+    "originalPrompt": "Your sales team does not understand why prepaid annual contracts appear as a liability on the balance sheet.",
+    "options": [
+      "Explain deferred revenue to a sales manager using our annual SaaS contract as an example. Show: how a \u00a312,000 annual contract is recorded at signing (liability) and recognised monthly (\u00a31,000/month), why it is a liability not income, and the cash vs P&L timing difference. Max 150 words, no jargon.",
+      "Explain deferred revenue and why it is a liability.",
+      "Write a comprehensive explanation of deferred revenue accounting, including the journal entries, the balance sheet treatment, how it affects cash flow, and why it is important for SaaS businesses to track carefully."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Using a specific contract value, showing the monthly recognition schedule, and explicitly answering 'why a liability' makes the concept concrete for a non-finance audience.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite transfer pricing memo prompt",
+    "originalPrompt": "Write a transfer pricing memo for our intercompany transactions. We need to make sure we are compliant.",
+    "options": [
+      "Draft a transfer pricing policy memo for intercompany services charged from UK HoldCo to Irish OpCo. Cover: arm's length principle (OECD guidelines), chosen method (cost-plus mark-up of 8%), benchmark comparables used, documentation requirements (master file, local file), and risk of challenge. Formal tax language.",
+      "Write a transfer pricing memo covering our intercompany transactions that will help us stay compliant with transfer pricing rules.",
+      "Create a comprehensive transfer pricing memo covering all aspects of our intercompany transactions and how we determine our transfer pricing methodology to ensure compliance with all relevant tax regulations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the specific entities, method (cost-plus 8%), OECD framework, and documentation requirements means a tax adviser gets a structured memo they can verify rather than draft from scratch.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact FX exposure summary",
+    "originalPrompt": "You need a tight prompt to produce a monthly FX exposure summary for the finance team.",
+    "options": [
+      "Summarise FX exposure for this month. Table: Currency | Exposure (\u00a3 equivalent) | Natural hedge offset | Net open position | Hedged (Y/N). Five currencies max. No narrative.",
+      "Give me a summary of our FX exposure.",
+      "Please provide a comprehensive and detailed analysis of all our foreign exchange exposures this month including all currencies, the gross and net positions, the hedging instruments in place, the mark-to-market value, and recommendations for any additional hedging we should consider."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Five defined columns, a row cap of five currencies, and no narrative produces a table the treasury manager can review in two minutes.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Unit economics analysis prompt",
+    "originalPrompt": "You need to explain your SaaS unit economics to a potential investor in a data room document.",
+    "options": [
+      "Write a unit economics summary for a SaaS investor data room. Metrics: CAC (blended, by channel), LTV, LTV:CAC ratio, payback period (months), and churn (gross and net revenue retention). For each metric: definition, our figure, and industry benchmark. Table + 2-sentence interpretation below.",
+      "Explain our SaaS unit economics for investors.",
+      "Write a comprehensive unit economics document that covers all our key SaaS metrics and shows investors how our business model works and why it is attractive compared to other SaaS companies they might be looking at."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Listing seven specific metrics, requiring definition plus benchmark per metric, and combining a table with an interpretation paragraph produces a data-room document investors can evaluate immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Rewrite covenant compliance prompt",
+    "originalPrompt": "Check whether we are in compliance with our loan covenants. We have a review coming up.",
+    "options": [
+      "Assess covenant compliance for our revolving credit facility. Covenants: Net Leverage Ratio \u22643.5x, Interest Cover \u22654.0x, Minimum Liquidity \u00a35M. Use these actuals [paste financials]. For each covenant: test value, pass/fail, headroom, and any cure period if breaching. Lender-ready format.",
+      "Please check whether our financial figures mean we are in compliance with all of our bank loan covenants and flag any covenants we might be at risk of breaching.",
+      "Review our covenant compliance and highlight any issues."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming the three specific covenants with their thresholds and requiring headroom plus cure period information produces a lender-ready compliance certificate, not a summary memo.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Finance & Accounting",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Concise IRR explanation prompt",
+    "originalPrompt": "You need a short prompt to get a plain-English explanation of IRR for a non-financial project sponsor.",
+    "options": [
+      "Explain IRR to a non-finance project sponsor in 3 sentences: what it measures, how to interpret it vs a hurdle rate of 12%, and one limitation to be aware of. No maths.",
+      "Explain IRR.",
+      "Please provide a comprehensive explanation of Internal Rate of Return including how it is calculated, how it compares to NPV and payback period, what the limitations are, and when it is appropriate to use it as the primary investment appraisal method."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Three sentences with a specific hurdle rate and one limitation constraint produces a response that fits a slide note and teaches the key point without overwhelming a sponsor.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague contract review prompt",
+    "originalPrompt": "Review this contract and tell me what I should know before signing it.",
+    "options": [
+      "Review this contract [paste]. Flag: (1) any automatic renewal clauses with notice periods, (2) liability caps and indemnities, (3) termination for convenience rights, (4) exclusivity or non-compete restrictions, (5) governing law and dispute resolution. Plain English. Note page/clause numbers.",
+      "Please read through this contract and let me know if there are any important things I should be aware of before we sign it.",
+      "Review the contract and highlight any risks."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing five specific clause types to find and requesting page/clause numbers means the review is precise and the findings can be acted on without re-reading the contract.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Force majeure clause explanation prompt",
+    "originalPrompt": "A non-legal colleague asks what a force majeure clause in a supplier contract means for the business.",
+    "options": [
+      "Explain the force majeure clause in this supplier contract [paste clause] in plain English. Cover: what events trigger it, what obligations it excuses for each party, how long it lasts, and what happens if the event continues beyond [X] days. Max 200 words.",
+      "Explain what force majeure means.",
+      "Provide a thorough and comprehensive explanation of force majeure clauses covering their legal origins, how they are interpreted by courts, all the typical events that qualify, the obligations on parties, and the interaction with other contract clauses."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Directing the AI to the specific clause text and asking four practical questions means the explanation is about that contract's terms, not a generic legal lecture.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite employment contract clause prompt",
+    "originalPrompt": "Write a garden leave provision for our employment contracts so we are protected when senior people leave.",
+    "options": [
+      "Draft a garden leave clause for a senior employee employment contract. Specify: maximum garden leave period (6 months), obligations during garden leave (available on reasonable notice, no competing activity), continued pay and benefits, and employer's right to waive. UK employment law, formal drafting style.",
+      "Write a garden leave clause for our employment contracts to protect us when key employees leave.",
+      "Draft a comprehensive garden leave provision that protects the company's legitimate business interests when senior employees leave and covers all the relevant obligations and rights during the garden leave period."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the maximum period (6 months), four obligations/rights, and UK law context means the clause is substantively complete and legally grounded.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Concise regulatory horizon scan",
+    "originalPrompt": "You need a tight prompt to get a regulatory horizon scan for a UK fintech company.",
+    "options": [
+      "List 5 upcoming UK regulatory changes relevant to a payments fintech in the next 12 months. For each: regulation name, effective date, key obligation, and impact level (H/M/L). Table format, no explanatory text.",
+      "What regulations are coming for UK fintech?",
+      "Please provide a comprehensive and detailed regulatory horizon scan for our UK fintech business covering all upcoming regulatory changes, their effective dates, the full details of what we need to do to comply, and recommendations for our compliance programme."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Fixing five items, requiring four columns with data types, and banning explanatory text produces a dense, scannable compliance planning input.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Privacy impact assessment prompt",
+    "originalPrompt": "Your team is launching a new employee monitoring tool and needs a DPIA before going live.",
+    "options": [
+      "Conduct a DPIA for an employee productivity monitoring tool that captures application usage and keystroke metadata. Cover: nature and purpose of processing, necessity and proportionality assessment, risks to employees (intrusion, chilling effect), mitigations (data minimisation, retention limits, transparency notice), and residual risk score. UK GDPR Article 35 structure.",
+      "Write a DPIA for our employee monitoring tool.",
+      "Create a comprehensive Data Protection Impact Assessment for our new employee monitoring software covering all aspects of data protection, privacy risks, and mitigation measures required under GDPR."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Describing the exact data types captured, citing the specific legal basis (Article 35), and naming concrete risks like 'chilling effect' produces a DPIA substantive enough for DPO sign-off.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite sanctions screening prompt",
+    "originalPrompt": "We need to set up sanctions screening for our customers. Help me think through what we need.",
+    "options": [
+      "Design a sanctions screening framework for a UK B2B payments company. Cover: screening lists required (OFAC, UN, HMT, EU), screening triggers (onboarding, transaction, periodic review), match-handling workflow (true match vs false positive escalation), and record-keeping obligations. Output as a structured policy outline.",
+      "Help me understand what sanctions screening we need to do and how to set it up for our business.",
+      "Create a comprehensive sanctions compliance framework that covers all the different sanctions lists we need to screen against, how to conduct the screening, and how to deal with any matches we find."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming four specific sanctions lists, three screening triggers, and a match-handling workflow means the framework is operationally specific rather than a policy principle statement.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Legal & Compliance",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Data retention schedule prompt",
+    "originalPrompt": "Your legal team needs to build a data retention schedule for a UK-regulated professional services firm.",
+    "options": [
+      "Create a data retention schedule for a UK professional services firm. Data categories: client contracts, HR records (employee and ex-employee), financial records, marketing data, and correspondence. For each: retention period, legal basis (UK GDPR, Companies Act, HMRC), disposal method, and owner. Table format.",
+      "Write a data retention schedule for our firm.",
+      "Create a comprehensive and complete data retention schedule that covers every type of data we hold and specifies exactly how long we need to keep it and what we need to do with it when the retention period expires."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming five specific data categories and requiring four columns including the specific legal basis per category produces a legally defensible schedule that survives a regulatory audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Fix vague RACI chart prompt",
+    "originalPrompt": "Make a RACI for our project. We need to know who does what.",
+    "options": [
+      "Create a RACI matrix for a software migration project. Rows: requirements sign-off, vendor selection, data migration, UAT, go-live approval, and post-go-live support. Columns: Project Manager, IT Lead, Business Owner, Finance, and External Vendor. One R per row, enforce RACI rules.",
+      "Please make a RACI chart for our project that clearly shows everyone's responsibilities across all the activities and all the different people involved.",
+      "Build a RACI matrix."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing specific activities and named roles ensures the RACI reflects the actual project structure, and the one-R rule keeps accountability clear.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Project charter one-pager prompt",
+    "originalPrompt": "You are starting a new initiative to migrate your CRM system. You need a project charter to get sign-off.",
+    "options": [
+      "Write a one-page project charter for a CRM migration project. Sections: project purpose (one sentence), objectives (3 SMART goals), scope (in-scope and out-of-scope list), key stakeholders, timeline (start\u2013end dates), budget (\u00a3X), and success criteria. Approver signature block at the bottom.",
+      "Write a project charter for our CRM migration.",
+      "Create a comprehensive project charter document for our CRM migration that covers everything stakeholders need to know about the project including the full business case, detailed scope, governance structure, resource plan, budget, risk register, and success metrics."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing seven sections with defined content per section and a one-page constraint means the charter is readable by a busy exec and ready for sign-off.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight project closure report prompt",
+    "originalPrompt": "You need a concise prompt to generate a project closure report in under 100 tokens.",
+    "options": [
+      "Write a project closure report. Sections: objectives met (Y/N + one line per objective), budget outturn (planned vs actual with % variance), schedule outturn (planned vs actual end date), top 3 lessons learned, and formal closure recommendation. Max 300 words.",
+      "Write a project closure report.",
+      "Please write a comprehensive and detailed project closure report that covers all aspects of the project including a full review of objectives achievement, financial performance, schedule performance, lessons learned, team performance, stakeholder feedback, and recommendations for future similar projects."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Five defined sections with content constraints per section and a 300-word cap produces a concise closure document that governance boards actually read.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Rewrite dependency map prompt",
+    "originalPrompt": "Map out the dependencies in our programme. We have several projects that affect each other.",
+    "options": [
+      "Create a programme dependency map for these 6 projects [list them]. For each dependency: Project A \u2192 Project B, dependency type (FS/SS/FF/SF), and impact if delayed (H/M/L). Output as a table. Highlight any circular dependencies.",
+      "Map all the dependencies between our programme's projects and show how they are connected and what the impacts of delays might be.",
+      "Create a comprehensive dependency mapping exercise for our programme that identifies all the inter-project dependencies and shows the critical path and potential bottlenecks."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Using standard dependency types (FS/SS/FF/SF) and requesting a circular dependency check means the map supports scheduling decisions rather than just documenting connections.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Issue log template prompt",
+    "originalPrompt": "Your team keeps raising issues informally. You need a structured issue log for the project.",
+    "options": [
+      "Create an issue log template for a medium-complexity IT project. Columns: Issue ID, Date Raised, Description, Raised By, Severity (H/M/L), Assigned Owner, Target Resolution Date, Status (Open/In Progress/Closed), and Resolution Notes. Pre-populate with 2 example rows.",
+      "Build an issue log for our project.",
+      "Create a comprehensive issue log template that captures all the information we need to track and resolve project issues effectively and has all the fields needed for good project governance."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming nine specific columns and requesting two pre-populated example rows means the template is ready to use and self-explanatory to new team members.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Project Management",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite programme governance framework",
+    "originalPrompt": "Set up a governance framework for our programme. We want to make sure everything is overseen properly.",
+    "options": [
+      "Design a programme governance framework for a \u00a35M, 18-month transformation. Define: governance tiers (Programme Board, Steering Co, Workstream Leads), meeting cadence per tier, reporting pack contents per tier, decision rights matrix (who approves budget changes, scope changes, risks), and escalation path. One-page summary table.",
+      "Create a governance framework for our programme that makes sure everything is properly overseen and the right people are involved in decisions.",
+      "Write a comprehensive programme governance framework that covers all aspects of programme oversight including committee structures, reporting, decision-making, risk management, and change control."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming three governance tiers, defining cadence, report contents, and decision rights per tier, and requesting a one-page summary table means the framework is implementable, not theoretical.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Concentration risk analysis prompt",
+    "originalPrompt": "Your top 3 customers represent 65% of revenue. You need to assess and present concentration risk.",
+    "options": [
+      "Analyse customer concentration risk for a business where top 3 clients = 65% of ARR. Cover: risk statement (what happens if one leaves), financial impact scenario (loss of largest client at \u00a3Xk ARR), early warning indicators, and 3 mitigation actions (diversification targets, contract terms, pipeline mix). Board-ready summary, max 1 page.",
+      "Help me explain our customer concentration risk to the board.",
+      "Write a comprehensive analysis of our customer concentration risk covering all aspects of the risk including the financial impact, strategic implications, mitigation options, and our plan to diversify our customer base over time."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the 65% concentration figure, structuring four elements, and specifying board audience with a page limit produces a self-contained risk briefing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Rewrite insurance coverage review prompt",
+    "originalPrompt": "Review our insurance coverage and let me know if we have the right policies in place.",
+    "options": [
+      "Review our insurance portfolio against our business risk profile (200-person B2B SaaS, \u00a315M revenue, 50+ enterprise contracts). For each policy type\u2014Professional Indemnity, Cyber, D&O, Employers' Liability, Product Liability\u2014state: coverage limit, typical adequacy for our profile, and coverage gap if any. Table format.",
+      "Tell me if our insurance policies are adequate for our business.",
+      "Review all our insurance policies and check whether the coverage levels are appropriate given the nature and scale of our business activities and identify any gaps or areas where we might be underinsured."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying company size and revenue, naming five policy types, and requiring three columns including a gap assessment produces a structured insurance review the CFO can act on.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Quick risk treatment options",
+    "originalPrompt": "You need a tight prompt asking AI to recommend a risk treatment strategy for a specific risk.",
+    "options": [
+      "For this risk: [paste risk description], recommend the optimal treatment strategy from: avoid, reduce, transfer, or accept. State the chosen strategy, rationale in one sentence, one action required, and estimated residual risk (H/M/L) after treatment.",
+      "What should we do about this risk?",
+      "Please analyse this risk in detail and recommend whether we should avoid it, reduce it, transfer it, or accept it, providing a full explanation of each option and why you have chosen the recommended approach."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Constraining the response to four named strategies, one-sentence rationale, one action, and a residual risk rating produces a decision-ready recommendation in minimal tokens.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "ops_finance_legal",
+    "subFunction": "Risk Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Vendor single source risk prompt",
+    "originalPrompt": "You rely on a single vendor for a critical software component. You need to assess and present this dependency risk.",
+    "options": [
+      "Assess single-vendor dependency risk for our reliance on [Vendor X] for our core payment processing API. Cover: risk if vendor fails or exits, business impact (revenue at risk \u00a3X), current mitigations (contractual protections, escrow), and recommended actions (alternative vendor qualification, redundancy build). Practical, concise.",
+      "Help me understand the risk of relying on just one vendor for our software.",
+      "Write a comprehensive vendor dependency risk assessment that covers all aspects of our reliance on this single vendor including the technical, financial, operational, and strategic risks and all the mitigation options available to us."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the vendor, specifying the revenue-at-risk figure, and structuring four elements (risk, impact, mitigations, actions) produces a usable one-page risk briefing.",
+    "maxTokens": null
+  }
+]

@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague data cleaning request fix",
+    "originalPrompt": "Can you help me clean up my data? There are some issues with it.",
+    "options": [
+      "Clean this CSV dataset. Steps: remove rows where revenue is null or negative, deduplicate on order_id (keep first), parse date column to YYYY-MM-DD, and trim whitespace from customer_name. Return Python pandas code.",
+      "Help me fix the problems in my dataset.",
+      "Please write comprehensive data cleaning code that handles all possible data quality issues including nulls, duplicates, formatting problems, and outliers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing each transformation step explicitly and specifying the language and library produces runnable cleaning code on the first attempt.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best SQL aggregation prompt",
+    "originalPrompt": "You need to calculate monthly active users from a database table.",
+    "options": [
+      "How do I count users in SQL?",
+      "Write a SQL query to calculate Monthly Active Users (MAU) for each month in 2024. Table: events(user_id, event_date). Active = at least 1 event in the month. Group by year-month, order descending.",
+      "Help me write a SQL query that counts how many users were active each month and shows me the trend over time with all the relevant details."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Defining 'active', specifying the table schema, the time range, and sort order gives the AI everything to write a correct, runnable query.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Statistical analysis prompt improvement",
+    "originalPrompt": "I want to analyse my data statistically. Can you help me with that?",
+    "options": [
+      "Run a two-sample t-test in Python (scipy) on this dataset to compare conversion rates between control (n=1,200) and treatment (n=1,180) groups. Report: t-statistic, p-value, and a plain-English conclusion at \u03b1=0.05. Data: [paste].",
+      "Help me do statistical analysis on my A/B test data to see if there's a significant difference between the two groups.",
+      "Explain the different statistical tests I can use to analyse my experiment data and tell me which one is best for comparing two groups."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the test, library, sample sizes, the significance level, and the required output format produces a complete analysis script with an interpretable conclusion.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact cohort analysis prompt",
+    "originalPrompt": "Ask AI to explain a cohort retention analysis.",
+    "options": [
+      "Explain cohort retention analysis in 3 sentences. Define: cohort, retention rate, and what a healthy retention curve looks like for a SaaS product.",
+      "Can you explain what cohort analysis is and how it works and what retention rate means and how to interpret a cohort table and what good retention looks like for different types of businesses?",
+      "Explain cohort analysis."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Capping the explanation at 3 sentences and naming the three concepts to define keeps the answer focused and within the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best funnel analysis prompt",
+    "originalPrompt": "You want to analyse where users are dropping off in a checkout funnel.",
+    "options": [
+      "Analyse my checkout funnel.",
+      "Analyse this checkout funnel data. Stages: visit\u2192cart\u2192checkout\u2192payment\u2192confirmation. Calculate drop-off rate between each stage. Flag stages with >40% drop-off. Data: [paste as CSV]. Return a table with stage, users, drop-off %, and a one-line observation per high-drop stage.",
+      "Help me understand where users are dropping out of my checkout process by looking at the data for each step and calculating conversion rates and identifying the biggest problems."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Listing the stages, the threshold to flag, and the output columns produces a ready-to-present funnel report rather than a generic analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Customer segmentation prompt fix",
+    "originalPrompt": "I want to segment my customers. Can you help me do that?",
+    "options": [
+      "Perform RFM customer segmentation on this dataset (columns: customer_id, order_date, order_value). Score Recency, Frequency, and Monetary on a 1-5 scale. Define 4 segments (Champions, At Risk, Lost, New). Return Python code using pandas and a segment count summary.",
+      "Analyse my customer data and segment customers into different groups based on their behaviour.",
+      "Explain customer segmentation techniques and tell me which approach is best for my e-commerce business and how I should implement it."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the methodology (RFM), the column names, the scoring scale, the four segments, and the expected outputs produces a complete segmentation script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact data visualisation recommendation",
+    "originalPrompt": "Ask AI which chart to use for time-series with multiple categories.",
+    "options": [
+      "Recommend the best chart type for comparing monthly revenue across 5 product categories over 2 years. Options: line, stacked bar, small multiples. Justify in 2 sentences.",
+      "Can you tell me what type of chart or visualisation I should use for my data? I have time-series data with multiple categories and I want to choose the best chart to communicate the trends effectively.",
+      "What chart should I use?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-providing the chart options and limiting justification to 2 sentences produces a decision in a few words rather than a long design tutorial.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best A/B test design prompt",
+    "originalPrompt": "You need to design a statistically valid A/B test for a new checkout button colour.",
+    "options": [
+      "Help me set up an A/B test.",
+      "Design an A/B test for a checkout button colour change. Calculate sample size needed for: 5% baseline conversion, 1% minimum detectable effect, 80% power, \u03b1=0.05. Specify: randomisation unit (session), test duration, and guardrail metrics. Use Python statsmodels for the calculation.",
+      "Tell me everything about A/B testing methodology including how to design experiments and calculate sample sizes and what statistical tests to use and how to avoid common pitfalls."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing the baseline rate, MDE, power, and \u03b1, and asking for the randomisation unit, duration, and guardrail metrics produces a complete experiment design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Causal inference analysis prompt fix",
+    "originalPrompt": "I want to understand if my marketing campaign actually caused an increase in sales.",
+    "options": [
+      "Apply a Difference-in-Differences analysis to estimate the causal impact of a 4-week email campaign on sales. Treatment group: customers who received emails (n=5,000). Control group: matched non-recipients (n=5,000). Pre-period: 4 weeks before. Output: Python code (pandas/statsmodels), ATT estimate, 95% CI, and a parallel trends assumption check plot.",
+      "Did my email marketing campaign increase sales? Here is the sales data.",
+      "Explain causal inference methods like A/B testing, difference-in-differences, and regression discontinuity and help me choose the right approach for my marketing analysis."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert causal analysis prompts must specify the method, group sizes, time periods, the key assumption check, and all output artefacts to produce a complete, defensible analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact outlier detection prompt",
+    "originalPrompt": "Ask AI to detect outliers in transaction data.",
+    "options": [
+      "Detect outliers in this transaction dataset using IQR and Z-score methods. Flag rows where amount is an outlier by either method. Return flagged rows with a column indicating which method(s) triggered. Python/pandas. Data: [paste].",
+      "I need to find outliers in my transaction data. Please help me identify unusual values that might indicate errors or fraud and explain how outlier detection works and what methods are available.",
+      "Find outliers in my data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying two methods, the column to check, the output columns, and the language produces working detection code within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best pivot table explanation prompt",
+    "originalPrompt": "A junior analyst needs a prompt to learn how to create pivot tables in pandas.",
+    "options": [
+      "Teach me about pivot tables.",
+      "Show me how to create a pivot table in pandas. Example: sales data with columns region, product, and revenue. Pivot: rows=region, columns=product, values=sum(revenue). Include the code and a 2-sentence explanation of each parameter.",
+      "Can you explain pivot tables in pandas and show me some examples of how to use them for data analysis with different aggregation functions and multi-level indexes?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Providing a concrete example dataset and specifying the row, column, and value fields makes the tutorial immediately actionable with realistic data.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Dashboard KPI definition prompt fix",
+    "originalPrompt": "Help me define KPIs for my dashboard. I want to track the right things.",
+    "options": [
+      "Define 5 KPIs for a SaaS customer success dashboard. For each: metric name, formula, target, data source (our CRM/product DB), and whether it's a leading or lagging indicator. Focus on: churn, NPS, product adoption, support resolution, and expansion revenue.",
+      "What KPIs should I track on my dashboard?",
+      "Help me choose all the important metrics and key performance indicators that would be relevant for tracking business performance across our different teams."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the five metrics, the required fields per KPI, and the data sources produces a dashboard spec that the engineering team can build from immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact regex data extraction prompt",
+    "originalPrompt": "Ask AI to extract data from unstructured text.",
+    "options": [
+      "Write a Python regex to extract all email addresses and phone numbers (UK format: 07xxx xxxxxx) from this text. Return two lists: emails and phones. Text: [paste].",
+      "I need to extract contact information from some unstructured text data. Please help me write code to find all the emails and phone numbers in the text.",
+      "Extract data from text."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the two data types, the phone format, and the output structure (two lists) produces a working extraction script without any ambiguity.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best data profiling prompt",
+    "originalPrompt": "You need to profile a new dataset before analysis.",
+    "options": [
+      "Profile this dataset for me.",
+      "Profile this DataFrame before analysis. Report per column: data type, null count (%), unique value count, min/max for numerics, and top 5 values for categoricals. Flag columns with >20% nulls. Python/pandas. Data: [paste].",
+      "Analyse my dataset and tell me everything about the data quality and the distribution of values and the relationships between variables."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Enumerating the per-column statistics and the null-flag threshold produces a profiling report that immediately reveals quality issues.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Time-series forecasting prompt fix",
+    "originalPrompt": "I want to forecast sales for next quarter. Can you help me with that?",
+    "options": [
+      "Build a Prophet time-series forecast for monthly sales. Training data: Jan 2022\u2013Dec 2024 (CSV attached). Forecast horizon: Q1 2025. Include: seasonality (monthly, yearly), a 90% confidence interval plot, and a table of predicted values with upper/lower bounds.",
+      "Help me forecast my sales for next quarter using historical data.",
+      "Explain time-series forecasting methods like ARIMA and Prophet and exponential smoothing and tell me which one I should use for quarterly sales forecasting."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the model, data range, horizon, seasonality components, and the two output artefacts (plot + table) produces a complete forecasting implementation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact correlation analysis prompt",
+    "originalPrompt": "Ask AI to find correlations between variables in a dataset.",
+    "options": [
+      "Compute a Pearson correlation matrix for numeric columns in this DataFrame. Highlight pairs with |r| > 0.7. Flag multicollinearity risks for regression. Return heatmap code (seaborn) and a top-5 correlated pairs table.",
+      "I need to understand the relationships between the different variables in my dataset. Can you help me calculate correlations and identify which variables are strongly related to each other?",
+      "Find correlations in data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the method, the threshold, the practical concern (multicollinearity), and two output artefacts keeps the analysis focused and within budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best experimentation platform design prompt",
+    "originalPrompt": "Your company wants to build an internal A/B testing platform from scratch.",
+    "options": [
+      "How do I build an A/B testing system?",
+      "Design an internal A/B experimentation platform for a 2M DAU app. Address: assignment consistency (user-level bucketing with hashing), experiment isolation (mutual exclusivity), real-time metric computation (Kafka + ClickHouse), and a self-serve UI for analysts. Identify the top 3 engineering risks and mitigation strategies.",
+      "Tell me about A/B testing platforms and what features they need and how companies like Google and Netflix have built their experimentation infrastructure."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Specifying the DAU scale, the four design concerns, the tech stack, and asking for risk analysis produces an architecture review rather than a tutorial.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague chart interpretation request fix",
+    "originalPrompt": "Can you help me understand this chart and what it means for my business?",
+    "options": [
+      "Interpret this bar chart showing monthly churn rate (%) for Q1\u2013Q4 2024. Identify: the highest churn month, any seasonal trend, and one data-driven recommendation to reduce churn. Chart data: [paste as table].",
+      "Explain what this chart is showing me and what it means.",
+      "Analyse this chart and give me a very detailed interpretation of all the data points and trends and patterns and what they mean for our business strategy going forward."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the chart type, metric, time period, and asking for three specific outputs (peak month, trend, recommendation) produces an immediately actionable interpretation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best attribution modelling prompt",
+    "originalPrompt": "Your marketing team wants to understand which channels are driving conversions.",
+    "options": [
+      "Tell me about marketing attribution models.",
+      "Compare first-touch, last-touch, and data-driven multi-touch attribution models for a B2B SaaS with a 45-day sales cycle and 5 touchpoints on average. For each model: how credit is assigned, when to use it, and its main weakness. Return as a 3-column comparison table.",
+      "Help our marketing team understand which channels are driving the most conversions by analysing our attribution data and building a model."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Constraining the comparison to three specific models, the business context (sales cycle + touchpoints), and a table format produces a decision-ready comparison.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact LTV calculation prompt",
+    "originalPrompt": "Ask AI to calculate customer lifetime value.",
+    "options": [
+      "Calculate Customer LTV using: avg monthly revenue $120, avg churn rate 3.5%, gross margin 65%. Formula: LTV = (ARPU \u00d7 Gross Margin) / Churn Rate. Return the result and a one-sentence interpretation.",
+      "I need to calculate the lifetime value of our customers. Can you help me with the formula and show me how to calculate it using our business metrics including revenue and churn rate and margins?",
+      "Calculate LTV."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the actual numbers and the formula and limiting the output to the result plus one sentence produces a calculation that can be shared in a slide immediately.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Join analysis prompt improvement",
+    "originalPrompt": "Can you help me write a query that combines data from two tables?",
+    "options": [
+      "Write a SQL query to LEFT JOIN orders to customers on customer_id. Include: customer_name, email, order_count (COUNT), total_spent (SUM order_value), and last_order_date (MAX order_date). Filter: customers with at least 1 order. Group by customer.",
+      "Help me combine my orders and customers tables in SQL to see customer purchase history.",
+      "Write a SQL query that joins multiple tables and calculates various aggregated metrics and filters the results appropriately."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the join type, join key, all output columns with their aggregations, and the filter condition produces a complete, runnable query.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best pandas groupby explanation prompt",
+    "originalPrompt": "You need to understand how to use pandas groupby for data aggregation.",
+    "options": [
+      "Tell me about groupby in pandas.",
+      "Show me how to use pandas groupby to calculate sum and mean of 'revenue' grouped by 'region' and 'product'. Show the code, then explain in 2 sentences why .agg() is preferred over separate .sum()/.mean() calls.",
+      "Explain all the things you can do with pandas groupby including different aggregation functions and transform and apply and filter methods with examples."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Providing concrete column names, multiple groupby keys, and asking for a comparison of approaches produces a tutorial that teaches a real best practice.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Forecasting accuracy evaluation prompt fix",
+    "originalPrompt": "How accurate are my forecasts? Can you help me evaluate them?",
+    "options": [
+      "Evaluate forecast accuracy for these predicted vs actual monthly sales values. Compute: MAE, RMSE, MAPE, and bias. Flag if MAPE > 10%. Python code + results table. Data: [paste as two lists: actual, predicted].",
+      "Help me calculate forecast accuracy metrics for my predictions.",
+      "Explain all the different metrics used to evaluate forecast accuracy and tell me which ones are best for different situations and how to interpret them."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Listing the four metrics, the flag threshold, the output format, and providing the data structure produces a complete evaluation script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact data dictionary entry prompt",
+    "originalPrompt": "Ask AI to write a data dictionary entry for a table column.",
+    "options": [
+      "Write a data dictionary entry for column 'churn_probability'. Include: data type (FLOAT), range (0\u20131), description (ML model output: probability user cancels in next 30 days), and how to use it (flag users >0.7 for retention campaign).",
+      "Help me write documentation for one of the columns in my data warehouse. It's a machine learning model output that predicts whether customers will churn.",
+      "Write a data dictionary entry."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Pre-filling the data type, range, description, and use case produces a complete data dictionary entry without the AI needing to ask questions.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Analysis & Analytics",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best prompt for trend decomposition",
+    "originalPrompt": "You need to decompose a time series into its components.",
+    "options": [
+      "Decompose my time-series data.",
+      "Decompose this monthly website traffic time series using statsmodels seasonal_decompose (additive model). Plot the trend, seasonal, and residual components. Identify: is there a yearly seasonal pattern, and does the trend show growth or decline? Data: [paste].",
+      "Explain how time-series decomposition works and what the trend and seasonal and residual components mean and how to interpret them for business analysis."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the library, the model type, the two interpretive questions, and providing the data produces a complete decomposition analysis with conclusions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Model evaluation prompt improvement",
+    "originalPrompt": "Can you help me evaluate my machine learning model? I want to know how good it is.",
+    "options": [
+      "Evaluate this binary classification model. Dataset is imbalanced (5% positive class). Compute: precision, recall, F1, AUC-ROC, and confusion matrix. Explain in one sentence why accuracy is misleading for imbalanced classes. Python/sklearn. Predictions: [paste].",
+      "Tell me how good my machine learning model is.",
+      "Help me evaluate my model performance using various metrics and explain what each metric means and which ones are most important for my use case."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the imbalanced class problem, the five metrics, and asking for the conceptual explanation produces a thorough evaluation with a key insight about the dataset.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best feature engineering prompt",
+    "originalPrompt": "You want to generate feature engineering ideas for a customer churn prediction model.",
+    "options": [
+      "Give me ideas for machine learning features.",
+      "Suggest 8 engineered features for a customer churn prediction model. Data available: subscription start date, login events, support tickets, payment history, and product usage logs. For each feature: name, formula/derivation, and rationale for churn prediction.",
+      "What features should I use for my churn model and how do I create them from my raw data?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Specifying the feature count, all available data sources, and asking for formula + rationale per feature produces a complete feature engineering spec.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Hyperparameter tuning prompt fix",
+    "originalPrompt": "How do I improve my model by adjusting its parameters?",
+    "options": [
+      "Write a scikit-learn GridSearchCV pipeline to tune a Random Forest classifier. Parameter grid: n_estimators [100,200,500], max_depth [None,10,20], min_samples_leaf [1,2,5]. Use 5-fold CV, scoring=f1_weighted. Print best params and test set F1.",
+      "Help me tune the hyperparameters of my random forest model to get better performance.",
+      "Explain all the hyperparameters for random forest and how they affect model performance and what values I should try."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the tuning strategy, the parameter grid with values, the CV folds, and the scoring metric produces a ready-to-run tuning script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact ML algorithm selection prompt",
+    "originalPrompt": "Ask AI which ML algorithm to use for a regression problem.",
+    "options": [
+      "Recommend an ML algorithm for predicting house prices. Features: 20 numeric, 5 categorical. Dataset: 50k rows. Priorities: interpretability and speed. Compare: linear regression vs gradient boosting. Justify in 2 sentences.",
+      "I need to choose a machine learning algorithm for predicting house prices. I have a mix of numeric and categorical features and a reasonably large dataset. Can you help me understand the tradeoffs between different approaches?",
+      "Which ML model should I use?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing dataset size, feature types, priority criteria, and limiting the comparison to two options produces a fast, decision-ready recommendation.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best ML pipeline code review prompt",
+    "originalPrompt": "You want an AI to review your ML training pipeline for issues.",
+    "options": [
+      "Review my machine learning code.",
+      "Review this scikit-learn ML pipeline for data leakage. Check: preprocessing steps inside vs outside the pipeline, target encoding before cross-validation split, and test set exposure during feature selection. Code: [paste]. Flag each leakage point with line number and fix.",
+      "Look at my machine learning pipeline and tell me if there are any issues or bugs or problems that could affect my model's performance."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the specific leakage pattern to check, the three locations to inspect, and requiring line number + fix produces an actionable code review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Model explainability prompt fix",
+    "originalPrompt": "I need to explain why my model made certain predictions. Can you help?",
+    "options": [
+      "Generate SHAP explainability analysis for this trained XGBoost model. Produce: a beeswarm summary plot (top 10 features), a waterfall chart for the highest-risk prediction, and a plain-English summary of the top 3 drivers. Python/shap library. Model and data: [paste].",
+      "Help me explain the predictions of my XGBoost machine learning model to stakeholders.",
+      "Tell me about model explainability techniques like SHAP and LIME and feature importance and how to use them for my model."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the tool, the three output artefacts, and the audience (stakeholders need plain English) produces a complete explainability report.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact class imbalance handling prompt",
+    "originalPrompt": "Ask AI how to handle imbalanced classes in a classification model.",
+    "options": [
+      "List 3 techniques for handling class imbalance (positive class: 2%). For each: technique name, when to use it, and one-line sklearn implementation. Techniques to cover: SMOTE, class_weight='balanced', threshold tuning.",
+      "I have a highly imbalanced dataset where only 2% of samples are positive. How should I handle this class imbalance in my classification model? What are all the different techniques and when should I use each one?",
+      "How do I fix class imbalance?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-specifying the three techniques and asking for a when-to-use + one-liner per technique prevents a long tutorial while still teaching the key options.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best ML model monitoring prompt",
+    "originalPrompt": "Your production ML model is showing degraded performance three months after deployment.",
+    "options": [
+      "Why is my model performing worse?",
+      "Diagnose production ML model degradation for a fraud detection model (XGBoost, deployed 3 months ago). Performance drop: precision 0.91\u21920.74. Analyse: feature drift (KS test on top 5 features), concept drift (label distribution shift), and recent data leakage. Suggest a retraining trigger strategy. Data samples: [paste].",
+      "Explain the different types of model drift including data drift and concept drift and how to detect and address them when a production ML model starts performing worse over time."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Quantifying the performance drop, naming the model, specifying three drift types to investigate, and asking for a retraining strategy produces a root-cause analysis plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Reinforcement learning design prompt fix",
+    "originalPrompt": "I want to use reinforcement learning for my recommendation system. Can you help me get started?",
+    "options": [
+      "Design a contextual bandit system for a content recommendation engine. State space: user embedding (128-dim) + time-of-day. Action space: top-50 content items. Reward: 5-min engagement signal (delayed, +30s). Algorithm: LinUCB. Address: cold start for new content and reward delay handling. Output: algorithm pseudocode and a feature schema.",
+      "How do I use reinforcement learning for recommendations?",
+      "Explain reinforcement learning algorithms for recommendations including bandit algorithms and Q-learning and actor-critic methods and when to use each one."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert RL prompts must define the state space, action space, reward signal (including delay), the algorithm, and the two key practical challenges to produce an implementable design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact cross-validation strategy prompt",
+    "originalPrompt": "Ask AI to choose a cross-validation strategy for time-series data.",
+    "options": [
+      "Recommend a cross-validation strategy for time-series churn prediction (monthly data, 3 years). Compare: standard k-fold vs TimeSeriesSplit. Explain data leakage risk with k-fold. Show TimeSeriesSplit sklearn code with n_splits=5.",
+      "What cross-validation approach should I use for my machine learning model that uses time-series data? I want to make sure I'm not overfitting and I'm getting reliable performance estimates.",
+      "Explain cross-validation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Limiting the comparison to two options, asking for the leakage explanation, and requesting code with a specific n_splits produces a focused, actionable answer.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best transfer learning application prompt",
+    "originalPrompt": "You want to fine-tune a pre-trained model for a custom text classification task.",
+    "options": [
+      "Help me fine-tune a model for text classification.",
+      "Fine-tune bert-base-uncased for 3-class customer support ticket classification (billing, technical, general). Dataset: 2,000 labelled examples. Use HuggingFace Trainer API. Freeze: first 8 encoder layers. Show training script with AdamW, lr=2e-5, 3 epochs, and a validation split.",
+      "Explain transfer learning and how to fine-tune BERT for text classification and what hyperparameters to use."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the base model, the task, class labels, dataset size, library, frozen layers, and all hyperparameters produces a complete, runnable fine-tuning script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Confusion matrix explanation prompt fix",
+    "originalPrompt": "Can you explain the confusion matrix for my model?",
+    "options": [
+      "Explain this confusion matrix for a spam classifier. Matrix: [[TN=850, FP=50], [FN=30, TP=70]]. Calculate: precision, recall, and F1. Explain in one sentence why high FP is worse than high FN for a spam filter.",
+      "Help me understand what the confusion matrix shows about my classification model's performance.",
+      "Explain what a confusion matrix is and what all the different cells mean and how to calculate various metrics from it."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the actual matrix values, the domain context, and asking for the business impact comparison produces a concrete, memorable explanation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact overfitting explanation prompt",
+    "originalPrompt": "Ask AI to explain overfitting in machine learning.",
+    "options": [
+      "Explain overfitting in ML in 3 sentences. Define it, give one real-world analogy, and name two remedies (regularisation and early stopping).",
+      "Can you explain what overfitting is in machine learning and why it happens and how to detect it and all the different ways to prevent it?",
+      "What is overfitting?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Capping the response at 3 sentences and specifying definition, analogy, and remedies produces a crisp explanation that is easy to remember.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best feature store design prompt",
+    "originalPrompt": "Your ML team wants to standardise feature computation and reuse across models.",
+    "options": [
+      "What is a feature store?",
+      "Design a feature store architecture for an ML platform serving 10 production models. Requirements: online store (<10ms latency, Redis), offline store (Parquet on S3), feature versioning, and point-in-time correct joins. Address: avoiding train-serve skew. Output: component diagram description and a feature registration API schema.",
+      "Help me build a feature store for our machine learning platform so that our team can share and reuse features across different models."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Specifying the scale, the dual store architecture, the latency SLA, the key design concern (train-serve skew), and both output artefacts produces an architecture decision record.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague dashboard design prompt fix",
+    "originalPrompt": "Help me design a dashboard. I want something that shows business performance.",
+    "options": [
+      "Design a Looker dashboard for the C-suite. Include 5 KPI tiles: MRR, MoM growth, churn rate, NPS, and CAC. Add a revenue trend line chart (12 months) and a customer acquisition breakdown by channel (bar chart). Layout: KPIs row at top, charts below.",
+      "Can you help me design a business performance dashboard?",
+      "Create a very detailed and comprehensive dashboard design with all the important metrics and visualisations and filters and drill-downs that executives would want to see."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the BI tool, the audience, five specific KPIs, two chart types, and the layout produces a dashboard spec ready to build.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best LookML measure definition prompt",
+    "originalPrompt": "You need to define a complex LookML measure for revenue attribution.",
+    "options": [
+      "Write a LookML measure for revenue.",
+      "Write a LookML measure for net_revenue that calculates SUM(gross_revenue) - SUM(refunds). Add: label 'Net Revenue', format '$#,##0', and a drill-down to order_id and customer_name. Include a brief inline comment explaining the business logic.",
+      "Help me write LookML code for calculating our net revenue metric that subtracts refunds from gross revenue with proper formatting and drill-through capabilities."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Specifying the formula, label, number format, drill fields, and the need for a comment produces a complete, self-documenting LookML block.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "BI report narrative prompt fix",
+    "originalPrompt": "Can you write a commentary for my monthly BI report?",
+    "options": [
+      "Write a 3-paragraph executive commentary for the June monthly BI report. Key metrics: revenue \u00a32.3M (+8% MoM), new customers 412 (-5% MoM), churn 2.1% (up from 1.8%). Tone: factual, action-oriented. Highlight: the churn increase as the key risk and recommend one action.",
+      "Write a commentary for my business intelligence report that summarises the key metrics.",
+      "Write a very detailed and insightful commentary for our monthly business report covering all the metrics and explaining all the trends and providing context and recommendations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the actual numbers, the paragraph structure, the tone, and the key narrative focus (churn risk + action) produces a ready-to-publish commentary.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact metric definition prompt",
+    "originalPrompt": "Ask AI to define a business metric clearly.",
+    "options": [
+      "Define Net Revenue Retention (NRR) for a SaaS business. Include: formula (expansion + renewal \u2212 churn / prior period ARR \u00d7 100), what >100% means, and one benchmark (top quartile SaaS: >120%). 3 sentences max.",
+      "Can you explain what Net Revenue Retention is for a SaaS company and how to calculate it and what a good NRR looks like and how it compares to gross revenue retention?",
+      "Define NRR."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including the formula, the interpretation of >100%, and an industry benchmark makes the definition actionable and memorable in 3 sentences.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best self-serve BI rollout prompt",
+    "originalPrompt": "Your company wants to roll out self-serve analytics to business teams.",
+    "options": [
+      "Help us implement self-serve analytics.",
+      "Create a self-serve BI rollout plan for 200 business users across Finance, Sales, and Marketing. Tool: Tableau. Address: data governance (certified data sources, row-level security), training programme (3-tier: viewer/analyst/power user), and an adoption measurement framework. Output: a 90-day rollout timeline with milestones.",
+      "What are the best practices for rolling out self-serve analytics and business intelligence to business users in a large organisation?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing user count, departments, tool, three governance concerns, a tiered training model, and an adoption framework produces a complete change management plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Semantic layer design prompt fix",
+    "originalPrompt": "We need a semantic layer for our data warehouse. Help us design it.",
+    "options": [
+      "Design a semantic layer in dbt Metrics for a SaaS data warehouse (Snowflake). Define metrics: MRR, ARR, churn_rate, and NPS. For each: underlying table(s), calculation logic, time grain (monthly/weekly), and dimensions (plan_tier, region). Address: metric consistency across BI tools via the MetricFlow interface and how to handle currency conversion.",
+      "What is a semantic layer and how should we design it for our BI platform?",
+      "Help us design a metrics layer that defines all our important business metrics in a single place so they are consistent across different reporting tools."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Naming the tool, warehouse, four specific metrics, the per-metric schema, and the two cross-cutting concerns produces a design that is directly implementable in dbt.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact dashboard filter specification",
+    "originalPrompt": "Ask AI to specify filters for a sales dashboard.",
+    "options": [
+      "Specify dashboard filters for a sales performance dashboard. Filters needed: date range (default: last 30 days), region (multi-select, all by default), sales rep (single-select, dependent on region), and product line. Each filter: type, default value, and which charts it affects.",
+      "Help me decide what filters to include on my sales dashboard and how they should work together and what the default values should be.",
+      "Add filters to my dashboard."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing the four filters with type, default, and dependency chain produces a technical spec the BI engineer can implement without follow-up questions.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best Tableau calculated field prompt",
+    "originalPrompt": "You need to create a calculated field in Tableau to show year-over-year revenue growth.",
+    "options": [
+      "Help me calculate growth in Tableau.",
+      "Write a Tableau calculated field for Year-over-Year revenue growth %. Formula: (SUM([Revenue]) - LOOKUP(SUM([Revenue]), -52)) / ABS(LOOKUP(SUM([Revenue]), -52)). Explain in 1 sentence what LOOKUP(-52) does for a weekly data source.",
+      "Explain how to create calculated fields in Tableau and all the different functions available and how to do year-over-year comparisons and trend analysis."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Providing the complete formula and asking for a one-sentence explanation of the LOOKUP offset produces a field you can paste directly into Tableau.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Data access governance prompt fix",
+    "originalPrompt": "We need to make sure the right people have access to the right data in our BI tool.",
+    "options": [
+      "Design a row-level security model in Looker for a multi-tenant SaaS company. Tables affected: orders, customers, revenue. Logic: sales reps see only their accounts, managers see their team's accounts, admins see all. Implement via user_attributes and access_filters. Show the LookML access_filter syntax for orders.",
+      "Help us set up data access controls in our BI tool.",
+      "What are the best practices for data governance and security in business intelligence platforms and how do we control who can see what data?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the BI tool, the three affected tables, the three role definitions, the Looker-specific mechanism, and asking for syntax produces an implementable RLS design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact BI performance optimisation prompt",
+    "originalPrompt": "Ask AI to diagnose a slow Tableau dashboard.",
+    "options": [
+      "Diagnose this slow Tableau dashboard (load time: 45s). Checks: extract vs live connection, high-cardinality dimensions in filters, cross-database joins, and calculation complexity. Return top 3 likely causes and a one-line fix for each.",
+      "My Tableau dashboard is very slow and takes a long time to load. Can you help me understand what might be causing the performance issues and how to fix them?",
+      "Why is my dashboard slow?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the load time and pre-listing the four diagnostic checks produces a focused performance audit within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best modern data stack design prompt",
+    "originalPrompt": "Your startup needs to design a complete modern data stack from scratch.",
+    "options": [
+      "Recommend a tech stack for analytics.",
+      "Design a modern data stack for a 50-person B2B SaaS startup: 5M events/day, 3 analysts, \u20ac5k/month infrastructure budget. Recommend: ingestion (Fivetran vs Airbyte), warehouse (BigQuery vs Snowflake), transformation (dbt), and BI (Metabase vs Looker). Justify each choice on cost and scale. Provide a data flow diagram description.",
+      "What tools should we use for our data infrastructure and analytics stack and what are the tradeoffs between the different options?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Constraining the recommendation with team size, event volume, and a budget produces cost-aware tooling choices rather than enterprise-first defaults.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Stakeholder report prompt improvement",
+    "originalPrompt": "Write me a report for the business stakeholders about our data.",
+    "options": [
+      "Write a 1-page stakeholder report on Q2 marketing analytics. Audience: non-technical marketing directors. Include: 3 key findings with data (conversion rate, CPL, pipeline influenced), 1 insight per finding, and 2 recommended actions. Avoid jargon. Use bullet points.",
+      "Create a report on our marketing data for stakeholders.",
+      "Write a comprehensive and detailed report covering all of our marketing metrics and analytics results and trends and insights and recommendations for the executive team."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying audience, length, the three metrics, the per-finding structure, the jargon constraint, and format produces a publishable report without revision.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague linear regression prompt fix",
+    "originalPrompt": "Can you help me run a regression on my data to predict sales?",
+    "options": [
+      "Build a multiple linear regression model in Python (sklearn) to predict monthly_sales. Features: ad_spend, seasonality_index, price. Split: 80/20 train/test. Report: R\u00b2, MAE, and a coefficient table. Data: [paste].",
+      "Help me run a regression analysis to understand what factors affect our sales.",
+      "Build a machine learning model to predict sales with all the relevant features and give me a detailed analysis of the results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the model type, library, target, features, split ratio, and evaluation metrics produces a complete regression script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best hypothesis test selection prompt",
+    "originalPrompt": "You need to choose the right statistical test for comparing two groups of non-normally distributed data.",
+    "options": [
+      "What statistical test should I use?",
+      "I have two independent groups of customer satisfaction scores (non-normal distribution confirmed by Shapiro-Wilk, n=80 and n=75). Which test should I use to compare them: Mann-Whitney U, t-test, or chi-squared? Justify the choice in 2 sentences.",
+      "Explain the different statistical tests for comparing groups and when to use parametric vs non-parametric tests and how to check test assumptions."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Stating the distribution confirmed, the sample sizes, and the three options to evaluate produces a specific recommendation with the correct justification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "NLP text classification prompt fix",
+    "originalPrompt": "I need to classify text. Can you help me build a model for that?",
+    "options": [
+      "Build a text classification pipeline in Python to categorise customer reviews as Positive/Neutral/Negative. Use TF-IDF vectoriser + Logistic Regression. Steps: preprocess (lowercase, remove stopwords), vectorise, train on 80%, evaluate with classification_report. Data: [paste].",
+      "Help me build a sentiment analysis model that can classify customer reviews into different categories.",
+      "Explain all the different approaches to text classification including traditional ML and deep learning and transformers and tell me which one I should use."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the three classes, the full pipeline (vectoriser + model), each preprocessing step, and the evaluation function produces a working NLP pipeline.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact descriptive statistics prompt",
+    "originalPrompt": "Ask AI to summarise a dataset statistically.",
+    "options": [
+      "Generate descriptive statistics for this DataFrame. For numeric columns: mean, median, std, min, max, IQR. Highlight any column where std > mean (high variance). Python pandas. Data: [paste].",
+      "Can you give me a summary of the statistical properties of my dataset including measures of central tendency and spread and any interesting patterns or outliers?",
+      "Summarise my data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing the six statistics, the flag condition, and specifying the library gives the AI a clear output specification within the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best experiment results write-up prompt",
+    "originalPrompt": "You need to write up the results of a data science experiment for stakeholders.",
+    "options": [
+      "Write up my experiment results.",
+      "Write a 1-page stakeholder summary of this data science experiment: tested 3 churn models (Logistic Regression, XGBoost, LightGBM), metric AUC-ROC (0.72, 0.81, 0.84). Recommend LightGBM. Audience: non-technical product managers. Include: what we tested, the result, why LightGBM wins, and the next step.",
+      "Write a comprehensive technical report on our model comparison experiment with detailed methodology, results, and statistical analysis for our data science team."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Specifying the audience, length, the three models with their scores, the recommendation, and the four sections produces a write-up that needs no editing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Bayesian model prompt improvement",
+    "originalPrompt": "I want to use Bayesian statistics for my analysis. Can you help me get started?",
+    "options": [
+      "Build a Bayesian A/B test in PyMC to compare conversion rates between control (120/2000) and treatment (145/2000). Prior: Beta(1,1). Posterior: 10,000 MCMC samples. Output: probability that treatment > control, 95% HDI, and a posterior distribution plot. Interpret the result in 2 sentences.",
+      "Help me apply Bayesian statistics to my A/B test analysis.",
+      "Explain Bayesian statistics and how it differs from frequentist statistics and when to use Bayesian methods for data analysis and how to implement them in Python."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the actual data counts, the prior, the MCMC samples, and specifying all three outputs produces a complete Bayesian analysis script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact model card generation prompt",
+    "originalPrompt": "Ask AI to write a model card for an ML model.",
+    "options": [
+      "Write a model card for a churn prediction model. Include: intended use, training data (Q1-Q3 2024 subscribers), performance (AUC 0.83 on holdout), known limitations (no cold-start handling), and ethical considerations (no protected attributes used). 5 sections, 1-2 sentences each.",
+      "Can you write a model card for my machine learning model? I want to document what it does and how it performs and what the limitations are and any fairness or ethical considerations.",
+      "Write a model card."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-filling the five section contents and limiting each to 1-2 sentences produces a complete model card without the AI needing to ask for the details.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best data science project scoping prompt",
+    "originalPrompt": "You need to scope a new data science project for the product team.",
+    "options": [
+      "Help me start a data science project.",
+      "Write a 1-page project brief for a customer churn prediction model. Include: business objective (reduce churn by 2%), success metrics (AUC > 0.80, F1 > 0.70), data requirements, and estimated timeline (4 weeks). Format: problem statement, success criteria, data needed, and risks.",
+      "Create a detailed project plan for a machine learning project to predict customer churn with all the tasks and timelines and resource requirements and risk assessments."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the business objective with a number, the success metrics, and the four brief sections produces a scoping document that gets stakeholder buy-in quickly.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Survival analysis prompt fix",
+    "originalPrompt": "I want to analyse customer lifetime using survival analysis. Help me.",
+    "options": [
+      "Fit a Kaplan-Meier survival curve in Python (lifelines) for customer subscription lifetime. Event: churn. Segments: plan_type (monthly vs annual). Plot both curves on one chart, add 95% CI, and perform a log-rank test to check if survival curves are significantly different (\u03b1=0.05). Data: [paste].",
+      "Help me do survival analysis on my subscription data to understand customer lifetime.",
+      "Explain survival analysis and Kaplan-Meier curves and Cox proportional hazards models and how to apply them to analyse customer retention data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the library, the event, the segmentation variable, the CI, and the significance test produces a complete, publication-ready survival analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact propensity score matching prompt",
+    "originalPrompt": "Ask AI to explain propensity score matching for causal analysis.",
+    "options": [
+      "Explain propensity score matching in 4 sentences: what it does, when to use it vs randomised experiment, how to implement in Python (sklearn LogisticRegression for propensity scores, then nearest-neighbour matching), and one key assumption.",
+      "Can you explain what propensity score matching is and how it works and when you would use it instead of a randomised controlled trial and how to implement it in Python and what the key assumptions are?",
+      "Explain propensity score matching."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Capping the explanation at 4 sentences and specifying the four aspects to cover produces a complete, concise explanation of a complex technique.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best cluster analysis interpretation prompt",
+    "originalPrompt": "You ran a k-means clustering analysis and need to interpret the results.",
+    "options": [
+      "Interpret my clustering results.",
+      "Interpret these k-means clustering results (k=4) on customer behaviour data. For each cluster: report the mean values of the key features (purchase_frequency, avg_order_value, recency), suggest a business label (e.g. 'High-Value Active'), and recommend one targeted action per cluster. Cluster centroids: [paste].",
+      "Help me understand what the different customer segments mean from my k-means clustering analysis and what we should do with each group."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Asking for mean feature values, a business label, and a recommended action per cluster transforms raw centroids into an actionable customer segmentation strategy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Counterfactual analysis prompt fix",
+    "originalPrompt": "Can you help me understand what would have happened without our intervention?",
+    "options": [
+      "Build a synthetic control counterfactual for our email re-engagement campaign. Treatment: 1,000 churned users received emails in March. Control pool: 8,000 churned users who did not. Pre-period: Jan-Feb. Post-period: March-April. Metric: 30-day reactivation rate. Implement in Python (using dataframe operations), plot actual vs synthetic, and report the average treatment effect.",
+      "What would have happened without our marketing campaign? Show me the counterfactual.",
+      "Explain counterfactual analysis and synthetic control methods and how to measure the causal impact of marketing interventions on user behaviour."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the treatment/control sizes, the pre/post periods, the metric, and specifying both output artefacts (plot + ATE) produces a complete causal impact analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact EDA prompt",
+    "originalPrompt": "Ask AI to suggest steps for exploratory data analysis.",
+    "options": [
+      "List 5 EDA steps for a new tabular dataset. For each: step name and one pandas/matplotlib code line. Cover: shape/dtypes, null counts, distribution plots, correlation matrix, target variable balance.",
+      "Can you tell me all the steps I should follow when doing exploratory data analysis on a new dataset and what visualisations to create and what statistics to calculate?",
+      "What is EDA?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Pre-specifying five steps and requesting one code line per step produces a usable EDA checklist within the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "System prompt design prompt fix",
+    "originalPrompt": "Can you help me write a system prompt for my AI assistant?",
+    "options": [
+      "Write a system prompt for a customer support AI assistant for a B2B SaaS company. Tone: professional, concise. Constraints: only answer questions about the product (do not discuss competitors), escalate billing questions to a human, respond in the user's language.",
+      "Help me write a system prompt for my AI chatbot.",
+      "Write a very detailed and comprehensive system prompt for my AI assistant that covers all the different scenarios it might encounter and all the rules it should follow."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining the persona, tone, and three concrete behavioural constraints produces a system prompt that controls the LLM's behaviour reliably.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best RAG pipeline design prompt",
+    "originalPrompt": "You need to design a RAG (Retrieval-Augmented Generation) pipeline for a company knowledge base.",
+    "options": [
+      "Help me build a RAG system.",
+      "Design a RAG pipeline for a 10,000-document company knowledge base. Components: chunking strategy (512 tokens, 50-token overlap), embedding model (text-embedding-3-small), vector store (Pinecone), and retrieval (top-5 chunks by cosine similarity). Specify how to handle: out-of-scope queries and hallucination detection.",
+      "Explain how RAG works and what components I need and how to build a retrieval augmented generation system for enterprise knowledge management."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Specifying all four components with their parameters and the two failure modes to handle produces an implementable RAG architecture.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Prompt chaining strategy prompt fix",
+    "originalPrompt": "I want to chain multiple prompts together. How should I do this?",
+    "options": [
+      "Design a 3-step prompt chain for automating a monthly competitive analysis report. Step 1: extract key claims from competitor press releases (input: URLs). Step 2: score each claim by threat level (1-5). Step 3: generate a 3-bullet executive summary. Specify input/output contract for each step.",
+      "How do I chain multiple LLM calls together for a complex task?",
+      "Explain prompt chaining and sequential LLM pipelines and how to pass outputs between prompts and what the best patterns are for complex multi-step AI workflows."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining the three steps with their specific task, input source, and output contract turns a vague chaining question into a buildable pipeline specification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact LLM evaluation criteria prompt",
+    "originalPrompt": "Ask AI what to evaluate when testing an LLM application.",
+    "options": [
+      "List 5 evaluation criteria for an LLM customer support application. For each: criterion name, what it measures, and one example test case. Cover: accuracy, hallucination, tone, latency, and refusal rate.",
+      "What should I look at when evaluating my LLM application to make sure it is working well and producing good outputs for users?",
+      "How do I evaluate an LLM?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Pre-specifying the five criteria and the three fields per criterion produces a complete evaluation rubric within the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best LLM guardrails implementation prompt",
+    "originalPrompt": "You need to prevent an LLM from generating harmful or off-topic content in a production app.",
+    "options": [
+      "How do I make my LLM safe?",
+      "Design a guardrails layer for a financial advice LLM. Input guards: detect and block PII (regex + NER), topic restriction (only finance-related queries using a classifier). Output guards: hallucination check (compare claim to source documents), disclaimer injection for investment advice. Specify which guard runs synchronously vs asynchronously for latency optimisation.",
+      "Tell me about LLM safety techniques including content filtering and prompt injection prevention and what tools and frameworks are available."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Specifying the domain, the input and output guard types, and asking about sync vs async placement produces a production-ready guardrails architecture.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "LLM observability stack prompt fix",
+    "originalPrompt": "We need to be able to monitor our LLM in production. How do we do that?",
+    "options": [
+      "Design an LLM observability stack for a production RAG application serving 50k requests/day. Instrument: token usage per request, retrieval relevance score, response latency (p50/p95/p99), and user thumbs-up/down feedback. Storage: ClickHouse for traces. Alerting: LangSmith for regression detection. Define the 3 alerting thresholds most critical for SLA compliance.",
+      "What should we monitor for our LLM application in production?",
+      "Explain LLM observability and what tools and metrics to use for monitoring a production language model application."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the request volume, the four instrumentation points, the storage and alerting tools, and asking for the three SLA-critical thresholds produces an implementable observability design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact vector embedding selection prompt",
+    "originalPrompt": "Ask AI to recommend an embedding model for a semantic search use case.",
+    "options": [
+      "Recommend an embedding model for semantic search over 500k product descriptions. Compare: text-embedding-3-small (cost: cheap, 1536-dim) vs text-embedding-3-large (cost: 5x, 3072-dim). Recommend one based on: accuracy vs cost tradeoff for a startup. 3 sentences.",
+      "I need to choose an embedding model for my semantic search application. Can you tell me about the different options available and compare their performance and cost and dimensions and when to use each one?",
+      "Which embedding model should I use?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the dataset size, two specific models with their specs, and limiting the answer to 3 sentences produces a fast, justified recommendation.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best agentic AI system design prompt",
+    "originalPrompt": "You are designing a multi-agent AI system for automating a complex research workflow.",
+    "options": [
+      "How do I build an AI agent?",
+      "Design a multi-agent research system for automated market intelligence reports. Agents: Researcher (web search + URL scraping), Analyst (extract claims, score relevance), Writer (synthesise to 500-word report), and Critic (fact-check against sources). Orchestration: LangGraph with a supervisor node. Address: agent failure recovery, context window management across agents, and avoiding prompt injection from scraped content.",
+      "Explain multi-agent AI systems and how to build them using LangChain or LangGraph and what the different agent roles should be."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Defining four specific agents with roles, the orchestration framework, and three architectural challenges produces a design that is ready for implementation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Few-shot prompt design prompt fix",
+    "originalPrompt": "How do I make my LLM follow a specific output format reliably?",
+    "options": [
+      "Design a few-shot prompt to extract structured data from unstructured job postings. Output schema: {title, company, location, salary_range, remote: bool}. Provide 3 few-shot examples (1 with salary, 1 without, 1 remote role). Add: a JSON-only instruction and a fallback instruction for missing fields (use null).",
+      "Help me write a prompt that makes the LLM output JSON consistently.",
+      "Explain few-shot prompting and how to design examples that teach the LLM the output format you want and how many examples to include."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the schema, the three contrasting example cases, the JSON-only constraint, and the null fallback produces a prompt that reliably generates structured output.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact context window management prompt",
+    "originalPrompt": "Ask AI how to handle long conversations that exceed an LLM's context window.",
+    "options": [
+      "List 3 strategies for handling long LLM conversations exceeding context limits. For each: strategy name (summarisation, sliding window, retrieval-augmented memory), when to use it, and one implementation note. Max 4 sentences total.",
+      "Can you explain how to handle situations where a conversation or document exceeds the context window of a large language model and what the different approaches are and when to use each one?",
+      "How do I handle long contexts in LLMs?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Pre-specifying the three strategy names and limiting the total response to 4 sentences produces a concise decision guide within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best structured output prompt design",
+    "originalPrompt": "You need to extract meeting action items from unstructured meeting transcripts reliably.",
+    "options": [
+      "Extract action items from meeting transcripts.",
+      "Extract action items from this meeting transcript. Output strictly as a JSON array: [{\"owner\": \"name\", \"action\": \"description\", \"due_date\": \"YYYY-MM-DD or null\"}]. Return only the JSON array, no explanation. If no action items found, return []. Transcript: [paste].",
+      "Read this meeting transcript and identify all the tasks and action items that were assigned to different people and when they are due and format it nicely."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Providing the exact JSON schema, the empty-result fallback, and a 'no explanation' instruction produces reliable structured output that can be parsed programmatically.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Temperature setting explanation prompt fix",
+    "originalPrompt": "What temperature should I set for my LLM? I'm not sure what it does.",
+    "options": [
+      "Explain the LLM temperature parameter. What values should I use for: (a) data extraction requiring consistent JSON output, (b) creative marketing copy, and (c) code generation? Give a recommended value (0\u20131) and one-sentence justification for each.",
+      "Can you explain what the temperature parameter does in large language models?",
+      "Explain all the LLM parameters including temperature, top_p, top_k, frequency penalty, presence penalty, and how they interact and what values I should use for different tasks."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Asking for three concrete use-case examples with recommended values and one-line justifications produces a practical reference guide rather than a theoretical explanation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague model training prompt fix",
+    "originalPrompt": "Can you help me train a machine learning model? I have some data I want to use.",
+    "options": [
+      "Train a Random Forest classifier in Python (sklearn) on this tabular dataset (CSV attached). Target column: 'is_fraud'. Features: all numeric columns. Split 80/20 stratified. Print classification_report and feature_importances sorted descending.",
+      "Help me train a machine learning model on my data.",
+      "Build a machine learning model using all the best techniques and hyperparameter tuning and cross-validation to get the best possible performance."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the algorithm, library, target column, stratification requirement, and two specific outputs produces a complete training script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Model deployment prompt improvement",
+    "originalPrompt": "How do I deploy my machine learning model so people can use it?",
+    "options": [
+      "Create a FastAPI endpoint to serve this sklearn model as a REST API. Endpoint: POST /predict, input: JSON with feature fields {age, income, tenure}, output: {prediction: 0|1, probability: float}. Load the model from a .pkl file on startup. Add input validation with Pydantic.",
+      "Help me deploy my machine learning model as an API that other systems can call.",
+      "Explain how to deploy machine learning models in production and what serving infrastructure and monitoring I need."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the framework, endpoint path, input/output schemas, model loading strategy, and validation library produces a deployable API in one shot.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Neural network architecture prompt fix",
+    "originalPrompt": "I want to build a neural network for my task. Can you help me design the architecture?",
+    "options": [
+      "Design a neural network architecture in PyTorch for tabular binary classification (50 features, 100k rows). Architecture: 3 fully-connected layers [256, 128, 64], BatchNorm after each layer, Dropout(0.3), ReLU activations, sigmoid output. Loss: BCEWithLogitsLoss with pos_weight for class imbalance (5:1 ratio). Show the model class and training loop skeleton.",
+      "Help me design a deep learning model for my classification problem.",
+      "Explain neural network architectures and how to choose the right number of layers and neurons for different types of problems."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the framework, layer sizes, regularisation techniques, loss function with imbalance handling, and requesting both the model class and training loop produces a complete implementation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best model versioning prompt",
+    "originalPrompt": "You need to set up model versioning for your ML team.",
+    "options": [
+      "Tell me about model versioning.",
+      "Set up MLflow model versioning for a Python ML project. Log: model artefact, hyperparameters, and metrics (F1, AUC) per training run. Promote the best run to 'Staging' then 'Production' via the Model Registry. Show the mlflow.log_param, mlflow.log_metric, and mlflow.sklearn.log_model calls.",
+      "Help me version my machine learning models so the team can track different experiments and models over time."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the MLflow APIs to use and the model lifecycle stages produces immediately runnable versioning code rather than a tooling survey.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best ML fairness audit prompt",
+    "originalPrompt": "Your hiring ML model may have demographic bias. You need to audit it.",
+    "options": [
+      "Check my model for bias.",
+      "Perform a fairness audit on this binary hiring model. Protected attributes: gender, ethnicity. Metrics to compute: demographic parity difference, equalised odds difference, and disparate impact ratio. Use the Fairlearn library. Flag any metric outside acceptable range (DPD > 0.1, EOD > 0.1). Data: [paste]. Output: per-group metric table and a one-sentence remediation recommendation.",
+      "Tell me about ML fairness and bias and how to measure and mitigate discrimination in machine learning models."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the library, the three specific metrics with thresholds, and asking for a table plus recommendation produces a legally defensible fairness audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Machine Learning & AI",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact precision-recall tradeoff prompt",
+    "originalPrompt": "Ask AI to explain the precision-recall tradeoff for a medical diagnosis model.",
+    "options": [
+      "Explain the precision-recall tradeoff for a cancer screening model. In 3 sentences: define precision and recall, explain why high recall is prioritised over precision in this domain (cost of false negative vs false positive), and state which threshold direction increases recall.",
+      "Can you explain precision and recall and the tradeoff between them and how to choose the right threshold for a medical machine learning model that detects cancer?",
+      "Explain precision vs recall."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Grounding the explanation in the medical context and limiting to 3 sentences produces a conceptual answer that is immediately transferable to real decisions.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague Power BI measure prompt fix",
+    "originalPrompt": "Can you help me write a DAX formula for my Power BI report?",
+    "options": [
+      "Write a DAX measure for Running Total Revenue. Formula: CALCULATE(SUM(Sales[Revenue]), FILTER(ALL(Calendar), Calendar[Date] <= MAX(Calendar[Date]))). Add a plain-English comment explaining why ALL() is needed.",
+      "Help me write a DAX formula that calculates running total revenue in Power BI.",
+      "Explain DAX formulas and how to use CALCULATE and FILTER and time intelligence functions in Power BI."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the complete formula and asking for a comment on the counterintuitive ALL() function teaches the key concept alongside the solution.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "BI data model design prompt fix",
+    "originalPrompt": "Help me design the data model for my BI dashboard.",
+    "options": [
+      "Design a star schema for a sales BI dashboard in Snowflake. Fact table: fact_orders (order_id, customer_id, product_id, date_id, revenue, quantity). Dimensions: dim_customer, dim_product, dim_date. For each dim table: list 5 key attributes. Specify which columns to cluster on for query performance.",
+      "Can you help me design the database structure for my Power BI dashboard?",
+      "Tell me about data modelling for business intelligence and star schema vs snowflake schema and when to use each."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the warehouse, the fact table schema, the three dimensions, and asking for attributes and clustering keys produces a complete, buildable data model.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Embedded analytics prompt improvement",
+    "originalPrompt": "We want to embed analytics into our product for our customers. Help us plan this.",
+    "options": [
+      "Design an embedded analytics strategy for a B2B SaaS product: 200 customer tenants, each needing tenant-isolated dashboards. Options: embed Metabase (open-source, self-hosted) vs Looker Embedded (API-based). Evaluate: data isolation method, SSO integration, customisation, and cost at scale. Output: a decision matrix and a recommended implementation approach.",
+      "Help us add analytics features into our product for our customers.",
+      "What are the options for embedding analytics into a SaaS product and what are the tradeoffs between building versus buying a solution?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the tenant count, naming two specific tools with their deployment models, and specifying four evaluation criteria produces a decision-ready comparison.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best cohort revenue chart prompt",
+    "originalPrompt": "You want to visualise revenue retention by customer cohort in a BI tool.",
+    "options": [
+      "Make a cohort chart.",
+      "Create a Tableau view showing monthly revenue retention by sign-up cohort. Rows: cohort month (Jan\u2013Dec 2024). Columns: months since sign-up (0\u201312). Cell value: % of cohort's Month 0 revenue retained. Use diverging colour: green for >80%, red for <40%. Include a grand average row.",
+      "Help me build a cohort retention visualisation that shows how well we're retaining revenue from customers who signed up in different months."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the tool, the row/column dimensions, the cell metric, the colour thresholds, and the grand average row produces a complete chart specification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best write-back BI requirement prompt",
+    "originalPrompt": "Your finance team wants to use a BI tool for budget planning with write-back capability.",
+    "options": [
+      "Add write-back to our BI tool.",
+      "Define requirements for adding budget write-back to our Tableau dashboard. Business need: Finance team enters forecast values directly in the dashboard. Technical requirements: write to PostgreSQL budget_forecast table on save, row-level locking for concurrent edits, and audit log (user, timestamp, old/new value). Output: a 5-line functional requirements list.",
+      "Help us understand what we need to implement write-back functionality in our business intelligence tool for budget planning."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Specifying the tool, the target table, concurrency handling, the audit fields, and limiting to 5 requirements produces a spec that developers can estimate from immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best BI adoption measurement prompt",
+    "originalPrompt": "You need to measure and improve adoption of a newly launched BI tool.",
+    "options": [
+      "How do I get people to use my BI tool?",
+      "Design a BI adoption measurement framework for a new Looker rollout (200 target users). Define 4 adoption metrics: weekly active users %, dashboard view rate, self-serve query rate, and time-to-insight (avg days from data question to answered). Set 90-day targets for each, and identify 2 interventions for users below target (training vs dashboard redesign). Output: a metrics tracking table.",
+      "Tell me about best practices for driving adoption of analytics and BI tools in organisations and how to measure success."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the tool, user target, four specific metrics with 90-day targets, and two remediation interventions produces an adoption programme that can be tracked and acted on.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact chart type recommendation prompt",
+    "originalPrompt": "Ask AI which chart to use for comparing revenue across regions.",
+    "options": [
+      "Recommend a chart for comparing Q2 revenue across 8 sales regions. Options: bar chart, treemap, geographic map. Justify in 2 sentences. Note: audience is the sales leadership team in a slide deck.",
+      "What type of chart or visualisation should I use to compare revenue performance across different sales regions for a presentation to our leadership team?",
+      "What chart for region comparison?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Pre-listing three chart options, the audience context, and limiting justification to 2 sentences produces a fast, context-aware recommendation.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Business Intelligence",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact Looker Explore optimisation prompt",
+    "originalPrompt": "Ask AI to optimise a slow Looker Explore.",
+    "options": [
+      "Optimise this slow Looker Explore (query time: 25s). Check: missing indexes on join keys, fanout on has-many joins, and large aggregate tables not using PDTs. LookML model: [paste]. Return top 2 fixes with estimated impact.",
+      "My Looker dashboard is slow and taking too long to load. Can you help me figure out what is causing the performance issues and how to fix them?",
+      "Fix slow Looker Explore."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the query time, the three diagnostic patterns to check, and limiting to top-2 fixes keeps the diagnosis focused within the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague correlation prompt fix",
+    "originalPrompt": "I want to see if two variables in my data are related. Help me.",
+    "options": [
+      "Test the correlation between 'marketing_spend' and 'revenue' in this DataFrame. Use Pearson for the coefficient (check normality with Shapiro-Wilk first; use Spearman if p<0.05). Report: correlation coefficient, p-value, and a one-sentence interpretation. Python/scipy.",
+      "Help me calculate the correlation between two columns in my dataset.",
+      "Explain correlation analysis and which correlation coefficient to use for different types of data and how to interpret the results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the columns, the normality pre-check, the fallback method, and the three output fields produces a statistically rigorous correlation analysis.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Recommendation system design prompt fix",
+    "originalPrompt": "I want to build a recommendation system for my product. Can you help me?",
+    "options": [
+      "Design a collaborative filtering recommendation system for an e-commerce site: 500k users, 20k products, sparse interaction matrix (avg 4 ratings/user). Use matrix factorisation (ALS via implicit library). Address: cold start for new users (fallback to popularity), and evaluation metric (Precision@K, K=10). Show the model fitting code.",
+      "Help me build a recommendation engine for my e-commerce platform.",
+      "Explain recommendation system approaches including collaborative filtering, content-based filtering, and hybrid methods and when to use each one."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing scale metrics, the specific algorithm, the cold-start fallback, and the evaluation metric produces a complete recommendation system design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Simulation modelling prompt fix",
+    "originalPrompt": "We need to model our business to understand future outcomes. Can you help?",
+    "options": [
+      "Build a Monte Carlo simulation in Python to model 3-year revenue scenarios for a SaaS business. Inputs with distributions: new customer growth (Normal, mean=15%, std=5%), churn rate (Beta, mean=3%, std=1%), ARPU expansion (Uniform, 0-10%). Simulate 10,000 paths. Output: P10/P50/P90 revenue scenarios, a histogram of year-3 outcomes, and the probability of exceeding \u00a310M ARR.",
+      "Help us build a financial model to forecast our business performance over the next 3 years.",
+      "Explain Monte Carlo simulation and how to use it for business forecasting and what probability distributions to use for different types of business metrics."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the three input distributions with parameters, simulation count, and the four output artefacts produces a complete stochastic model implementation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best data science notebook review prompt",
+    "originalPrompt": "You want an AI to review a Jupyter notebook before sharing it with stakeholders.",
+    "options": [
+      "Review my notebook.",
+      "Review this Jupyter notebook before sharing with business stakeholders. Check: are all cells executed in order, are hardcoded file paths replaced with variables, do visualisations have titles and axis labels, is there a markdown summary of findings at the top, and are any credentials or PII visible? Return a checklist with pass/fail per item.",
+      "Help me clean up and improve my Jupyter notebook so it looks professional when I share it with the business team."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the five specific checks and asking for a pass/fail per item produces a structured review that catches the most common notebook sharing mistakes.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best network analysis prompt",
+    "originalPrompt": "You need to analyse a social network graph to identify influential nodes.",
+    "options": [
+      "Help me analyse my network data.",
+      "Perform a network analysis on this social graph (nodes: users, edges: follows). Compute: degree centrality, betweenness centrality, and PageRank for all nodes. Identify the top 10 nodes by PageRank. Use NetworkX in Python. Visualise the top-10 subgraph with node size proportional to PageRank. Data: edge list CSV [paste].",
+      "Explain graph analysis techniques including centrality measures and community detection and how to identify influential nodes in a network."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the three centrality metrics, the top-N selection, the library, and the visualisation encoding produces a complete network analysis script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "Data Science",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact data transformation prompt",
+    "originalPrompt": "Ask AI to help with a data reshaping task in pandas.",
+    "options": [
+      "Reshape this DataFrame from wide to long format using pd.melt(). Columns: customer_id, Jan_revenue, Feb_revenue, Mar_revenue. Output: customer_id, month, revenue. Show the melt() call and a 1-line explanation of the id_vars parameter.",
+      "I have a wide-format DataFrame and need to convert it to long format. Can you help me with the pandas code to do this transformation?",
+      "How do I reshape data in pandas?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the exact column names and asking for the melt call plus a one-liner on id_vars produces a copy-pasteable solution with the key concept explained.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Retrieval chunk size optimisation prompt",
+    "originalPrompt": "My RAG system is giving poor quality answers. How do I fix it?",
+    "options": [
+      "Diagnose poor answer quality in this RAG pipeline. Check: chunk size (current 2000 tokens \u2014 too large, losing precision), overlap (currently 0 \u2014 add 10%), embedding model mismatch with query length, and top-k retrieval count (currently 2 \u2014 increase to 5). Pipeline config: [paste]. Return a numbered list of fixes ordered by expected impact.",
+      "Help me improve the quality of my RAG system's responses.",
+      "Explain the different factors that affect RAG quality and how to optimise retrieval and generation for better answers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Diagnosing four specific configuration issues with their current values and ordering fixes by impact turns a vague quality complaint into an actionable improvement plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "LLM cost optimisation prompt fix",
+    "originalPrompt": "Our LLM API costs are too high. Help us reduce them.",
+    "options": [
+      "Analyse and reduce LLM inference costs for this production application: 500k requests/day, avg prompt 800 tokens, avg completion 400 tokens, using gpt-4o at $5/1M input tokens. Current monthly cost: ~$700. Suggest 3 cost reduction strategies: prompt compression (target 30% token reduction), model routing (cheap model for simple queries), and response caching (identify cacheable query types). Estimate monthly saving per strategy.",
+      "How do we reduce our OpenAI API costs?",
+      "Tell me about ways to optimise LLM costs including model selection and caching and prompt engineering and batching."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the current cost breakdown and specifying three strategies with a saving estimate per strategy produces a business case that can be prioritised by ROI.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best AI product evaluation framework prompt",
+    "originalPrompt": "You are launching an AI-powered writing assistant and need to build an evaluation framework.",
+    "options": [
+      "How do I evaluate an AI writing assistant?",
+      "Design an LLM evaluation framework for an AI writing assistant. Define 5 evaluation dimensions: factual accuracy, coherence, tone match, task completion rate, and user preference (pairwise). For each: specify the evaluation method (automated vs human), a scoring rubric (1-5), and a sample test prompt. Output: an evaluation scorecard template.",
+      "Tell me about LLM evaluation methods and what metrics to use and how to compare different models and prompts."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Specifying five dimensions with evaluation method, rubric, and a test prompt per dimension produces a framework that can be handed to the QA team immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "data_ai",
+    "subFunction": "AI Engineering",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact tool-use prompt design",
+    "originalPrompt": "Ask AI to design a tool definition for an LLM agent.",
+    "options": [
+      "Write a tool definition for an LLM agent that queries a customer database. Tool name: get_customer_info. Input schema: {customer_id: string}. Returns: {name, email, plan, mrr}. Include: a clear description field explaining when the model should call this tool vs a search tool.",
+      "I need to define a tool for my LLM agent that looks up customer information from our database. Can you help me write the tool definition with the right input and output schema and a good description?",
+      "Write a tool definition for my AI agent."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the tool name, input schema, return fields, and asking for a disambiguation description produces a complete tool definition that prevents ambiguous agent behaviour.",
+    "maxTokens": 75
+  }
+]

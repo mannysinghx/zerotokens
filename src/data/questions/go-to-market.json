@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write blog post outline for SEO",
+    "originalPrompt": "Can you help me write a blog post about project management? I want it to be good for SEO and get a lot of readers.",
+    "options": [
+      "Write a blog post outline for the keyword 'best project management tools for remote teams'. Target: 1,200 words, SEO-optimised. Include: H1 title, 5 H2 sections with 2-3 bullet points each, a target featured snippet paragraph, and a CTA at the end. Audience: operations managers at 50-500 person companies.",
+      "Create a blog post outline about project management tools for remote teams. Make it SEO-friendly and include sections for different aspects of the topic.",
+      "Write a blog outline about project management for remote workers. Cover the main points and include an SEO angle."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact keyword, word count, heading structure, snippet paragraph, and target audience produces an SEO-ready content brief in one pass.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Generate email subject line variants",
+    "originalPrompt": "You need to generate subject line variants for a product launch email to a B2B SaaS email list of 15,000 subscribers.",
+    "options": [
+      "Write 5 email subject line variants for a product launch email. Product: AI-powered expense reporting tool. Audience: finance managers at mid-market companies. Variants: 1 urgency-based, 1 curiosity-based, 1 benefit-led, 1 question format, 1 social proof. Include preview text (max 90 chars) for each. No clickbait.",
+      "Give me subject lines for our product launch email. Include different styles like urgency, questions, and benefit-focused. Make them catchy.",
+      "Write email subject lines for our AI expense tool launch. Create 5 variants testing different angles. Include preview text."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Assigning a specific angle to each of the 5 variants, requiring preview text, and banning clickbait produces a testable set of subject lines ready for A/B testing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write LinkedIn post for thought leadership",
+    "originalPrompt": "Write a LinkedIn post for me. I want to share something insightful about AI in marketing and get engagement.",
+    "options": [
+      "Write a LinkedIn thought leadership post (200-250 words) for a B2B CMO audience on 'Why most companies are using AI for marketing content backwards.' Structure: hook (1 provocative sentence), problem (2-3 sentences), contrarian insight (3-4 sentences), practical takeaway (2 sentences), engagement question. No hashtag spam (max 3 relevant tags).",
+      "Write a LinkedIn post about AI in marketing. Make it thought-provoking and shareable. Include a good hook and end with a question to drive comments.",
+      "Create a LinkedIn post on AI marketing for a CMO audience. Be contrarian and insightful. Keep it under 300 words."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining each post section with a sentence count and banning hashtag spam produces a LinkedIn post that drives genuine engagement rather than reach-farming.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write SEO meta description",
+    "originalPrompt": "Write a meta description for a SaaS pricing page.",
+    "options": [
+      "Write a meta description for a B2B SaaS pricing page. Max 155 characters. Include: primary keyword 'project management software pricing', a benefit, and a CTA verb. No passive voice.",
+      "Write a meta description for our SaaS pricing page that will rank well in search results and encourage clicks from our target audience of project managers and operations professionals. Include the main keyword about project management software pricing, highlight the key benefits of our pricing structure, and end with a call to action. Keep it under 155 characters.",
+      "Meta description: project management software pricing, free trial available."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact character limit, the keyword to include, and requiring a CTA verb produces a meta description that fits Google's display limit and drives clicks.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write product comparison landing page copy",
+    "originalPrompt": "A content marketer needs to write copy for a comparison landing page positioning their tool against a market leader.",
+    "options": [
+      "Write above-the-fold copy for a 'vs Asana' comparison landing page. Include: H1 (max 8 words, benefit-led), subheadline (max 20 words, addresses main switching reason), and 3 feature comparison bullets (our advantage, not feature parity). Target: Asana users frustrated with pricing. Tone: confident, not dismissive.",
+      "Write copy for our comparison page against Asana. Highlight our advantages, mention pricing, and make it compelling for people considering switching.",
+      "Write landing page copy comparing us to Asana. Include a headline, subhead, and 3 bullet points about why we're better."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Banning feature parity bullets, targeting a specific competitor frustration, and requiring a tone directive produces copy that converts switchers rather than just listing features.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Repurpose webinar transcript to blog post",
+    "originalPrompt": "I have a webinar transcript. Can you turn it into a blog post? Make sure it's engaging and covers the main points.",
+    "options": [
+      "Repurpose this webinar transcript into a 900-word SEO blog post. Structure: intro (problem statement), 3 main sections matching the webinar's core arguments, a 'key takeaways' bulleted section, and a CTA linking to the webinar recording. Preserve 2-3 direct quotes from the speaker. Audience: B2B marketing managers. Avoid academic tone.",
+      "Turn this webinar transcript into a blog post. Keep the main points, add a good intro and conclusion, and make it readable.",
+      "Convert this webinar into a blog post. Extract the key insights, structure them clearly, and add a CTA at the end. About 900 words."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the structure, word count, quote preservation, and audience prevents the AI from producing a dry summary instead of a well-crafted article.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write paid ad headline variants",
+    "originalPrompt": "Write Google Ads headline variants for a CRM software product.",
+    "options": [
+      "Write 5 Google Ads headlines for a B2B CRM. Each headline max 30 characters. One per angle: price, time-saving, free trial, #1 claim, pain point. Flag character count per headline.",
+      "Write Google Ads headlines for our CRM product. We need several options testing different angles including price, free trial, and key benefits. Each headline should be under 30 characters as required by Google Ads. Create headlines that will appeal to small business owners and sales teams who are looking for a better way to manage their customer relationships and close more deals.",
+      "CRM Google Ad headlines: benefit-led, short, punchy."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "One headline per angle and flagging character count per line ensures all 5 fit Google Ads constraints without manual counting.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write content calendar for product launch",
+    "originalPrompt": "A content team needs a 4-week content calendar to support a product feature launch.",
+    "options": [
+      "Build a 4-week content calendar for a B2B SaaS feature launch (AI search). Week 1: awareness. Week 2: education. Week 3: social proof. Week 4: conversion. For each week: 1 blog post (title + angle), 2 LinkedIn posts (format), 1 email (subject line + send day), 1 short-form video concept. Output as a table.",
+      "Create a content calendar for our AI search feature launch. Cover 4 weeks with content across blog, social, and email channels.",
+      "Write a 4-week content plan for our feature launch. Map content to funnel stages (awareness to conversion) and include blogs, social posts, and emails."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Assigning a funnel stage to each week, defining the exact content types per channel, and requiring a table output produces a calendar the team can execute immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write customer success story narrative",
+    "originalPrompt": "Write a customer case study. A customer used our product and got good results. Make it compelling.",
+    "options": [
+      "Write a 400-word customer case study narrative. Customer: TechFlow Inc (200-person SaaS company). Challenge: manual invoicing took 15 hours/week. Solution: automated our billing module. Result: reduced to 2 hours/week, saving $40K/year. Structure: Challenge \u2192 Solution \u2192 Result \u2192 Quote placeholder. Tone: factual, outcome-focused. No superlatives.",
+      "Write a case study about TechFlow Inc. They used our billing automation and saved significant time. Make it compelling and include the key results.",
+      "Write a customer success story about a company that automated invoicing with our product. Include the challenge, solution, and results. Keep it factual and professional."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing specific metrics (15h \u2192 2h, $40K), the exact narrative structure, and banning superlatives produces a case study that a sales team will actually use.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write messaging framework for new segment",
+    "originalPrompt": "A marketing team needs a messaging framework to enter the legal industry with an existing project management tool.",
+    "options": [
+      "Create a messaging framework for positioning a project management tool in the legal industry. Include: (1) primary value proposition (1 sentence, outcome-focused), (2) 3 audience segments (law firm size or role) with a tailored message per segment, (3) proof point requirements per claim, (4) language to avoid (generic SaaS terms), (5) competitive differentiator vs legal-specific tools like Clio. Output as a messaging matrix.",
+      "Write a messaging framework for selling our project management tool to law firms. Cover the value prop, target segments, and differentiators.",
+      "Create a messaging framework for the legal market. Include a value proposition, segment-specific messages, and how we differentiate from legal software tools."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring proof point fields, a banned language list, and a named competitor comparison produces a framework that marketing and sales can actually align on.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write homepage hero copy",
+    "originalPrompt": "Write homepage hero copy for a B2B SaaS product that automates contract management.",
+    "options": [
+      "Write homepage hero copy for a B2B contract management SaaS. H1: max 6 words, outcome-focused. Subheadline: max 18 words, addresses the ICP pain (legal teams losing deals to slow contract cycles). CTA: 3 words. No buzzwords.",
+      "Write homepage hero copy for our contract management product. Include a headline, subheadline, and CTA. The headline should be short and impactful. The subheadline should explain what the product does and who it's for. The CTA should encourage visitors to sign up for a free trial. Make sure everything is clear, compelling, and speaks to the pain points of legal teams and operations managers who deal with slow contract processes.",
+      "Hero copy: fast contracts, close deals faster, start free."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Separate word caps for H1, subheadline, and CTA\u2014with a specific ICP pain to address\u2014produces copy that fits the hero layout without bloat.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write Twitter/X thread hook for product tip",
+    "originalPrompt": "Write a tweet thread about how to use our product better. Make it useful and shareable.",
+    "options": [
+      "Write the first 3 tweets of a Twitter/X thread on 'underused features of [project management tools].' Tweet 1: hook (provocative stat or claim, max 280 chars). Tweet 2: first feature tip (specific, action-oriented). Tweet 3: second tip. End each tweet with a natural thread-continuer. No filler phrases like 'A thread'.",
+      "Write a Twitter thread about useful project management features. Start with a strong hook and share practical tips in each tweet.",
+      "Write tweets for a thread on hidden project management features. Include a good opening tweet and two tips. Keep each tweet under 280 characters."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying what each tweet must contain, banning filler phrases, and requiring thread-continuers produces a thread that retains readers through every tweet.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write product explainer video script",
+    "originalPrompt": "A marketing team needs a 60-second explainer video script for a new B2B SaaS product.",
+    "options": [
+      "Write a 60-second explainer video script (~150 words) for a B2B SaaS onboarding tool. Structure: problem (10s) \u2192 solution intro (10s) \u2192 3 key features as visual moments (25s) \u2192 social proof line (5s) \u2192 CTA (10s). Include stage directions for visuals. Voiceover tone: clear, professional, not hype-heavy.",
+      "Write an explainer video script for our onboarding tool. Keep it under 60 seconds. Cover the problem, solution, key features, and a call to action.",
+      "Create a 60-second video script. Start with the customer pain point, show how our product solves it, and end with a CTA. About 150 words."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Assigning exact timings to each script section and requiring visual stage directions produces a production-ready script without a second writing pass.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Develop ICP messaging for two personas",
+    "originalPrompt": "We have two main buyers for our product. Help me write messaging for both of them.",
+    "options": [
+      "Write persona-specific messaging for 2 B2B buyer personas for an HR automation tool: (1) HR Director (strategic, ROI-focused, ~10-min buying window), (2) HR Coordinator (operational, feature-focused, daily user). For each: 1-sentence value prop, 2 key pain points addressed, 2 proof points, recommended channel and content format. Output as a 2-column comparison table.",
+      "Write messaging for our two HR tool buyers: the HR Director and HR Coordinator. Cover what each cares about and how to talk to them.",
+      "Create persona messaging for our HR product. One for the HR Director (executive buyer) and one for the HR Coordinator (end user). Include value props, pain points, and proof points."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Adding a buying window constraint per persona and requiring channel + format recommendations forces the messaging to account for how each buyer actually encounters content.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write Instagram caption for product launch",
+    "originalPrompt": "Write an Instagram caption for our product launch.",
+    "options": [
+      "Write an Instagram caption for a B2B SaaS product launch. Max 150 characters for the first line (caption preview). Hook: announce the launch. Second sentence: one key benefit. End: CTA with link-in-bio instruction. No more than 5 relevant hashtags.",
+      "Write an Instagram caption announcing the launch of our new B2B SaaS product. The caption should be exciting and capture attention in the first sentence because that's what shows before the read more cut-off on Instagram. Include the key benefit of the product, encourage people to click the link in our bio to learn more or sign up, and add some relevant hashtags to help with discoverability. Keep it on-brand and engaging.",
+      "We just launched! Check it out. Link in bio. #SaaS #launch"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the preview line character limit and capping hashtags prevents the AI from writing a wall of text that gets truncated on mobile.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write cold outreach email for SaaS",
+    "originalPrompt": "Write a cold email for our sales team. It should get people interested in our product and get them to reply.",
+    "options": [
+      "Write a cold outreach email for a B2B SDR. Product: AI-powered invoicing software. ICP: CFOs at 100-500 person manufacturing companies. Email structure: personalised opening (1 sentence referencing their industry), problem statement (1 sentence), social proof (1 sentence with a metric), CTA (a single, low-friction ask). Max 100 words. No attachments, no 'I hope this email finds you well.'",
+      "Write a cold email for our AI invoicing product. Target CFOs at manufacturing companies. Keep it short, mention a customer success metric, and end with a clear ask.",
+      "Write a cold sales email for our invoicing software. Make it personalised, mention a specific business problem, include proof, and ask for a meeting."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning padding phrases, specifying a word cap, and assigning a single role to each sentence forces a lean cold email that respects the prospect's time.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write discovery call prep questions",
+    "originalPrompt": "A sales rep needs to prepare for a discovery call with a VP of Operations at a logistics company.",
+    "options": [
+      "Write 8 discovery call questions for a VP of Operations at a logistics company (potential buyer of a supply chain analytics tool). Include: 2 situation questions, 2 problem questions, 2 implication questions, 1 need-payoff question. Label each question type. Sequence them in SPIN order.",
+      "Give me discovery call questions for a VP of Operations at a logistics company. Cover their current setup, pain points, and what a solution would mean for them.",
+      "Write sales discovery questions for a logistics VP. Use the SPIN framework and cover their current state, problems, and goals."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying exact counts per SPIN question type and requiring labels and sequencing produces a call prep sheet that trains the rep in the methodology simultaneously.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write follow-up email after no response",
+    "originalPrompt": "Write a follow-up email for when a prospect hasn't replied. I don't want to be annoying but I need them to respond.",
+    "options": [
+      "Write a follow-up email (email 3 in a sequence) for a prospect who hasn't replied to 2 previous emails about our HR software. Tone: light, non-pushy. Include: a new angle (link to relevant case study), a simple yes/no question as the CTA. Max 60 words. Subject line: make it different from previous emails.",
+      "Write a follow-up email for a prospect who hasn't replied to my last two emails. Keep it short, add something new, and make it easy to respond.",
+      "Write a 3rd follow-up email. Don't be pushy. Reference the previous emails, add value with a case study link, and ask a simple question at the end."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the sequence position, requiring a new angle, and mandating a yes/no CTA produces a follow-up that re-engages without badgering.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write LinkedIn connection request note",
+    "originalPrompt": "Write a LinkedIn connection request message for a sales prospecting outreach.",
+    "options": [
+      "Write a LinkedIn connection request note for a B2B sales rep prospecting a Head of Finance at a 300-person tech company. Max 300 characters. Include: shared context or observation (not generic), one reason to connect. No pitch, no meeting ask.",
+      "Write a LinkedIn connection request message for reaching out to a Head of Finance at a tech company. The message should feel personal and not like a sales pitch. Mention something relevant about their role or company to show that you've done your research. Express genuine interest in connecting and make it clear why you'd like to be in their network without being pushy or immediately asking for a meeting or demo.",
+      "Hi [Name], I work in fintech and would love to connect. Looking forward to it!"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 300-character cap and banning a meeting ask forces a connection note that builds rapport rather than triggering an immediate 'no thanks' reflex.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Build objection handling script",
+    "originalPrompt": "A sales team needs to handle the objection 'We already use [Competitor X] and we're happy with it.'",
+    "options": [
+      "Write an objection handling response for 'We already use Salesforce and we're happy with it.' Sales context: mid-market AE selling a leaner CRM. Response structure: acknowledge (1 sentence), question to probe depth of satisfaction (1 sentence), bridge to differentiated value (2 sentences), soft next step (1 sentence). Avoid bashing the competitor.",
+      "Write a response to the objection 'We already use Salesforce.' Be empathetic, ask questions, and explain why we're different.",
+      "Handle the objection about using Salesforce. Acknowledge their choice, find a pain point, pivot to our differentiation, and suggest a next step."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning a single sentence to each response move and banning competitor-bashing produces a handling script that sounds natural and non-defensive in a live call.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write proposal executive summary",
+    "originalPrompt": "Write a proposal executive summary. Make it compelling and show the value of working with us.",
+    "options": [
+      "Write a 200-word executive summary for a sales proposal. Client: RetailCo (1,200-person retail chain). Their problem: fragmented inventory data across 45 stores. Our solution: unified inventory analytics platform. Include: client's stated priority, our recommended approach (2-3 sentences), quantified ROI estimate (base it on industry benchmark: 15% inventory cost reduction), and a decision timeline recommendation.",
+      "Write a proposal executive summary for RetailCo. Cover their inventory problem, our solution, the ROI, and a recommended timeline.",
+      "Write an executive summary for our sales proposal. Describe the client's problem, our solution, the expected ROI, and why they should move forward now."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the client name, their specific problem, and a real benchmark figure to anchor the ROI estimate prevents a generic exec summary that the buyer ignores.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Summarise account research for call prep",
+    "originalPrompt": "Summarise research on a prospect account to prepare for an enterprise sales call.",
+    "options": [
+      "Summarise this account research for an enterprise sales call prep. Output: 4 bullets, max 15 words each. Cover: (1) recent company news, (2) likely strategic priority, (3) probable pain our product solves, (4) one risk or objection to anticipate.",
+      "Summarise the key information about this prospect account to help an enterprise sales rep prepare for a call. Cover recent news and announcements from the company, their current strategic priorities based on public information, the business challenges they likely face that our product could address, and any potential objections or concerns the rep should be ready to handle. Keep it concise and focused on what the rep needs to know.",
+      "Account summary: recent news, priorities, our fit, key risks."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 4-bullet structure with a 15-word cap per bullet and assigned topics produces account intel that a rep can scan in 60 seconds before the call.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write multi-threaded outreach strategy",
+    "originalPrompt": "An enterprise AE needs to build a multi-threaded outreach strategy to penetrate a 500-person target account.",
+    "options": [
+      "Design a multi-threaded outreach strategy for a $500K ARR target account (500-person SaaS company). Identify 3 stakeholder personas (economic buyer, champion, technical evaluator), the message angle for each, the best channel (email/LinkedIn/phone), and the sequence trigger to move them forward. Output as a stakeholder engagement matrix.",
+      "Create a multi-threading strategy for a large account. Cover the different stakeholders, how to message each one, and the channels to use.",
+      "Write an account penetration plan. Identify 3 buyer personas, a message per persona, and the best outreach channel and sequence for each."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the three persona roles, requiring a sequence trigger per stakeholder, and requesting a matrix output produces an actionable account penetration plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write mutual close plan email",
+    "originalPrompt": "Write an email to a prospect to keep the deal moving forward and get them to commit to a date.",
+    "options": [
+      "Write a mutual close plan email to an enterprise buyer (VP of Engineering) for a $120K SaaS deal. The deal is stuck after legal review. Email structure: acknowledge the current status, propose a shared timeline (3 milestones with dates), confirm the economic buyer's signature date, and identify who owns each step. Tone: collaborative, not pressuring. Max 150 words.",
+      "Write an email to get our deal unstuck. The prospect finished legal review and we need to agree on a timeline to close. Keep it collaborative.",
+      "Write a close plan email for a stuck enterprise deal. Propose a 3-step timeline, confirm who owns each step, and set a signature date."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Including deal size context, the specific sticking point, and requiring a 3-milestone timeline with owners produces a mutual action plan that both sides can hold each other to.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write deal risk summary for sales manager",
+    "originalPrompt": "Summarise the key risks in an enterprise deal for a weekly pipeline review with the sales manager.",
+    "options": [
+      "Summarise deal risks for a $200K pipeline deal in 3 bullets. Max 20 words each. Risk types: champion access, legal/procurement delay, competitive threat. State each risk and a recommended mitigation action.",
+      "Write a deal risk summary for our weekly pipeline review. Analyse the key risks in this enterprise opportunity including whether we have the right champion, any procurement or legal delays, and competitive threats. For each risk, explain what the concern is and what the account executive should do to mitigate it. Be specific and actionable.",
+      "Deal risks: no champion, slow procurement, competitor pricing."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Assigning specific risk categories to each bullet and requiring a mitigation action per risk produces a pipeline review summary that drives coaching conversations.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write partnership outreach for channel deal",
+    "originalPrompt": "A BD director needs to write an outreach message to a potential channel partner (a consulting firm) to propose a referral programme.",
+    "options": [
+      "Write a BD outreach email to a senior partner at a management consulting firm (150-person boutique, specialises in HR transformation) proposing a referral partnership for our HR SaaS product. Include: shared client value (1 sentence), the partnership model (referral fee + co-branded content), 3 benefits to their firm, and a low-friction next step. Max 150 words. Avoid corporate jargon.",
+      "Write a partnership email to a consulting firm about a referral programme for our HR product. Explain the model, the benefits, and ask for a meeting.",
+      "Write a BD outreach email proposing a channel partnership. Cover the referral programme structure, what's in it for them, and suggest a call to discuss further."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the partner's specialisation, the exact partnership model components, and banning jargon produces a BD email that a consulting partner will read past the first sentence.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write post-demo follow-up email",
+    "originalPrompt": "Write a follow-up email after a product demo. Say thank you and keep the conversation going.",
+    "options": [
+      "Write a post-demo follow-up email (sent same day). Recipient: Director of IT at a 300-person insurance company. Demo covered: data security features and SSO integration. Email: thank them (1 sentence), summarise the 2 things they said they cared most about, confirm next step (send security review doc by Friday), and include one relevant resource link placeholder. Max 80 words.",
+      "Write a thank you email after a product demo. Recap the key points we covered and confirm the next steps we agreed on.",
+      "Write a post-demo follow-up. Thank the prospect, summarise their top concerns from the call, and confirm what happens next."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Referencing the specific topics covered in the demo and naming the exact next step with a deadline produces a follow-up that shows attentiveness and advances the deal.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write win/loss analysis framework",
+    "originalPrompt": "A sales leader needs a consistent framework for conducting win/loss analysis after deal outcomes.",
+    "options": [
+      "Create a win/loss analysis interview guide for deals over $50K. Cover: 5 standardised questions (decision criteria, competitive alternative chosen, our strengths, our gaps, buying process friction), a rating scale per dimension (1-5), and instructions for who to interview (internal rep, decision-maker, and economic buyer if accessible). Flag what to do if the prospect declines to be interviewed.",
+      "Write a win/loss analysis framework. Include questions about why we won or lost, what the competitor offered, and what we could improve.",
+      "Create win/loss interview questions. Ask about decision criteria, competitive comparison, and process friction. Include a rating scale."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying who to interview, requiring a consistent rating scale, and handling the 'declined interview' case produces a repeatable process, not just a question list.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write QBR agenda for key account",
+    "originalPrompt": "Help me write a QBR agenda. I need to review the quarter with a key customer and plan the next one.",
+    "options": [
+      "Write a QBR agenda for a 60-minute session with a key B2B account (200-person logistics company, $85K ARR). Sections: (1) Q3 results vs goals (15 min), (2) product usage highlights and gaps (15 min), (3) upcoming roadmap preview (10 min), (4) Q4 success plan (15 min), (5) open questions (5 min). Include suggested presenter per section and 1 prep data point needed.",
+      "Write a QBR agenda for a key account. Cover Q3 results, product usage, roadmap, and Q4 planning. Assign time to each section.",
+      "Create a QBR agenda for a 60-minute customer meeting. Include results review, product updates, and planning for next quarter."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact account context, minute allocations per section, and a prep data point requirement produces a QBR agenda that the CSM can execute without further planning.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write at-risk customer intervention email",
+    "originalPrompt": "A CSM needs to write an email to an at-risk customer showing declining product usage over the past 30 days.",
+    "options": [
+      "Write an email to an at-risk customer (usage down 40% in 30 days). Recipient: Head of Operations. Tone: proactive, not alarming. Structure: open with value (what they achieved in Q2), acknowledge the recent drop (without making them defensive), offer a specific 30-minute session to diagnose and unblock, and include a direct calendar link placeholder. Max 120 words.",
+      "Write an email to a customer whose usage has dropped. Express concern, offer help, and ask for a call to understand what's happening.",
+      "Write a proactive email to an at-risk customer. Acknowledge the usage decline, lead with their past success, and offer a call to help them get back on track."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring the email to open with value before mentioning the usage drop prevents the customer from feeling criticised rather than supported.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write executive escalation response",
+    "originalPrompt": "A customer's CEO emailed our CEO about a critical bug affecting their operations. I need to write a response.",
+    "options": [
+      "Write a CEO-to-CEO escalation response email. Situation: critical data sync bug caused 6-hour outage for enterprise customer (HealthCare Corp). Write on behalf of our CEO. Include: acknowledgement (1 sentence, no excuses), what happened (1 sentence, factual), what was done (remediation steps), prevention action (1 sentence), and an offer of a direct call. Tone: accountable, calm. Max 150 words.",
+      "Write a CEO-level escalation response about our data sync bug. Be accountable, explain what happened and what we fixed, and offer a call.",
+      "Draft a response to a CEO escalation about an outage. Acknowledge the issue, explain the root cause and fix, and commit to prevention. Keep it professional."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying 'no excuses' in the acknowledgement, requiring factual brevity on the root cause, and setting a word cap produces an executive communication that de-escalates rather than inflames.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write renewal reminder email",
+    "originalPrompt": "Write a renewal reminder email for a customer whose subscription expires in 30 days.",
+    "options": [
+      "Write a renewal reminder email for a B2B SaaS customer with 30 days to renewal. Max 80 words. Structure: acknowledge their usage this year (1 stat placeholder), renewal date and ARR, one new feature they haven't used, CTA to speak with their CSM. Subject line included.",
+      "Write a renewal reminder email for a customer whose subscription expires in 30 days. Thank them for being a customer, remind them about their renewal date and the cost, highlight some of the features they've been using and some new features they haven't tried yet, and encourage them to get in touch with their customer success manager to discuss renewal options.",
+      "Your subscription renews soon. Contact us to renew."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including a usage stat placeholder and an upsell angle (unused feature) turns a transactional renewal reminder into a value-reinforcement email.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Build customer health scorecard prompt",
+    "originalPrompt": "A CS operations manager needs to build a customer health score framework for a 500-customer B2B SaaS business.",
+    "options": [
+      "Design a customer health scorecard for a 500-customer B2B SaaS product. Define: 5 health dimensions (product adoption, support ticket frequency, NPS, contract expansion, stakeholder engagement), a 0-100 scoring formula for each dimension, weights that sum to 100%, and the green/yellow/red threshold per total score. Include a data source for each dimension. Output as a table.",
+      "Build a customer health score model. Include product usage, NPS, support tickets, and expansion signals. Weight each dimension and define red/yellow/green thresholds.",
+      "Create a health scorecard for our B2B customers. Cover adoption, NPS, support activity, and expansion. Define scores and thresholds for each."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring weights that sum to 100%, specifying a data source per dimension, and providing exact threshold values produces a scorecard that CS ops can actually implement in a CRM.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write churn save call script",
+    "originalPrompt": "Write a script for a call with a customer who has told us they want to cancel. I need to save the account.",
+    "options": [
+      "Write a churn save call script for a CSM. Context: mid-market customer ($45K ARR) told their CSM they're switching to a competitor due to missing reporting features. Script sections: (1) empathetic opening (no defensiveness), (2) understand root cause (2 diagnostic questions), (3) present save offer (roadmap commitment + concession option), (4) ask for a 30-day stay. Include suggested wording for each section.",
+      "Write a script for saving a churning customer. Understand why they're leaving, present our solution, and ask them to stay.",
+      "Create a churn save script. Open empathetically, diagnose the real reason for leaving, offer something valuable to keep them, and close with a commitment ask."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the specific churn reason (missing reporting), providing a concrete save mechanism (roadmap + concession), and requiring suggested wording per section produces a script that coaches less experienced CSMs.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write product update announcement to customers",
+    "originalPrompt": "Write a customer announcement email about a new product update.",
+    "options": [
+      "Write a customer product update email for a new bulk export feature. Max 100 words. Structure: what's new (1 sentence), who benefits (1 sentence), how to access it (1 sentence), one known limitation. No marketing fluff. Plain language.",
+      "Write an email to customers announcing our new bulk export feature. Explain what it is, which customers will find it most useful, how to access it from the product, and any limitations they should know about. Keep the tone friendly and professional. Include a subject line.",
+      "New feature: bulk export is live. Log in to try it."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 100-word cap with a known limitations field and a plain language directive prevents the announcement from reading like marketing copy that erodes customer trust.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Design onboarding success plan template",
+    "originalPrompt": "A CS team needs a standardised 90-day onboarding success plan template for new enterprise customers.",
+    "options": [
+      "Design a 90-day enterprise onboarding success plan template. Structure by phase: Days 1-30 (technical setup + admin training), Days 31-60 (team rollout + first value milestone), Days 61-90 (advanced feature adoption + success review). For each phase: key activities (3 max), owner (CSM/customer/technical), success metric, and risk flag. Output as a project plan table the CSM can fill in per account.",
+      "Write a 90-day onboarding plan for enterprise customers. Cover the three phases of onboarding and what needs to happen in each one.",
+      "Create a 90-day onboarding template. Split into 3 phases (setup, rollout, optimisation), list key activities per phase, assign owners, and define success metrics."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring a risk flag per phase and limiting activities to 3 per phase produces a template that CSMs will actually use rather than one that becomes a 20-row spreadsheet.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write internal handoff note from sales to CS",
+    "originalPrompt": "Write a handoff note from sales to customer success after a deal closes.",
+    "options": [
+      "Write a sales-to-CS internal handoff note. Deal details: RetailCo, $72K ARR, 3-year contract, 50 users, use case: inventory reporting. Include: why they bought (key pain + business goal), what was committed in the demo (features, integrations), known risks (1-2 items), key contacts with roles, and 90-day success criteria. Format as a structured note, not prose.",
+      "Write an internal handoff note from sales to CS. Cover why the customer bought, what we promised, who the main contacts are, and any risks we should know about.",
+      "Write a deal handoff note for CS. Include the use case, what was committed, key stakeholders, and early warning signs."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Separating the handoff into specific named fields (pain, commitments, risks, contacts, success criteria) prevents critical deal context from being buried in prose that the CSM ignores.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write feature adoption email campaign",
+    "originalPrompt": "A CS team wants to drive adoption of an underused analytics feature among existing customers.",
+    "options": [
+      "Write a 3-email adoption campaign for an underused analytics feature. Email 1 (Day 0): problem-awareness (why manual reporting costs time). Email 2 (Day 7): feature education (what it does + how to enable it). Email 3 (Day 14): social proof (customer quote + result metric) + CTA. Each email: max 100 words, subject line, one CTA. Specify trigger logic for each email.",
+      "Write 3 emails to drive adoption of our analytics feature. Include awareness, education, and social proof emails. Keep them short with clear CTAs.",
+      "Create a 3-part email campaign to promote our analytics feature. First email explains the value, second shows how to use it, third uses a customer story to encourage adoption."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying a distinct psychological angle per email, a 100-word cap, and requiring trigger logic produces a drip campaign that the marketing automation team can configure directly.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write A/B test hypothesis for landing page",
+    "originalPrompt": "I want to A/B test our landing page. Can you help me think through the hypothesis?",
+    "options": [
+      "Write an A/B test hypothesis for a SaaS landing page CTA button. Format: 'We believe changing [variable: CTA text from 'Get a Demo' to 'See It in Action'] will [direction: increase] [metric: demo request click-through rate] because [rationale: action-oriented language reduces perceived commitment].' Include: expected lift (%), minimum detectable effect, and suggested test duration at 2,000 visitors/week.",
+      "Write an A/B test hypothesis for changing our CTA button text. Explain what we're testing, what we expect to happen, and why.",
+      "Write an A/B test hypothesis for our landing page CTA. Use the standard format with variable, metric, and rationale. Include expected lift and test duration."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Filling in the hypothesis template with specific values and requiring MDE and duration prevents endless inconclusive tests by forcing statistical planning upfront.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write retargeting ad copy sequence",
+    "originalPrompt": "A growth marketer needs retargeting ad copy for visitors who viewed the pricing page but didn't convert.",
+    "options": [
+      "Write 3 retargeting ad variants for pricing page visitors who didn't convert. Ad 1: social proof (customer logo + stat). Ad 2: objection handler (address price concern with ROI framing). Ad 3: urgency (limited-time trial offer). Each ad: headline (max 25 chars), body (max 90 chars), and CTA label. Specify the audience segment each ad targets (recency: 1-day, 7-day, 30-day).",
+      "Write retargeting ads for visitors who saw our pricing page. Cover social proof, pricing objections, and a trial offer. Keep them short.",
+      "Create 3 retargeting ad variants for pricing page abandoners. Use different angles: proof, ROI framing, and urgency. Include headline, body, and CTA."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning a recency segment to each ad angle is the key differentiation\u2014it turns 3 generic variants into a sequenced retargeting strategy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write PLG activation email sequence",
+    "originalPrompt": "Help me write onboarding emails for our free trial users. We want them to activate and upgrade.",
+    "options": [
+      "Write a 5-email PLG activation sequence for free trial users (14-day trial). Email triggers and purpose: Day 0 (welcome + first action CTA), Day 1 if no action (nudge + video resource), Day 3 (feature spotlight on the activation milestone), Day 7 (mid-trial check-in + ROI framing), Day 12 (upgrade urgency + comparison to paid tier). Each email: subject line, 80-word max body, and one CTA. Tone: helpful, not pushy.",
+      "Write a 5-email trial sequence. Cover welcome, feature education, mid-trial check-in, and upgrade push. Keep emails short with clear calls to action.",
+      "Create a trial onboarding email sequence for our PLG product. Map each email to a point in the 14-day trial. Use behaviour triggers where relevant."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying behavioural triggers (Day 1 if no action), an 80-word cap, and a distinct purpose per email produces a sequence that a marketing automation team can configure and deploy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write webinar registration page copy",
+    "originalPrompt": "Write copy for a webinar registration page about AI in B2B sales.",
+    "options": [
+      "Write webinar registration page copy. Topic: 'How B2B Sales Teams Use AI to Cut Research Time by 50%'. Include: headline (max 8 words), 3 bullet 'you'll learn' points (max 10 words each), speaker bio placeholder (1 sentence), and registration CTA (3 words). Total: max 80 words.",
+      "Write the copy for a webinar registration page about using AI in B2B sales. Include a compelling headline that captures the value of the webinar, three bullet points explaining what attendees will learn, a short bio section for the speaker, and a strong call to action button. The copy should be persuasive and make prospects want to sign up to attend the webinar.",
+      "Webinar: AI in sales. Learn how. Register now."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining word caps per copy element and a total word budget produces registration page copy that fits a real landing page template without resizing.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Analyse conversion funnel drop-off",
+    "originalPrompt": "A growth analyst needs to identify where to focus optimisation effort in a leaky acquisition funnel.",
+    "options": [
+      "Analyse this conversion funnel data and identify the highest-leverage drop-off point: Ad click (10,000) \u2192 Landing page visit (6,500) \u2192 Sign-up page view (2,100) \u2192 Trial sign-up (420) \u2192 Activated user (105). For each step: calculate conversion rate, benchmark it against SaaS industry averages, and flag whether it's above/below benchmark. Rank the 3 drop-off points by absolute volume lost. Recommend where to focus first with rationale.",
+      "Look at our funnel data and tell me where we're losing the most people. Explain what's happening at each step and what we should fix.",
+      "Analyse this funnel: show conversion rates at each step, compare to benchmarks, and tell me where to focus optimisation efforts first."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the raw numbers inline, requiring benchmark comparison, and asking for absolute volume ranking produces a funnel analysis that prioritises by impact, not just conversion rate.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write growth loop design document",
+    "originalPrompt": "Help me design a growth loop for our product. I want to understand how growth compounds.",
+    "options": [
+      "Design a viral/product-led growth loop for a B2B project management tool. Map the loop: (1) trigger (user invites a collaborator), (2) action (collaborator receives a task notification), (3) value moment (collaborator completes a task in the product), (4) reward/output (user sees team activity feed update), (5) loop closes (collaborator becomes an active user who invites others). For each loop node: identify the friction to reduce and the metric to instrument.",
+      "Design a growth loop for our project management product. Show how one user's action leads to new users. Cover the key steps and what we should measure.",
+      "Map the viral growth loop for our tool. Start with a user action that triggers a new user to join. Show the cycle and the metrics for each step."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Labelling each loop node with a specific metric to instrument and a friction to reduce produces a growth loop spec that an engineering team can actually instrument and optimise.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write paid channel budget allocation strategy",
+    "originalPrompt": "A growth director needs to allocate a $50K/month paid acquisition budget across channels for a B2B SaaS product.",
+    "options": [
+      "Create a $50K/month paid acquisition budget allocation for a B2B SaaS targeting operations managers. Channels to consider: Google Search, LinkedIn Ads, G2/review sites, content syndication, and retargeting. For each channel: recommended budget allocation, rationale (CAC benchmark, intent signal), expected lead volume at 3% CTR baseline, and one risk. Output as a table with a bottom-line CAC estimate.",
+      "Allocate a $50K paid marketing budget across Google, LinkedIn, and retargeting. Include rationale and expected results for each channel.",
+      "Build a paid acquisition budget plan for $50K/month. Cover Google Search, LinkedIn, review sites, and retargeting. Show expected leads and CAC per channel."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring a risk per channel and a bottom-line CAC estimate forces the allocation to be grounded in performance accountability, not just budget distribution.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write brand voice guidelines",
+    "originalPrompt": "Write brand voice guidelines for our company. We want everyone to sound consistent when they write.",
+    "options": [
+      "Write brand voice guidelines for a B2B SaaS company targeting SMB owners. Include: 4 voice attributes (each with a 1-sentence description, a 'we are / we are not' contrast, and a writing example). Add a section on tone shifts by context (website vs support vs social). Max 400 words.",
+      "Write brand voice guidelines. Include our tone, personality attributes, and examples of how to write in our voice. Cover different contexts like marketing and customer support.",
+      "Create brand voice guidelines for our SaaS company. Define 4 personality attributes with do/don't examples and how the tone changes depending on the channel."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "The 'we are / we are not' contrast per attribute is the key differentiator\u2014it gives writers clear guardrails that purely positive descriptions never provide.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write press release for product launch",
+    "originalPrompt": "A PR manager needs to write a press release for a major product launch announcement.",
+    "options": [
+      "Write a press release for the launch of an AI analytics feature in a B2B SaaS product. Structure: dateline + headline (benefit-led, max 12 words), lead paragraph (who/what/why/when, max 50 words), product quote from CEO, 2 key feature bullets, boilerplate (1 sentence), and press contact. AP style. Avoid 'revolutionary', 'game-changing', and 'cutting-edge'.",
+      "Write a press release for our AI analytics feature launch. Include a headline, CEO quote, feature highlights, and contact info. Keep it professional.",
+      "Draft a product launch press release. Cover what we're announcing, why it matters, a quote from our CEO, and key features. Follow standard press release format."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Banning the three most overused PR adjectives and specifying AP style forces a press release that journalists will actually read rather than immediately delete.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write internal comms for layoff announcement",
+    "originalPrompt": "I need to write an internal communication about some layoffs at our company. It needs to be sensitive and professional.",
+    "options": [
+      "Write an internal company announcement for a 10% workforce reduction. Tone: direct, empathetic, no euphemisms. Structure: (1) what is happening and why (market context, 2 sentences), (2) who is affected and the process (timeline, severance, support), (3) message to remaining team (what stays the same, leadership's commitment), (4) Q&A process. Avoid: 'rightsizing', 'difficult decision', passive voice. Length: 300 words.",
+      "Write a layoff announcement email for the company. Cover why it's happening, who is affected, and what support we're offering. Be empathetic but direct.",
+      "Draft a company-wide layoff communication. Explain the business reasons, describe the support for affected employees, and reassure the remaining team. Avoid corporate jargon."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Banning specific euphemisms ('rightsizing') and passive voice, combined with a structured 4-section format, produces a communication that treats affected employees with genuine dignity.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write CEO LinkedIn bio",
+    "originalPrompt": "Write a LinkedIn bio for our CEO to use on their profile.",
+    "options": [
+      "Write a LinkedIn 'About' section for a B2B SaaS CEO. Max 150 words. Include: what the company does and who it helps (1 sentence), what the CEO built before this (1-2 sentences), their leadership philosophy (1 sentence), and a CTA to connect. First-person. No clich\u00e9s like 'passionate' or 'visionary'.",
+      "Write a LinkedIn bio for our CEO. Cover their background, what they're building now, their leadership approach, and a way for people to connect with them. It should be engaging and personal, written in the first person. Highlight their achievements and what makes them unique as a leader in the B2B SaaS space. Make it compelling for potential investors, partners, and customers who might visit their LinkedIn profile.",
+      "CEO bio: founder of X, building SaaS product, passionate leader. Connect with me."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning 'passionate' and 'visionary', specifying each content element, and capping at 150 words produces an authentic bio that stands out on LinkedIn.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write crisis communications holding statement",
+    "originalPrompt": "A communications team needs to prepare a holding statement for a potential data breach before full details are confirmed.",
+    "options": [
+      "Write a data breach holding statement for a B2B SaaS company to be issued within 2 hours of a suspected incident. Requirements: acknowledge we are investigating a potential security incident (without confirming breach), state what we are doing right now (3 specific actions), commit to an update within 24 hours, provide a direct contact for affected customers. Max 100 words. Legal-reviewed tone (factual, no admissions).",
+      "Write a holding statement for a potential data breach. Acknowledge the incident, explain what we're doing, and tell customers when they'll hear more.",
+      "Draft a crisis holding statement for a suspected data breach. Be transparent, tell customers what we know and don't know, what actions we're taking, and when the next update will be."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying 'no admissions' and requiring three concrete current actions produces a legally defensible holding statement that still demonstrates accountability.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write investor narrative for fundraising deck",
+    "originalPrompt": "Help me write the narrative for our fundraising deck. We're raising a Series A and I need it to be compelling.",
+    "options": [
+      "Write the narrative arc for a Series A fundraising deck (B2B SaaS, $2M ARR, 3x YoY growth, targeting ops teams). Slide-by-slide narrative: Problem \u2192 Why Now \u2192 Solution \u2192 Traction \u2192 Market Size \u2192 Business Model \u2192 Team \u2192 Use of Funds \u2192 Ask. For each slide: 1-sentence core claim, the key data point to include, and the investor concern each slide must preemptively address. Format as a slide narrative guide.",
+      "Write a Series A fundraising deck narrative. Cover the problem, solution, traction, market, team, and use of funds. Make each slide compelling with data.",
+      "Create a fundraising deck narrative for our Series A. Map the story arc from problem to ask. Include what data to show on each slide and what investor questions to address."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring a 'preemptive investor concern' per slide is the key differentiator\u2014it forces the narrative to answer objections before they are raised, which is what closes funding rounds.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write thought leadership op-ed outline",
+    "originalPrompt": "A founder wants to write an op-ed for a trade publication on the future of remote work technology.",
+    "options": [
+      "Write an op-ed outline for a trade publication on 'Why remote work technology is failing distributed teams\u2014and what needs to change.' Target: 800 words. Structure: provocative thesis (1 sentence), 3 supporting arguments (each with evidence hook and counterpoint), a solution section (2-3 practical recommendations), and a closing call to action for the industry. Identify 2 places to insert original data or proprietary research.",
+      "Write an op-ed outline about remote work technology. Include a strong thesis, main arguments, and recommendations. Target around 800 words.",
+      "Create an op-ed outline on the future of remote work tech. Open with a strong take, build the argument with evidence, and close with recommendations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a counterpoint per argument and flagging where to insert original data produces an op-ed outline that will pass editorial review at a serious trade publication.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write conference speaking abstract",
+    "originalPrompt": "Write a speaking abstract for a tech conference submission about AI-powered customer support.",
+    "options": [
+      "Write a conference speaking abstract for a SaaStr-style B2B event. Topic: 'How we reduced support ticket volume by 60% with AI triage'. Max 150 words. Include: session title (provocative, stat-led), 3 audience takeaways as bullet points, speaker credential (1 sentence). No buzzwords.",
+      "Write a conference abstract for a talk about using AI in customer support. Describe what the talk covers, what the audience will learn, and who the speaker is. The talk is about how our company implemented AI-powered ticket triage and routing, which significantly reduced the volume of tickets that needed human intervention. Include some compelling statistics about the results we achieved and make the abstract engaging enough that conference organizers will want to select this session.",
+      "Abstract: AI support triage, 60% ticket reduction, three takeaways."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A stat-led title and a 150-word cap with three prescribed elements produce an abstract that conference programme committees rank higher than abstract narrative descriptions.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write company values statement",
+    "originalPrompt": "Write our company values. We want to define what we stand for and how we work.",
+    "options": [
+      "Write 4 company values for a 50-person B2B SaaS startup. For each value: a 2-3 word label, a 1-sentence definition, and one concrete example of what it looks like in practice (not 'we believe in X'). Values should be specific enough that an employee could use them to make a real decision. Avoid generic values like 'integrity' or 'excellence' without context.",
+      "Write company values for our startup. Include 4-5 values with names and descriptions. Make them genuine and reflect how we actually work.",
+      "Create 4 company values. Each should have a short name and an explanation of what it means. Give an example of each value in action."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requiring a concrete 'looks like in practice' example per value and banning empty generic labels forces values that employees can actually use as decision-making guides.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write M&A integration communication",
+    "originalPrompt": "A VP of Communications needs to draft internal and external communications for a company acquisition announcement.",
+    "options": [
+      "Write a communications plan for a B2B SaaS acquisition announcement. Cover 4 audiences with separate messages: (1) acquired company employees (tone: reassuring, what changes/stays same), (2) acquiring company employees (tone: excited, strategic rationale), (3) customers of both companies (tone: value-focused, no disruption), (4) press release. For each: key message (1 sentence), FAQs to anticipate (3 per audience), and recommended channel and timing.",
+      "Write acquisition announcement communications for employees, customers, and press. Tailor each for the audience and cover what they need to know.",
+      "Draft M&A communications for 4 audiences: acquired employees, our employees, shared customers, and the press. Include key messages, FAQs, and timing for each."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring 3 FAQs per audience and specifying channel and timing forces the communications plan to anticipate real stakeholder concerns rather than just crafting messages.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write nurture email for MQL who went cold",
+    "originalPrompt": "Write a re-engagement email for a lead who downloaded our whitepaper 30 days ago but hasn't responded to any follow-up.",
+    "options": [
+      "Write a re-engagement email for an MQL who downloaded a whitepaper 30 days ago and went silent after 2 follow-ups. Angle: share a new, relevant resource (not the same whitepaper). Max 80 words. Include: subject line that doesn't reference previous emails, one specific value-add (a link to a relevant case study or short video), and a low-friction CTA (reply with a yes/no question).",
+      "Write a re-engagement email for a cold lead. Share something new and useful. Keep it short and don't pressure them.",
+      "Write an email to re-engage a lead who downloaded our whitepaper. Use a new piece of content as the hook and ask a simple question at the end."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A subject line that doesn't reference previous emails avoids the passive-aggressive tone that makes cold leads unsubscribe rather than re-engage.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write newsletter introduction section",
+    "originalPrompt": "A content team needs to write the opening section of a weekly B2B SaaS newsletter.",
+    "options": [
+      "Write the intro section of a weekly B2B SaaS newsletter. Max 80 words. Structure: 1-sentence hook (surprising stat or counterintuitive claim relevant to the week's topic), 2-sentence preview of what's inside, 1-sentence CTA to keep reading. First-person plural ('we'). No 'hope you're having a great week' openers.",
+      "Write the opening for our weekly newsletter. Include a hook, preview of the content, and encourage people to read on. Keep it brief.",
+      "Write a newsletter intro. Start with something interesting to hook the reader, preview the topics covered, and make them want to read more."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning generic openers like 'hope you're having a great week' and requiring a surprising hook increases open-to-click rates by capturing attention in the email preview pane.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write event promotional tweet",
+    "originalPrompt": "Write a tweet promoting a free B2B webinar about scaling sales teams.",
+    "options": [
+      "Write a promotional tweet for a free B2B webinar. Max 240 characters. Include: topic (scaling sales from 3 to 30 reps), one specific takeaway attendees get, date/time, and registration link placeholder. Hashtags: max 2.",
+      "Write a tweet promoting our free webinar on scaling B2B sales teams. It should be engaging and encourage people to register. Mention what they'll learn and include the date, time, and a link to sign up. Add some relevant hashtags to reach more people in the sales and B2B community. Make sure it fits in a tweet.",
+      "Free webinar: scale your sales team. Register now. #sales"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring one specific takeaway in the tweet text proves value before asking for a registration click, which drives higher sign-up rates.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write gated content landing page",
+    "originalPrompt": "Write a landing page for a gated eBook. I want people to fill in the form and download it.",
+    "options": [
+      "Write copy for a gated eBook landing page. eBook: '2025 State of B2B Procurement Report'. Include: H1 (benefit-led, max 8 words), 3-bullet 'what you'll learn' section (max 12 words each), social proof line (X companies downloaded), form field rationale sentence (why we ask for company size), and a submit button label (not 'Submit'). Total: max 120 words.",
+      "Write a landing page for our gated eBook on B2B procurement. Include a headline, bullet points about what readers will learn, social proof, and a form with a CTA button.",
+      "Write gated content landing page copy. Headline should be compelling, bullet points should preview the content, include a trust signal, and end with a strong form CTA."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Including a 'form field rationale sentence' reduces form abandonment by addressing the privacy concern before the visitor reaches the form.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write product category definition for SEO",
+    "originalPrompt": "A content marketer needs to define the product category in the website's core SEO page to own the category keyword.",
+    "options": [
+      "Write a 100-word 'what is [category]' SEO section for a page targeting the keyword 'revenue operations software'. Include: a plain-language definition, 3 key problems it solves for B2B companies, and a mention of who uses it. Optimise for a featured snippet (direct answer in the first sentence). No jargon.",
+      "Write a definition of revenue operations software for our SEO page. Explain what it is, who uses it, and what problems it solves. Make it search-friendly.",
+      "Write the 'what is RevOps software' section for our website. Define the category in a way that answers common search queries and helps us rank for the term."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Explicitly writing for a featured snippet (direct answer in the first sentence) is the single highest-leverage SEO tactic for category definition pages.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Build content pillar strategy document",
+    "originalPrompt": "Help me build a content strategy for our blog. We want to rank for important keywords and build authority.",
+    "options": [
+      "Design a content pillar strategy for a B2B SaaS company in the HR tech space. Create 3 content pillars: each with a pillar page topic, target keyword cluster (5 keywords), 5 supporting cluster articles, and the buyer journey stage it targets (awareness/consideration/decision). Include internal linking logic between pillar and cluster pages. Output as a content architecture table.",
+      "Build a content pillar strategy for our HR tech blog. Define 3 pillars, list the keywords for each, and outline supporting articles.",
+      "Create a content strategy using topic clusters. Define 3 pillar topics with keyword clusters and supporting articles. Show how the pieces link together."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring internal linking logic between pillar and cluster pages is what turns a content list into an SEO architecture\u2014without it, the cluster articles leak link equity.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write product feature comparison bullet",
+    "originalPrompt": "Write a bullet point comparing our product's reporting feature to a competitor's for a comparison page.",
+    "options": [
+      "Write one feature comparison bullet for a 'vs competitor' page. Topic: reporting. Our advantage: real-time dashboards vs competitor's daily refresh. Max 20 words. Lead with our advantage. Factual, no superlatives.",
+      "Write a bullet point for a competitor comparison page about our reporting feature. Explain how our real-time dashboard is better than the competitor's daily data refresh. Make it compelling and persuasive so visitors understand why our approach is superior. Keep it concise and focused on the key advantage.",
+      "Real-time reports vs. daily refresh. We're faster."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 20-word cap with a 'lead with our advantage' rule and a no-superlatives constraint produces comparison copy that is credible and scannable.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write ABM content personalisation brief",
+    "originalPrompt": "A marketing team needs to personalise content for a named account campaign targeting 20 enterprise accounts in the retail industry.",
+    "options": [
+      "Write an ABM content personalisation brief for an enterprise retail account campaign. Specify: (1) personalisation variables per account tier (company name, industry pain, recent news hook), (2) which content assets to personalise (email, landing page hero, LinkedIn ad), (3) the personalisation token structure for each asset, (4) what requires human review vs can be auto-generated. Output as a personalisation playbook.",
+      "Write a personalisation brief for our ABM campaign targeting retail accounts. Cover what to personalise, which assets, and how.",
+      "Create an ABM personalisation strategy for the retail campaign. Define which fields to personalise in emails and ads, and flag what needs manual review."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Distinguishing 'auto-generated vs human review' requirements prevents the campaign from sending AI-hallucinated account details that damage enterprise relationships.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write podcast guest pitch email",
+    "originalPrompt": "Write an email pitching a podcast host to have our founder as a guest. Make it compelling so they say yes.",
+    "options": [
+      "Write a podcast guest pitch email on behalf of a B2B SaaS founder. Target podcast: a 50k-listener B2B marketing show. Email structure: personalised observation about a recent episode (1 sentence), founder's unique angle (what counterintuitive insight they'd bring that fits the show's audience), social proof (company metric or past media appearance), and a low-friction ask (availability to chat, not a booking link). Max 100 words.",
+      "Write a pitch email to a podcast host about having our founder on the show. Mention a recent episode, explain why she'd be a great guest, and include some credentials.",
+      "Write a guest pitch email for a B2B podcast. Personalise it, explain what value our founder brings, mention their credentials, and ask for a conversation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Framing the founder's contribution as a 'counterintuitive insight that fits the show's audience' shows the host you've done the research and makes the pitch about their listeners, not the founder's exposure.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write product launch email subject variants",
+    "originalPrompt": "Write email subject lines for a major annual product launch.",
+    "options": [
+      "Write 4 email subject lines for a major annual product launch. Max 45 characters each. One per angle: (1) year in review + what's new, (2) biggest single new feature, (3) customer quote-led, (4) urgency/event-based. Include preview text (max 85 chars) for each pair.",
+      "Write subject lines and preview text for our annual product launch email. We need several variants to test. Cover different angles including the new features we're launching, customer testimonials, and any urgency around the launch event or timing. Each subject line should be short enough to display fully on mobile and the preview text should add context without repeating the subject.",
+      "Annual launch email subjects: new features, customer love, urgency."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Pairing each subject line with preview text in the brief ensures the two work together, since many recipients decide whether to open based on both fields simultaneously.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write LinkedIn InMail for C-suite prospect",
+    "originalPrompt": "Write a LinkedIn InMail message targeting a CFO at a large enterprise company about our finance automation product.",
+    "options": [
+      "Write a LinkedIn InMail to a CFO at a 2,000-person manufacturing company about a finance process automation tool. Max 150 words. Structure: personalised opener referencing their company or a recent announcement (1 sentence), the financial inefficiency our tool addresses (1 sentence with a relevant stat), a specific outcome a similar company achieved (1 sentence), and a low-commitment CTA (share a 2-minute overview video, not a meeting ask).",
+      "Write a LinkedIn InMail to a CFO about our finance automation product. Personalise it, explain the value, mention a customer result, and ask for a call.",
+      "Write a CFO-targeted LinkedIn message. Reference their company, explain how we help with finance processes, and offer a short video or conversation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 2-minute video CTA has 3x higher acceptance rates than a meeting request as the first ask from a cold InMail to a C-suite executive.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write enterprise sales qualification framework",
+    "originalPrompt": "A head of sales needs a qualification framework that sales reps can use consistently to assess enterprise opportunities.",
+    "options": [
+      "Create a MEDDPICC qualification framework template for enterprise B2B sales. For each element (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion, Competition), provide: a definition (1 sentence), 2 qualifying questions for the rep to ask, and a red flag that signals the deal is unqualified on that dimension. Format as a sales qualification card.",
+      "Write an enterprise sales qualification framework using MEDDPICC. Cover each letter, what it means, and questions to ask prospects.",
+      "Create a MEDDPICC template for our sales team. Define each element, give example questions, and note warning signs that a deal might not be qualified."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring a 'red flag' indicator per MEDDPICC element produces a qualification framework that helps reps disqualify bad deals quickly, not just qualify good ones.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write voicemail script for cold outreach",
+    "originalPrompt": "Write a voicemail script for a sales rep calling a cold prospect. Make it so they call back.",
+    "options": [
+      "Write a cold call voicemail script (max 25 seconds / ~60 words). Structure: name and company (5 words), one specific reason for calling referenced to their role or company (1 sentence), a compelling reason to call back (one benefit or insight), and callback number said twice. No 'I'll also follow up by email' hedge. Conversational tone.",
+      "Write a voicemail script for a cold call. Introduce the rep and company, explain why they're calling, and give a reason to call back. Keep it short.",
+      "Write a 20-second voicemail script. Say who you are, mention a relevant business problem, and leave a callback number. Don't make it salesy."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning the 'I'll also follow up by email' line forces the rep to make the voicemail compelling enough to stand on its own, which improves callback rates.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write deal summary for CRM update",
+    "originalPrompt": "Write a deal summary to update in our CRM after a discovery call.",
+    "options": [
+      "Write a CRM deal summary after a discovery call. Max 80 words. Cover: (1) prospect's stated pain (their words), (2) business impact of the pain (metric if given), (3) decision timeline, (4) next step agreed, (5) one open question to address. Use note-style prose, not bullet points.",
+      "Write a CRM note summarising a discovery call. Cover what the prospect told us about their pain points, their timeline for a decision, and what we agreed to do next. Include any open questions that need to be answered before we can move forward. Keep it clear and useful for the account executive who will pick this up.",
+      "Discovery call summary: pain, timeline, next step."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Including the prospect's stated pain in their own words (not paraphrased) is the most important CRM field\u2014it prevents the rep from projecting assumptions into subsequent calls.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write competitive battle card",
+    "originalPrompt": "A sales enablement team needs to write a battle card for reps to use when competing against a specific named competitor.",
+    "options": [
+      "Write a competitive battle card against Competitor X for a B2B CRM product. Sections: (1) when you'll see them (deal types and company profiles), (2) their 3 strengths (honest assessment), (3) their 3 weaknesses from a customer perspective, (4) our top 3 differentiators vs them, (5) how to handle their top 2 traps ('Their pricing is lower' and 'They have more integrations'). One-page format. No spin\u2014include real weaknesses.",
+      "Write a competitive battle card. Cover competitor strengths and weaknesses, our differentiators, and how to handle common objections about them.",
+      "Create a battle card for competing against a major CRM competitor. Explain when we face them, what they're good and bad at, how we're different, and how to counter their sales tactics."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring an honest assessment of competitor strengths makes the battle card credible\u2014reps who discover the AI downplayed a real competitor strength stop trusting the card entirely.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write territory plan for new region",
+    "originalPrompt": "Write a territory plan for a new region we're entering. The sales rep needs to know how to prioritise and where to start.",
+    "options": [
+      "Write a 90-day territory plan for a new enterprise AE entering the UK market for a B2B SaaS product (existing US product, no UK presence). Structure: (1) ICP for UK market (firmographic criteria adjusted for UK), (2) account segmentation (tier 1/2/3 by ARR potential), (3) Week 1-30 activities (research, outreach, pipeline building), (4) 90-day quota expectation and pipeline coverage target (3x quota), (5) key risks unique to UK market entry. Format: structured plan.",
+      "Write a territory plan for our UK market entry. Cover the ICP, account tiers, activity plan, targets, and risks.",
+      "Create a 90-day plan for a new AE entering the UK. Define the target accounts, what they should do in the first 90 days, their pipeline targets, and UK-specific challenges."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying a 3x quota pipeline coverage target and requiring UK-specific risks produces a territory plan that sets realistic expectations, not just optimistic activity goals.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write sales email P.S. line",
+    "originalPrompt": "Write a P.S. line for a sales prospecting email about an upcoming product webinar.",
+    "options": [
+      "Write a P.S. line for a B2B prospecting email. Promote an upcoming free webinar on reducing manual reporting. Max 30 words. Include: event name, date, and a single benefit. Link placeholder included.",
+      "Write a P.S. line for our prospecting email about an upcoming webinar on reducing manual reporting. The P.S. should be short and draw attention to the webinar as an additional resource for the prospect. Include the name of the webinar, when it takes place, and why they should attend. End with a link to register.",
+      "P.S. Join our free webinar. Register here."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 30-word cap with a single benefit and date produces a P.S. that adds value without distracting from the main email CTA.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write trade show follow-up email",
+    "originalPrompt": "A sales rep met 20 prospects at a trade show and needs to send a follow-up email the next day.",
+    "options": [
+      "Write a trade show follow-up email (sent within 24 hours). Recipient: a product director met briefly at booth. Max 80 words. Reference: the specific topic you discussed (placeholder), attach the one resource they asked for (placeholder), and propose a 20-minute call with a booking link placeholder. Do not start with 'It was great meeting you.'",
+      "Write a trade show follow-up email. Reference the conversation, offer a useful resource, and suggest a meeting. Keep it short and personal.",
+      "Write a post-event follow-up for someone met at a trade show. Personalise it, remind them of your conversation, and ask for a call."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning 'It was great meeting you' and requiring a specific conversation reference is the difference between a follow-up that gets a reply and one that gets deleted.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write sales one-pager for a specific vertical",
+    "originalPrompt": "Write a sales one-pager for our product. I need something reps can leave behind or email after a meeting.",
+    "options": [
+      "Write a 1-page sales leave-behind for a B2B expense management tool targeting CFOs in the healthcare sector. Sections: headline (outcome, not product name), 3 key benefits with healthcare-specific proof points, a relevant customer logo and result, pricing summary (starting price), and CTA (book a demo). Max 200 words. No technical jargon. Design note: intended for PDF.",
+      "Write a sales one-pager for our expense tool. Cover the benefits, a customer story, pricing, and a CTA. Target CFOs in healthcare.",
+      "Create a sales one-pager for healthcare CFOs. Include the key benefits with proof points, a customer reference, and how to get started."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Adding healthcare-specific proof points and a pricing summary (not a 'contact us for pricing') creates a leave-behind that answers the CFO's two most common questions without a follow-up call.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write enterprise RFP response section",
+    "originalPrompt": "A sales team needs to respond to an RFP's 'Security and Compliance' section for a large enterprise deal.",
+    "options": [
+      "Write the Security and Compliance section of an enterprise RFP response. Include: certifications held (SOC 2 Type II, ISO 27001 placeholders), data residency options, encryption standards (in transit and at rest), penetration testing cadence, incident response SLA (time-to-notify), and customer data deletion policy. Format: question-and-answer with each RFP requirement stated before our answer. Max 300 words.",
+      "Write the security and compliance section for an enterprise RFP. Cover our certifications, data security practices, and incident response process.",
+      "Respond to the security section of an RFP. Include our SOC 2 certification, encryption practices, data residency, and how we handle security incidents."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Using a question-and-answer format that restates each RFP requirement before answering it makes the response easy for the procurement team to score against their evaluation rubric.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write champion enablement email",
+    "originalPrompt": "Write an email to a champion contact inside a prospect account to help them sell our product internally.",
+    "options": [
+      "Write a champion enablement email to an internal champion at a prospect account. Max 100 words. Give them: (1) a 2-sentence business case they can forward to their CFO (ROI framing), (2) one objection they'll likely face and a one-line response, (3) a suggested next step they can propose internally. Tone: collaborative, not coaching.",
+      "Write an email to our champion at a prospect company. Give them talking points to use internally when promoting our product. Cover the business case, likely objections, and how to propose next steps to their leadership.",
+      "Champion email: business case, objection handling, internal next step."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing a forwarding-ready CFO message (2 sentences) and a pre-handled objection gives the champion everything they need for an internal conversation without feeling coached.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write account expansion playbook prompt",
+    "originalPrompt": "Help me write a playbook for expanding accounts. I want to grow revenue in our existing customer base.",
+    "options": [
+      "Write an account expansion playbook for a B2B SaaS CSM/AE team. Structure: (1) trigger events that signal expansion readiness (usage threshold, new hire in champion role, company funding announcement), (2) upsell motion by product tier (land-and-expand map), (3) expansion email template per trigger (max 3), (4) pricing conversation script (value-to-price bridge), (5) internal handoff between CSM and AE when expansion exceeds $50K ARR. Format as a playbook with numbered sections.",
+      "Write an expansion playbook. Cover trigger events, the upsell motion, email templates, and how CSM and AE hand off expansion deals.",
+      "Create a playbook for expanding accounts. Include signals that show readiness, the email approach for each signal, and a process for moving from CSM to sales."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the exact handoff threshold ($50K ARR) prevents the grey-zone conflict between CSMs protecting relationships and AEs chasing revenue that kills expansion motions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write customer welcome email",
+    "originalPrompt": "Write a welcome email for new customers. Make them feel excited and know what to do next.",
+    "options": [
+      "Write a Day 0 welcome email for a new B2B SaaS customer (team plan, 15 users). Max 120 words. Include: congratulatory opener (1 sentence, not generic), 3 immediate next steps as numbered list (setup, invite team, first use), their dedicated CSM's name and response time SLA, and a 'get started' CTA button label. No attachments referenced.",
+      "Write a welcome email for a new customer. Tell them what to do next, introduce their CSM, and make them feel supported.",
+      "Write a welcome email for new customers. Include next steps, support contact, and a button to get started. Keep it short and friendly."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Numbered next steps (not bullet points) create a sequential mental model that new users follow in order, which reduces time-to-first-value and support tickets.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write customer training curriculum outline",
+    "originalPrompt": "A CS team needs to build a training curriculum for new enterprise customers with 100+ users to onboard.",
+    "options": [
+      "Write a 4-module training curriculum for enterprise SaaS onboarding (100+ users, 3 user roles: admin, manager, end user). For each module: title, learning objective (1 sentence), content format (live webinar/self-paced video/documentation), duration, target role, and a 3-question knowledge check. Sequence modules from setup to advanced use. Output as a curriculum table.",
+      "Write a training curriculum for enterprise customers. Cover the key modules, learning objectives, and the format for each. Cater to different user roles.",
+      "Design an onboarding training plan for enterprise customers. Include 4 modules covering setup, core features, advanced use, and administration. Target different user roles."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a 3-question knowledge check per module creates accountability for learning transfer, not just content delivery.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write executive sponsor engagement email",
+    "originalPrompt": "Write an email from our VP of Customer Success to an executive sponsor at a key account to re-engage their strategic relationship.",
+    "options": [
+      "Write a VP-to-executive-sponsor relationship email. Max 100 words. Context: 6-month-old enterprise customer ($180K ARR), no exec contact in 90 days. Open: acknowledge shared outcome from onboarding. Propose: a 30-min strategic review call. Offer: preview of roadmap item relevant to their stated Q4 initiative. No check-in language.",
+      "Write an email from our VP of CS to an executive sponsor at a key account. Reference their business goals, offer something of value, and suggest a call. Keep it short and strategic.",
+      "Write an executive sponsor email to re-engage a quiet key account. Reference their Q4 goals, share a relevant roadmap update, and propose a strategic review call."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Banning 'check-in' language and anchoring the email to the customer's stated Q4 initiative positions the outreach as strategic partnership rather than account management.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write NPS follow-up for detractor",
+    "originalPrompt": "Write a follow-up message for a customer who gave us an NPS score of 3. I want to understand why and save the relationship.",
+    "options": [
+      "Write an NPS detractor follow-up email (score: 3/10). Sent by the CSM within 24 hours. Max 80 words. Structure: acknowledge the score without being defensive, ask one open question (why they scored this way), commit to acting on feedback, and offer a 15-minute call with a direct calendar link. Do not offer a discount in this email.",
+      "Write a follow-up email for an NPS score of 3. Apologise, ask why they gave that score, and offer to have a call to understand and fix the issue.",
+      "Write an NPS detractor follow-up. Acknowledge the low score, ask for more detail, and invite them to a call. Keep it empathetic."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "The 'do not offer a discount' directive prevents the CSM from making a commercial concession before understanding the root cause, which trains customers to give low NPS scores for rewards.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write CS team OKR for retention goal",
+    "originalPrompt": "A VP of Customer Success needs to set Q3 OKRs for a CS team responsible for $8M in ARR.",
+    "options": [
+      "Write Q3 OKRs for a Customer Success team managing $8M ARR at a B2B SaaS company. Objective: drive net revenue retention above 110%. Key Results: 3 KRs with specific metrics (GRR, expansion ARR, QBR completion rate), baseline values, and Q3 targets. Each KR must be ownable by the CS team (no dependency on product or sales). Flag one KR that will require a process change to achieve.",
+      "Write Q3 OKRs for our CS team. Goal is NRR above 110%. Include KRs on retention, expansion, and engagement metrics.",
+      "Create OKRs for our Customer Success team. Objective: improve net revenue retention. Key results should cover gross retention, expansion, and customer engagement. Include baselines and Q3 targets."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring KRs to be 'ownable by the CS team' with no cross-functional dependencies prevents the classic OKR problem where the team is accountable for outcomes they can't control.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write customer reference request email",
+    "originalPrompt": "Write an email asking a happy customer to be a reference for us. I want them to say yes.",
+    "options": [
+      "Write a customer reference request email. Recipient: a customer who gave an NPS score of 9, 12 months into their contract. Ask: reference call with a specific prospect (not yet named). Max 80 words. Make the ask specific (30-min call, their topic of expertise: data migration), reciprocate with something valuable (roadmap preview call), and include a deadline (by end of month). No vague 'we'd love for you to...' phrasing.",
+      "Write an email asking a happy customer to be a reference. Explain what it involves, offer something in return, and make it easy to say yes.",
+      "Write a reference request email. Tell the customer what we're asking for, why we thought of them, and what we'll offer in return. Keep it concise."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the customer's topic of expertise (data migration) and a deadline produces a reference request that the customer can say yes or no to without needing clarification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write thank-you email after QBR",
+    "originalPrompt": "Write a thank-you email to send after a quarterly business review meeting.",
+    "options": [
+      "Write a post-QBR thank-you email. Max 60 words. Include: 1-sentence appreciation (specific to meeting content, not generic), 3 agreed actions with owners as a bulleted list, next meeting date placeholder. Plain language.",
+      "Write a thank-you email after a quarterly business review. Thank the customer for their time and participation, recap the key points discussed and decisions made, list the action items that were agreed to and who is responsible for each, and confirm the date of the next QBR.",
+      "Thanks for the great QBR. Here are next steps. See you next quarter."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 60-word cap with owners on action items produces a QBR follow-up that creates accountability without requiring a separate project tracker.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write customer feedback loop process",
+    "originalPrompt": "A CS team wants to close the loop with customers after their feature requests are addressed in a product update.",
+    "options": [
+      "Design a customer feedback loop process for closing feature request loops. Specify: (1) trigger (product ships a feature that was requested), (2) who is notified internally (CSM), (3) CSM outreach template (what to say to the requesting customer, include the feature name, when it shipped, and a 'you asked, we built it' frame), (4) how to track that the loop was closed in the CRM, (5) what happens if the request was NOT shipped (partial close message). Output as a process doc.",
+      "Write a process for closing the loop with customers when we ship a feature they requested. Cover who does it, what to say, and how to track it.",
+      "Design a feedback loop close process. Define the trigger, the outreach template, tracking in CRM, and how to handle partial feature delivery."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a process for features NOT fully shipped (step 5) makes the loop closure process honest, which builds more trust than only communicating full wins.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write referral programme CTA email",
+    "originalPrompt": "Write an email to existing customers about our referral programme. I want them to refer their colleagues.",
+    "options": [
+      "Write a referral programme launch email to existing B2B customers. Max 100 words. Include: what they get (dual incentive: referrer and referee), what counts as a qualified referral, how to refer (unique link placeholder), and one sentence of social proof (X customers already referred). Subject line included. Tone: peer-to-peer, not corporate.",
+      "Write a referral email to customers. Explain the programme, what they earn, and how to participate. Keep it enthusiastic and easy to act on.",
+      "Write a referral programme email. Cover the incentive, how it works, and a link to share. Use a friendly tone that doesn't feel like a marketing email."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying both sides of the dual incentive and defining 'qualified referral' prevents customers from spamming unqualified contacts and burning out the programme.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write free trial CTA copy variants",
+    "originalPrompt": "A growth team needs CTA button copy variants to test on a SaaS pricing page.",
+    "options": [
+      "Write 5 CTA button copy variants for a SaaS free trial. Max 4 words each. Variants: (1) action + outcome, (2) urgency + free, (3) no-risk framing, (4) role-specific, (5) curiosity-based. State the hypothesis for why each might outperform a generic 'Start Free Trial' button.",
+      "Write 5 CTA button variants for our free trial. Try different angles like urgency, benefit, and curiosity. Keep them short.",
+      "Give me 5 CTA options for our free trial button. Include different approaches and explain which one you'd test first."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requiring a hypothesis per variant is what turns a list of copy ideas into an A/B testing plan\u2014without hypotheses, the team has no framework for interpreting results.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Design viral coefficient model",
+    "originalPrompt": "Help me understand our product's viral potential. How do I measure and improve it?",
+    "options": [
+      "Build a viral coefficient (K-factor) model for a B2B SaaS product. Define: K = invitations sent per user \u00d7 conversion rate of invites. Current data: average user sends 2.3 invites, invite conversion rate is 18%. Calculate current K-factor, state whether it's viral (K>1) or sub-viral, and model the impact of improving invite conversion to 30% and to 45%. Recommend the highest-leverage intervention to improve K.",
+      "Calculate our viral coefficient and tell me what it means. We send 2.3 invites per user and convert 18% of them. What should we focus on?",
+      "Build a K-factor model with our data (2.3 invites/user, 18% conversion). Show current K, whether we're viral, and what improving conversion rates would do."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Modelling two specific conversion improvement scenarios (30% and 45%) produces a quantified case for investment rather than a vague recommendation to 'improve conversion'.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write free trial expiry reminder",
+    "originalPrompt": "Write a free trial expiry email to send 3 days before a user's trial ends.",
+    "options": [
+      "Write a trial expiry reminder email (sent 3 days before end). Max 80 words. Include: days remaining (placeholder), the one feature the user hasn't tried yet (placeholder), upgrade CTA with direct link, and what they lose if they don't upgrade (data retention policy, 1 sentence). Tone: helpful urgency, not alarming.",
+      "Write a trial expiry email for users whose free trial ends in 3 days. Remind them they're running out of time. Highlight what they'll lose if they don't upgrade, suggest the key feature they should try before their trial ends, and include a clear upgrade button. Keep it short and persuasive.",
+      "Trial ends in 3 days. Upgrade now to keep your data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Mentioning an untried feature in the expiry email drives a last-minute activation moment that can flip fence-sitters into paying customers.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write product-led growth experiment plan",
+    "originalPrompt": "A growth PM needs to plan 4 PLG experiments to improve free-to-paid conversion in a 14-day trial.",
+    "options": [
+      "Design 4 PLG experiments to improve free-to-paid conversion in a 14-day trial. For each experiment: hypothesis (variable + metric + direction), where in the trial funnel it targets (day 0, activation, mid-trial, day 12), control vs variant description, primary metric, guardrail metric, and minimum runtime. Prioritise by expected impact \u00d7 confidence \u00f7 effort. Output as an experiment backlog table.",
+      "Plan 4 PLG experiments for our free trial. Cover different parts of the funnel and include hypotheses and metrics for each.",
+      "Write a PLG experiment plan for improving free-to-paid conversion. Include 4 experiments with hypotheses, funnel stages, and metrics. Prioritise by impact and effort."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring a guardrail metric per experiment prevents conversion optimisations that improve paid conversion at the cost of user experience or trust metrics.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write SEO FAQ section for pricing page",
+    "originalPrompt": "Write FAQ content for our pricing page. I want it to help with SEO and answer customer questions.",
+    "options": [
+      "Write 5 FAQ questions and answers for a B2B SaaS pricing page. Target: long-tail keywords around pricing objections (e.g. 'Is there a free plan?', 'Can I cancel anytime?', 'Do you offer annual discounts?'). Each answer: max 50 words, direct, conversational. Structure for FAQ schema markup (use Q: / A: format). No sales spin.",
+      "Write FAQ content for our pricing page. Cover common questions about our pricing, free trial, billing, and cancellation policy.",
+      "Create 5 pricing page FAQs. Answer questions about free plans, contracts, discounts, and billing. Keep answers short and honest."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Writing questions as real long-tail keyword phrases and structuring for FAQ schema markup helps the page appear in Google's 'People also ask' boxes, which is high-value pricing page traffic.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write brand name announcement for rebrand",
+    "originalPrompt": "A company is rebranding and needs to announce the new name to customers and the public.",
+    "options": [
+      "Write a rebrand announcement for customers (existing B2B SaaS customers, 2,000 accounts). New name: Formerly 'FlowTrack', now 'Nexus'. Structure: lead with continuity (your product, your team, your data\u2014nothing changes), explain why the new name (1 sentence\u2014growth into a new category), reassure on product (no action required), reassure on contracts and billing (no changes), and invite feedback (1 sentence). Max 200 words.",
+      "Write a rebrand announcement email to customers. Explain the new name, why we're changing it, and reassure them nothing is changing in the product or their contract.",
+      "Write the customer announcement for our rebrand from FlowTrack to Nexus. Lead with what stays the same, explain the new name, and tell them what they need to do."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Leading with 'nothing changes' before explaining the new name prevents the 'what does this mean for our contract?' support ticket flood that follows most rebrand announcements.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write product award submission summary",
+    "originalPrompt": "Write an entry for a product award. Our product is great and we want to win. Make it persuasive.",
+    "options": [
+      "Write a 250-word award submission summary for a B2B SaaS product entering the 'Best Emerging Tech' category at a major industry award. Structure: the problem in the market (evidence-backed), what makes our product distinct (3 differentiated capabilities, not features), customer impact (1-2 quantified results), and why now (market timing). Tone: confident, substantiated. No empty claims without data.",
+      "Write an award submission for our product. Cover the problem we solve, what makes us different, and our customer results. Make it compelling.",
+      "Write an award entry for our B2B product. Explain the market problem, our solution, why we're different, and include customer proof points. Keep it under 300 words."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "The 'no empty claims without data' constraint is what separates award-winning submissions from plausible-sounding ones\u2014judges read dozens and fact-check the memorable ones.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write social media bio for company page",
+    "originalPrompt": "Write a Twitter/X bio for our B2B SaaS company account.",
+    "options": [
+      "Write a Twitter/X bio for a B2B SaaS company in the HR tech space. Max 160 characters. Include: what the product does (1 benefit, not a feature list), who it's for (ICP), and a social proof element (customer count or award). No hashtags. No 'We help' opener.",
+      "Write a Twitter bio for our HR SaaS company. Explain what we do and who we serve. Include a social proof point like customer count. Keep it under 160 characters.",
+      "HR SaaS company. Helping teams manage people better. Trusted by 500+ companies. #HRTech #SaaS"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Banning 'We help' openers and hashtags in bios produces copy that uses all 160 characters for substance, not filler that Twitter algorithms deprioritise.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write brand positioning statement",
+    "originalPrompt": "Write a brand positioning statement for our company. It should summarise what we stand for and our market position.",
+    "options": [
+      "Write a formal brand positioning statement using the Ogilvy framework. Format: 'For [target audience], [brand name] is the only [frame of reference / category] that [point of difference] because [reason to believe].' The brand: a B2B data integration platform targeting data engineers at growth-stage tech companies. Differentiator: zero-code pipeline setup vs competitors requiring Python. Write 3 variants and rank them by clarity and credibility.",
+      "Write a brand positioning statement for our data integration platform. Target data engineers. Differentiate on ease of use vs coding-required competitors.",
+      "Create a positioning statement for our B2B data platform. Use a standard format, target data engineers, and focus on the zero-code differentiation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requesting 3 variants and requiring a ranking with rationale forces a comparative quality assessment rather than accepting the first version that sounds plausible.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Brand & Communications",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write spokesperson briefing doc",
+    "originalPrompt": "A PR team needs to prepare a spokesperson for a journalist interview about the company's expansion into Europe.",
+    "options": [
+      "Write a spokesperson briefing document for a CEO interview about European market expansion. Include: (1) key messages (3 approved statements with supporting data), (2) likely questions and recommended answers (5 Q&As), (3) topics to bridge away from (competitor comparisons, revenue figures, layoffs), (4) approved statistics to reference, (5) prohibited claims (unverified market leadership claims). Format as a 1-page interview prep brief.",
+      "Write a spokesperson briefing for a CEO interview about our European expansion. Cover key messages, likely questions, and what to avoid saying.",
+      "Create an interview briefing doc. Include approved messages, Q&As for likely questions, and a list of topics to avoid. Format it for a quick pre-interview review."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Including a 'prohibited claims' section is critical\u2014it prevents the spokesperson from making market leadership claims that could trigger regulatory scrutiny or competitor legal challenges.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Customer Success",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write product usage tips email",
+    "originalPrompt": "Write an email with tips to help customers get more value from our product.",
+    "options": [
+      "Write a 'tips and tricks' email for B2B customers 30 days post-onboarding. Max 120 words. Include 3 specific underused features as numbered tips, each formatted as: feature name (bold) + what it does (1 sentence) + time saving or outcome. CTA: link to the help centre for more tips. No upsell.",
+      "Write a product tips email to help customers use our product better. Cover underused features and include links to learn more.",
+      "Write a tips email for customers who are 30 days into using our product. Highlight 3 features they may not be using and explain why each is valuable."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Framing each tip as 'feature name + outcome' rather than 'feature name + description' makes the email about customer benefit, not product documentation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Growth & Demand Generation",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write SMS re-engagement message",
+    "originalPrompt": "Write an SMS message to re-engage lapsed free trial users.",
+    "options": [
+      "Write an SMS re-engagement for a lapsed free trial user (inactive 7 days, trial has 3 days left). Max 160 characters. Include: time urgency, one feature benefit, and a direct link placeholder. No emojis.",
+      "Write an SMS message to re-engage users who haven't logged in during their free trial. The message should remind them that their trial is expiring soon and encourage them to come back and try the product. Mention a specific feature that might interest them and include a link to log in. Keep it short since it's an SMS.",
+      "Trial ending soon! Log in now: [link]"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A hard 160-character cap with a no-emoji constraint forces the message to lead with the highest-value content, since SMS truncates anything longer.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Marketing & Content",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write case study pull quote",
+    "originalPrompt": "Write a pull quote for a customer case study that can be used in marketing materials.",
+    "options": [
+      "Write a pull quote for a B2B case study. Max 25 words. The quote should express: a specific result achieved, in the customer's voice (natural, not marketing-speak), attributed to a [Role, Company] placeholder. No generic praise phrases like 'game-changer'.",
+      "Write a pull quote for our customer case study. It should be something a real customer might say about the positive impact of our product. Include the result they achieved and make it sound authentic. Keep it short enough to use as a highlighted quote in the case study layout or in marketing materials.",
+      "Our product changed the way we work. Highly recommended."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 25-word cap with a specific result requirement and a ban on 'game-changer' language produces a pull quote that appears credible when used in sales decks.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "go_to_market",
+    "subFunction": "Sales & Business Development",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write internal deal review summary",
+    "originalPrompt": "Write a deal review summary to present at the weekly sales forecast call.",
+    "options": [
+      "Write a weekly forecast deal summary for a $95K ARR opportunity. Max 80 words. Cover: deal stage, close date, next step and date, top risk (1 sentence), and confidence level (high/medium/low with 1-sentence rationale). Output as labelled bullet points.",
+      "Write a deal summary for our weekly forecast call. Cover the account name, deal size, current stage, projected close date, what we're doing next, and any risks we see. Be honest about where the deal stands. The sales manager will use this to forecast the quarter so it needs to accurately reflect our confidence level.",
+      "Deal: $95K, Stage 3, closes Q3, next step: legal review."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A confidence level with a 1-sentence rationale forces the rep to articulate why they believe a deal will close, which is the signal a sales manager needs to forecast accurately.",
+    "maxTokens": 100
+  }
+]

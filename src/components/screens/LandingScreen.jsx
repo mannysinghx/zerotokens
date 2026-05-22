@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
 import { playClick, playLevelUp } from '../../utils/sound.js'
 import { VILLAINS, getVillainProgress } from '../../data/villains.js'
 import { getHighestTier } from '../../data/certifications.js'
+import { FIELD_CATEGORY_MAP } from '../../data/fieldCategories.js'
 import CertBadge from '../ui/CertBadge.jsx'
 
 const features = [
@@ -19,10 +20,17 @@ function WelcomeBack() {
     username, coins, xp, streak, completedChallenges,
     totalTokensSaved, badges, sessions, joinedAt,
     team, company, certifications = [], newCerts = [],
+    assignment, fieldLoading, fieldError,
     startChallenge, goTo, soundEnabled, resetProgress, recordSession,
+    initEmployee, startFieldSession,
   } = useGameStore()
 
   const [confirmReset, setConfirmReset] = useState(false)
+
+  // Sync employee to DB on every load (idempotent)
+  useEffect(() => { initEmployee() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const fieldCategory = assignment ? FIELD_CATEGORY_MAP[assignment.category_id] : null
 
   const defeatedVillains = VILLAINS.filter(
     v => getVillainProgress(v.id, completedChallenges).defeated
@@ -84,6 +92,39 @@ function WelcomeBack() {
             <div className="flex justify-center mt-2">
               <CertBadge tier={getHighestTier(certifications)} size="sm" />
             </div>
+          )}
+
+          {/* Field assignment chip */}
+          {fieldCategory && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex justify-center mt-3"
+            >
+              <div
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full font-mono text-xs border"
+                style={{ borderColor: fieldCategory.color + '44', background: fieldCategory.color + '11', color: fieldCategory.color }}
+              >
+                <span>{fieldCategory.emoji}</span>
+                <span>{fieldCategory.name}</span>
+                {assignment.sub_function && (
+                  <><span className="text-slate-600">·</span><span className="text-slate-400">{assignment.sub_function}</span></>
+                )}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Awaiting assignment */}
+          {!fieldCategory && username && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-xs text-slate-600 font-mono mt-2"
+            >
+              ⏳ Awaiting course assignment from your admin
+            </motion.p>
           )}
         </motion.div>
 
@@ -176,6 +217,30 @@ function WelcomeBack() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Field training CTA — shown when assigned */}
+        {fieldCategory && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="mb-4"
+          >
+            <button
+              className="btn-primary w-full text-base py-4 flex items-center justify-center gap-2"
+              style={{ background: `linear-gradient(90deg, ${fieldCategory.color}cc, ${fieldCategory.color}88)` }}
+              onClick={() => { if (soundEnabled) playLevelUp(); startFieldSession() }}
+              disabled={fieldLoading}
+            >
+              {fieldLoading
+                ? '⏳ Loading questions…'
+                : `${fieldCategory.emoji} Start ${fieldCategory.name} Training`}
+            </button>
+            {fieldError && (
+              <p className="text-neon-red text-xs font-mono text-center mt-2">{fieldError}</p>
+            )}
+          </motion.div>
+        )}
 
         {/* CTA buttons */}
         <motion.div

@@ -23,6 +23,9 @@ const DEFAULT_SAVE = {
   team:          null,      // optional team / department
   company:       null,      // optional company / organisation
   certifications: [],       // [{ tierId, name, earnedAt, avgScore, completedCount }]
+  // ── Field training (Supabase-backed) ────────────────────────────────────
+  assignment:   null,       // { categoryId, subFunction, role, categoryName } — from DB
+  fieldSession: [],         // shuffled question objects for current field session
 }
 
 // ── Active save ─────────────────────────────────────────────────────────────

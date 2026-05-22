@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Rewrite vague PRD feature section",
+    "originalPrompt": "Can you please help me write something about the new feature we are adding to our product? It would be really great if you could make it sound professional and cover the important stuff.",
+    "options": [
+      "Write a PRD feature section for a bulk CSV export feature in a B2B SaaS dashboard. Include: problem statement, user story, functional requirements (3-5 bullet points), and out-of-scope items. Audience: engineers and QA.",
+      "Write a professional PRD section about our new CSV export feature. Make it detailed and cover everything important.",
+      "Help me document a CSV export feature for our product. Write it in a PRD format and make sure it sounds good."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "The best prompt specifies the exact feature, required sections, level of detail, and the intended audience.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Generate user stories for login feature",
+    "originalPrompt": "You need to generate user stories for a new SSO login feature in a B2B SaaS product. Target users are enterprise IT admins.",
+    "options": [
+      "Write user stories for an SSO login feature. Format each as: 'As an [IT admin], I want [action] so that [benefit].' Cover: setup, provisioning, error handling, and session management. Limit to 6 stories.",
+      "Can you write some user stories for our SSO feature? We need them for our sprint planning.",
+      "Generate user stories about login for enterprise customers. Include all the relevant scenarios."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the format template, key scenarios to cover, and a story count produces immediately usable output.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Draft acceptance criteria for search",
+    "originalPrompt": "Write acceptance criteria for search functionality. It should cover everything and be thorough.",
+    "options": [
+      "Write Gherkin-format acceptance criteria for a product search feature. Scenarios to cover: keyword search, zero results state, filter by category, and pagination. Product: an e-commerce platform with 10k+ SKUs.",
+      "Write acceptance criteria for a search feature. Be thorough and cover all edge cases.",
+      "Can you write acceptance criteria for search? Make sure it's complete and covers the main scenarios we'd need to test."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the format (Gherkin), the specific scenarios, and the product context gives testers exactly what they need.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Summarise feature for release notes",
+    "originalPrompt": "Describe a new dark mode feature for a mobile app's release notes.",
+    "options": [
+      "Write a 2-sentence release note for dark mode in our iOS app. Mention it reduces eye strain and is auto-enabled at sunset. Tone: friendly, non-technical.",
+      "Write release notes for our new dark mode feature. Dark mode is a new feature we have added to our mobile application that allows users to switch the appearance of the app to a darker colour scheme. This can help reduce eye strain especially when using the app at night or in low-light environments. The feature automatically switches on at sunset based on the user's location and can also be manually toggled in Settings under Display Options. We hope our users enjoy this new addition to the app.",
+      "Dark mode release note: new feature, reduces eye strain."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A tight word-count constraint with specific talking points produces concise, usable release notes without over-explaining.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Prioritise backlog using RICE framework",
+    "originalPrompt": "You have a 15-item product backlog and need to help a PM apply the RICE scoring framework to prioritise it.",
+    "options": [
+      "Apply RICE scoring to this backlog. For each item, estimate Reach (users/quarter), Impact (0.25\u20133 scale), Confidence (%), and Effort (person-weeks). Output a ranked table with RICE score formula shown. Flag any items needing more data before scoring.",
+      "Help me prioritise my backlog using RICE. Here are the 15 items. Tell me which ones are most important.",
+      "Score my backlog with RICE (Reach, Impact, Confidence, Effort) and give me the top 5 priorities."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining each RICE dimension's scale, asking for a ranked table, and flagging data gaps produces an actionable, auditable output.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write stakeholder update for delayed release",
+    "originalPrompt": "Write an email about our product release being delayed. Make it professional and reassuring.",
+    "options": [
+      "Write a 150-word stakeholder update email. Context: mobile app v3.2 release delayed by 2 weeks due to a critical payment bug found in QA. New date: June 14. Tone: direct, accountable, confident. Include: reason for delay, mitigation steps taken, new timeline, and next update date.",
+      "Write a professional email to stakeholders about a product delay. Keep it positive and explain what happened.",
+      "Draft a stakeholder email about our delayed release. It should be reassuring and mention the new date."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the word count, the exact context, tone directive, and required content sections eliminates multiple back-and-forth revision rounds.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Create go/no-go decision framework",
+    "originalPrompt": "A PM needs a structured go/no-go framework before launching a new B2B feature to 500 enterprise customers.",
+    "options": [
+      "Create a go/no-go launch checklist for a B2B SaaS feature rollout. Group criteria into: Technical Readiness, Customer Support Readiness, Legal/Compliance, and Business KPIs. For each criterion, specify the pass threshold and the owner role. Format as a table.",
+      "Give me a go/no-go checklist for launching a new feature. Cover all the important areas.",
+      "What should I check before launching a feature to enterprise customers? Give me a list of things to consider."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Grouping criteria by domain, requiring thresholds and owner roles, and specifying table format makes the output immediately usable in a launch review meeting.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Draft OKR for product growth quarter",
+    "originalPrompt": "Help me write OKRs for Q3. We want to grow the product and improve user retention.",
+    "options": [
+      "Draft 1 Objective and 3 Key Results for Q3 for a B2B SaaS product team. Goal: improve 90-day user retention. Each KR must be measurable with a specific metric and target number. Current retention baseline: 62%. Format: Objective as a qualitative statement, KRs as 'Increase/Reduce X from Y to Z by [date].'",
+      "Write OKRs for Q3 focused on retention and growth. Make them measurable and ambitious.",
+      "Help me create some OKRs for Q3. We want to grow the product and retain more users. Include a few key results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the baseline metric, the exact format template, and the measurement requirement produces OKRs that are immediately ready for a planning doc.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Summarise competitor feature gap",
+    "originalPrompt": "Summarise how Competitor X's reporting feature compares to ours for a product strategy doc.",
+    "options": [
+      "In 3 bullet points, compare Competitor X's reporting feature to ours: (1) what they offer that we lack, (2) where we lead, (3) one strategic implication. Keep each bullet under 20 words.",
+      "Compare our reporting feature to Competitor X's. Cover all the differences including data visualisation options, export formats, scheduled reports, user permissions, API access, and any unique features either product has. Explain the strategic implications for our roadmap.",
+      "Summarise reporting feature gap vs Competitor X. Include everything relevant."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A strict 3-bullet structure with word limits forces the output to be scannable and insertion-ready into a strategy doc.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Design phased rollout strategy prompt",
+    "originalPrompt": "Help me plan how to roll out a new AI feature to our users. We need to be careful and make sure it goes well.",
+    "options": [
+      "Design a 3-phase rollout strategy for an AI-powered analytics feature in a B2B SaaS product (8,000 customers). Phase 1: 5% beta (power users). Phase 2: 25% (by industry vertical). Phase 3: full GA. For each phase include: success metrics, kill-switch criteria, and customer communication plan. Output as a structured table.",
+      "Create a rollout plan for our new AI feature. Include phases, metrics, and how we'll communicate to customers. Make it thorough.",
+      "Write a feature rollout plan with phases. Start with a small group, expand based on results, then go to everyone. Include metrics and comms."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining the exact phase percentages, segmentation logic, customer count, and required output columns eliminates ambiguity for a high-stakes launch plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write sprint demo talking points",
+    "originalPrompt": "A PM needs talking points for a 5-minute sprint demo to non-technical stakeholders.",
+    "options": [
+      "Write 5 talking points for a 5-minute sprint demo to non-technical stakeholders. Feature shipped: bulk user import via CSV. Structure each point as: what was built \u2192 why it matters \u2192 how to see it. Avoid technical jargon.",
+      "Give me talking points for my sprint demo about the CSV import feature. Keep it simple for business stakeholders.",
+      "Write talking points for our sprint demo. Cover the new features we built and why they matter to the business."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the count, time limit, feature, audience, and a per-point structure prevents vague or inconsistently formatted output.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Generate feature prioritisation rationale",
+    "originalPrompt": "Explain why we should build feature X before feature Y. Make a good argument.",
+    "options": [
+      "Write a 100-word prioritisation rationale for building in-app notifications (Feature X) before advanced analytics (Feature Y). Use data: X has 45 customer requests vs Y's 12. X reduces support tickets. Audience: CPO. Tone: concise and data-driven.",
+      "Explain why in-app notifications should be prioritised over advanced analytics. Use the customer request data to support the argument.",
+      "Write an argument for why we should build Feature X first. Make it convincing and use data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming both features, providing the actual data points, the audience, and a word count produces a usable executive summary, not a generic argument.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compress hypothesis into one sentence",
+    "originalPrompt": "Express a product hypothesis for a checkout flow simplification experiment.",
+    "options": [
+      "Write a one-sentence product hypothesis: 'We believe [reducing checkout steps from 4 to 2] will [increase conversion rate] for [mobile users], which we will measure by [completed purchases per session] over [30 days].'",
+      "Write a product hypothesis for a checkout simplification experiment. We think that if we reduce the number of steps in the checkout process from four steps down to two steps, mobile users will find it easier to complete their purchase and will therefore convert at a higher rate. We will know this is true if we see an increase in completed purchases per session over a 30-day test period. The hypothesis should be clearly stated and testable.",
+      "Hypothesis: simplifying checkout will improve conversion."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Filling in a hypothesis template with specific variables produces a rigorous, testable statement without unnecessary prose.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Draft product vision statement",
+    "originalPrompt": "A product team needs to write a product vision statement for a new AI-assisted HR platform targeting mid-market companies.",
+    "options": [
+      "Write a product vision statement for an AI-assisted HR platform targeting mid-market companies (200\u20132000 employees). Structure: '[Target user] can [do key action] so that [strategic outcome]. Unlike [alternative], our product [key differentiator].' Max 40 words.",
+      "Write a vision statement for our AI HR product. It should be inspiring and explain what we're building and why.",
+      "Create a product vision for an AI HR platform. Cover the target market, what the product does, and what makes it different from competitors."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing a fill-in-the-blank template with a word limit produces a tightly scoped vision statement rather than a generic paragraph.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write post-mortem executive summary",
+    "originalPrompt": "Write a post-mortem for our outage. Explain what happened and what we're doing to fix it.",
+    "options": [
+      "Write a 200-word post-mortem executive summary for a 3-hour API outage on May 15. Root cause: misconfigured load balancer after a routine deployment. Impact: 1,200 customers affected, ~$45K estimated revenue impact. Sections: Incident Summary, Root Cause, Immediate Actions Taken, Preventive Measures. Tone: direct, no blame.",
+      "Write a professional post-mortem for our API outage on May 15. Cover what happened, why, and how we'll prevent it.",
+      "Draft an outage post-mortem. Include the root cause (misconfigured load balancer), the customer impact, and remediation steps. Keep it concise."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the word count, exact impact numbers, required sections, and a no-blame tone directive produces an executive-ready document in one pass.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Build competitive positioning matrix",
+    "originalPrompt": "A product strategist needs a competitive positioning matrix for a project management tool entering a market with Asana, Monday.com, and Linear.",
+    "options": [
+      "Create a competitive positioning matrix. Rows: our product, Asana, Monday.com, Linear. Columns: Target segment, Core use case, AI features, Pricing model, Integration depth, Mobile experience. Rate each on a 1\u20133 scale. Flag our two strongest differentiation points and two biggest gaps. Output as a markdown table.",
+      "Build a competitive matrix comparing our project management tool to Asana, Monday, and Linear. Cover the main features and pricing.",
+      "Compare our tool to Asana, Monday.com, and Linear across the key dimensions that matter to buyers. Show where we win and where we lag."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining exact rows, columns, a rating scale, and asking for explicit win/gap callouts produces a decision-ready matrix, not just a feature list.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Generate sprint retrospective action items",
+    "originalPrompt": "Help me come up with action items from our sprint retro. We had some issues with communication and testing.",
+    "options": [
+      "Generate 3 concrete action items from a sprint retrospective. Issues identified: (1) QA testing started too late, (2) design handoff was unclear. Each action item must include: what to do, who owns it, and done-by date format. Be specific, not generic.",
+      "Write action items for our sprint retro based on communication and testing issues. Make them actionable.",
+      "Give me some retro action items. We had problems with testing and design handoffs last sprint."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the exact issues and requiring owner and deadline fields per item forces specific, immediately assignable outputs.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write one-line product tagline",
+    "originalPrompt": "Write a tagline for a time-tracking SaaS product for freelancers.",
+    "options": [
+      "Write 3 tagline options for a time-tracking SaaS for freelancers. Each under 8 words. Focus on: saving time, getting paid accurately, staying organised. No clich\u00e9s.",
+      "Write a catchy and memorable tagline for our time-tracking product for freelancers. The product helps freelancers track their billable hours accurately so they never lose money. It also has features for invoicing and project management. Make the tagline short, punchy, and appealing to independent workers who value their time and want to be paid fairly for their work.",
+      "Give me a tagline: time tracking for freelancers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requesting 3 variants with a word limit and specific value prop themes gives creative options without padding.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Define north star metric for product",
+    "originalPrompt": "A PM needs help defining the north star metric for a B2C fitness app that tracks workouts and nutrition.",
+    "options": [
+      "Recommend a north star metric for a B2C fitness app (workout + nutrition tracking). Evaluate 3 candidates: Weekly Active Workouts per User, 30-Day Retention Rate, and Goal Achievement Rate. For each, state: what behaviour it measures, why it can lead or lag revenue, and one risk of optimising for it alone. Conclude with a recommendation.",
+      "What should be the north star metric for a fitness app? Give me some options and explain which is best.",
+      "Help me pick a north star metric for our fitness app. We track workouts and nutrition. Options could be DAU, retention, or workout completions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the specific candidates, asking for a lead/lag analysis, and requiring a risk callout per metric produces a board-ready metric recommendation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write changelog entry for API update",
+    "originalPrompt": "Write changelog notes for our API update. Developers need to know what changed.",
+    "options": [
+      "Write a developer changelog entry for REST API v2.3.1. Changes: (1) deprecated /v1/users endpoint\u2014replacement is /v2/users with new pagination params, (2) added webhook retry logic with exponential backoff, (3) rate limit increased to 1000 req/min. Format: version header, bullet list, migration note for breaking changes.",
+      "Write API changelog notes for v2.3.1. Cover the deprecated endpoint, new webhook retry logic, and rate limit increase.",
+      "Write changelog notes for our API update. Explain the deprecated endpoint and new features in a way developers will understand."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing each specific change, the exact version, and requiring a migration note format ensures developers get actionable, unambiguous upgrade guidance.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Create interview prep questions for PM role",
+    "originalPrompt": "A PM is preparing for a job interview and wants to use AI to generate practice questions.",
+    "options": [
+      "Generate 5 behavioural interview questions for a Senior PM role at a B2B SaaS company. Focus on: cross-functional conflict, data-driven decisions, and failed product launches. Format each as: Question / What the interviewer is probing for / Key points to address in answer.",
+      "Give me some interview questions for a PM job. Include behavioural and technical questions.",
+      "Write practice interview questions for a Senior PM role. Cover the main topics a PM would be asked about."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying role level, company type, topic focus, and a 3-part answer framework per question turns generic questions into targeted interview prep.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Synthesise customer interview findings",
+    "originalPrompt": "I have notes from 10 customer interviews. Can you help me make sense of them and find the key themes?",
+    "options": [
+      "Analyse these 10 customer interview notes. Identify: (1) top 3 pain points by frequency of mention, (2) top 2 desired outcomes, (3) any surprising insights not anticipated. For each finding, quote one verbatim customer statement as evidence. Output as a structured research synthesis with a section per finding type.",
+      "Read these customer interview notes and summarise the main themes. Highlight the most important findings.",
+      "Synthesise these customer interview notes into key insights. Find patterns across interviews and tell me what customers care about most."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the exact output categories, requiring frequency-ranked findings, and asking for verbatim evidence quotes makes the synthesis directly usable in a research readout.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write crisp feature announcement Slack message",
+    "originalPrompt": "Write a Slack message announcing a new team-level dashboard feature to all product users.",
+    "options": [
+      "Write a Slack announcement for a new Team Dashboard feature. Max 3 sentences: (1) what launched, (2) key benefit for team leads, (3) CTA with link placeholder. No emojis. Direct tone.",
+      "Write a Slack message announcing our new Team Dashboard feature to all users. The Team Dashboard is a new feature that allows team leaders and managers to see an overview of all their team members' activity, progress on projects, and individual performance metrics in one centralised place. This will help team leads make better decisions and keep their teams aligned. The feature is available now for all Professional and Enterprise plan customers. To access it, go to the main navigation and click on Team Dashboard. We're excited to share this with you and hope it helps your team work more effectively together.",
+      "New Team Dashboard is live! Check it out."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A 3-sentence constraint with prescribed sentence roles and a no-emoji rule produces a Slack message people will actually read.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write minimum viable feature definition",
+    "originalPrompt": "A PM needs to define the MVP scope for a document collaboration feature before engineering estimation.",
+    "options": [
+      "Define MVP scope for a document collaboration feature. List: (1) must-have capabilities (max 5 bullets), (2) explicitly out-of-scope items (max 3 bullets), (3) the single most critical assumption being tested. Audience: engineering lead. Be opinionated about what to cut.",
+      "Define the MVP for our document collaboration feature. Cover what's in scope and what we're deferring.",
+      "Write an MVP definition for document collaboration. Include the core features engineers need to build and what we're not doing yet."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Capping the must-haves, explicitly calling for out-of-scope items, and asking for the key assumption forces a lean, testable MVP definition.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Draft roadmap communication to sales team",
+    "originalPrompt": "Write a roadmap update email for the sales team. Tell them about our upcoming features so they can use it with customers.",
+    "options": [
+      "Write a 150-word internal email to the sales team previewing Q3 roadmap. Features to highlight: (1) SSO launch (GA in July), (2) mobile app redesign (beta in August), (3) Salesforce integration (target Q4). For each feature: one-sentence description, availability date, and one customer objection it helps handle. No engineering jargon.",
+      "Draft a roadmap email for sales. Tell them about SSO, the mobile redesign, and Salesforce integration with dates.",
+      "Write a sales enablement email about our Q3 roadmap. Cover the main features coming up and how they help close deals."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing exact features with dates and requiring a 'customer objection it handles' per feature turns a generic update into a sales tool.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Request design critique on checkout flow",
+    "originalPrompt": "Can you review my checkout design and give me feedback? I want to know if it's good or if there are issues.",
+    "options": [
+      "Review this checkout flow wireframe (3 steps: cart \u2192 shipping \u2192 payment). Identify: (1) up to 3 UX issues reducing conversion, (2) any accessibility concerns (WCAG 2.1 AA), (3) one quick win to implement this sprint. Format as numbered findings with severity (high/medium/low).",
+      "Give me feedback on my checkout design. Look for UX problems and accessibility issues and suggest improvements.",
+      "Review my checkout wireframe and tell me what's wrong. Focus on conversion and accessibility."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the specific flow steps, output format, and asking for severity ratings makes the critique immediately actionable in a design review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Describe empty state for dashboard",
+    "originalPrompt": "You need to write UX copy for an empty state on a B2B analytics dashboard when a user has no data yet.",
+    "options": [
+      "Write UX copy for an empty state on a B2B analytics dashboard (first-time user, no data connected). Include: headline (max 6 words), one supporting sentence explaining next step, and CTA button label. Tone: encouraging, not apologetic. No 'No data yet' phrasing.",
+      "Write empty state copy for our analytics dashboard. Make it helpful and guide users to the next step.",
+      "Write copy for when the analytics dashboard has no data. Keep it short and tell users what to do next."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Defining character/word constraints per element, tone guidelines, and a banned phrase forces precise, immediately usable microcopy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Generate wireframe description for onboarding",
+    "originalPrompt": "Describe a wireframe for the onboarding of our SaaS product. It should be user-friendly and cover the main steps.",
+    "options": [
+      "Describe a low-fidelity wireframe layout for a 4-step SaaS onboarding flow: (1) account setup, (2) invite teammates, (3) connect integration, (4) first action. For each screen: list the primary UI elements, the single CTA, and the progress indicator type. Target: developer handoff spec.",
+      "Write a wireframe description for our onboarding flow. Cover account setup, inviting team members, and the first key action.",
+      "Describe wireframes for our 4-step onboarding. Include the UI elements and what users do on each screen."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying each screen's required elements, the single CTA constraint, and a developer handoff audience produces a specification, not a narrative.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write tooltip copy for a form field",
+    "originalPrompt": "Write tooltip text explaining what an API key is for a developer settings page.",
+    "options": [
+      "Write a tooltip for 'API Key' on a developer settings page. Max 15 words. Tell users: what it is and not to share it.",
+      "Write a tooltip that explains what an API key is for developers who are using our settings page. An API key is a unique identifier used to authenticate requests made to our API. It should be kept confidential and not shared with others, as anyone with access to your API key can make requests on your behalf. You can regenerate your API key at any time from this page if you believe it has been compromised.",
+      "API key: used for authentication. Keep private."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A strict word limit with two required content points (definition + warning) produces tooltip copy that fits the UI component.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write error message for failed upload",
+    "originalPrompt": "A UX writer needs to write an error message when a user tries to upload a file that exceeds the 10MB size limit.",
+    "options": [
+      "Write an inline error message for a file upload that exceeds the 10MB limit. Include: what went wrong, why, and exactly what the user should do next. Max 20 words. No passive voice. No technical jargon.",
+      "Write an error message for when the upload fails because the file is too large. Make it helpful and friendly.",
+      "Give me an error message for a file size error. It should tell users the limit and what to do."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requiring all three error message elements (what/why/next step), a word limit, and banning passive voice produces UX copy that reduces support tickets.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write accessibility audit prompt for modal",
+    "originalPrompt": "Check my modal design for accessibility issues. Let me know if there are problems.",
+    "options": [
+      "Audit this modal dialog design against WCAG 2.1 AA criteria. Check: focus trap implementation, keyboard navigation order, ARIA role and label attributes, contrast ratio on overlay text, and close button target size (minimum 44x44px). Output: pass/fail per criterion with specific remediation steps for each failure.",
+      "Review my modal for WCAG 2.1 AA accessibility issues. Check focus, keyboard navigation, ARIA attributes, and contrast.",
+      "Look at my modal design and tell me if it passes accessibility standards. Flag any issues and how to fix them."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Listing each specific WCAG criterion to check and requiring a pass/fail with remediation steps turns a vague audit request into a structured quality gate.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Critique nav information architecture",
+    "originalPrompt": "A UX designer wants feedback on the information architecture of a 6-section SaaS navigation menu.",
+    "options": [
+      "Critique this navigation IA for a B2B SaaS product. Evaluate: (1) label clarity for a non-technical user, (2) grouping logic against user mental models, (3) depth\u2014are any items buried more than 2 clicks from home? Flag the top 2 IA problems and suggest specific label or grouping changes. Reference Jakob Nielsen's IA heuristics where relevant.",
+      "Give me feedback on our navigation structure. Is it easy to find things? Are the labels clear?",
+      "Review my app navigation and tell me if the information architecture makes sense. Look at the labels, grouping, and depth."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining evaluation dimensions, requiring specific fix suggestions, and referencing established heuristics ensures the critique goes beyond opinion to actionable guidance.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write concise onboarding tooltip sequence",
+    "originalPrompt": "Write a 3-step tooltip sequence guiding new users through the main dashboard.",
+    "options": [
+      "Write 3 onboarding tooltips for a project management dashboard. Each tooltip: one action-oriented sentence (max 12 words) + CTA label (2-3 words). Tooltips: (1) create first project, (2) invite a teammate, (3) set a due date.",
+      "Write onboarding tooltips that walk new users through the dashboard. The first tooltip should help users create their first project by explaining where the create button is and what happens when they click it. The second should guide them to invite teammates by going to the team settings area. The third tooltip should explain how to set due dates on tasks. Each tooltip should be helpful, friendly, and clear for first-time users.",
+      "3 dashboard tooltips: create project, invite team, set date."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning each tooltip a specific action, a word cap, and a required CTA label produces copy ready for direct implementation.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Describe mobile navigation pattern options",
+    "originalPrompt": "What are some good ways to do navigation on mobile? I need help deciding what to use for our app.",
+    "options": [
+      "Compare 3 mobile navigation patterns for a B2C app with 5 main sections: tab bar, hamburger menu, and bottom drawer. For each: when to use it, one UX trade-off, and a real-world app example. Conclude with a recommendation for a content-heavy social app.",
+      "Tell me about different mobile navigation options like tab bars and hamburger menus. Which is best for our app?",
+      "Compare mobile navigation patterns and help me choose the right one. We have 5 sections in our app."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the three patterns explicitly, requiring a trade-off and real-world example per pattern, and providing app context leads to a decision-ready recommendation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write motion design specification",
+    "originalPrompt": "A UX designer needs to write animation and motion specifications for a component library used by 10 engineers.",
+    "options": [
+      "Write a motion design specification for a component library. Cover: (1) duration scale (instant/fast/normal/slow with ms values), (2) easing function for enter/exit/transition types, (3) reduced motion (prefers-reduced-motion) fallback rules. Output as a developer-ready spec table with CSS variable names for each value.",
+      "Write animation specs for our component library. Include durations and easing curves for different interaction types.",
+      "Create motion guidelines for our design system. Cover timing, easing, and accessibility for animations. Use developer-friendly formatting."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining each spec category, requiring CSS variable names, and mandating reduced-motion rules produces a spec that engineers can implement without design Q&A.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write design system component documentation",
+    "originalPrompt": "Write documentation for our button component. Explain how to use it properly.",
+    "options": [
+      "Write component documentation for a Button component in our design system. Sections: (1) Usage guidelines (when to use primary vs secondary vs destructive variants), (2) Do/Don't examples (2 each), (3) Props table with name, type, default, and description columns, (4) Accessibility notes. Audience: product designers and front-end engineers.",
+      "Document our button component. Cover the variants, how to use them, and the props for engineers.",
+      "Write docs for our button component. Explain the different types, when to use each, and the technical properties."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing exact documentation sections, requiring a props table with column names, and specifying a dual audience (design + engineering) produces complete, usable component docs.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write loading state microcopy variants",
+    "originalPrompt": "Write loading state messages for a report generation feature that may take 10\u201330 seconds.",
+    "options": [
+      "Write 4 rotating loading messages for a report generation feature (10-30s wait). Each message: max 6 words, present tense, progress-oriented. Avoid 'please wait' or 'loading'. Sequence should feel like progress, not repetition.",
+      "Write loading state messages for our report generation feature. The report can take between 10 and 30 seconds to generate depending on the amount of data. We want users to understand that something is happening and feel reassured that the system is working. The messages should rotate to give a sense of progress and should be friendly and engaging without being annoying.",
+      "4 loading messages for report generation: short, progress-focused."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "A 6-word cap per message, banned phrases, and a sequence logic requirement produces loading copy that feels purposeful without over-engineering the brief.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Review form design for cognitive load",
+    "originalPrompt": "A UX designer wants to reduce cognitive load in a 12-field registration form.",
+    "options": [
+      "Analyse this 12-field registration form for cognitive load. Recommend: (1) which fields to remove or defer post-signup, (2) which fields to group together, (3) input type optimisations (autocomplete, smart defaults, inline validation timing). Prioritise by effort vs user drop-off impact. Max 5 recommendations.",
+      "Review my registration form and tell me how to reduce cognitive load. What fields can I remove?",
+      "Analyse this signup form for cognitive overload. Give me suggestions to simplify it and improve completion rates."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requesting specific optimisation categories, a prioritisation criterion, and capping recommendations at 5 produces a focused improvement plan rather than a long list.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Create responsive layout breakpoint spec",
+    "originalPrompt": "Help me define breakpoints for our responsive design. We have mobile, tablet, and desktop layouts.",
+    "options": [
+      "Define a responsive layout breakpoint specification for a B2B SaaS dashboard. Breakpoints: mobile (<768px), tablet (768-1024px), desktop (>1024px). For each breakpoint specify: grid columns, gutter width, sidebar behaviour (collapse/overlay/fixed), data table behaviour (scroll/stack/truncate), and max content width. Output as a CSS-ready specification table.",
+      "Write breakpoint specs for our responsive SaaS dashboard. Cover mobile, tablet, and desktop with grid and layout behaviour.",
+      "Define our responsive design breakpoints. Tell me the pixel values and how the layout should change at each size."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying exact pixel values, all layout properties per breakpoint, and requiring a CSS-ready format table produces a spec that front-end engineers can implement directly.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Generate user interview questions",
+    "originalPrompt": "Write some user interview questions for our product. We want to understand how people use it and what they think.",
+    "options": [
+      "Write 8 user interview questions to understand how mid-market finance teams manage budget approvals. Include: 2 warm-up questions, 3 workflow/process questions, 2 pain point probes, and 1 ideal future state question. Use open-ended phrasing. Avoid leading questions.",
+      "Give me user interview questions about our budget approval product. Cover workflow, pain points, and what users want.",
+      "Write open-ended interview questions to understand how finance teams use our product and what frustrates them."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact number and type of questions, the user segment, and banning leading questions produces a research-valid interview guide.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Design survey for feature satisfaction",
+    "originalPrompt": "You need to design a short post-launch survey to measure satisfaction with a newly released reporting feature.",
+    "options": [
+      "Design a 5-question post-launch survey for a reporting feature. Include: 1 NPS-style rating question, 2 Likert scale questions (ease of use, meets needs), 1 open-text question on biggest friction point, 1 open-text on what's missing. Avoid double-barrelled or leading questions. Specify the rating scale for each closed question.",
+      "Write a survey to measure satisfaction with our new reporting feature. Keep it short and ask about ease of use and value.",
+      "Create a satisfaction survey for our reporting feature. Include NPS, ease of use, and open-ended questions. Make it 5 questions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning a specific question type to each slot and requiring scale definitions eliminates survey design errors before the research team reviews it.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write usability test moderation script",
+    "originalPrompt": "Write a script for usability testing our app. I need to guide participants through the test.",
+    "options": [
+      "Write a usability test moderation script for a 45-minute session on a mobile expense tracking app. Include: (1) intro/consent section (5 min), (2) warm-up task, (3) 3 core tasks with think-aloud prompts, (4) post-task rating question (SEQ scale), (5) debrief questions. Specify exact moderator language for each section.",
+      "Write a moderation script for usability testing our expense app. Cover the intro, tasks, and debrief.",
+      "Create a usability test script for our mobile app. Include tasks for participants to complete and questions to ask afterward."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying session duration, the five script sections, a standardised rating scale (SEQ), and requiring exact moderator language produces a research-ready document.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write research participant screener",
+    "originalPrompt": "Write a screener question to find qualified research participants for a study on expense reporting.",
+    "options": [
+      "Write 3 screener questions to qualify participants for an expense reporting usability study. Target: employees who submit expenses at least monthly using software tools. Each question must have a 'disqualify if' answer noted.",
+      "Write screener questions to find people who regularly use expense reporting software at work. We need users who submit expenses at least monthly and use some kind of tool to do it. The screener should help us identify the right people and exclude those who don't use software for expenses or only submit expenses very rarely. Include a range of questions that cover frequency, tools used, and job role.",
+      "Screener questions for expense reporting study. Ask about frequency and tool usage."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Capping at 3 questions, defining the target criterion, and requiring a disqualify trigger per question produces a field-ready screener.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Synthesise affinity diagram themes",
+    "originalPrompt": "A researcher has 60 sticky notes from a discovery workshop and needs to group them into themes.",
+    "options": [
+      "Cluster these 60 workshop observations into affinity themes. For each cluster: name the theme (3-5 words), list the observations grouped under it, count the observations, and rate the theme's impact on user goals (high/medium/low). Sort clusters by observation count descending. Flag any observations that don't fit a cluster.",
+      "Group these sticky notes into themes. Give each theme a name and list the observations under it.",
+      "Synthesise these workshop notes into affinity clusters. Name each theme, count the items, and rank by importance."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring a theme name format, an observation count, an impact rating, and flagging outliers produces a synthesis that is audit-able and directly transferable to a research report.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write Jobs-to-be-Done statement",
+    "originalPrompt": "Write a JTBD statement for our users. They use our tool to manage projects.",
+    "options": [
+      "Write 3 Jobs-to-be-Done statements for project managers using a B2B project tracking tool. Use the format: 'When [situation], I want to [motivation/goal], so I can [expected outcome].' Focus on functional, not feature-based jobs. Cover: status visibility, stakeholder updates, and deadline risk.",
+      "Write JTBD statements for project managers using our tool. Use the standard format and cover the main use cases.",
+      "Write Jobs-to-be-Done statements about project management. Focus on the main reasons people use our tool."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring the exact JTBD format, naming the three job domains, and specifying 'functional not feature-based' avoids shallow statements that describe the product instead of the user need.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Summarise usability test findings",
+    "originalPrompt": "Summarise the top findings from a usability test on a checkout flow.",
+    "options": [
+      "Summarise top 3 usability findings from checkout flow testing. Format each as: Issue (1 sentence) | Severity (1-5) | Recommended fix (1 sentence). Total: max 60 words.",
+      "Write a summary of the key usability findings from our checkout flow testing sessions. Cover the main issues users encountered, how severe each problem is, and what we recommend doing to fix them. Include enough detail so the design team understands what needs to change.",
+      "Top 3 checkout usability issues with fixes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 3-item cap with a defined per-item structure and word limit produces findings that fit directly into a stakeholder readout slide.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Identify survey response bias",
+    "originalPrompt": "A researcher needs to check whether their satisfaction survey questions contain bias before sending.",
+    "options": [
+      "Review these 5 survey questions for bias. For each question, identify: question type (leading/double-barrelled/loaded/neutral), the specific wording causing bias if present, and a rewritten neutral version. Output as a table.",
+      "Check my survey questions for bias. Tell me if any are leading or problematic and how to fix them.",
+      "Review these survey questions and flag any that are biased. Explain what's wrong and suggest better wording."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming specific bias types, requiring per-question analysis in a table, and asking for rewritten versions produces a structured QA output, not a narrative review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Design longitudinal diary study protocol",
+    "originalPrompt": "Help me design a diary study. I want to understand how people use our product over time.",
+    "options": [
+      "Design a 2-week diary study protocol for understanding how procurement managers use our sourcing tool in daily work. Specify: daily prompt format (2-3 questions, max 5 minutes to complete), what to capture (task, tool used, friction point, workaround if any), recruitment criteria (5-8 participants), analysis approach (thematic + frequency), and ethical considerations. Output as a structured protocol document.",
+      "Design a diary study protocol for our sourcing tool. Cover the prompts, participant criteria, duration, and how to analyse the data.",
+      "Write a 2-week diary study plan. Include daily questions for participants, who to recruit, and how to analyse what they report."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining the study duration, the user segment, prompt format constraints, and requiring ethical considerations produces a study protocol that a research ops team can execute without gaps.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write persona narrative from data",
+    "originalPrompt": "A researcher has quantitative data and interview quotes and needs to write a persona for a B2B product.",
+    "options": [
+      "Write a B2B persona using the data below. Include: name/role/company size, day-in-the-life summary (3 sentences), top 3 goals, top 3 frustrations, preferred communication channel, and one direct quote. Base everything on the data provided\u2014do not invent. Flag any persona section where data is insufficient.",
+      "Write a persona based on our research data. Cover goals, frustrations, and a quote. Make it realistic.",
+      "Create a user persona for our B2B product. Include the typical job role, what they care about, their pain points, and a realistic quote."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying each persona section, requiring data-grounded content only, and asking for gaps to be flagged prevents the AI from fabricating research findings.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Generate card sort categories",
+    "originalPrompt": "Help me with a card sort study. I need to figure out how users think about organising information in our app.",
+    "options": [
+      "Generate 20 card sort cards for an open card sort study of a project management app. Each card is one feature or concept. Cover: task management, reporting, team settings, integrations, and notifications. Write card labels as noun phrases (2-4 words). Avoid overlapping concepts.",
+      "Write card sort cards for our project management app. Cover all the main features and make sure the labels are clear.",
+      "Create 20 card labels for a card sort on our project management tool. Cover task management, reports, settings, and integrations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact count, card format (noun phrases), topic domains to cover, and the anti-overlap rule produces a card sort ready for a research tool upload.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write research insight statement",
+    "originalPrompt": "Write an insight statement from a user research finding about notification overload.",
+    "options": [
+      "Write one research insight statement on notification overload. Format: 'Users experience [problem] when [context] because [root cause], which leads to [consequence].' Max 35 words. Make it specific and evidence-grounded.",
+      "Write an insight about how users feel overwhelmed by too many notifications in our product. Explain the context in which this happens, why it's a problem, and what consequences it has for users and for our business metrics. The insight should be clearly written and based on research findings. It should communicate the problem in a way that motivates the team to act on it.",
+      "Insight: users are overwhelmed by notifications."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Using a fill-in-the-blank insight template with a word cap produces a statement that is precise, citable, and drives design decisions.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Design mixed-method research plan",
+    "originalPrompt": "A research lead needs to plan a 6-week study combining qualitative and quantitative methods to understand churn in a B2B product.",
+    "options": [
+      "Design a 6-week mixed-method research plan to understand B2B product churn. Week-by-week timeline: specify method (exit survey, churned customer interviews, usage log analysis, session replay review), the question each method answers, sample size, and deliverable per phase. Conclude with how findings from each method will be triangulated.",
+      "Create a 6-week research plan to understand churn. Use qualitative and quantitative methods and show how they connect.",
+      "Design a mixed-method study on churn. Include interviews, surveys, and data analysis. Show the timeline and what each method will tell us."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Assigning a specific method and research question to each week, requiring sample sizes, and asking for a triangulation plan produces a rigorous, fundable research proposal.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write a product strategy one-pager",
+    "originalPrompt": "Write a product strategy document. It should explain where we're going and how we'll get there.",
+    "options": [
+      "Write a 1-page product strategy for a B2B workflow automation tool targeting operations teams. Structure: (1) Problem we solve, (2) Target customer (ICP), (3) 12-month strategic bets (3 bullets), (4) What we will NOT do, (5) How we'll measure success (2-3 metrics). Max 300 words.",
+      "Write a product strategy document. Cover the problem, our target customers, where we're going, and how we'll measure success.",
+      "Create a product strategy one-pager. Explain the market opportunity, our strategic priorities for the year, and the key metrics we'll track."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming each required section, including a 'what we won't do' section, and setting a word cap produces a strategy doc that forces strategic clarity.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Draft quarterly roadmap themes",
+    "originalPrompt": "A product team needs to define Q3 roadmap themes that balance new features, technical debt, and customer requests.",
+    "options": [
+      "Draft 4 Q3 roadmap themes for a B2B SaaS product. Each theme must: have a descriptive name, a 1-sentence strategic rationale, 2-3 example initiatives under it, and a target customer outcome. Themes must balance: new capability (40%), reliability/scale (30%), customer-requested improvements (30%). Output as a structured list.",
+      "Write 4 roadmap themes for Q3. Include new features, infrastructure work, and customer requests in the mix.",
+      "Help me create Q3 roadmap themes. Each should have a name, rationale, and some example work items. Balance new features and tech debt."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a customer outcome per theme and specifying the allocation percentages prevents a roadmap that over-indexes on new features at the expense of reliability.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write product market fit analysis prompt",
+    "originalPrompt": "Help me figure out if our product has product-market fit. What should I look at?",
+    "options": [
+      "Analyse our product's PMF signals using the Sean Ellis framework. Evaluate: (1) % of users who'd be 'very disappointed' without the product (target: >40%), (2) retention curve shape (flattening vs declining), (3) word-of-mouth NPS. For each signal, state what we have vs the benchmark and whether it indicates strong/weak/unclear PMF. Conclude with the highest-leverage action to improve PMF.",
+      "Assess our product-market fit. Look at retention, NPS, and user disappointment scores and tell me if we have PMF.",
+      "Help me evaluate product-market fit. Use the Sean Ellis framework and retention data. Tell me what the numbers mean and what to do next."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the exact framework, providing benchmarks for each signal, and requiring a highest-leverage action recommendation makes this analysis actionable, not just descriptive.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write roadmap item description",
+    "originalPrompt": "Write a description for a 'Smart Notifications' feature on the product roadmap.",
+    "options": [
+      "Write a roadmap item description for 'Smart Notifications'. Max 40 words. Include: what it does, who benefits, and the business outcome. One sentence per element.",
+      "Write a description for our Smart Notifications feature on the product roadmap. Smart Notifications is an AI-powered notification system that learns from user behaviour to deliver the right notifications at the right time, reducing notification fatigue. It benefits all users but especially power users who receive high volumes of notifications. This feature will help improve engagement, reduce the number of users who turn off all notifications, and ultimately improve retention. The system uses machine learning to understand each user's engagement patterns and optimise delivery timing accordingly.",
+      "Smart Notifications: AI-powered, reduces fatigue, improves engagement."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 40-word cap with three required content elements and one-sentence-per-element rule produces a roadmap description that fits in a slide or product portal.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Evaluate build vs buy vs partner decision",
+    "originalPrompt": "A product team must decide whether to build, buy, or partner to add AI writing assistance to their product.",
+    "options": [
+      "Evaluate a build/buy/partner decision for adding AI writing assistance to a B2B SaaS product. For each option, assess: time to market, total cost of ownership (3 years), differentiation potential, and key risk. Use a weighted decision matrix with weights: time to market 30%, cost 25%, differentiation 30%, risk 15%. Recommend an option with rationale.",
+      "Help me decide whether to build, buy, or partner for AI writing features. Compare cost, timeline, and risk for each option.",
+      "Analyse build vs buy vs partner for AI writing assistance. Cover time to market, cost, differentiation, and risk. Use a decision matrix."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the four evaluation dimensions with explicit weights and requiring a concluded recommendation produces a board-ready decision memo.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write market sizing analysis for new segment",
+    "originalPrompt": "Help me size the market for our product. We're thinking about expanding into a new segment.",
+    "options": [
+      "Build a TAM/SAM/SOM analysis for expanding a B2B project management tool into the construction industry. TAM: all global construction companies >50 employees. SAM: US and UK construction firms using digital project tools. SOM: reachable via existing sales channels in year 1. Use public data estimates. Show formula and assumptions for each layer.",
+      "Size the market for our project management tool in the construction sector. Calculate TAM, SAM, and SOM with assumptions.",
+      "Do a market sizing for our expansion into construction. Cover TAM, SAM, SOM and show how you calculated each number."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining each market layer precisely (geography, company size, channel constraint) and requiring formula transparency produces a market sizing an investor can audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Summarise competitive threat for leadership",
+    "originalPrompt": "Summarise a competitive threat from a new market entrant for a product leadership briefing.",
+    "options": [
+      "Write a 3-sentence competitive threat briefing: (1) who the entrant is and their differentiator, (2) which customer segment they threaten first, (3) recommended defensive move. Max 60 words total.",
+      "Write a competitive threat summary for leadership about a new entrant in our market. Cover who they are, what makes them different, which of our customers are most at risk, and what we should do in response. Keep it concise and strategic so leadership can make a quick decision about whether this is a serious threat that requires immediate action.",
+      "New competitor summary: who they are, threat level, our response."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning a specific content role to each sentence and capping total word count produces a briefing that leadership can read in 20 seconds.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write product investment thesis for board",
+    "originalPrompt": "A CPO needs to write a 5-year product investment thesis for a board strategy session.",
+    "options": [
+      "Write a 5-year product investment thesis for a B2B SaaS company targeting SMBs. Structure: (1) market tailwinds (2-3 macro trends), (2) strategic bets (3 multi-year initiatives with expected customer and revenue impact), (3) capability investments required (talent, technology), (4) key risks and mitigations. Max 500 words. Tone: confident, data-referenced, board-appropriate.",
+      "Write a product investment thesis for our 5-year strategy. Cover market trends, what we're betting on, what we need to invest in, and the risks.",
+      "Create a 5-year product strategy document for a board presentation. Include market opportunity, strategic priorities, required investments, and risk factors. Keep it concise and strategic."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Defining each section with sub-item counts, providing a word cap, and specifying the tone directive produces a board-ready investment memo without multiple revision rounds.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write problem statement for strategy doc",
+    "originalPrompt": "Write a problem statement for our product strategy. We're solving a problem for our customers and need to explain it clearly.",
+    "options": [
+      "Write a 2-sentence problem statement for a product strategy document. Problem: mid-market HR teams spend 8+ hours/week on manual onboarding tasks using disconnected tools. Quantify the cost and state who is affected. Format: '[User] currently [pain/inefficiency], which costs [quantified impact].'",
+      "Write a problem statement for our product. HR teams spend too much time on manual onboarding. Make it clear and compelling.",
+      "Write a concise problem statement for our HR onboarding product. Explain the pain, who has it, and the cost. Use a strong format."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Providing the specific data point (8+ hours/week), the format template, and the quantification requirement produces a problem statement that justifies investment.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write strategic assumptions log",
+    "originalPrompt": "A product strategist needs to document key assumptions underlying a 12-month product roadmap before presenting to the leadership team.",
+    "options": [
+      "Document the 5 most critical assumptions underlying a 12-month B2B SaaS roadmap. For each assumption: state it as a testable hypothesis, identify what evidence would validate or invalidate it, assign a confidence level (high/medium/low), and flag the earliest milestone at which the assumption is tested. Output as a table.",
+      "List the key assumptions behind our roadmap and explain how we'd validate each one. Cover the most important strategic bets.",
+      "Write our roadmap assumptions. For each, explain what we believe, how confident we are, and how we'll know if we're right."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a testable hypothesis format, evidence criteria, confidence level, and validation milestone per assumption turns a list into a living risk management tool.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write strategic pivot rationale",
+    "originalPrompt": "Write a strategic rationale for pivoting from a horizontal SaaS product to a vertical SaaS focus.",
+    "options": [
+      "Write a strategic pivot rationale in 4 sentences: (1) why the horizontal market isn't working (one metric), (2) the vertical opportunity chosen and its size, (3) what changes in go-to-market and product, (4) expected outcome in 18 months. Max 80 words.",
+      "Write the strategic rationale for why we're pivoting from a horizontal SaaS model to a vertical SaaS focus. The horizontal market has proven to be too competitive and requires too much sales and marketing investment to acquire customers efficiently. By focusing on a specific vertical, we can build deeper product features tailored to that industry, develop stronger customer relationships, and create more defensible competitive moats. We expect this to improve our unit economics significantly.",
+      "Pivot rationale: vertical focus improves unit economics and reduces competition."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Assigning a specific role to each sentence and including a metric and a time-bound outcome forces a concise, evidence-backed pivot story.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write colour token naming convention",
+    "originalPrompt": "Help me come up with a naming system for our design tokens. We need colour tokens.",
+    "options": [
+      "Define a colour token naming convention for a design system. Use a 3-tier structure: (1) primitive tokens (e.g. blue-500), (2) semantic tokens (e.g. color-action-primary), (3) component tokens (e.g. button-bg-primary). For each tier, provide 5 example token names and explain when to use that tier. Output as a table.",
+      "Create a naming system for our design colour tokens. Use a tiered approach with primitives and semantic tokens.",
+      "Write a colour token naming convention. Include primitive colours, semantic usage tokens, and component-level tokens with examples."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining each tier with a concrete naming pattern and requiring 5 examples per tier produces a convention document that a team can immediately apply.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write design system migration guide",
+    "originalPrompt": "A design systems team is helping product teams migrate from an old component library (v1) to a new one (v2).",
+    "options": [
+      "Write a component migration guide from Design System v1 to v2 for product engineers. For each changed component (Button, Input, Modal), document: old API \u2192 new API, breaking changes, code example of the migration, and estimated effort. Format as a developer-facing migration doc with code blocks.",
+      "Write a migration guide for engineers moving from our old design system to the new one. Cover all the components that changed.",
+      "Create a v1 to v2 migration guide for our design system. Show before/after for each component, note breaking changes, and include code examples."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming each specific component, requiring old\u2192new API comparison with code blocks, and including effort estimates gives engineers everything needed to plan a sprint without additional research.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Document spacing scale for design system",
+    "originalPrompt": "Write documentation for our spacing scale. Designers and developers need to know how to use it.",
+    "options": [
+      "Write spacing scale documentation for a design system. Define: (1) base unit (4px), (2) scale values (4, 8, 12, 16, 24, 32, 48, 64px) with token names (e.g. spacing-2), (3) usage rules (when to use each tier), (4) CSS variable format, (5) a Do/Don't example for layout spacing. Audience: designers and front-end engineers.",
+      "Document our spacing scale. Include the values, token names, and how to use them in layouts and components.",
+      "Write spacing scale docs. Show the values, CSS variables, and give guidance on when to use small vs large spacing."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the base unit, enumerating all scale values with token names, and requiring both CSS format and usage rules produces documentation that eliminates ad-hoc spacing decisions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write component deprecation notice",
+    "originalPrompt": "Write a deprecation notice for the old Card component in our design system.",
+    "options": [
+      "Write a design system deprecation notice for the Card v1 component. Max 50 words. Include: (1) deprecation date, (2) replacement component name, (3) link placeholder for migration guide. Tone: neutral, informational.",
+      "Write a deprecation notice for our old Card component. Explain that it's being deprecated, when it will be removed, what to use instead, and how to migrate. Make sure engineers understand the urgency and have everything they need to update their code before the deadline. Include the migration guide link and any important notes about breaking changes.",
+      "Card v1 deprecated. Use Card v2. See migration guide."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 50-word cap with three required data points and a tone directive produces a deprecation notice that works in a changelog, README, or Storybook annotation.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write contribution guidelines for design system",
+    "originalPrompt": "A design systems team needs contribution guidelines so product designers can propose new components.",
+    "options": [
+      "Write contribution guidelines for adding a new component to a design system. Cover: (1) eligibility criteria (when a pattern is ready to be systemised), (2) proposal process (RFC template, review steps, approvers), (3) design requirements (states, variants, accessibility), (4) handoff requirements (Figma specs, tokens used, developer notes). Format as a numbered process guide.",
+      "Write contribution guidelines for our design system. Explain how designers can propose new components and what they need to submit.",
+      "Create a guide for contributing to our design system. Cover the criteria for new components, how to submit a proposal, design requirements, and what's needed for the developer handoff."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Enumerating four specific phases of the contribution process and listing the exact requirements per phase produces guidelines that reduce rejected or incomplete submissions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Define design system governance model",
+    "originalPrompt": "Write about how we should govern our design system. Who should be responsible and how do we make decisions?",
+    "options": [
+      "Define a design system governance model for a 200-person product org with 4 product teams. Specify: (1) ownership model (federated vs centralised), recommendation with rationale, (2) decision-making process for breaking changes (proposal \u2192 RFC \u2192 vote \u2192 announce), (3) roles and responsibilities (DS lead, contributor, consumer), (4) SLA for component requests and bug fixes. Output as a governance framework document.",
+      "Write a governance model for our design system. Cover who owns it, how we make decisions, and our SLAs.",
+      "Define design system governance. Choose between centralised and federated ownership, outline the decision process for changes, and define roles and SLAs."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing org context (size, team count), naming ownership model options, and requiring SLA specifics produces a governance doc that resolves real organisational conflicts.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write cross-platform token architecture",
+    "originalPrompt": "A design systems engineer needs to architect a token system that works across web, iOS, and Android.",
+    "options": [
+      "Design a cross-platform design token architecture for web (CSS variables), iOS (Swift), and Android (XML). Specify: (1) token taxonomy (global \u2192 alias \u2192 component), (2) transformation pipeline (design tool \u2192 JSON \u2192 platform outputs), (3) token format and naming for each platform, (4) how dark mode tokens are handled across platforms. Output as a technical architecture document with code examples for each platform.",
+      "Design a token architecture that works for web, iOS, and Android. Cover the token layers, transformation process, and how we handle dark mode.",
+      "Create a cross-platform design token system. Show how tokens are structured, how they're transformed per platform, and how dark mode works across web, iOS, and Android."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring code examples for each platform and specifying the exact transformation pipeline architecture produces a technical document that a design systems engineer can implement.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write icon naming convention rule",
+    "originalPrompt": "Write the naming convention rule for icons in our design system.",
+    "options": [
+      "Write the icon naming convention for a design system in 3 rules. Max 40 words total. Format: icon-[category]-[action/object]-[modifier?]. Example each rule. Kebab-case only.",
+      "Write a comprehensive icon naming convention for our design system. Icons should follow a consistent naming pattern that makes them easy to find and understand. Use kebab-case and include categories like action, navigation, status, and object. Each icon name should clearly describe what it represents without being too long. Include guidance on when to add size or state modifiers to the name. Provide examples for each category.",
+      "Icons: kebab-case, category prefix, descriptive name."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 40-word cap with 3 rules, a format template, and a concrete example per rule produces a naming convention a designer can follow immediately.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write typography scale documentation",
+    "originalPrompt": "Document our typography scale. We have different text sizes and I need documentation for the team.",
+    "options": [
+      "Write typography scale documentation for a design system. Include: type scale (Display, H1-H4, Body L/M/S, Label, Caption) with font-size, line-height, and font-weight for each. Add usage guidance (max 1 sentence per style). Provide CSS custom property names. Audience: designers and engineers.",
+      "Document our typography scale. Show all the text styles with their font sizes, weights, and line heights.",
+      "Write typography docs. Include the full scale from display down to caption. Show font-size, weight, line-height, and when to use each style."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming each type style, specifying all three CSS properties, and requiring usage guidance plus custom property names produces a typography spec that eliminates guesswork.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write Figma component documentation",
+    "originalPrompt": "A design systems designer needs to document a Figma component for the team library so other designers use it correctly.",
+    "options": [
+      "Write Figma component documentation for a Dropdown component in a shared team library. Include: (1) component description and use case (when to use it), (2) available variants and states (with Figma property names), (3) slot usage (what can be swapped/overridden), (4) do/don't examples (2 each), (5) accessibility notes. Format for Figma description field\u2014plain text, under 300 words.",
+      "Write Figma documentation for our Dropdown component. Cover variants, states, how to use it, and accessibility notes.",
+      "Document our Dropdown Figma component. Include the different variants and states, when to use it, and any accessibility considerations."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying Figma-native concepts (variants, properties, slots), the description field format constraint, and listing all five required sections produces documentation that the Figma UI can actually display.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write confirmation dialog microcopy",
+    "originalPrompt": "Write the text for a confirmation popup when a user deletes something important.",
+    "options": [
+      "Write a destructive action confirmation dialog for deleting a project. Include: title (max 5 words, action-verb led), body (1 sentence stating what will be permanently lost), and two button labels (destructive action in red, cancel in grey). No 'Are you sure?' phrasing.",
+      "Write a confirmation dialog for deleting a project. Ask the user to confirm and tell them the action can't be undone.",
+      "Write the text for a delete confirmation popup. Include a title, description of what gets deleted, and confirm/cancel buttons."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Banning 'Are you sure?' and specifying button colour semantics forces microcopy that is honest about consequences without vague phrasing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write dark mode design token spec",
+    "originalPrompt": "A designer needs to document the dark mode token mapping for a design system that supports both light and dark themes.",
+    "options": [
+      "Write a dark mode token mapping spec. For each semantic token (background-primary, surface-raised, text-primary, text-secondary, border-default, interactive-primary), specify the light mode value, dark mode value, and the primitive token each maps to. Flag any tokens where contrast ratio changes require validation. Output as a table.",
+      "Document dark mode tokens for our design system. Show the light and dark values for each semantic colour token.",
+      "Write a dark mode token spec. Map each semantic token to its light and dark values. Include contrast ratio checks for accessibility."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Listing the exact tokens to document and requiring a contrast-ratio flag column produces a spec that designers and engineers can audit without a separate accessibility review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write success state microcopy for form",
+    "originalPrompt": "Write a success message for when a user submits a form. Make it friendly and confirm what happened.",
+    "options": [
+      "Write a success state message for a profile update form. Include: headline (max 5 words, confirms the action), supporting sentence (tells the user what happens next), and an optional secondary CTA (view updated profile). Tone: warm, present tense. No exclamation mark spam.",
+      "Write a success message for our form submission. Confirm the action, tell the user what happens next, and include a next step.",
+      "Write a friendly success state for a form. Confirm it worked and guide the user to what they can do next."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying that the headline confirms the action (not just celebrates it) and requiring a 'what happens next' sentence turns a generic success toast into useful guidance.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "UX/UI Design",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write password strength hint copy",
+    "originalPrompt": "Write the hint text shown below a password field to guide users in creating a strong password.",
+    "options": [
+      "Write inline password hint text for a signup form. Max 20 words. Specify: min 8 characters, one number, one special character. Tone: instructive, not alarming.",
+      "Write hint text for a password field that helps users create a strong password. The hint should explain the minimum requirements for a strong password, including the minimum number of characters required, whether uppercase and lowercase letters are needed, and whether numbers and special characters should be included. The text should be friendly and encouraging to help users successfully create their account without feeling frustrated by security requirements.",
+      "Password: min 8 chars, include a number and symbol."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 20-word cap with the exact three requirements specified produces hint copy that fits below the input field without overflow.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write think-aloud protocol instructions",
+    "originalPrompt": "Write instructions telling participants in a usability test to think out loud. Make it simple to understand.",
+    "options": [
+      "Write think-aloud protocol instructions for usability test participants (non-technical users). Max 80 words. Cover: what to do (narrate thoughts aloud), what not to do (don't ask permission, don't stay silent), and a reassurance (there are no wrong answers, we're testing the product not you). Plain language, second person.",
+      "Write instructions for usability test participants about thinking aloud. Tell them to share their thoughts as they use the product and reassure them there are no wrong answers.",
+      "Write think-aloud instructions for participants. Explain what it means, give an example, and reassure them it's about testing the product."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying 'what not to do' alongside 'what to do' and requiring a reassurance statement produces instructions that actually change participant behaviour during the test.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Write research readout executive summary",
+    "originalPrompt": "A researcher needs to present findings from a 6-week discovery study to a C-suite audience unfamiliar with research methods.",
+    "options": [
+      "Write a 200-word executive summary for a UX discovery research readout to a C-suite audience. Include: (1) research goal (1 sentence), (2) methods used and participant count, (3) top 3 insights ranked by business impact, (4) recommended product direction with supporting evidence, (5) requested decision. Avoid research jargon. Make each insight an actionable statement, not an observation.",
+      "Write an executive summary for our research findings. Cover what we did, what we found, and what we recommend. Keep it concise for a C-suite audience.",
+      "Write a research readout summary for executives. Include the study goals, methods, top insights, and product recommendations. Avoid technical research terminology."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring a 'requested decision' field and framing insights as actionable statements rather than observations forces the summary to drive executive action, not just inform.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write study consent form summary",
+    "originalPrompt": "Write a plain-language summary of a user research consent form for participants.",
+    "options": [
+      "Write a plain-language consent summary for a user research session. Max 60 words. Cover: purpose of the study, what you'll ask them to do, how data is used and stored, voluntary participation, and contact for questions. No legal jargon.",
+      "Write a consent form summary for research participants. Explain the purpose of the study, what participation involves, how their data will be used and protected, and their right to withdraw at any time. Make sure it's clear and understandable for people who don't have a background in research or legal matters.",
+      "Consent: research session, recorded, data kept private, voluntary."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A 60-word cap with five required content points and a no-jargon rule produces a consent summary that participants actually read before signing.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write technology bet rationale",
+    "originalPrompt": "Write a rationale for a major technology choice we're making. We're deciding to build on a new platform.",
+    "options": [
+      "Write a 200-word technology bet rationale for adopting a microservices architecture (moving from a monolith). Structure: current constraint (why the monolith limits growth), strategic bet (what microservices enables), key risks and mitigations (2 each), decision criteria for success at 12 months, and the reversibility cost if wrong. Audience: engineering leadership and CPO.",
+      "Write a rationale for migrating from monolith to microservices. Cover why we're doing it, what it enables, and the risks involved.",
+      "Write a technology decision rationale for adopting microservices. Explain the business case, risks, and how we'll know if it's working."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring a 'reversibility cost' section is the key differentiator\u2014it forces the decision to account for the downside scenario, which is what engineering leadership needs to approve a major architectural change.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write scenario planning for uncertain market",
+    "originalPrompt": "A product strategist needs to plan for uncertainty in the AI tooling market for the next 18 months.",
+    "options": [
+      "Write a 3-scenario planning framework for an AI tooling company over 18 months. Scenarios: (1) AI commoditises rapidly (price collapse), (2) enterprise adoption accelerates (demand surge), (3) regulatory restrictions tighten (compliance cost rise). For each scenario: probability estimate, early signal to watch, and strategic response. Output as a decision matrix.",
+      "Write 3 market scenarios for an AI tooling company. Cover optimistic, pessimistic, and base case. Include signals and strategic responses for each.",
+      "Create a scenario planning framework for our AI product. Define 3 scenarios based on different market trajectories. For each, explain what triggers it and what our strategy would be."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming specific, asymmetric scenarios (not just optimistic/base/pessimistic) and requiring an 'early signal to watch' per scenario produces a framework that a strategy team can monitor in real time.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Write product vision in one sentence",
+    "originalPrompt": "Write a one-sentence product vision for a B2B expense management tool.",
+    "options": [
+      "Write a one-sentence product vision for a B2B expense management tool. Format: 'For [ICP], [product name] is the [category] that [unique value], unlike [alternative].' Max 25 words. Make the unique value measurable or specific.",
+      "Write a product vision statement for our B2B expense management tool. The vision should capture what we're building, who it's for, and why it matters. It should be inspiring enough to align the team and clear enough to guide product decisions. Think about what makes us different from other expense tools on the market and how we help finance teams and employees manage expenses more efficiently.",
+      "Vision: the easiest expense tool for finance teams."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A Geoffrey Moore positioning statement template with a 25-word cap and a 'measurable unique value' requirement produces a vision that is both memorable and testable.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Write design token audit report",
+    "originalPrompt": "I need to audit our design tokens. There are inconsistencies and I want to document what's wrong.",
+    "options": [
+      "Write a design token audit report for a design system with suspected inconsistencies. For each token category (colour, spacing, typography, border-radius, elevation): list the audit method, the most common violation type found, the number of tokens affected, a before/after example, and the migration priority (P1/P2/P3). Output as a structured audit table. Audience: design systems team and front-end engineers.",
+      "Write a design token audit report. Cover colour, spacing, typography, and other token types. Show what inconsistencies were found and how to fix them.",
+      "Create a token audit report. Document the issues in each token category, give examples of the problems, and prioritise what to fix first."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Requiring an audit method per category and before/after examples produces an audit report that is reproducible and can be used to justify a design system sprint.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write design system onboarding doc",
+    "originalPrompt": "A new designer joined the team. You need to help them get up to speed on the design system quickly.",
+    "options": [
+      "Write a design system onboarding guide for a new product designer (first week). Sections: (1) what the design system is and why we use it (2 sentences), (2) how to access Figma library and enable it, (3) the 3 most important rules when using components, (4) how to ask questions or raise a component issue, (5) a 'your first task' exercise. Max 300 words.",
+      "Write an onboarding guide for a new designer to get started with our design system. Cover how to find the Figma library, the key principles, and how to get help.",
+      "Create a quick-start guide for a new designer using our design system. Include how to access it, key rules to follow, and who to contact with questions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including a 'your first task' exercise makes the onboarding doc immediately actionable rather than a passive reference document a new hire reads once and forgets.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Write token changelog entry",
+    "originalPrompt": "Write a changelog entry for design token updates in a new design system version.",
+    "options": [
+      "Write a design system token changelog entry for v2.4.0. Cover: 3 changed tokens (old name \u2192 new name or old value \u2192 new value), 1 deprecated token with replacement, 1 new token added. Max 80 words. Format: version header, type-labelled bullet list (CHANGED/DEPRECATED/ADDED). Include a migration note for breaking changes.",
+      "Write a changelog for design token updates in version 2.4.0. List the tokens that changed, any deprecated tokens, and new tokens added. Include migration notes for engineers who need to update their code.",
+      "Token changelog v2.4.0: updated 3 tokens, deprecated 1, added 1 new."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Using semantic changelog labels (CHANGED/DEPRECATED/ADDED) and requiring a migration note for breaking changes produces a changelog that follows engineering conventions.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Write definition of done for team",
+    "originalPrompt": "Help me write a definition of done for our engineering team. We need consistent quality standards.",
+    "options": [
+      "Write a Definition of Done (DoD) for a B2B SaaS engineering team. Include criteria across: code quality (tests, PR review), design (matches spec, responsive), accessibility (WCAG 2.1 AA), documentation (updated), and deployment (passed CI/CD, rollback plan exists). Format as a checklist. Keep each item binary (done/not done). Max 15 items total.",
+      "Write a definition of done for our team. Cover code quality, design compliance, accessibility, and deployment readiness.",
+      "Create a DoD checklist for our engineering team. Include items for code, design, testing, accessibility, and release readiness."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring binary (done/not done) items and capping at 15 ensures the DoD is actually used as a checklist rather than a document that engineers skim.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write experiment design for pricing test",
+    "originalPrompt": "A product manager wants to run a pricing experiment to test whether a new pricing tier increases revenue per customer.",
+    "options": [
+      "Design a pricing experiment for testing a new $79/month 'Pro' tier (vs current $49/month). Specify: hypothesis, control and variant groups, traffic split (50/50), success metric (ARPU), guardrail metric (churn rate), minimum sample size (use 80% power, 5% significance), and test duration estimate. Flag the ethical consideration of charging different prices simultaneously.",
+      "Design a pricing experiment for a new $79 tier. Include hypothesis, control/variant split, success metric, and how long to run it.",
+      "Write a pricing A/B test plan. Compare the current $49 tier to a new $79 Pro tier. Cover the statistical setup, metrics, and duration."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Requiring a guardrail metric and flagging the ethical consideration of simultaneous price differences produces a test design that a legal and finance team can approve.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write quick weekly status update",
+    "originalPrompt": "Write a weekly product status update for the leadership team.",
+    "options": [
+      "Write a weekly product status update. Max 5 bullets, max 15 words each. Sections: shipped this week (2 bullets), blocked (1 bullet), decision needed (1 bullet), metric highlight (1 bullet). Plain language, no filler.",
+      "Write a weekly status update for the leadership team covering what the product team shipped this week, any blockers we're dealing with, decisions that leadership needs to make, and a key metric from our dashboard. Keep it concise and easy to read. Leadership is busy and we want to give them the most important information without overwhelming them with detail.",
+      "Weekly update: shipped X, blocked on Y, need decision on Z."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Assigning a section role to each bullet with a word cap produces a status update that takes 30 seconds to read and drives the right leadership conversations.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write platform strategy memo",
+    "originalPrompt": "Write a strategy memo about turning our product into a platform. Leadership needs to understand the opportunity.",
+    "options": [
+      "Write a 300-word strategy memo on transitioning a B2B SaaS product to a platform model. Structure: strategic rationale (why now\u20142 market signals), what changes (3 platform capabilities to build: API, marketplace, partner ecosystem), 3-year revenue model impact (ecosystem vs direct), execution risk (top 2 risks with mitigations), and the ask from leadership. Audience: CEO and board. Tone: analytical, not visionary hype.",
+      "Write a strategy memo about becoming a platform. Explain the market opportunity, what we need to build, the revenue impact, and what risks we need to manage.",
+      "Write a memo on our platform strategy. Cover why we're doing this, the three capabilities we need, financial impact, and key risks."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring an explicit 'ask from leadership' section and banning visionary hype ensures the memo is a decision document, not a thought piece.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Write AI feature ethics review",
+    "originalPrompt": "A PM needs to conduct an ethics review of an AI feature before it ships.",
+    "options": [
+      "Write an AI feature ethics review framework for a recommendation algorithm that personalises content for B2C users. Evaluate: (1) bias risk (training data representation, affected groups), (2) transparency (can users understand why they see content?), (3) consent and data use (what data is used, opt-out options), (4) harm potential (filter bubble risk, addictive design), (5) audit mechanism (how will we monitor post-launch). For each: risk level (high/medium/low) and required mitigation before GA.",
+      "Write an ethics review for our AI recommendation feature. Cover bias, transparency, privacy, and potential harms. Include mitigations.",
+      "Conduct an ethics review of our recommendation algorithm. Evaluate bias, user transparency, data consent, and harm risks. Rate each and describe the mitigations needed before launch."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring a 'required mitigation before GA' field per dimension creates a gating mechanism that can block a launch, making the ethics review structurally impactful.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write feature brief for design kickoff",
+    "originalPrompt": "Write a brief for designers for our new feature. They need to understand what we're building before they start designing.",
+    "options": [
+      "Write a feature design brief for a bulk email notification settings feature. Include: problem statement (1 sentence), user goal, out-of-scope items (2-3), constraints (technical and UX), success metrics, and open questions for the design team. Max 250 words. Audience: product designer and UX researcher starting discovery.",
+      "Write a design brief for our notification settings feature. Cover the problem, user needs, constraints, and metrics.",
+      "Write a brief for designers working on bulk notification settings. Include the user story, constraints, what not to build, and how we'll measure success."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Including an 'open questions for the design team' section invites designers into the problem-solving process rather than handing them a specification to execute.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "User Research",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Write research repository tagging taxonomy",
+    "originalPrompt": "We have a lot of research notes and need a way to organise them. Help me create a tagging system.",
+    "options": [
+      "Design a research repository tagging taxonomy for a B2B SaaS product team with 3 researchers and 2 years of accumulated studies. Define tag categories: (1) product area (list 5-8 relevant tags), (2) insight type (pain point, behaviour, motivation, mental model), (3) user segment, (4) data type (qual/quant/mixed), (5) confidence level (validated/directional/anecdotal). Include a tagging guide: when each tag applies and how to handle multi-tag conflicts. Output as a taxonomy document.",
+      "Create a tagging system for our research repository. Include tags for product area, insight type, user segment, and confidence level.",
+      "Design a research repository taxonomy. Define tag categories for our studies, explain when to apply each tag, and how to handle cases where multiple tags apply."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Including a 'how to handle multi-tag conflicts' rule is the difference between a taxonomy researchers use consistently and one that degrades into chaos over time.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write quarterly product review summary",
+    "originalPrompt": "Write a quarterly product review summary. Cover what we achieved and what we learned.",
+    "options": [
+      "Write a Q3 product review summary for an internal team meeting. Sections: (1) goals we set (list 3), (2) goals we hit/missed with a brief reason, (3) top 3 learnings, (4) how this changes Q4 priorities. Max 300 words. Tone: honest, forward-looking. No spin.",
+      "Write a quarterly product review. Cover our goals, what we achieved, the main learnings, and what we're changing for next quarter.",
+      "Write a Q3 product review summary. Include our goals, outcomes, learnings, and updated priorities. Keep it honest and concise."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requiring 'a brief reason' for each hit/miss and connecting learnings to Q4 priorities produces a review that drives change rather than just recapping history.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Strategy & Roadmapping",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Design strategic partnership evaluation",
+    "originalPrompt": "A product VP needs to evaluate three potential strategic technology partnerships before recommending one to the CEO.",
+    "options": [
+      "Create a partnership evaluation framework for 3 potential technology partners for a B2B SaaS company. Evaluate each partner on: strategic fit (alignment with 3-year vision), technical integration complexity (low/medium/high), customer value add (how many customers benefit, average ARR impact), exclusivity risk, and exit cost. Build a weighted scoring matrix (weights must sum to 100%). Output: ranked recommendation with a 2-sentence rationale per partner.",
+      "Evaluate 3 technology partnerships for our SaaS company. Compare them on strategic fit, integration complexity, customer value, and risk.",
+      "Write a partnership evaluation comparing 3 technology vendors. Score each on strategic alignment, integration effort, customer impact, and risk. Recommend one with rationale."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Requiring an exclusivity risk and exit cost assessment prevents the company from discovering a lock-in problem after the partnership contract is signed.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Write accessibility audit checklist",
+    "originalPrompt": "A design systems team needs an accessibility checklist for designers to self-audit their work before engineering handoff.",
+    "options": [
+      "Write an accessibility self-audit checklist for product designers before engineering handoff. Group items by WCAG principle: Perceivable (colour contrast, alt text, non-colour indicators), Operable (keyboard access, focus order, target size), Understandable (labels, error messages, reading order), Robust (component names, ARIA roles). Each item should be a binary yes/no question. Max 20 items total. Note WCAG 2.1 AA criterion reference per item.",
+      "Write an accessibility checklist for designers. Cover contrast, keyboard navigation, labels, and ARIA. Make it easy to self-audit.",
+      "Create a design accessibility checklist. Group by WCAG principles, include colour contrast, keyboard, and semantic markup. Reference WCAG criteria for each item."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Grouping by WCAG principle rather than component type and requiring a WCAG criterion reference per item produces a checklist that also educates designers on the standard.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Write grid system documentation",
+    "originalPrompt": "Document our grid system. Designers and developers need to know how it works.",
+    "options": [
+      "Write grid system documentation for a design system. Cover: (1) grid type (12-column), (2) breakpoint-specific column count, gutter, and margin values for mobile/tablet/desktop, (3) do/don't examples for column spanning, (4) how to use the grid in Figma (auto-layout vs grid overlay), (5) CSS class or variable names. Output as a reference doc for designers and engineers.",
+      "Document our 12-column grid system. Include the column counts, gutters, and margins for each breakpoint. Add usage guidance.",
+      "Write grid documentation. Cover the column grid, gutters, margins at different breakpoints, and how to use it in Figma and code."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Requiring both Figma usage instructions and CSS variable names in the same doc prevents the common problem of designers and engineers using different grid implementations.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Design Systems",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Write Storybook component story description",
+    "originalPrompt": "Write a description for a component story in Storybook.",
+    "options": [
+      "Write a Storybook component story description for an Alert component. Max 50 words. Include: what the component is, the 4 variants (info/success/warning/error), and one accessibility note. Plain language.",
+      "Write a Storybook description for our Alert component. Explain what it is and when to use it. Cover all the variants including informational, success, warning, and error states. Include accessibility guidance for screen reader users and mention any ARIA attributes that are required. The description should help developers and designers understand how to use the component correctly in their work.",
+      "Alert component: 4 variants, accessible, for system feedback."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "A 50-word cap with a required accessibility note produces a Storybook description that fits the component canvas without scrolling.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Write product feedback triage process",
+    "originalPrompt": "A PM needs a consistent process for triaging incoming product feedback from multiple channels (support tickets, NPS comments, sales calls).",
+    "options": [
+      "Design a product feedback triage process for a B2B SaaS team. Specify: (1) input sources and owners, (2) tagging taxonomy (bug, feature request, UX friction, pricing, churn signal), (3) weekly triage cadence (who attends, time box, output), (4) threshold for escalating a tag to a roadmap item (e.g. 10+ unique customers). Output as a process diagram description and a tag legend.",
+      "Write a feedback triage process. Cover how we collect feedback, how we tag it, and how we decide what goes on the roadmap.",
+      "Create a product feedback process. Include input sources, tagging categories, a review cadence, and criteria for when feedback becomes a roadmap item."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying a numeric threshold for escalation to roadmap prevents the triage meeting from devolving into subjective debates about what counts as important.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "product_design",
+    "subFunction": "Product Management",
+    "mode": "token_budget",
+    "difficulty": "expert",
+    "title": "Write strategic context for a design sprint",
+    "originalPrompt": "Write a strategic context brief for a design sprint on reducing time-to-value for new B2B customers.",
+    "options": [
+      "Write a design sprint strategic context brief. Max 100 words. Include: business problem (1 sentence with a metric), sprint focus question (How Might We format), target user and their job-to-be-done, 1 constraint, and the success metric for the sprint outcome.",
+      "Write a strategic context document for our design sprint on reducing time-to-value for new customers. Explain the business problem we're trying to solve, including relevant data about our current onboarding metrics. State the sprint focus question in HMW format. Describe the target user and what they're trying to accomplish. List any important constraints the team should work within. Define what success looks like at the end of the sprint.",
+      "Sprint brief: reduce onboarding time-to-value. HMW question. Success = faster activation."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "A 100-word cap with five required elements forces the sprint brief to contain only the information the team needs to align quickly and diverge productively.",
+    "maxTokens": 100
+  }
+]

@@ -6,6 +6,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
+import { upsertEmployee } from '../../utils/api.js'
+// Static ref so we can read the just-set employeeId after setEmployee navigates away
+const getStore = () => useGameStore.getState()
 
 const NAME_REGEX = /^[a-zA-Z0-9 .'-]{2,50}$/
 
@@ -30,7 +33,16 @@ export default function EmployeeRegistrationScreen() {
     if (!name.trim()) { setError('Please enter your full name.'); return }
     if (!nameValid)   { setError('Name must be 2–50 characters (letters, numbers, spaces, . \' - allowed).'); return }
     setError('')
+    // Persist to local state first (synchronous — navigates to landing)
     setEmployee(name.trim(), team.trim() || null, company.trim() || null)
+    // Read the actual employeeId the store just generated, then sync to Neon
+    const { employeeId } = getStore()
+    upsertEmployee({
+      employeeId,
+      username: name.trim(),
+      team:     team.trim() || null,
+      company:  company.trim() || null,
+    }).catch(() => { /* offline — initEmployee() will retry on next load */ })
   }
 
   return (

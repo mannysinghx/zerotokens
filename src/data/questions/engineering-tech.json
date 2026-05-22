@@ -1,0 +1,1702 @@
+[
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague code review request rewrite",
+    "originalPrompt": "Can you please take a look at my code and let me know if there are any issues or problems with it? I would really appreciate your help with this.",
+    "options": [
+      "Review this Python function for bugs, edge cases, and performance issues. Return a bullet list of findings with line references.",
+      "Please look at my code and tell me what you think about it and if there are any problems.",
+      "Check the code."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "A good code review prompt specifies the language, what to look for, and the desired output format.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best prompt for writing unit tests",
+    "originalPrompt": "You need a prompt to ask an AI to write unit tests for a JavaScript function that validates email addresses.",
+    "options": [
+      "Write unit tests for my code.",
+      "Write Jest unit tests for this JavaScript email validation function. Cover: valid emails, missing @, missing domain, empty string, and null input. Use describe/it blocks.",
+      "Can you help me write some tests? I have a function that checks emails and I want to make sure it works correctly with different inputs."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming the testing framework, function purpose, and specific test cases eliminates ambiguity and produces ready-to-use output.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Debugging help prompt improvement",
+    "originalPrompt": "My app is throwing an error and I'm not sure why. Can you help me figure out what's wrong and how to fix it?",
+    "options": [
+      "Debug this error. App is broken. Error message attached.",
+      "I'm getting an error in my Node.js Express app. Here is the stack trace: [paste]. The error occurs when POST /api/users is called with a duplicate email. Identify the root cause and suggest a fix.",
+      "Please help me debug my application because it's not working properly and I've been stuck on this for a while and can't figure out what is happening."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Include the runtime, the triggering action, and the exact error output so the AI can diagnose without guessing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact refactoring request",
+    "originalPrompt": "Ask the AI to refactor a legacy Python function to use modern syntax.",
+    "options": [
+      "Refactor this Python 2 function to Python 3.10+. Use f-strings, type hints, and replace map/filter with comprehensions. Return only the refactored code.",
+      "I have some old Python code that was written a long time ago and it uses older Python 2 syntax and style. I would like you to please help me modernize it by converting it to use Python 3 conventions including things like f-strings and type hints and list comprehensions instead of map and filter calls.",
+      "Update my Python code."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the target version, exact syntax features, and output format keeps the prompt under budget while being fully actionable.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Architecture decision best prompt",
+    "originalPrompt": "Your team must decide between a monolith and microservices for a new SaaS product with 5 engineers and 10k expected users at launch.",
+    "options": [
+      "What architecture should I use for my app?",
+      "Compare monolith vs microservices for a B2B SaaS product: 5-person engineering team, 10k users at launch, expected 10x growth in 18 months. Evaluate on: operational complexity, deployment speed, team scaling, and cost. Recommend one and justify in 3 bullet points.",
+      "Tell me about microservices architecture and whether it's good or bad for startups and what the tradeoffs are compared to other approaches."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Grounding the prompt in concrete constraints (team size, user count, growth) and specifying evaluation criteria produces a directly actionable recommendation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "PR description generation prompt fix",
+    "originalPrompt": "Write a PR description for my changes.",
+    "options": [
+      "Write a GitHub PR description for this diff. Include: what changed and why, any breaking changes, and testing instructions. Use the conventional commits format. Diff: [paste diff].",
+      "Create a description for my pull request that explains what I did.",
+      "Write a PR description."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing the diff and specifying the required sections and format format turns a one-liner into a complete, merge-ready PR description.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "API documentation prompt selection",
+    "originalPrompt": "You need to generate REST API documentation for a /users endpoint.",
+    "options": [
+      "Document my API endpoint.",
+      "Write OpenAPI 3.0 documentation for GET /users. Include: path parameters, query filters (page, limit, role), response schema with example, and 401/404 error responses.",
+      "Can you help me write some documentation for an endpoint in my API? It's for getting users and it has some filtering options."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming the spec format (OpenAPI 3.0) and listing every parameter and response code produces documentation that is immediately usable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Concise SQL query generation request",
+    "originalPrompt": "Ask AI to write a SQL query to find duplicate records.",
+    "options": [
+      "Write a SQL query to find duplicate email addresses in a users table. Return email and count. Use GROUP BY and HAVING.",
+      "I need your help writing a SQL query. I have a database table called users and I want to find all the email addresses that appear more than once in the table because we have duplicate records and I need to identify them so we can clean up the data.",
+      "Find duplicates in SQL."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the table, the duplicate field, and the SQL clauses expected produces a runnable query without excess context.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Legacy code refactoring strategy prompt",
+    "originalPrompt": "How do I refactor old code? I have a big codebase and it's really hard to work with and I want to make it better but I don't know where to start.",
+    "options": [
+      "Suggest a prioritised refactoring plan for a 200k-line PHP 5.6 monolith being migrated to Laravel 10. Constraints: zero downtime, no dedicated refactoring sprints. Output: ordered list of 5 steps with rationale and risk level for each.",
+      "How should I refactor old code to make it better?",
+      "Give me a detailed and comprehensive explanation of all the different strategies and approaches for refactoring large legacy codebases, including the pros and cons of each approach and what situations they are best suited for."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert prompts specify the technology stack, hard constraints, desired output structure, and scope so the AI produces an immediately executable plan rather than general advice.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Choosing best error handling prompt",
+    "originalPrompt": "You want guidance on adding robust error handling to an async Node.js service.",
+    "options": [
+      "Add error handling to my Node.js code.",
+      "What is error handling and why is it important in Node.js applications for production environments?",
+      "Add error handling to this async Node.js Express route handler. Use try/catch, return structured JSON errors ({error, message, statusCode}), log with Winston, and handle both 4xx client errors and 5xx server errors. Code: [paste]."
+    ],
+    "correctOption": 2,
+    "rewardCoins": 80,
+    "hint": "Specifying the error structure, logging library, and HTTP status code categories gives the AI everything needed to produce production-ready code.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact system design prompt",
+    "originalPrompt": "Ask AI to design a rate-limiting system for an API.",
+    "options": [
+      "Design a token-bucket rate limiter for a REST API: 100 req/min per user, Redis-backed, returns 429 with Retry-After header. Provide pseudocode and Redis key schema.",
+      "I need help designing a rate limiting system for my API. We want to limit how many requests users can make. Please explain the different algorithms like token bucket and sliding window and leaky bucket and tell me which one you think is best and how I would implement it using Redis.",
+      "How do I rate limit an API?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Choosing the algorithm, specifying numeric limits, the backing store, and the expected output format keeps the prompt tight and the answer immediately usable.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Code explanation prompt improvement",
+    "originalPrompt": "Can you explain what this code does? I want to understand it better.",
+    "options": [
+      "Explain what this Python code does in plain English. Describe the purpose of each function, identify any side effects, and flag any potential bugs. Code: [paste].",
+      "What does this code do?",
+      "I have some code here that was written by someone else and I'm having trouble understanding it and would like a thorough explanation of what it does and how it works so that I can maintain it in the future."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Asking for function-level breakdown, side effects, and bug flags turns a vague request into a structured code audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best prompt for database indexing advice",
+    "originalPrompt": "A PostgreSQL table with 50M rows is running slow queries on a composite filter.",
+    "options": [
+      "My database is slow. How do I make it faster?",
+      "Analyse this slow PostgreSQL query on a 50M-row orders table. Filters: status='pending' AND created_at > NOW()-7d. EXPLAIN ANALYZE output: [paste]. Recommend indexes, and confirm whether a partial index on status would reduce index size.",
+      "Tell me about PostgreSQL indexing strategies and when to use different types of indexes like B-tree and hash and partial indexes and what the tradeoffs are."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing the query, table size, filter columns, and EXPLAIN output lets the AI give a targeted index recommendation rather than generic advice.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "token_budget",
+    "difficulty": "expert",
+    "title": "Tight prompt for concurrency design",
+    "originalPrompt": "Ask AI to help design a thread-safe cache.",
+    "options": [
+      "Design a thread-safe LRU cache in Go: capacity 1000, read-heavy (95% reads), use sync.RWMutex. Show struct definition and Get/Put signatures.",
+      "Help me design a thread-safe LRU cache implementation in Go. The cache should have a configurable capacity and support concurrent read and write access. I want to understand the best locking strategy to use, whether that's a simple mutex or a read-write mutex, and you should explain the tradeoffs and show me a full implementation with all the methods.",
+      "How do I make a thread-safe cache?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying language, capacity, read/write ratio, and limiting output to struct + signatures produces a focused design under the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Improve vague regex help request",
+    "originalPrompt": "I need a regex. Can you help me write one for what I need?",
+    "options": [
+      "Write a JavaScript regex to validate a UK mobile phone number: starts with 07, 11 digits total, no spaces. Return the pattern and a one-line explanation.",
+      "Can you write a regular expression for me? I need it to match phone numbers.",
+      "Write a comprehensive regex that can handle all kinds of phone number formats from different countries with various separators and country codes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Defining the language, exact format rules, and asking for a brief explanation makes the regex immediately testable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Choosing migration script prompt",
+    "originalPrompt": "You need to generate a database migration script to add a column.",
+    "options": [
+      "Write a database migration.",
+      "Write a PostgreSQL migration script to add a non-null varchar(255) column called full_name to the users table, with default '' for existing rows. Include rollback SQL.",
+      "I need to add a new column to my users table in PostgreSQL. The column should store names and shouldn't allow null values. Can you write a migration script that does this safely and also lets me roll it back if needed?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Specifying the DB engine, column type, constraints, default value, and requesting rollback SQL produces a complete, reversible migration in one shot.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Security code review prompt fix",
+    "originalPrompt": "Review my code for security issues please.",
+    "options": [
+      "Review this Node.js Express endpoint for OWASP Top 10 vulnerabilities. Flag SQL injection, XSS, and missing auth middleware. For each finding, give severity (High/Med/Low) and a one-line fix. Code: [paste].",
+      "Look at my code and check if there are any security vulnerabilities or problems that could be exploited by hackers.",
+      "Do a security review."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the framework, the vulnerability taxonomy, and requiring severity + fix per finding produces an actionable security audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best prompt for README generation",
+    "originalPrompt": "You need to generate a README for a new open-source CLI tool.",
+    "options": [
+      "Write a README for my project.",
+      "Generate a GitHub README for an open-source Python CLI tool called 'csv-cleaner'. Include: one-line description, installation via pip, 3 usage examples with flags, and a contributing section.",
+      "Write a detailed and comprehensive README file for my Python command-line tool that explains everything about it including how to install it and use it and contribute to it and all the different options and features."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming the tool, its type, and listing the exact sections prevents the AI from guessing what to include.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact code smell identification",
+    "originalPrompt": "Ask AI to identify code smells in a function.",
+    "options": [
+      "List code smells in this function. Flag: long method, magic numbers, deep nesting, and duplicated logic. Return a numbered list. Code: [paste].",
+      "Can you look at this function I wrote and tell me if there are any code smells or anti-patterns? I want to improve the quality of my code and make it more maintainable and readable.",
+      "Check my code for problems."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-listing the specific smells to check and asking for a numbered list focuses the output and keeps the prompt under budget.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Software Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Event-driven architecture review prompt",
+    "originalPrompt": "I want to use events in my system. Can you help me design this?",
+    "options": [
+      "Review this event-driven architecture for an e-commerce order system using Kafka. Identify: ordering guarantees issues, consumer group design flaws, and dead-letter queue strategy. System diagram: [paste]. Return findings as a prioritised table.",
+      "Help me design an event-driven system using message queues or something similar.",
+      "Tell me everything about event-driven architecture, event sourcing, CQRS, and how Kafka works and when I should use it versus other message brokers."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Providing the existing design, naming the technology, and specifying what to review (guarantees, consumer groups, DLQ) produces a targeted expert critique rather than a tutorial.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague Dockerfile help request fix",
+    "originalPrompt": "Can you help me write a Dockerfile? I want to containerize my app.",
+    "options": [
+      "Write a production-ready Dockerfile for a Node.js 20 Express app. Use multi-stage build, non-root user, and COPY only package.json before npm ci to leverage layer caching.",
+      "Help me write a Dockerfile for my Node.js application.",
+      "Please write a very detailed Dockerfile for me with all the best practices and optimisations and security features that I should use for a Node.js application."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the runtime version, build strategy, security requirement, and a specific optimisation gives the AI a clear target.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best CI/CD pipeline troubleshoot prompt",
+    "originalPrompt": "Your GitHub Actions workflow is failing on the build step intermittently.",
+    "options": [
+      "My CI pipeline is broken. Fix it.",
+      "My GitHub Actions build step fails intermittently (~30% of runs) with 'ECONNRESET' during npm ci. The runner is ubuntu-latest. Workflow YAML: [paste]. Suggest the most likely cause and a fix.",
+      "Tell me about common GitHub Actions errors and how to debug CI/CD pipelines in general and what are best practices for writing reliable workflows."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Providing the error message, failure rate, runner OS, and the workflow YAML gives the AI what it needs to diagnose the specific issue.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Kubernetes config review prompt fix",
+    "originalPrompt": "Can you review my Kubernetes configuration? I want to make sure it's correct.",
+    "options": [
+      "Review this Kubernetes Deployment manifest for production readiness. Check: resource requests/limits, liveness/readiness probes, image tag (no 'latest'), and replica count. YAML: [paste]. Return findings as a checklist.",
+      "Please review my Kubernetes YAML configuration file and let me know if there are any issues or improvements I should make.",
+      "Check my Kubernetes config."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing the exact checklist items (resources, probes, image tag) and the desired output format makes the review focused and directly actionable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact runbook generation request",
+    "originalPrompt": "Ask AI to write a runbook for restarting a service.",
+    "options": [
+      "Write a runbook for restarting the payments-service in Kubernetes. Steps: check pod status, drain connections, restart deployment, verify health check. Format as numbered steps.",
+      "I need you to write a detailed runbook or operational procedure document for restarting one of our microservices that runs in Kubernetes. Please include all the steps an on-call engineer would need to follow.",
+      "Write a runbook."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the service, the platform, the key steps, and the format makes the runbook production-ready without excess words.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best prompt for incident postmortem",
+    "originalPrompt": "You need to draft a postmortem for a 45-minute database outage that affected checkout.",
+    "options": [
+      "Write a postmortem.",
+      "Write a blameless incident postmortem for a 45-minute PostgreSQL primary failover that took down checkout. Include: timeline, root cause, customer impact (est. \u00a312k lost revenue), and 3 action items with owners. Tone: blameless.",
+      "Write a full and detailed incident postmortem document for a database outage that we had, including a very detailed timeline and root cause analysis and everything the team did to fix it and lots of recommendations for preventing it in the future."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Including the incident type, duration, business impact, and blameless tone constraint produces a postmortem that matches real-world engineering standards.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Terraform module review prompt fix",
+    "originalPrompt": "Review my Terraform code and tell me if it's good.",
+    "options": [
+      "Review this Terraform module for AWS EKS. Check: hardcoded credentials, missing remote state backend, security group overpermissioning, and resource tagging. Return a finding per line with severity. Code: [paste].",
+      "Can you review my Terraform infrastructure-as-code and let me know if there are any security issues or best practices I'm not following?",
+      "Review Terraform."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the cloud provider, resource type, and specific checks (credentials, state, permissions, tagging) scopes the review precisely.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Tight Helm chart troubleshoot prompt",
+    "originalPrompt": "Ask AI to debug a failing Helm chart deployment.",
+    "options": [
+      "Debug this Helm chart deployment failure on EKS. Error: 'ImagePullBackOff'. Chart values.yaml: [paste]. Check: image tag, registry auth, and namespace imagePullSecrets.",
+      "I'm trying to deploy my application using Helm on an EKS cluster but the deployment is failing and I'm seeing some errors and I'm not sure what's causing it. Can you help me figure out what's wrong?",
+      "Fix my Helm deployment."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Giving the exact error message, the platform, and the three most common causes of ImagePullBackOff focuses the diagnosis instantly.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best prompt for Nginx config generation",
+    "originalPrompt": "You need to generate an Nginx reverse proxy config for two upstream services.",
+    "options": [
+      "Write an Nginx config.",
+      "Create an Nginx config file for a reverse proxy. Route /api to upstream api-service:3000 and /static to upstream static-service:8080. Include: gzip, proxy_pass, and connection timeout of 30s.",
+      "Help me write an Nginx configuration for routing traffic to different backend services with all the performance and security settings I should include."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the routes, upstream addresses, and the exact directives needed produces a complete config block on the first try.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Multi-region failover design prompt fix",
+    "originalPrompt": "How should I set up failover for my application so it doesn't go down?",
+    "options": [
+      "Design an active-passive multi-region failover for a stateful payment service: primary us-east-1, standby eu-west-1. RTO \u22645 min, RPO \u226430s. Address: Route 53 health checks, RDS cross-region read replica promotion, and session data sync. Output: architecture decision record.",
+      "Tell me how to make my application highly available across multiple regions.",
+      "Explain the different strategies for multi-region failover and disaster recovery including active-active and active-passive approaches and their tradeoffs."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert prompts require hard SLA numbers (RTO/RPO), specific technology components, and a defined output format to produce actionable architecture decisions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best monitoring alert rule prompt",
+    "originalPrompt": "You need to write a Prometheus alert rule for high API error rate.",
+    "options": [
+      "Write a Prometheus alerting rule.",
+      "Write a Prometheus alerting rule that fires when the 5xx error rate on /api/v1 exceeds 1% over a 5-minute window. Alert name: HighAPIErrorRate. Severity: critical. Include annotations with a runbook URL placeholder.",
+      "Write a comprehensive Prometheus alerting configuration for my API that handles different types of errors and latency and availability with appropriate thresholds and all the metadata fields I should include."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Giving the threshold, window, endpoint scope, and required metadata fields produces a rule that can be dropped straight into an alerts file.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact chaos engineering scenario prompt",
+    "originalPrompt": "Ask AI to design a chaos experiment for a microservice.",
+    "options": [
+      "Design a chaos experiment for the checkout service: inject 500ms latency on calls to inventory-service. Hypothesis: circuit breaker triggers within 3 retries. Define: steady state, method (Chaos Monkey), and rollback trigger.",
+      "Help me design a chaos engineering experiment for one of my microservices to test its resilience. I want to make sure it handles failures gracefully and I want to understand how to set up the experiment properly with all the right parameters.",
+      "How do I do chaos engineering?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the target service, failure mode, hypothesis, tool, and rollback condition gives the AI all the variables needed to produce a runnable experiment plan.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague Jenkins pipeline prompt fix",
+    "originalPrompt": "Help me write a Jenkins pipeline for my project.",
+    "options": [
+      "Write a Jenkins declarative pipeline for a Java Maven project. Stages: checkout, build, unit test, Docker build, push to ECR. Fail fast if tests fail. Use environment block for ECR_REPO.",
+      "Create a Jenkins pipeline that builds my application and deploys it.",
+      "Write a detailed Jenkins pipeline script for me with all the stages and configurations I need."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Listing each stage, the build tool, the registry, and the fail-fast requirement produces a complete pipeline script immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best GitOps migration prompt",
+    "originalPrompt": "Your team wants to migrate from push-based to GitOps-based deployments using Argo CD.",
+    "options": [
+      "Explain GitOps to me.",
+      "Create a migration plan from manual kubectl deployments to GitOps with Argo CD on EKS. We have 12 microservices, 3 environments (dev/staging/prod), and Helm charts. Address: repo structure, Argo CD app-of-apps pattern, secrets management with Sealed Secrets, and a phased rollout. Output: a numbered migration checklist.",
+      "What are the best practices for GitOps and how should I structure my repositories and what tools should I use for secrets management?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Describing the current state, the target architecture, the scale, and required components (app-of-apps, secrets) produces a plan the team can execute without further clarification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Quick docker-compose generation request",
+    "originalPrompt": "Ask AI to write a docker-compose file.",
+    "options": [
+      "Write a docker-compose.yml for a Node.js app + PostgreSQL 15. Mount a named volume for postgres data. Expose app on port 3000. Use .env for DB credentials.",
+      "Please write me a docker-compose file for my application. I need a Node.js service and a database service that work together and I want to make sure volumes are set up correctly.",
+      "Write docker-compose."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the services, versions, port, volume type, and credential method gives the AI a fully specified target without unnecessary explanation.",
+    "maxTokens": 50
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Cost optimisation prompt for cloud infra",
+    "originalPrompt": "How can I reduce my AWS costs? I'm spending too much money.",
+    "options": [
+      "Analyse AWS cost optimisation for our stack: EC2 (t3.large, always on), RDS (db.r5.2xlarge, 40% CPU avg), and S3 (2TB, infrequent access). Suggest top 3 savings actions with estimated monthly saving for each.",
+      "What are the best ways to reduce AWS costs?",
+      "I want to reduce our AWS spending. Can you tell me everything about AWS cost optimisation strategies and reserved instances and savings plans and rightsizing and all the different options?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the specific services, instance types, and utilisation data enables the AI to give dollar-quantified recommendations rather than generic tips.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best zero-downtime deployment prompt",
+    "originalPrompt": "You need to implement zero-downtime deployment for a stateful microservice.",
+    "options": [
+      "How do I deploy without downtime?",
+      "Design a zero-downtime blue-green deployment for a stateful session-based Node.js service on Kubernetes. Address: session affinity during cutover, database migration compatibility, and health check grace period. Return a deployment sequence.",
+      "Explain the different deployment strategies like blue-green, canary, and rolling deployments and which one I should use for a stateful application."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the deployment strategy, the statefulness challenge, and the three specific concerns (sessions, DB migrations, health checks) produces a targeted solution.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Test plan generation prompt fix",
+    "originalPrompt": "Write a test plan for my feature. I need to test it properly.",
+    "options": [
+      "Write a QA test plan for a user password reset feature. Cover: functional tests (valid/invalid token, expired token), edge cases, and regression scope. Output as a table with test ID, scenario, steps, and expected result.",
+      "Help me create a test plan for the new feature I'm building.",
+      "Write a comprehensive and detailed test plan document for my password reset functionality including all possible test scenarios and edge cases and performance tests and security tests."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the feature, the test categories, and a structured table format produces a test plan that can be handed directly to QA engineers.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best Cypress E2E test prompt",
+    "originalPrompt": "You need to write a Cypress end-to-end test for a login flow.",
+    "options": [
+      "Write a Cypress test for login.",
+      "Write a Cypress E2E test for the login flow: valid credentials succeed and redirect to /dashboard, invalid credentials show 'Invalid password' error message. Use cy.intercept to stub the /api/auth endpoint.",
+      "Help me write some automated end-to-end tests for my login page that test different scenarios and make sure everything works correctly."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Listing the exact scenarios, expected outcomes, and the specific Cypress API to use produces tests that pass without revision.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Bug report generation prompt fix",
+    "originalPrompt": "I found a bug. Can you help me write up a bug report?",
+    "options": [
+      "Write a Jira bug report for this issue: clicking 'Apply coupon' on checkout with an expired coupon shows no error and removes the cart. Environment: Chrome 124, staging. Steps to reproduce: [paste]. Severity: P1. Include: actual vs expected behaviour.",
+      "Help me write a bug report for an issue I found in the checkout flow.",
+      "Write a detailed bug report for me for the bug I discovered in our application."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Including the bug location, specific behaviour, environment, severity, and actual vs expected sections maps directly to a standard bug tracking template.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact test data generation prompt",
+    "originalPrompt": "Ask AI to generate test data for a user registration form.",
+    "options": [
+      "Generate 5 rows of test data for a user registration form: name, email, password, DOB. Include 1 valid row, 1 invalid email, 1 underage (DOB <18), 1 duplicate email, 1 missing required field.",
+      "Can you generate some test data for me for a user registration form? I need different types of data including valid data and invalid data and edge cases so that I can test my form validation properly.",
+      "Generate test data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the exact number of rows and the specific case each row must represent produces ready-to-use test fixtures.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best performance testing prompt",
+    "originalPrompt": "You need to load test a checkout API endpoint before a product launch.",
+    "options": [
+      "Help me do load testing.",
+      "Write a k6 load test script for POST /api/checkout. Ramp to 500 virtual users over 2 minutes, sustain for 5 minutes. Pass criteria: p95 latency <500ms, error rate <1%. Include a think time of 1s between requests.",
+      "Tell me about load testing strategies and different tools like JMeter and k6 and Gatling and when to use each one and what metrics I should be measuring."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the tool, the endpoint, ramp profile, sustain duration, and pass/fail thresholds produces a test script you can run without modification.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Test automation strategy prompt fix",
+    "originalPrompt": "We need a better testing strategy. Can you help us improve our tests?",
+    "options": [
+      "Design a test automation strategy for a React/Node.js e-commerce platform: 200k lines, 15% unit test coverage, 0 E2E tests, 2-hour manual regression cycle. Target: 80% coverage, CI under 10 min. Recommend the testing pyramid split, tooling (Jest/Cypress/Playwright), and a 3-sprint implementation roadmap.",
+      "What testing strategies should we use for our application to improve quality?",
+      "Help us improve our test coverage and testing approach for our web application with a focus on automation and CI/CD integration."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Quantifying the current state (coverage %, regression time) and the targets enables the AI to produce a gap-based roadmap rather than generic testing advice.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact API test assertion prompt",
+    "originalPrompt": "Ask AI to write assertions for an API response.",
+    "options": [
+      "Write Jest assertions for this API response: status 200, body.user.email matches input, body.token is a non-empty string, response time <300ms. Use expect().toEqual and jest-extended matchers.",
+      "I need help writing test assertions for the response from my API endpoint. I want to check various things about the response including the status code and the response body structure and the data values and also the response time.",
+      "Write API test assertions."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Enumerating the exact assertions and the specific matcher library lets the AI write them directly without needing to infer what to check.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best exploratory testing notes prompt",
+    "originalPrompt": "You are creating a prompt to document exploratory testing findings.",
+    "options": [
+      "Write up my testing notes.",
+      "Convert these raw exploratory testing notes into a structured bug report and testing charter summary. For each issue found, output: title, severity, steps, and actual vs expected. Notes: [paste].",
+      "Help me document what I found during exploratory testing of the new feature so the team can understand the issues and what needs to be fixed."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the two output artefacts and the per-issue structure transforms raw notes into a report that requires no editing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Contract testing prompt improvement",
+    "originalPrompt": "Help me set up contract testing for my microservices.",
+    "options": [
+      "Generate a Pact consumer contract test in JavaScript for the order-service consumer calling the payment-service provider's POST /payments endpoint. Mock the success (200) and insufficient-funds (402) responses. Include provider verification setup.",
+      "What is contract testing and how do I implement it for my microservices architecture?",
+      "Help me write contract tests for my services."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the framework, consumer, provider, endpoint, and both response scenarios produces a working Pact test without needing follow-up questions.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact mutation testing analysis prompt",
+    "originalPrompt": "Ask AI to analyse mutation testing results.",
+    "options": [
+      "Analyse this Stryker mutation testing report. Mutation score: 34%. Surviving mutants in payment validation: [paste]. Identify top 3 test gaps and suggest one new test case per gap.",
+      "I have some mutation testing results from running Stryker on my codebase and the mutation score is quite low. Can you help me understand what the results mean and what I should do to improve my test coverage based on what the mutation testing found?",
+      "What do mutation testing results mean?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Giving the tool name, the score, the surviving mutants, and asking for top-3 gaps with one test case each keeps the response actionable and within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague ETL pipeline prompt improvement",
+    "originalPrompt": "Help me build a data pipeline that processes some data.",
+    "options": [
+      "Design a Python ETL pipeline to ingest daily CSV files from S3, transform (deduplicate, parse timestamps to UTC, drop nulls in user_id), and load to a Redshift staging table. Use pandas for transformation.",
+      "Can you help me build a pipeline that takes some data and processes it and loads it somewhere?",
+      "Write a comprehensive data pipeline for me that handles ingestion, transformation, and loading with all the best practices and error handling."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying source, destination, the three transformations, and the library gives the AI enough to write runnable code immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best SQL optimisation prompt",
+    "originalPrompt": "A Redshift query joining three large tables is taking 8 minutes to run.",
+    "options": [
+      "Make my SQL query faster.",
+      "Optimise this Redshift SQL query that takes 8 minutes. It joins orders (500M rows), customers (10M rows), and products (1M rows). EXPLAIN output: [paste]. Focus on: distribution keys, sort keys, and join order. Query: [paste].",
+      "Tell me about SQL query optimisation techniques for Redshift and how I can improve my queries that involve large table joins."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Providing row counts, the EXPLAIN output, and the query itself along with Redshift-specific knobs (dist/sort keys) enables a targeted optimisation plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Data quality check prompt fix",
+    "originalPrompt": "I need to check data quality. Can you help?",
+    "options": [
+      "Write Great Expectations test suite for a transactions DataFrame. Check: no nulls in transaction_id or amount, amount > 0, transaction_date is a valid ISO 8601 timestamp, and user_id matches UUID format. Return as Python code.",
+      "Help me add data quality checks to my data pipeline to ensure the data is correct.",
+      "Write a very thorough data quality validation framework for my data pipeline that checks everything that could possibly be wrong with the data."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the validation library, the DataFrame, and each specific rule produces production-ready Great Expectations code without iteration.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact data schema design request",
+    "originalPrompt": "Ask AI to design a database schema for e-commerce orders.",
+    "options": [
+      "Design a PostgreSQL schema for e-commerce orders. Tables: orders, order_items, customers. Include PKs, FKs, and indexes on customer_id and created_at. Return CREATE TABLE statements only.",
+      "I need help designing a database schema for an e-commerce platform. I want tables for orders and customers and products and I need to think about the relationships between them and the right indexes to use.",
+      "Design a database schema."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the tables, the key constraints, and the indexes and limiting output to CREATE TABLE statements keeps the response lean and usable.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best streaming pipeline architecture prompt",
+    "originalPrompt": "You need to design a real-time data streaming pipeline for clickstream events.",
+    "options": [
+      "How do I process streaming data?",
+      "Design a real-time clickstream pipeline: 100k events/sec, Kafka ingestion, Flink processing (sessionisation window: 30 min inactivity), sink to ClickHouse. Address: event ordering guarantees, late-arriving data (up to 5 min), and backpressure strategy.",
+      "Help me design a streaming data architecture for clickstream events with the right technologies and patterns for real-time processing."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing throughput numbers, the full tech stack, window parameters, and the three failure modes (ordering, late data, backpressure) produces a complete architecture.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Data lake architecture prompt fix",
+    "originalPrompt": "We need to build a data lake. Can you help us design it?",
+    "options": [
+      "Design a lakehouse architecture on AWS for a fintech company: 5TB/day raw event data, 3-zone structure (raw/curated/consumption), Delta Lake format, Glue for cataloguing, Athena for ad hoc queries. Address: GDPR right-to-erasure via Deletion Vectors, and a data mesh ownership model. Output: architecture diagram description and a zone naming convention.",
+      "Help us design a data lake architecture for our company.",
+      "What are the best practices for building a data lake and what technologies should we use and how should we structure the different zones?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert prompts specify the cloud provider, industry, data volume, format, tools, compliance requirement, and desired outputs to avoid a generic cloud storage tutorial.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact dbt model generation prompt",
+    "originalPrompt": "Ask AI to write a dbt model for a dimension table.",
+    "options": [
+      "Write a dbt model for dim_customers. Source: raw.customers. Select: customer_id, full_name, email, created_at. Apply: deduplicate on customer_id (keep latest), cast created_at to TIMESTAMP. Use ref() and add a unique test in schema.yml.",
+      "Help me write a dbt model for my customer dimension table. I want to select the relevant columns and do some transformations and make sure I'm following dbt best practices.",
+      "Write a dbt model."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the source table, selected columns, transformation logic, dbt macro to use, and the test to add produces a complete model and schema file.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best data pipeline error handling prompt",
+    "originalPrompt": "You want to add error handling to a Python data pipeline.",
+    "options": [
+      "Add error handling to my pipeline.",
+      "Add error handling to this Python Airflow DAG. For each task: catch exceptions, log error to CloudWatch with task_id and error message, send Slack alert on failure, and mark task as failed (not skipped). Code: [paste].",
+      "What are the best practices for error handling in data pipelines and how should I handle failures and retries in Airflow?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the orchestration tool, the logging destination, the alerting channel, and the failure semantics produces working error handling code.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Slowly changing dimension prompt fix",
+    "originalPrompt": "How do I handle historical data changes in my dimension tables?",
+    "options": [
+      "Implement SCD Type 2 for dim_products in Snowflake using a MERGE statement. Columns to track: price, category. Add: effective_date, expiry_date, is_current flag. Show the full MERGE SQL with source and target CTEs.",
+      "How do I implement slowly changing dimensions in my data warehouse?",
+      "Help me handle historical changes in my dimension tables so I can track how data has changed over time."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the SCD type, the table, the platform, the tracked columns, and the required fields constrains the answer to a single, runnable SQL block.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact data lineage description prompt",
+    "originalPrompt": "Ask AI to document data lineage for a reporting table.",
+    "options": [
+      "Document data lineage for monthly_revenue_summary. Sources: orders (S3/Glue), refunds (PostgreSQL). Transformations: join on order_id, exclude cancelled orders, group by month. Output: one-paragraph lineage description and a column-level mapping table.",
+      "I need documentation for the data lineage of one of our important reporting tables. It pulls data from multiple sources and goes through several transformations and I want to have clear documentation of how the data flows from source to the final table.",
+      "Document data lineage."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the table, sources with their storage type, each transformation step, and the two output artefacts keeps the response structured and within budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague security policy draft request fix",
+    "originalPrompt": "Can you write a security policy for our company?",
+    "options": [
+      "Write a password security policy for a 50-person SaaS company. Include: minimum length (12 chars), complexity requirements, MFA requirement for admin accounts, and 90-day rotation for service accounts. Tone: plain English, non-technical audience.",
+      "Help me write a security policy for our organisation.",
+      "Write a comprehensive information security policy covering all aspects of security including access control, data protection, incident response, and everything else we need."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Scoping the policy to one topic (passwords), the company size, specific rules, and the audience produces a document that can be published immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best threat modelling prompt",
+    "originalPrompt": "You need to perform a threat model on a new payment feature.",
+    "options": [
+      "Do a threat model for my application.",
+      "Perform a STRIDE threat model for a new payment tokenisation feature. System components: React frontend, Node.js API, Stripe SDK, PostgreSQL. Identify one threat per STRIDE category, its attack vector, and a mitigation. Format as a table.",
+      "Tell me about threat modelling and the STRIDE methodology and how I can apply it to identify security risks in my system and what mitigations I should implement."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the methodology, the feature, all system components, and specifying one threat per category with a table format produces a complete, structured threat model.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Vulnerability assessment summary prompt fix",
+    "originalPrompt": "Can you help me write up the results of our security scan?",
+    "options": [
+      "Summarise this Snyk vulnerability scan report for a Node.js application. Group findings by severity (Critical/High/Medium). For each Critical/High: package name, CVE, and a one-line fix action. Total count per severity at the top. Report: [paste].",
+      "Write a summary of our security scan results that I can share with the team.",
+      "Please help me write a detailed vulnerability assessment report summarising all the security issues found in our scan results."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the scan tool, grouping logic, the fields per finding, and what to summarise at the top transforms a raw scan report into a prioritised action list.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact GDPR checklist prompt",
+    "originalPrompt": "Ask AI to create a GDPR compliance checklist.",
+    "options": [
+      "Create a GDPR compliance checklist for a B2C web app collecting user emails and usage analytics. Include 8 items covering: consent, data retention, right to erasure, and breach notification. Format: checkbox list.",
+      "Can you create a GDPR compliance checklist for my company? I want to make sure we are compliant with all the relevant regulations and data protection requirements.",
+      "GDPR checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Scoping the checklist to a specific app type, the data collected, a fixed item count, and four topic areas prevents an overwhelming 40-item generic list.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best pen test scope definition prompt",
+    "originalPrompt": "You need to define the scope for an external penetration test of your company's web application.",
+    "options": [
+      "Help me define the scope for a penetration test.",
+      "Write a penetration test scope document for an external black-box web app pentest. Target: api.example.com (production). In-scope: OWASP Top 10, API endpoints, authentication flows. Out-of-scope: DDoS, social engineering, third-party integrations. Duration: 5 days. Include rules of engagement and emergency contact protocol.",
+      "Write a document that explains everything about our web application for a security testing company that will be performing a penetration test, including all the features and APIs and the infrastructure."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "A scope document needs explicit in-scope/out-of-scope lists, the test type, target domain, duration, and rules of engagement to be legally and operationally sound.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Zero trust architecture prompt fix",
+    "originalPrompt": "We want to move to zero trust. Help us.",
+    "options": [
+      "Create a zero-trust network architecture migration plan for a 300-person company with on-prem AD, AWS workloads, and a BYOD policy. Current state: flat VPN-based network. Target: BeyondCorp model with device trust, identity-aware proxy, and micro-segmentation. Address: legacy app compatibility and phased rollout over 3 quarters. Output: executive summary (3 bullets) and a per-quarter milestone table.",
+      "Explain zero trust architecture to me and how we can implement it.",
+      "What are the steps to implement zero trust security and what tools do I need and how long will it take?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Expert prompts must describe the current state, target model, key constraints, output artefacts, and audience to generate a decision-ready document.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact security incident response prompt",
+    "originalPrompt": "Ask AI to draft an incident response procedure.",
+    "options": [
+      "Draft a 5-step incident response procedure for a suspected data breach. Steps: detect, contain, assess, notify (GDPR 72h rule), and remediate. Each step: one action sentence and the responsible role.",
+      "I need a document that describes what our team should do when we have a security incident or data breach, including all the steps and who is responsible for each one.",
+      "Write incident response plan."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-defining the five steps and requesting one action plus one role per step produces a concise, executable procedure within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best AWS IAM policy review prompt",
+    "originalPrompt": "You need to review an AWS IAM policy for over-permissioning.",
+    "options": [
+      "Review my AWS security settings.",
+      "Review this AWS IAM policy for principle of least privilege violations. Flag: wildcard actions (*), wildcard resources (*), and missing condition keys. For each violation, suggest the minimal replacement. Policy JSON: [paste].",
+      "Can you look at my IAM policy and tell me if there are any security problems with it and what I should change to make it more secure and follow best practices?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming the three specific violations to check and asking for a minimal replacement per finding produces a directly actionable security review.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "SOC 2 controls gap analysis prompt fix",
+    "originalPrompt": "We need to prepare for SOC 2. Can you help us figure out what we need to do?",
+    "options": [
+      "Perform a SOC 2 Type II gap analysis for a 20-person SaaS startup. Trust Service Criteria: Security and Availability. Our current controls: [paste description]. Identify gaps, map to CC criteria numbers, and prioritise by audit risk (High/Med/Low). Output: a gap table.",
+      "What do we need to do to get SOC 2 compliance for our company?",
+      "Explain SOC 2 Type II compliance requirements and what controls we need to implement and how long it typically takes to achieve certification."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Specifying the TSC scope, company size, current controls, and requesting a CC-mapped priority table turns a vague compliance question into a structured audit roadmap.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Tight cryptography recommendation prompt",
+    "originalPrompt": "Ask AI to recommend encryption for storing sensitive user data.",
+    "options": [
+      "Recommend encryption for storing PII (name, email, SSN) at rest in PostgreSQL. Constraints: key rotation support, FIPS 140-2 compliance needed. Output: algorithm, key management approach (AWS KMS), and one implementation note per field type.",
+      "I need help deciding what encryption to use for storing sensitive user personal information in our database. We need to comply with various regulations and I want to understand the different options and which algorithms and key management approaches are recommended.",
+      "How should I encrypt user data?"
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the data types, the compliance standard, the key management tool, and limiting output to algorithm + approach + one note per field keeps the answer tight and actionable.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Vague IT ticket response prompt fix",
+    "originalPrompt": "Help me write a response to a user's IT support ticket.",
+    "options": [
+      "Write a response to this IT support ticket: user cannot connect to VPN from macOS 14. Provide 3 troubleshooting steps in plain English. Escalate if steps don't resolve within 1 hour. Tone: professional, empathetic. Ticket: [paste].",
+      "Can you help me write a reply to a support ticket from a user who has a problem?",
+      "Write a detailed support response covering all possible causes of the issue and all the steps the user should try."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Specifying the issue, platform, step count, escalation trigger, and tone produces a response the IT agent can send without editing.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best knowledge base article prompt",
+    "originalPrompt": "You need to write a knowledge base article on how to reset a corporate password.",
+    "options": [
+      "Write a KB article about password resets.",
+      "Write a knowledge base article for employees on how to reset their corporate Active Directory password using the self-service portal at password.example.com. Include: 5 numbered steps, a screenshot placeholder after step 2, a troubleshooting FAQ (3 Q&As), and a 'Contact IT' footer.",
+      "Write a comprehensive knowledge base article that explains everything about password management including password resets and best practices and security policies and how to use the self-service portal with lots of detail."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Naming the system, the URL, the step count, screenshot placement, and FAQ count produces a publishable KB article without back-and-forth.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact onboarding checklist prompt",
+    "originalPrompt": "Ask AI to generate a new employee IT onboarding checklist.",
+    "options": [
+      "Generate a 10-item IT onboarding checklist for a new remote employee: laptop setup, VPN, SSO accounts (Google Workspace, Slack, Jira), MFA enrollment, email signature, and security training. Format: checkbox list.",
+      "Can you create a checklist for IT to use when onboarding new employees? It should cover everything they need to set up for a new person joining the company remotely.",
+      "Write IT onboarding checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Setting a fixed item count, naming the tools, and specifying the format produces a checklist that is immediately usable without editing.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "SLA reporting prompt improvement",
+    "originalPrompt": "Generate a report on our support tickets.",
+    "options": [
+      "Generate a monthly IT support SLA report summary for June. Metrics: ticket volume (312), P1 resolution time (avg 2.4h vs 4h SLA), first-response rate (94%), and top 3 categories by volume. Format: executive summary paragraph + a 4-row metrics table.",
+      "Write a report on how our IT support team performed this month.",
+      "Create a detailed and comprehensive report covering all aspects of our IT support operations including all ticket metrics and team performance and SLA compliance and trends over time."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the actual numbers, the SLA target, and specifying the exact output format lets the AI produce a report that needs no data lookup.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best disaster recovery test prompt",
+    "originalPrompt": "You need to plan a tabletop disaster recovery exercise for IT operations.",
+    "options": [
+      "Help me plan a DR exercise.",
+      "Design a 2-hour tabletop disaster recovery exercise for a ransomware attack scenario. Participants: IT Ops, InfoSec, Legal, and Comms. Include: 3 inject events (encryption detected, backup integrity failure, media enquiry), discussion prompts per inject, and a debrief checklist. Format: facilitator guide.",
+      "Tell me about how to run disaster recovery tests and tabletop exercises and what scenarios to use and how to evaluate the results."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Specifying duration, scenario, participants, the three inject events, and the output format produces a facilitator guide ready to run.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "IT asset management strategy prompt fix",
+    "originalPrompt": "We need to improve how we manage IT assets. Any suggestions?",
+    "options": [
+      "Design an IT asset management strategy for a 500-person hybrid company with 600 laptops, 200 mobile devices, and SaaS sprawl (80+ tools). Current state: spreadsheet-based, no auto-discovery. Target: ServiceNow CMDB with Jamf integration for macOS and Intune for Windows. Address: auto-discovery, software licence reconciliation, and end-of-life tracking. Output: a phased 6-month implementation plan.",
+      "What are the best practices for IT asset management and what tools should we use?",
+      "Help us improve our IT asset management processes and tooling for our company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Quantifying the asset counts, naming the current and target tools, and specifying the three process areas produces an expert-level implementation plan rather than tool recommendations.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact escalation procedure prompt",
+    "originalPrompt": "Ask AI to write an escalation procedure for P1 incidents.",
+    "options": [
+      "Write a P1 incident escalation procedure. Timeline: 15 min detect\u2192acknowledge, 30 min\u2192escalate to on-call engineer, 1 hr\u2192escalate to VP Engineering. Include communication channel (PagerDuty) and a one-sentence action per step.",
+      "Create an escalation procedure for our most critical (P1) incidents that describes what should happen at different time intervals and who should be involved and how they should be notified and communicated with.",
+      "Write escalation procedure."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Pre-defining the time thresholds, escalation targets, and the communication tool keeps the procedure concise and operable under the token budget.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best software procurement email prompt",
+    "originalPrompt": "You need to write an email requesting approval for a new SaaS tool.",
+    "options": [
+      "Write an email asking for a new tool.",
+      "Write an internal email requesting approval to purchase Figma (Business plan, $45/user/month, 5 users) for the Design team. Include: business case (replaces 2 tools, saves 3h/week per designer), total annual cost, and a request-by date of Friday.",
+      "Write a detailed email to management explaining why we need a new design tool and all the benefits it will bring and the ROI and everything they need to know to make a decision."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Including the tool, plan, cost, user count, business case with numbers, and a decision deadline produces an approval-ready email.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "MDM policy configuration prompt fix",
+    "originalPrompt": "Help me set up MDM policies for our company devices.",
+    "options": [
+      "Write Jamf Pro MDM configuration profiles for macOS company laptops. Policies needed: FileVault encryption enabled, screen lock after 5 min, disable USB mass storage, and block non-App-Store software. Return as a JSON configuration profile schema.",
+      "What MDM policies should I configure for our company laptops?",
+      "Help me set up mobile device management policies covering all the security settings and restrictions we need for our company's macOS devices."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the MDM tool, the OS, the four policies, and requesting the actual JSON schema produces a configuration you can deploy immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "token_budget",
+    "difficulty": "advanced",
+    "title": "Compact vendor security assessment prompt",
+    "originalPrompt": "Ask AI to create a vendor security questionnaire.",
+    "options": [
+      "Create a 10-question vendor security questionnaire for a SaaS provider handling PII. Cover: SOC 2 status, encryption at rest/transit, sub-processor list, breach notification SLA, and pen test frequency. Format: question + answer field per item.",
+      "I need to create a security questionnaire that we can send to vendors who will be processing our customers' personal data. It should cover all the important security and compliance topics that we need to know about.",
+      "Write a vendor security questionnaire."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Setting a fixed question count, naming the five topic areas, and specifying the question+answer format produces a ready-to-send questionnaire within the token budget.",
+    "maxTokens": 100
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Vague log aggregation prompt improvement",
+    "originalPrompt": "Help me set up logging for my application so I can see what's going on.",
+    "options": [
+      "Configure structured JSON logging for a Node.js Express app using Winston. Send logs to CloudWatch Logs with these fields: timestamp, level, request_id, http_method, path, status_code, duration_ms. Set log level to 'warn' in production.",
+      "Help me add logging to my application so I can debug issues.",
+      "Set up a comprehensive logging system for my Node.js application that captures all the important information about requests and errors."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Specifying the log format (JSON), library, destination, required fields, and the production log level produces a logging configuration that is immediately deployable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "IaC drift detection prompt fix",
+    "originalPrompt": "How do I know if my infrastructure has drifted from my Terraform code?",
+    "options": [
+      "Write a CI pipeline step using 'terraform plan' to detect infrastructure drift on our AWS environment. Output: parse the plan output to count resources to add/change/destroy, post a Slack notification if change count > 0, and fail the pipeline if destroy count > 0.",
+      "Help me detect when my AWS infrastructure has changed from what's defined in Terraform.",
+      "Explain infrastructure drift and how to detect and remediate it when using Terraform for infrastructure as code."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Defining the CI step, the parsing logic, the notification channel, and the pipeline failure condition produces an automated drift detection workflow.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Accessibility testing prompt improvement",
+    "originalPrompt": "I want to make sure my website is accessible. Can you help me test it?",
+    "options": [
+      "Write an axe-core accessibility test in Cypress for the /checkout page. Check: all images have alt text, form inputs have labels, colour contrast meets WCAG AA, and keyboard navigation works for the submit button. Report each violation with the WCAG criterion number.",
+      "Help me test my website for accessibility issues.",
+      "Tell me about web accessibility testing and what tools to use and what WCAG guidelines I need to follow."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the tool, the page, four specific checks, and requesting WCAG criterion numbers per violation produces a structured accessibility audit.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "API mocking prompt improvement",
+    "originalPrompt": "I want to mock some API calls in my tests. How do I do that?",
+    "options": [
+      "Write Jest mocks for these two API calls in the UserService: getUser(id) returns {id, name, email} on success and throws UserNotFoundError for id=999. Use jest.mock() and mock both the success and error cases. File: userService.test.js.",
+      "Help me mock API calls in my Jest tests.",
+      "Explain how to mock external API calls in unit tests and what the different mocking strategies are."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Naming the service, the two functions, the return shapes, and the error case to mock produces complete, ready-to-paste test mocks.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Visual regression testing prompt fix",
+    "originalPrompt": "Help me add visual regression testing to my project.",
+    "options": [
+      "Set up Percy visual regression testing in a GitHub Actions CI pipeline for a React app. Capture snapshots on: /home, /product, and /checkout. Fail the pipeline if visual diff > 0.1%. Add the Percy CI step after the Cypress E2E tests. Show the YAML snippet.",
+      "Add visual regression tests to my React application's CI pipeline.",
+      "Tell me about visual regression testing tools and strategies for catching unintended UI changes."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the tool, the three pages, the diff threshold, the pipeline placement, and requesting the YAML snippet produces an immediately usable CI configuration.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Data ingestion script prompt fix",
+    "originalPrompt": "Can you help me write a script to ingest data from an API into my database?",
+    "options": [
+      "Write a Python script to call the Stripe API (GET /v1/charges, paginate using starting_after), transform each charge to {id, amount, currency, created_date, status}, and upsert into a PostgreSQL charges table using psycopg2. Run daily. Handle API rate limits with exponential backoff.",
+      "Help me write code to pull data from an API and store it in my database.",
+      "Write a comprehensive data ingestion framework that handles multiple API sources with full error handling and retry logic."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the API, the pagination mechanism, the transformation schema, the DB driver, and the rate-limit strategy produces a complete ingestion script.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Partition strategy prompt improvement",
+    "originalPrompt": "How should I partition my data in my data warehouse to make queries faster?",
+    "options": [
+      "Recommend a partitioning strategy for a 5TB events table in BigQuery. The most common query pattern filters by event_date (daily) and event_type (10 distinct values). Should I use date partitioning, clustering, or both? Justify with query cost impact and provide the CREATE TABLE statement.",
+      "What is the best way to partition my large events table in BigQuery?",
+      "Explain BigQuery partitioning and clustering and when to use each one and the performance and cost tradeoffs."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Providing the table size, the query pattern, the candidate strategies, and asking for cost impact + DDL produces a specific, justified recommendation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "fix_prompt",
+    "difficulty": "expert",
+    "title": "Real-time CDC pipeline prompt fix",
+    "originalPrompt": "We need to replicate database changes in real time. How do we do this?",
+    "options": [
+      "Design a Change Data Capture pipeline from PostgreSQL to a data warehouse using Debezium + Kafka. Address: enabling WAL replication in PostgreSQL, Kafka connector configuration for the orders and customers tables, handling schema changes without pipeline breakage, and exactly-once delivery semantics. Output: a Debezium connector JSON config and a 4-step setup checklist.",
+      "How do I replicate changes from my PostgreSQL database to my data warehouse in real time?",
+      "Explain CDC and database replication and what tools like Debezium and Kafka Connect are used for."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 120,
+    "hint": "Specifying the CDC tool, the source DB config change, the two tables, schema evolution handling, and delivery semantics produces a complete pipeline design.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "beginner",
+    "title": "Secrets management prompt improvement",
+    "originalPrompt": "How do I make sure I'm not accidentally exposing secrets in my code?",
+    "options": [
+      "Audit this GitHub repository for exposed secrets. Check: hardcoded API keys, passwords in config files, .env files committed to git, and AWS credentials in code. Use git log to check history. Provide a shell command to scan with truffleHog and a pre-commit hook to prevent future leaks.",
+      "Help me check if I have any secrets or credentials exposed in my code repository.",
+      "Tell me about secrets management best practices and how to store and rotate credentials securely."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Naming the four leak patterns, the scanning tool, and asking for both a scan command and a preventive hook produces actionable security hygiene steps.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "API authentication review prompt fix",
+    "originalPrompt": "Review the security of how my API handles authentication.",
+    "options": [
+      "Review this API authentication implementation for security issues. Check: JWT signature verification (HS256 vs RS256), token expiry enforcement, refresh token rotation, and protection against replay attacks. Code: [paste]. Flag each issue with severity (Critical/High/Medium) and a one-line fix.",
+      "Check if my API authentication is secure.",
+      "Tell me about API authentication security best practices including JWT, OAuth, and API keys."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Naming the four specific auth checks, the algorithm consideration, and the severity + fix format produces a targeted security review of the implementation.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "intermediate",
+    "title": "Network troubleshooting guide prompt fix",
+    "originalPrompt": "Help me write a guide for troubleshooting network issues for our employees.",
+    "options": [
+      "Write a step-by-step network troubleshooting guide for remote employees experiencing VPN connectivity issues on Windows 11. Steps: 1) ping gateway, 2) check DNS resolution, 3) verify VPN client version, 4) flush DNS cache. Each step: command to run and what result indicates success or failure. Audience: non-technical users.",
+      "Create a guide for employees to follow when they have network problems.",
+      "Write a comprehensive network troubleshooting guide covering all types of network issues for different operating systems and device types."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Targeting a specific OS, issue type, and audience, and specifying the command + interpretation for each step produces a self-service guide employees can follow independently.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "fix_prompt",
+    "difficulty": "advanced",
+    "title": "Capacity planning prompt improvement",
+    "originalPrompt": "We need to plan for our IT infrastructure capacity going forward.",
+    "options": [
+      "Create a 12-month IT capacity plan for a 300-person company growing to 450. Project requirements for: laptop fleet (current: 320, 1 laptop/employee), SaaS licence seats (Slack, Google Workspace, Zoom), storage (current: 50TB, growing 30% YoY), and network bandwidth. Output: a table with current state, 6-month projection, and 12-month projection per resource.",
+      "Help us plan for our IT infrastructure needs over the next year.",
+      "Tell me about IT capacity planning and forecasting methods and what factors to consider when planning infrastructure for a growing company."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 100,
+    "hint": "Providing current headcount, growth target, the four resource categories with current baselines, and the two projection milestones produces a plan that finance can budget from.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best container security scanning prompt",
+    "originalPrompt": "You need to scan a Docker image for vulnerabilities before pushing to production.",
+    "options": [
+      "Scan my Docker image.",
+      "Scan the Docker image myapp:latest using Trivy. Report: Critical and High CVEs only, with package name, CVE ID, and fix version. Fail the CI build if any Critical CVEs are found. Show the Trivy CLI command and the CI failure condition.",
+      "Help me check my Docker images for security vulnerabilities and explain the different scanning tools available and how to integrate them into my pipeline."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming the tool, the image, the severity filter, the required fields, and the failure condition produces a CI security gate that is immediately implementable.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "DevOps & Infrastructure",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best SRE error budget policy prompt",
+    "originalPrompt": "Your SRE team needs to define an error budget policy for a new service.",
+    "options": [
+      "Explain error budgets to me.",
+      "Define an error budget policy for a new payment API. SLO: 99.9% availability (monthly). Error budget: 43.8 min/month. Policy: if budget is >50% consumed by week 2, freeze non-reliability feature work; if 100% consumed, halt all releases. Define the SLI measurement method (synthetic probes vs real-user traffic) and the review cadence.",
+      "What are SLOs, SLIs, and error budgets and how do they relate to each other and how does an error budget policy work?"
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Providing the SLO percentage, the calculated budget in minutes, the two policy trigger levels, and asking for the measurement method produces a complete, actionable SRE policy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best regression test suite selection prompt",
+    "originalPrompt": "You need to identify which tests to run in a time-boxed pre-release regression cycle.",
+    "options": [
+      "Tell me about regression testing strategies.",
+      "Create a risk-based regression test selection strategy for a 2-hour pre-release window. Input: 500 total test cases, deployment changes 3 microservices (payments, auth, notifications). Prioritise: smoke tests first (15 min), then tests covering changed services, then cross-service integration tests. Exclude: tests unrelated to changed components. Output: a prioritised test run order.",
+      "Help me decide which regression tests to run before our release to make sure we have good coverage without taking too long."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Providing the time budget, total test count, changed services, and a three-tier prioritisation produces an executable regression strategy.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best security testing prompt for APIs",
+    "originalPrompt": "Your QA team needs to add security testing to the API test suite.",
+    "options": [
+      "Add security tests to my API.",
+      "Write OWASP ZAP active scan configuration for the REST API at https://api-staging.example.com. Scan for: SQL injection, broken authentication (missing auth header handling), and IDOR (increment resource IDs in path parameters). Include: authentication setup using API key header, and a CI integration script that fails on High+ alerts.",
+      "Explain how to do API security testing and what vulnerabilities to look for and which tools to use."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Naming the tool, target URL, the three vulnerability types, the auth setup, and the CI failure threshold produces a security test configuration that is ready to run.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best Airflow DAG design prompt",
+    "originalPrompt": "You need to design an Airflow DAG for a daily data pipeline.",
+    "options": [
+      "Write an Airflow DAG.",
+      "Design an Airflow DAG for a daily ETL pipeline. Tasks: extract from S3 (PythonOperator), transform with pandas (PythonOperator), load to Redshift (S3ToRedshiftOperator). Schedule: 6am UTC. Dependencies: transform depends on extract, load depends on transform. Add: email alert on failure, and max_active_runs=1.",
+      "Help me set up an Apache Airflow workflow for my data pipeline that runs every day and does extraction, transformation, and loading."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Naming each task with its operator, the schedule, the dependency chain, and the failure alert produces a complete, functional DAG definition.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Data Engineering",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best data mesh implementation prompt",
+    "originalPrompt": "Your organisation wants to move from a centralised data warehouse to a data mesh architecture.",
+    "options": [
+      "What is data mesh?",
+      "Design a data mesh migration plan for a 500-person company with 5 domain teams (Finance, Sales, Product, Marketing, Engineering). Address: data product ownership model, federated governance (shared data catalogue using DataHub, quality SLAs), self-serve infrastructure (Snowflake data sharing), and a 4-quarter migration roadmap. Identify the top 2 organisational challenges and mitigations.",
+      "Tell me about data mesh principles and how companies have implemented it and what the benefits and challenges are compared to centralised data warehousing."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Providing the company scale, domain count, all four design pillars with specific tooling, and asking for an org-change risk analysis produces an expert migration plan.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "choose_best",
+    "difficulty": "intermediate",
+    "title": "Best secure code training prompt",
+    "originalPrompt": "You need to create a secure coding training exercise for your development team.",
+    "options": [
+      "Create security training for my developers.",
+      "Create a hands-on secure coding exercise for developers on SQL injection prevention. Include: a vulnerable Node.js code snippet (using string concatenation in a query), the attack payload that exploits it, and the fixed version using parameterised queries. Add 3 test cases to verify the fix. Level: intermediate.",
+      "Help me create a training programme for developers on application security covering injection attacks and authentication flaws and other common vulnerabilities."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 80,
+    "hint": "Providing the vulnerable snippet, the attack payload, and the fixed version with test cases makes a training exercise that is immediately usable in a code review workshop.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "choose_best",
+    "difficulty": "expert",
+    "title": "Best cloud security posture prompt",
+    "originalPrompt": "You need to improve the security posture of your AWS multi-account environment.",
+    "options": [
+      "How do I improve my AWS security?",
+      "Design a cloud security posture management (CSPM) strategy for a 20-account AWS organisation. Address: Security Hub aggregation with CIS AWS Foundations Benchmark, automated remediation for S3 public access blocks via AWS Config Rules, GuardDuty threat detection across all accounts, and cross-account IAM access review. Output: a prioritised 30/60/90-day hardening plan.",
+      "Tell me about AWS security services and how to use them to improve security across my AWS environment."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 120,
+    "hint": "Specifying the account count, the benchmark standard, four specific services with their functions, and a 30/60/90-day structure produces an actionable hardening roadmap.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "choose_best",
+    "difficulty": "beginner",
+    "title": "Best IT asset inventory prompt",
+    "originalPrompt": "You need to create a process for tracking IT assets across the organisation.",
+    "options": [
+      "Help me track IT assets.",
+      "Design an IT asset inventory process for 200 devices (laptops, monitors, phones). Include: asset fields to track (serial number, model, assigned user, purchase date, warranty expiry), the intake process for new devices, and a quarterly audit procedure. Format as a 3-section process document.",
+      "Tell me everything about IT asset management processes and what information to track and how to do regular audits and what tools to use."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 60,
+    "hint": "Specifying the device count, required fields, and the two process steps (intake + audit) produces a document that can be adopted immediately.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "IT Support & Operations",
+    "mode": "choose_best",
+    "difficulty": "advanced",
+    "title": "Best ITSM process design prompt",
+    "originalPrompt": "Your IT team needs to improve its change management process to reduce production incidents caused by uncontrolled changes.",
+    "options": [
+      "Improve our change management process.",
+      "Design an ITIL-aligned change management process for a 50-person IT team. Define: 3 change types (standard/normal/emergency) with approval workflows, a change advisory board (CAB) meeting cadence, a change request template (fields: description, risk, rollback plan, test evidence), and a KPI to measure process effectiveness (change success rate). Output: a process flowchart description.",
+      "Tell me about ITIL change management best practices and how to implement a change control process in an IT organisation."
+    ],
+    "correctOption": 1,
+    "rewardCoins": 100,
+    "hint": "Defining the three change types, CAB cadence, template fields, and a success KPI with a flowchart output produces a complete change management framework.",
+    "maxTokens": null
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "QA & Testing",
+    "mode": "token_budget",
+    "difficulty": "beginner",
+    "title": "Compact smoke test checklist prompt",
+    "originalPrompt": "Ask AI to create a smoke test checklist for a web application deployment.",
+    "options": [
+      "Create a 6-item smoke test checklist for a web app post-deployment. Cover: homepage loads (200 OK), user login, key API endpoint responds, database connectivity, third-party integrations (Stripe ping), and error page renders. Format: checkbox list with pass condition per item.",
+      "Can you create a smoke test checklist I can use after deploying my web application to make sure everything is working correctly?",
+      "Write smoke tests."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 60,
+    "hint": "Fixing the item count and naming each specific check with a pass condition produces a checklist that can be executed in under 5 minutes.",
+    "maxTokens": 75
+  },
+  {
+    "categoryId": "engineering_tech",
+    "subFunction": "Security & Compliance",
+    "mode": "token_budget",
+    "difficulty": "intermediate",
+    "title": "Compact access review checklist prompt",
+    "originalPrompt": "Ask AI to create a quarterly access review checklist.",
+    "options": [
+      "Create a quarterly user access review checklist for a SaaS company. 6 items covering: inactive accounts (no login >90 days), over-privileged roles, service account usage, MFA compliance, shared credentials, and offboarded employee cleanup. Format: checkbox with responsible owner per item.",
+      "I need a checklist for our quarterly access review process to make sure we are reviewing all user accounts and permissions across our systems.",
+      "Write access review checklist."
+    ],
+    "correctOption": 0,
+    "rewardCoins": 80,
+    "hint": "Listing the six specific access risks and adding a responsible owner per item makes the checklist assignable and auditable.",
+    "maxTokens": 75
+  }
+]
