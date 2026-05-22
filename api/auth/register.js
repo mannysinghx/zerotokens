@@ -61,6 +61,15 @@ export default async function handler(req, res) {
     return res.status(201).json({ message: 'Check your email to verify your account.' })
   } catch (err) {
     console.error('register error:', err)
-    return res.status(500).json({ error: err.message })
+    // Temporary SMTP debug — remove after diagnosis
+    const smtpDebug = {
+      smtpUserPresent:  !!process.env.SMTP_USER,
+      smtpUserLen:      (process.env.SMTP_USER  ?? '').length,
+      smtpPassPresent:  !!process.env.SMTP_PASSWORD,
+      smtpPassLen:      (process.env.SMTP_PASSWORD ?? '').length,
+      dbUrlPresent:     !!process.env.DATABASE_URL,
+      allSmtpKeys:      Object.keys(process.env).filter(k => k.startsWith('SMTP')),
+    }
+    return res.status(500).json({ error: err.message, smtpDebug })
   }
 }
