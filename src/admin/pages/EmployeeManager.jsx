@@ -1,19 +1,21 @@
 /**
  * EmployeeManager.jsx
  * Table of all registered employees with their current assignment.
- * Admin can assign/reassign courses.
+ * Admin can assign/reassign courses and disable/delete/change password.
  */
 import { useEffect, useState, useCallback } from 'react'
 import { adminFetchEmployees } from '../../utils/api.js'
 import { FIELD_CATEGORY_MAP } from '../../data/fieldCategories.js'
 import AssignmentModal from '../components/AssignmentModal.jsx'
+import UserActionModal from '../components/UserActionModal.jsx'
 
 export default function EmployeeManager({ password }) {
-  const [employees, setEmployees] = useState([])
-  const [loading,   setLoading]   = useState(true)
-  const [error,     setError]     = useState(null)
-  const [search,    setSearch]    = useState('')
-  const [modal,     setModal]     = useState(null)   // employee to assign
+  const [employees,   setEmployees]   = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [error,       setError]       = useState(null)
+  const [search,      setSearch]      = useState('')
+  const [modal,       setModal]       = useState(null)   // assign modal
+  const [actionModal, setActionModal] = useState(null)   // { user, action }
 
   const load = useCallback(() => {
     setLoading(true)
@@ -53,35 +55,36 @@ export default function EmployeeManager({ password }) {
       {error   && <p className="text-red-400 font-mono text-sm">Error: {error}</p>}
 
       {!loading && !error && (
-        <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden overflow-x-auto">
+          <table className="w-full text-sm min-w-[700px]">
             <thead>
               <tr className="border-b border-slate-800">
-                {['Employee', 'Company / Type', 'Assigned Course', 'Role', 'Joined', ''].map(h => (
+                {['Employee', 'Company', 'Assigned Course', 'Role', 'Joined', 'Actions'].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-xs uppercase tracking-wider text-slate-500 font-mono">{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {filtered.map(emp => {
-                const cat = emp.category_id ? FIELD_CATEGORY_MAP[emp.category_id] : null
+                const cat      = emp.category_id ? FIELD_CATEGORY_MAP[emp.category_id] : null
+                const disabled = emp.is_active === false
                 return (
-                  <tr key={emp.id} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                  <tr key={emp.id} className={`border-b border-slate-800/50 transition-colors ${disabled ? 'opacity-50' : 'hover:bg-slate-800/30'}`}>
                     <td className="px-4 py-3">
-                      <div className="font-mono text-slate-200">{emp.username}</div>
+                      <div className="font-mono text-slate-200 flex items-center gap-1.5">
+                        {disabled && <span title="Disabled">🔒</span>}
+                        {emp.username}
+                      </div>
                       <div className="text-xs text-slate-500 font-mono">{emp.email ?? '—'}</div>
-                      {!emp.email_verified && (
+                      {!emp.email_verified && !disabled && (
                         <span className="text-xs text-amber-500 font-mono">⏳ invite pending</span>
                       )}
+                      {disabled && <span className="text-xs text-amber-400 font-mono">account disabled</span>}
                     </td>
                     <td className="px-4 py-3 font-mono text-slate-400 text-sm">
                       {emp.company_name
                         ? <span className="text-cyan-400">{emp.company_name}</span>
                         : <span className="text-slate-700">—</span>}
-                      {' '}
-                      <span className="text-xs text-slate-600">
-                        ({emp.user_type === 'company' ? '🏢' : '🎮'})
-                      </span>
                     </td>
                     <td className="px-4 py-3">
                       {cat
@@ -106,12 +109,40 @@ export default function EmployeeManager({ password }) {
                       {emp.created_at ? new Date(emp.created_at).toLocaleDateString() : '—'}
                     </td>
                     <td className="px-4 py-3">
-                      <button
-                        onClick={() => setModal(emp)}
-                        className="text-xs px-3 py-1.5 rounded-lg bg-cyan-900/40 text-cyan-400 hover:bg-cyan-800/60 border border-cyan-800/60 font-mono transition-colors"
-                      >
-                        {cat ? 'Reassign' : 'Assign'}
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => setModal(emp)}
+                          title={cat ? 'Reassign course' : 'Assign course'}
+                          className="text-xs px-2.5 py-1 rounded-lg bg-cyan-900/40 text-cyan-400 hover:bg-cyan-800/60 border border-cyan-800/60 font-mono transition-colors"
+                        >
+                          {cat ? '↻' : '+'} Course
+                        </button>
+                        <button
+                          onClick={() => setActionModal({ user: emp, action: disabled ? 'enable' : 'disable' })}
+                          title={disabled ? 'Enable account' : 'Disable account'}
+                          className={`text-xs px-2.5 py-1 rounded-lg font-mono border transition-colors ${
+                            disabled
+                              ? 'bg-emerald-900/40 text-emerald-400 hover:bg-emerald-800/60 border-emerald-800/60'
+                              : 'bg-amber-900/40 text-amber-400 hover:bg-amber-800/60 border-amber-800/60'
+                          }`}
+                        >
+                          {disabled ? '✅' : '🔒'}
+                        </button>
+                        <button
+                          onClick={() => setActionModal({ user: emp, action: 'set-password' })}
+                          title="Change password"
+                          className="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200 border border-slate-700 font-mono transition-colors"
+                        >
+                          🔑
+                        </button>
+                        <button
+                          onClick={() => setActionModal({ user: emp, action: 'delete' })}
+                          title="Delete account"
+                          className="text-xs px-2.5 py-1 rounded-lg bg-red-900/30 text-red-400 hover:bg-red-800/50 border border-red-800/50 font-mono transition-colors"
+                        >
+                          🗑
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 )
@@ -134,6 +165,16 @@ export default function EmployeeManager({ password }) {
           password={password}
           onClose={() => setModal(null)}
           onSaved={load}
+        />
+      )}
+
+      {actionModal && (
+        <UserActionModal
+          user={actionModal.user}
+          action={actionModal.action}
+          password={password}
+          onClose={() => setActionModal(null)}
+          onSuccess={load}
         />
       )}
     </div>

@@ -143,6 +143,14 @@ export async function adminFetchIndividuals(password) {
   return request('/admin/individuals', { headers: adminHeaders(password) })
 }
 
+export async function adminManageUser(password, { userId, action, newPassword }) {
+  return request('/admin/user-manage', {
+    method:  'PATCH',
+    headers: adminHeaders(password),
+    body:    JSON.stringify({ userId, action, newPassword }),
+  })
+}
+
 // ── Legacy (kept for backward compat, no-op on server) ───────────────────────
 export async function upsertEmployee() {
   return { success: true }

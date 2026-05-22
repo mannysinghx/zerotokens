@@ -15,12 +15,15 @@ export default async function handler(request) {
   if (request.method !== 'GET') return jsonResponse({ error: 'Method not allowed' }, 405, request)
 
   try {
+    await sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS is_active BOOLEAN NOT NULL DEFAULT TRUE`
+
     const rows = await sql`
       SELECT
         u.id,
         u.email,
         u.username,
         u.email_verified,
+        u.is_active,
         u.created_at,
         ep.team,
         ep.role        AS profile_role,
