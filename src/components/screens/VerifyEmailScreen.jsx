@@ -55,7 +55,7 @@ export default function VerifyEmailScreen() {
       const data = await res.json()
       if (!res.ok || data.error) { setFormError(data.error ?? 'Failed to set password.'); return }
       useGameStore.getState().restoreFromSession(data.user, data.sessionToken)
-      goTo('landing')
+      window.location.href = '/'
     } catch { setFormError('Network error. Please try again.') } finally { setSaving(false) }
   }
 
