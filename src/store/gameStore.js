@@ -42,7 +42,9 @@ const useGameStore = create((set, get) => {
   const initialSave = loadSave()
   return {
     // ── Screen routing ──
-    screen: 'landing',   // landing | levelMap | game | boss | results | badges | fieldTraining
+    // Always start at the login gateway — no auto-login even with a stored token.
+    // The user must actively sign in every session.
+    screen: 'userType',
 
     // ── Auth state ──
     userId:          initialSave.userId          ?? null,
@@ -378,31 +380,25 @@ const useGameStore = create((set, get) => {
     // ── Auth actions ──────────────────────────────────────────────────────────
 
     /**
-     * Called on app boot. If a sessionToken is in localStorage, validate it
-     * against the server and restore DB state (game_state merges with local).
+     * Called on app boot. Validates any stored session token against the server.
+     * If the token has expired it is cleared from localStorage — silent cleanup only.
+     * The screen is NOT changed; the user always starts at userType and must
+     * actively sign in. Game state from the DB is merged into localStorage for
+     * use once the user does log in.
      */
     async restoreSession() {
       const save = loadSave()
       if (!save.sessionToken) return
       try {
         const { user } = await apiMe(save.sessionToken)
-        const dbState   = user.game_state ?? {}
-        const merged    = { ...save, ...dbState }
-        const updated   = {
-          ...merged,
-          userId:          user.id,
-          userType:        user.user_type,
-          email:           user.email,
-          companyId:       user.company_id  ?? null,
-          companyName:     user.company_name ?? null,
-          username:        user.username,
-          sessionToken:    save.sessionToken,
-          isAuthenticated: true,
-        }
-        writeSave(updated)
-        set({ ...updated, isAuthenticated: true })
+        // Merge DB game state into localStorage so it's ready after manual login,
+        // but keep the store screen at 'userType' — do NOT set isAuthenticated here.
+        const dbState = user.game_state ?? {}
+        const merged  = { ...save, ...dbState }
+        writeSave(merged)
+        // No set() — user must log in manually.
       } catch {
-        // Token expired or network error — quietly clear auth
+        // Token expired or server error — clear stored credentials.
         const cleared = { ...save, sessionToken: null, isAuthenticated: false }
         writeSave(cleared)
         set({ sessionToken: null, isAuthenticated: false })
