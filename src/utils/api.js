@@ -151,6 +151,36 @@ export async function adminManageUser(password, { userId, action, newPassword })
   })
 }
 
+// ── Company Admin ─────────────────────────────────────────────────────────────
+
+function coAdminHeaders(token) {
+  return { Authorization: `Bearer ${token}` }
+}
+
+export async function coAdminMe(token) {
+  return request('/company-admin/me', { headers: coAdminHeaders(token) })
+}
+
+export async function coAdminFetchEmployees(token) {
+  return request('/company-admin/employees', { headers: coAdminHeaders(token) })
+}
+
+export async function coAdminInviteEmployee(token, { email, username }) {
+  return request('/company-admin/invite', {
+    method: 'POST',
+    headers: coAdminHeaders(token),
+    body:   JSON.stringify({ email, username }),
+  })
+}
+
+export async function coAdminManageUser(token, { userId, action, newPassword }) {
+  return request('/company-admin/user-manage', {
+    method:  'PATCH',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ userId, action, newPassword }),
+  })
+}
+
 // ── Legacy (kept for backward compat, no-op on server) ───────────────────────
 export async function upsertEmployee() {
   return { success: true }

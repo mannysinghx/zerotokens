@@ -1,35 +1,44 @@
 /**
- * PATCH /api/admin/user-manage
+ * PATCH /api/company-admin/user-manage
  * Body: { userId, action, newPassword? }
  * Actions: 'disable' | 'enable' | 'delete' | 'set-password'
  *
- * Disable  — sets is_active = FALSE, kills all sessions
- * Enable   — sets is_active = TRUE
- * Delete   — removes user row (cascades to sessions/responses/assignments)
- * Set-pass — re-hashes password, kills all sessions to force re-login
- *
- * Requires x-admin-password header.
- * Edge runtime — uses Neon HTTP driver + Web Crypto for hashing.
+ * Company admin can only manage users in their own company.
+ * Promote/demote is reserved for super admin only.
+ * Edge runtime.
  */
-import { sql, jsonResponse, handleOptions, isAdmin } from '../_db.js'
-import { generateSalt, hashPassword } from '../_auth.js'
+import { sql, jsonResponse, handleOptions } from '../_db.js'
+import { getCompanyAdmin, generateSalt, hashPassword } from '../_auth.js'
 
 export const config = { runtime: 'edge' }
 
 export default async function handler(request) {
   if (request.method === 'OPTIONS') return handleOptions(request)
-  if (!isAdmin(request))            return jsonResponse({ error: 'Unauthorized' }, 401, request)
-  if (request.method !== 'PATCH')   return jsonResponse({ error: 'Method not allowed' }, 405, request)
+  if (request.method !== 'PATCH') return jsonResponse({ error: 'Method not allowed' }, 405, request)
 
   try {
+    const admin = await getCompanyAdmin(request)
+    if (!admin) return jsonResponse({ error: 'Unauthorized — company admin access required' }, 401, request)
+
     const { userId, action, newPassword } = await request.json()
 
     if (!userId) return jsonResponse({ error: 'userId is required' }, 400, request)
     if (!action) return jsonResponse({ error: 'action is required' }, 400, request)
 
-    // Ensure columns exist (idempotent — fast no-op after first run)
+    // Ensure is_active column exists
     await sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS is_active BOOLEAN NOT NULL DEFAULT TRUE`
-    await sql`ALTER TABLE employee_profiles ADD COLUMN IF NOT EXISTS is_company_admin BOOLEAN NOT NULL DEFAULT FALSE`
+
+    // Verify target user belongs to the same company
+    const targetRows = await sql`
+      SELECT ep.user_id
+      FROM   employee_profiles ep
+      WHERE  ep.user_id    = ${userId}
+        AND  ep.company_id = ${admin.company_id}
+      LIMIT  1
+    `
+    if (targetRows.length === 0) {
+      return jsonResponse({ error: 'Forbidden — user not in your company' }, 403, request)
+    }
 
     // ── disable ──────────────────────────────────────────────────────────────
     if (action === 'disable') {
@@ -46,8 +55,6 @@ export default async function handler(request) {
 
     // ── delete ───────────────────────────────────────────────────────────────
     if (action === 'delete') {
-      // ON DELETE CASCADE handles sessions, email_verifications,
-      // assignments, responses, employee_profiles
       await sql`DELETE FROM users WHERE id = ${userId}`
       return jsonResponse({ ok: true }, 200, request)
     }
@@ -67,27 +74,14 @@ export default async function handler(request) {
                updated_at    = NOW()
         WHERE  id = ${userId}
       `
-      // Force re-login on all devices
       await sql`DELETE FROM sessions WHERE user_id = ${userId}`
-      return jsonResponse({ ok: true }, 200, request)
-    }
-
-    // ── promote-admin ─────────────────────────────────────────────────────────
-    if (action === 'promote-admin') {
-      await sql`UPDATE employee_profiles SET is_company_admin = TRUE WHERE user_id = ${userId}`
-      return jsonResponse({ ok: true }, 200, request)
-    }
-
-    // ── demote-admin ──────────────────────────────────────────────────────────
-    if (action === 'demote-admin') {
-      await sql`UPDATE employee_profiles SET is_company_admin = FALSE WHERE user_id = ${userId}`
       return jsonResponse({ ok: true }, 200, request)
     }
 
     return jsonResponse({ error: `Unknown action: ${action}` }, 400, request)
 
   } catch (err) {
-    console.error('user-manage error:', err)
+    console.error('company-admin/user-manage error:', err)
     return jsonResponse({ error: err.message }, 500, request)
   }
 }

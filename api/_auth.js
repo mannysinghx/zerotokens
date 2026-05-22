@@ -96,3 +96,31 @@ export async function getUserIdFromToken(token) {
   `
   return rows[0]?.user_id ?? null
 }
+
+/**
+ * Validates Bearer token and confirms user is a company admin.
+ * Returns the user row (with company_id, is_company_admin) or null.
+ */
+export async function getCompanyAdmin(request) {
+  const header = request.headers.get('authorization') ?? ''
+  const token  = header.startsWith('Bearer ') ? header.slice(7).trim() : null
+  if (!token) return null
+
+  await sql`ALTER TABLE employee_profiles ADD COLUMN IF NOT EXISTS is_company_admin BOOLEAN NOT NULL DEFAULT FALSE`
+
+  const rows = await sql`
+    SELECT u.*,
+           ep.company_id, ep.team, ep.role, ep.is_company_admin,
+           c.name AS company_name,
+           s.expires_at AS session_expires
+    FROM   sessions s
+    JOIN   users             u  ON u.id  = s.user_id
+    JOIN   employee_profiles ep ON ep.user_id = u.id
+    JOIN   companies         c  ON c.id = ep.company_id
+    WHERE  s.token = ${token}
+      AND  s.expires_at > NOW()
+      AND  ep.is_company_admin = TRUE
+    LIMIT  1
+  `
+  return rows[0] ?? null
+}

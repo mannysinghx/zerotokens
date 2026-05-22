@@ -4,7 +4,7 @@
  * Admin can assign/reassign courses and disable/delete/change password.
  */
 import { useEffect, useState, useCallback } from 'react'
-import { adminFetchEmployees } from '../../utils/api.js'
+import { adminFetchEmployees, adminManageUser } from '../../utils/api.js'
 import { FIELD_CATEGORY_MAP } from '../../data/fieldCategories.js'
 import AssignmentModal from '../components/AssignmentModal.jsx'
 import UserActionModal from '../components/UserActionModal.jsx'
@@ -24,6 +24,18 @@ export default function EmployeeManager({ password }) {
       .catch(err => setError(err.message))
       .finally(() => setLoading(false))
   }, [password])
+
+  async function handleToggleAdmin(emp) {
+    const action = emp.is_company_admin ? 'demote-admin' : 'promote-admin'
+    const label  = emp.is_company_admin ? 'Remove company admin status' : 'Promote to company admin'
+    if (!window.confirm(`${label} for ${emp.username}?`)) return
+    try {
+      await adminManageUser(password, { userId: emp.id, action })
+      load()
+    } catch (err) {
+      alert(`Failed: ${err.message}`)
+    }
+  }
 
   useEffect(() => { load() }, [load])
 
@@ -73,6 +85,7 @@ export default function EmployeeManager({ password }) {
                     <td className="px-4 py-3">
                       <div className="font-mono text-slate-200 flex items-center gap-1.5">
                         {disabled && <span title="Disabled">🔒</span>}
+                        {emp.is_company_admin && <span title="Company Admin">👑</span>}
                         {emp.username}
                       </div>
                       <div className="text-xs text-slate-500 font-mono">{emp.email ?? '—'}</div>
@@ -142,6 +155,25 @@ export default function EmployeeManager({ password }) {
                         >
                           🗑
                         </button>
+                        {/* Promote / Demote company admin */}
+                        {emp.is_company_admin ? (
+                          <button
+                            onClick={() => handleToggleAdmin(emp)}
+                            title="Demote from company admin"
+                            className="text-xs px-2.5 py-1 rounded-lg bg-amber-900/30 text-amber-400 hover:bg-amber-800/50 border border-amber-800/50 font-mono transition-colors"
+                          >
+                            👑 Demote
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleToggleAdmin(emp)}
+                            title="Promote to company admin"
+                            className="text-xs px-2.5 py-1 rounded-lg font-mono border transition-colors"
+                            style={{ background: '#3b0764', borderColor: '#7c3aed55', color: '#c4b5fd' }}
+                          >
+                            🔑→👑 Make Admin
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>

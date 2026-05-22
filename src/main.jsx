@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
-const AdminApp      = lazy(() => import('./admin/AdminApp.jsx'))
-const VerifyEmail   = lazy(() => import('./components/screens/VerifyEmailScreen.jsx'))
+const AdminApp        = lazy(() => import('./admin/AdminApp.jsx'))
+const CompanyAdminApp = lazy(() => import('./company-admin/CompanyAdminApp.jsx'))
+const VerifyEmail     = lazy(() => import('./components/screens/VerifyEmailScreen.jsx'))
 
 const Loader = () => (
   <div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">
@@ -20,6 +21,15 @@ function Root() {
         <Route
           path="/admin/*"
           element={<Suspense fallback={<Loader />}><AdminApp /></Suspense>}
+        />
+        <Route
+          path="/company-admin/*"
+          element={
+            <div className="min-h-screen bg-slate-950 relative">
+              <div className="scanlines" />
+              <Suspense fallback={<Loader />}><CompanyAdminApp /></Suspense>
+            </div>
+          }
         />
         <Route
           path="/verify"

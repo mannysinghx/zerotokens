@@ -3,11 +3,13 @@
  * Shared modal for user admin actions: disable/enable/delete/set-password.
  *
  * Props:
- *   user       — { id, username, email, is_active }
- *   action     — 'disable' | 'enable' | 'delete' | 'set-password'
- *   password   — admin password
- *   onClose    — called on cancel or after success
- *   onSuccess  — called after a successful action
+ *   user              — { id, username, email, is_active }
+ *   action            — 'disable' | 'enable' | 'delete' | 'set-password'
+ *   password          — admin password (not required when onConfirmAction is provided)
+ *   onClose           — called on cancel or after success
+ *   onSuccess         — called after a successful action
+ *   onConfirmAction   — optional; if provided, called with { userId, action, newPassword? }
+ *                       instead of adminManageUser. Makes the modal reusable for company admin.
  */
 import { useState } from 'react'
 import { adminManageUser } from '../../utils/api.js'
@@ -43,7 +45,7 @@ const ACTION_META = {
   },
 }
 
-export default function UserActionModal({ user, action, password, onClose, onSuccess }) {
+export default function UserActionModal({ user, action, password, onClose, onSuccess, onConfirmAction }) {
   const [newPassword, setNewPassword] = useState('')
   const [saving,      setSaving]      = useState(false)
   const [error,       setError]       = useState('')
@@ -59,11 +61,16 @@ export default function UserActionModal({ user, action, password, onClose, onSuc
     setSaving(true)
     setError('')
     try {
-      await adminManageUser(password, {
+      const params = {
         userId:      user.id,
         action,
         newPassword: action === 'set-password' ? newPassword : undefined,
-      })
+      }
+      if (onConfirmAction) {
+        await onConfirmAction(params)
+      } else {
+        await adminManageUser(password, params)
+      }
       onSuccess?.()
       onClose()
     } catch (err) {
