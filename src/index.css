@@ -373,3 +373,196 @@ body.theme-retro {
 @media (max-width: 640px) {
   .prompt-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ── Print helpers (screen) ── */
+.print-only { display: none !important; }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PRINT / PDF  —  Certificate only
+   Everything with .no-print is hidden; .print-only becomes block.
+   The .certificate-print div renders a clean white professional document.
+───────────────────────────────────────────────────────────────────────────── */
+@media print {
+  /* Hide everything except the certificate */
+  body > *,
+  #root > * { display: none !important; }
+
+  /* Show the print certificate */
+  .certificate-print { display: block !important; }
+
+  /* Reset body for print */
+  body, html {
+    background: white !important;
+    color: black !important;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .print-only { display: block !important; }
+  .no-print   { display: none  !important; }
+
+  /* ── Certificate print layout ── */
+  .certificate-print {
+    position: fixed;
+    inset: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    z-index: 99999;
+  }
+
+  .cert-print-inner {
+    width: 740px;
+    max-width: 100%;
+    border: 3px solid #1e293b;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: white;
+    box-shadow: none;
+  }
+
+  .cert-header {
+    background: #0f172a;
+    color: white;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cert-logo {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #00d4ff;
+  }
+  .cert-platform {
+    font-size: 11px;
+    color: #94a3b8;
+    font-family: monospace;
+    letter-spacing: 1px;
+  }
+
+  .cert-body {
+    padding: 36px 48px;
+    text-align: center;
+  }
+
+  .cert-achievement-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 10px;
+  }
+
+  .cert-tier-badge {
+    font-family: 'Arial', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .cert-subtitle {
+    font-size: 12px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .cert-divider {
+    border: none;
+    border-top: 1px solid #cbd5e1;
+    margin: 20px auto;
+    width: 60%;
+  }
+
+  .cert-certifies {
+    font-size: 13px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .cert-name {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .cert-identity {
+    font-size: 12px;
+    color: #475569;
+    font-family: monospace;
+    margin-bottom: 18px;
+  }
+
+  .cert-statement {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+
+  .cert-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    max-width: 480px;
+  }
+
+  .cert-stat {
+    flex: 1;
+    padding: 12px 8px;
+    border-right: 1px solid #e2e8f0;
+    text-align: center;
+  }
+  .cert-stat:last-child { border-right: none; }
+
+  .cert-stat-value {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #0f172a;
+  }
+  .cert-stat-label {
+    font-size: 9px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    font-family: monospace;
+  }
+
+  .cert-date {
+    font-size: 11px;
+    color: #94a3b8;
+    font-family: monospace;
+    letter-spacing: 1px;
+  }
+
+  .cert-footer {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 14px 32px;
+    text-align: center;
+    font-size: 10px;
+    color: #94a3b8;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+}

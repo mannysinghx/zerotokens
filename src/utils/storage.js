@@ -18,6 +18,11 @@ const DEFAULT_SAVE = {
   sessions: 0,
   playerElo: 1000,          // Elo rating (starts at 1000)
   challengeProgress: {},    // SM-2 spaced repetition per challenge id
+  // ── Corporate fields ────────────────────────────────────────────────────
+  employeeId:    null,      // 'emp_<timestamp>' — generated on first registration
+  team:          null,      // optional team / department
+  company:       null,      // optional company / organisation
+  certifications: [],       // [{ tierId, name, earnedAt, avgScore, completedCount }]
 }
 
 // ── Active save ─────────────────────────────────────────────────────────────

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
 import { playClick, playLevelUp } from '../../utils/sound.js'
 import { VILLAINS, getVillainProgress } from '../../data/villains.js'
+import { getHighestTier } from '../../data/certifications.js'
+import CertBadge from '../ui/CertBadge.jsx'
 
 const features = [
   { icon: '✍️', title: 'Fix the Prompt',     desc: 'Rewrite wasteful AI prompts into lean, powerful ones.' },
@@ -16,6 +18,7 @@ function WelcomeBack() {
   const {
     username, coins, xp, streak, completedChallenges,
     totalTokensSaved, badges, sessions, joinedAt,
+    team, company, certifications = [], newCerts = [],
     startChallenge, goTo, soundEnabled, resetProgress, recordSession,
   } = useGameStore()
 
@@ -65,10 +68,22 @@ function WelcomeBack() {
             Welcome back,{' '}
             <span className="text-neon-blue neon-text">{username}</span>!
           </h1>
+          {/* Team + Company */}
+          {(team || company) && (
+            <p className="text-slate-400 text-sm font-mono mt-1">
+              {[team, company].filter(Boolean).join(' · ')}
+            </p>
+          )}
           {joinDate && (
             <p className="text-slate-600 text-xs font-mono mt-1">
-              Quest member since {joinDate} · Session #{sessions}
+              Member since {joinDate} · Session #{sessions}
             </p>
+          )}
+          {/* Highest cert earned */}
+          {getHighestTier(certifications) && (
+            <div className="flex justify-center mt-2">
+              <CertBadge tier={getHighestTier(certifications)} size="sm" />
+            </div>
           )}
         </motion.div>
 
@@ -133,6 +148,35 @@ function WelcomeBack() {
           )}
         </motion.div>
 
+        {/* New certification banner */}
+        <AnimatePresence>
+          {newCerts.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -8 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="card p-4 mb-4 border-neon-amber/40 bg-neon-amber/5 text-center"
+            >
+              <p className="text-neon-amber font-bold font-mono text-sm mb-2">
+                🎓 New Certificate Unlocked!
+              </p>
+              <div className="flex justify-center flex-wrap gap-2 mb-3">
+                {newCerts.map(c => {
+                  const tier = getHighestTier([c])
+                  return tier ? <CertBadge key={c.tierId} tier={tier} size="md" animate /> : null
+                })}
+              </div>
+              <button
+                className="btn-neon text-xs px-4 py-2"
+                style={{ borderColor: '#f59e0b', color: '#f59e0b' }}
+                onClick={() => { if (soundEnabled) playClick(); goTo('certifications') }}
+              >
+                🖨 View & Print Certificate
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -155,6 +199,29 @@ function WelcomeBack() {
             style={{ borderColor: '#ef4444', color: '#ef4444' }}
           >
             👾 Villains
+          </button>
+        </motion.div>
+
+        {/* Corporate action row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          className="flex gap-2 mb-4"
+        >
+          <button
+            className="btn-neon flex-1 text-xs py-2"
+            style={{ borderColor: '#f59e0b', color: '#f59e0b' }}
+            onClick={() => { if (soundEnabled) playClick(); goTo('certifications') }}
+          >
+            🎓 My Certifications
+          </button>
+          <button
+            className="btn-neon flex-1 text-xs py-2"
+            style={{ borderColor: '#10b981', color: '#10b981' }}
+            onClick={() => { if (soundEnabled) playClick(); goTo('leaderboard') }}
+          >
+            🏆 Team Leaderboard
           </button>
         </motion.div>
 
@@ -188,7 +255,9 @@ function WelcomeBack() {
                 <p className="text-sm text-slate-300">
                   ⚠️ This will wipe all coins, XP, badges, and challenge progress.
                   <br />
-                  <span className="text-slate-500 text-xs">Your name <strong>{username}</strong> will be kept.</span>
+                  <span className="text-slate-500 text-xs">
+                    Your name, team, company, and certifications will be kept.
+                  </span>
                 </p>
                 <div className="flex gap-2 justify-center">
                   <button
@@ -227,7 +296,7 @@ function FirstTimeLanding() {
 
   function handleStart() {
     if (soundEnabled) playLevelUp()
-    goTo('username')
+    goTo('register')   // → EmployeeRegistrationScreen (corporate onboarding)
   }
 
   return (

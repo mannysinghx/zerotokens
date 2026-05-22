@@ -83,6 +83,20 @@ export default function Header() {
             >
               📊 Stats
             </button>
+            <button
+              onClick={() => { playClick(); goTo('certifications') }}
+              className="btn-neon text-xs px-3 py-1.5 hidden sm:flex items-center gap-1"
+              style={{ borderColor: '#f59e0b', color: '#f59e0b' }}
+            >
+              🎓 Certs
+            </button>
+            <button
+              onClick={() => { playClick(); goTo('leaderboard') }}
+              className="btn-neon text-xs px-3 py-1.5 hidden sm:flex items-center gap-1"
+              style={{ borderColor: '#10b981', color: '#10b981' }}
+            >
+              🏆 Board
+            </button>
           </>
         )}
 

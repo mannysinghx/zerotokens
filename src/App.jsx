@@ -12,6 +12,10 @@ import BadgeShelfScreen  from './components/screens/BadgeShelfScreen.jsx'
 import VillainsScreen    from './components/screens/VillainsScreen.jsx'
 import UsernameScreen    from './components/screens/UsernameScreen.jsx'
 import AnalyticsScreen   from './components/screens/AnalyticsScreen.jsx'
+import EmployeeRegistrationScreen from './components/screens/EmployeeRegistrationScreen.jsx'
+import CertificationScreen  from './components/screens/CertificationScreen.jsx'
+import CertificateViewScreen from './components/screens/CertificateViewScreen.jsx'
+import LeaderboardScreen from './components/screens/LeaderboardScreen.jsx'
 
 export default function App() {
   const { screen, theme } = useGameStore()
@@ -42,8 +46,12 @@ export default function App() {
         {screen === 'results'  && <ResultsScreen  key="results"  />}
         {screen === 'badges'   && <BadgeShelfScreen key="badges"   />}
         {screen === 'villains' && <VillainsScreen   key="villains" />}
-        {screen === 'username' && <UsernameScreen   key="username" />}
-        {screen === 'stats'    && <AnalyticsScreen  key="stats"    />}
+        {screen === 'username'      && <UsernameScreen            key="username"      />}
+        {screen === 'register'      && <EmployeeRegistrationScreen key="register"      />}
+        {screen === 'stats'         && <AnalyticsScreen            key="stats"         />}
+        {screen === 'certifications'&& <CertificationScreen        key="certifications"/>}
+        {screen === 'certificate'   && <CertificateViewScreen      key="certificate"   />}
+        {screen === 'leaderboard'   && <LeaderboardScreen          key="leaderboard"   />}
       </AnimatePresence>
     </div>
   )

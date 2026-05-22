@@ -2,6 +2,9 @@ import { create } from 'zustand'
 import { loadSave, writeSave, updateStreak, archiveSession, logAttempt } from '../utils/storage.js'
 import { calcNewElo, ELO_START } from '../utils/elo.js'
 import { sm2Update, defaultProgress } from '../utils/spacedRepetition.js'
+import { checkCertifications } from '../data/certifications.js'
+import { addOrUpdateLeaderboard, buildSnapshot } from '../utils/leaderboard.js'
+import { loadArchive } from '../utils/storage.js'
 import challenges from '../data/challenges.json'
 
 const BADGES = [
@@ -57,8 +60,12 @@ const useGameStore = create((set, get) => {
     // ── Elo ──
     _lastEloDelta: 0,
 
-    // ── Newly unlocked badges this session ──
+    // ── Newly unlocked badges / certs this session ──
     newBadges: [],
+    newCerts:  [],
+
+    // ── Certificate to view ──
+    _certToView: null,
 
     // ── Persisted progress ──
     ...initialSave,
@@ -126,7 +133,30 @@ const useGameStore = create((set, get) => {
       const newBadges = checkBadges(updatedSave, { ...score, comboBonus })
       updatedSave.badges = [...(updatedSave.badges || []), ...newBadges]
 
+      // ── Certification check ─────────────────────────────────────────────
+      const allAttempts   = loadArchive().attempts || []
+      const liveAvgScore  = allAttempts.length
+        ? Math.round(allAttempts.reduce((s, a) => s + (a.totalScore ?? 0), 0) / allAttempts.length)
+        : Math.round(score.totalScore)
+      const newCertTiers  = checkCertifications(
+        { completedCount: newCompleted.length, avgScore: liveAvgScore },
+        updatedSave.certifications || [],
+      )
+      const newCertRecords = newCertTiers.map(t => ({
+        tierId:         t.id,
+        name:           t.name,
+        earnedAt:       new Date().toISOString(),
+        avgScore:       liveAvgScore,
+        completedCount: newCompleted.length,
+      }))
+      updatedSave.certifications = [...(updatedSave.certifications || []), ...newCertRecords]
+      // ────────────────────────────────────────────────────────────────────
+
       writeSave(updatedSave)
+
+      // ── Leaderboard snapshot ────────────────────────────────────────────
+      addOrUpdateLeaderboard(buildSnapshot(updatedSave, allAttempts))
+      // ────────────────────────────────────────────────────────────────────
 
       // ── Hidden training-data log (never shown to user) ──────────────────
       if (score._meta) {
@@ -160,6 +190,7 @@ const useGameStore = create((set, get) => {
         _lastEloDelta: eloDelta,
         lastScore: { ...score, comboBonus, finalCoins },
         newBadges,
+        newCerts: newCertRecords,
         screen: 'results',
       })
     },
@@ -242,6 +273,38 @@ const useGameStore = create((set, get) => {
       set({ username: trimmed, joinedAt: updated.joinedAt, sessions: updated.sessions, screen: 'landing' })
     },
 
+    // ── Corporate employee registration ──
+    setEmployee(name, team = null, company = null) {
+      const trimmed = name.trim().slice(0, 50)
+      if (!trimmed) return
+      const save = loadSave()
+      const now  = new Date().toISOString()
+      const updated = {
+        ...save,
+        username:   trimmed,
+        team:       team    || save.team    || null,
+        company:    company || save.company || null,
+        employeeId: save.employeeId || `emp_${Date.now()}`,
+        joinedAt:   save.joinedAt || now,
+        sessions:   (save.sessions || 0) + 1,
+      }
+      writeSave(updated)
+      set({
+        username:   updated.username,
+        team:       updated.team,
+        company:    updated.company,
+        employeeId: updated.employeeId,
+        joinedAt:   updated.joinedAt,
+        sessions:   updated.sessions,
+        screen:     'landing',
+      })
+    },
+
+    // ── View a specific certificate ──
+    viewCertificate(cert) {
+      set({ _certToView: cert, screen: 'certificate' })
+    },
+
     // Increment session counter when returning user resumes
     recordSession() {
       const save = loadSave()
@@ -262,13 +325,19 @@ const useGameStore = create((set, get) => {
       })
       // ────────────────────────────────────────────────────────────────────
 
-      // Preserve identity, reset gameplay
+      // Preserve identity (including corporate fields), reset gameplay
       const fresh = {
         username:    save.username,
         joinedAt:    save.joinedAt,
         sessions:    save.sessions,
         soundEnabled: save.soundEnabled,
         theme:       save.theme,
+        // ── Corporate identity — never wiped ──
+        employeeId:     save.employeeId     || null,
+        team:           save.team           || null,
+        company:        save.company        || null,
+        certifications: save.certifications || [],
+        // ── Gameplay reset ──
         coins: 0, xp: 0, level: 1,
         completedChallenges: [], badges: [],
         streak: 0, lastPlayedDate: null,
