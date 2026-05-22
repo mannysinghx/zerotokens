@@ -45,7 +45,6 @@ async function smtpSend({ from, to, subject, html, text }) {
   const port = parseInt(process.env.SMTP_PORT ?? '587')
   const user = (process.env.SMTP_USER    ?? '').trim()
   const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\\n/g, '').replace(/\s/g, '').trim()
-  console.log('[smtp-debug] user:', JSON.stringify(user), 'pass-len:', pass.length, 'pass-first4:', pass.slice(0,4), 'pass-last4:', pass.slice(-4))
 
   return new Promise((resolve, reject) => {
     const done  = (err) => err ? reject(err) : resolve()
