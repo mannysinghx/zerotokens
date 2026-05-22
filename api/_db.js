@@ -16,29 +16,48 @@ if (!connectionString) {
 export const sql = neon(connectionString)
 
 /**
- * CORS headers for all API responses
+ * Allowed CORS origins.
+ * Same-origin requests (app + API on same Vercel deployment) don't need this,
+ * but it's good practice for explicit security.
  */
-export const CORS = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+const ALLOWED_ORIGINS = new Set([
+  'https://www.zerotokens.ai',
+  'https://zerotokens.ai',
+  'http://localhost:5173',   // vite dev
+  'http://localhost:3000',   // vercel dev
+])
+
+/**
+ * Build CORS headers, reflecting the request's Origin if it's allowed.
+ */
+export function corsHeaders(request) {
+  const origin = request?.headers?.get('origin') ?? ''
+  const allowedOrigin = ALLOWED_ORIGINS.has(origin)
+    ? origin
+    : 'https://www.zerotokens.ai'
+  return {
+    'Access-Control-Allow-Origin':  allowedOrigin,
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-admin-password',
+    'Vary': 'Origin',
+  }
 }
 
 /**
  * Send a JSON response with proper headers
  */
-export function jsonResponse(data, status = 200) {
+export function jsonResponse(data, status = 200, request = null) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { 'Content-Type': 'application/json', ...CORS },
+    headers: { 'Content-Type': 'application/json', ...corsHeaders(request) },
   })
 }
 
 /**
  * Handle OPTIONS preflight requests
  */
-export function handleOptions() {
-  return new Response(null, { status: 204, headers: CORS })
+export function handleOptions(request) {
+  return new Response(null, { status: 204, headers: corsHeaders(request) })
 }
 
 /**

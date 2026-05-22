@@ -36,6 +36,7 @@ export default function AdminLogin({ onLogin }) {
             Token Quest Admin
           </h1>
           <p className="text-slate-500 text-sm font-mono">Enter your admin password to continue</p>
+          <p className="text-slate-700 text-xs font-mono mt-1">www.zerotokens.ai</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -62,7 +63,7 @@ export default function AdminLogin({ onLogin }) {
         </form>
 
         <p className="text-center text-xs text-slate-700 font-mono mt-6">
-          Set ADMIN_PASSWORD in your Vercel environment variables.
+          Token Quest · ZeroTokens.ai · Set ADMIN_PASSWORD in Vercel env vars.
         </p>
       </div>
     </div>
