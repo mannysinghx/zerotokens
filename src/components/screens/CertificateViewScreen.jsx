@@ -90,12 +90,17 @@ export default function CertificateViewScreen() {
         {/* Logo row */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <span className="text-2xl">🤖</span>
-          <span
-            className="font-black text-xl tracking-wider neon-text"
-            style={{ fontFamily: 'Exo 2', color: '#00d4ff' }}
-          >
-            TOKEN<span style={{ color: '#a855f7' }}>QUEST</span>
-          </span>
+          <div>
+            <span
+              className="font-black text-xl tracking-wider neon-text"
+              style={{ fontFamily: 'Exo 2', color: '#00d4ff' }}
+            >
+              TOKEN<span style={{ color: '#a855f7' }}>QUEST</span>
+            </span>
+            <div className="text-xs font-mono text-slate-500 tracking-widest">
+              by <span style={{ color: '#10b981' }}>ZeroTokens.ai</span>
+            </div>
+          </div>
         </div>
 
         {/* Certificate type */}
@@ -157,7 +162,7 @@ export default function CertificateViewScreen() {
 
         {/* Date */}
         <p className="text-xs text-slate-600 font-mono">Issued {earnedDate}</p>
-        <p className="text-xs text-slate-700 font-mono mt-1">TokenQuest Corporate Training Platform</p>
+        <p className="text-xs text-slate-700 font-mono mt-1">Token Quest by ZeroTokens.ai</p>
       </motion.div>
 
       {/* ── Print-only layer (white, clean, professional) ── */}
@@ -166,8 +171,8 @@ export default function CertificateViewScreen() {
 
           {/* Header bar */}
           <div className="cert-header">
-            <div className="cert-logo">🤖 TOKENQUEST</div>
-            <div className="cert-platform">AI Prompt Optimisation Training Platform</div>
+            <div className="cert-logo">🤖 TOKEN QUEST</div>
+            <div className="cert-platform">by ZeroTokens.ai · AI Prompt Optimisation Training</div>
           </div>
 
           <div className="cert-body">
@@ -221,7 +226,7 @@ export default function CertificateViewScreen() {
 
           {/* Footer */}
           <div className="cert-footer">
-            <div>TokenQuest Corporate Training · AI Prompt Optimisation</div>
+            <div>Token Quest by ZeroTokens.ai · AI Prompt Optimisation Training</div>
             <div>This certificate confirms successful completion of the {tier.name} training programme.</div>
           </div>
         </div>
