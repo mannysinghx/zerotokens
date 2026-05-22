@@ -1,12 +1,20 @@
 /**
  * AssignmentModal.jsx
  * Category → Sub-Function → Role dropdowns → Save assignment.
+ *
+ * Props:
+ *   employee    — { id, username, email?, company_name? }
+ *   password    — super-admin password (not required when onAssign is provided)
+ *   onAssign    — optional; async ({ userId, categoryId, subFunction, role }) => void
+ *                 when provided, replaces the default adminAssignEmployee call
+ *   onClose     — called on cancel or after success
+ *   onSaved     — called after a successful assignment
  */
 import { useState } from 'react'
 import { FIELD_CATEGORIES } from '../../data/fieldCategories.js'
 import { adminAssignEmployee } from '../../utils/api.js'
 
-export default function AssignmentModal({ employee, password, onClose, onSaved }) {
+export default function AssignmentModal({ employee, password, onClose, onSaved, onAssign }) {
   const [categoryId,   setCategoryId]   = useState('')
   const [subFunction,  setSubFunction]  = useState('')
   const [role,         setRole]         = useState('')
@@ -21,12 +29,17 @@ export default function AssignmentModal({ employee, password, onClose, onSaved }
     setSaving(true)
     setError('')
     try {
-      await adminAssignEmployee(password, {
+      const params = {
         userId:      employee.id,
         categoryId,
         subFunction: subFunction || null,
         role:        role        || null,
-      })
+      }
+      if (onAssign) {
+        await onAssign(params)
+      } else {
+        await adminAssignEmployee(password, params)
+      }
       onSaved?.()
       onClose()
     } catch (err) {

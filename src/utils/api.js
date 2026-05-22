@@ -181,6 +181,22 @@ export async function coAdminManageUser(token, { userId, action, newPassword }) 
   })
 }
 
+export async function coAdminAssignEmployee(token, { userId, categoryId, subFunction, role }) {
+  return request('/company-admin/assign', {
+    method:  'POST',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ userId, categoryId, subFunction, role }),
+  })
+}
+
+export async function coAdminResendInvite(token, { userId }) {
+  return request('/company-admin/resend-invite', {
+    method:  'POST',
+    headers: coAdminHeaders(token),
+    body:    JSON.stringify({ userId }),
+  })
+}
+
 // ── Legacy (kept for backward compat, no-op on server) ───────────────────────
 export async function upsertEmployee() {
   return { success: true }
