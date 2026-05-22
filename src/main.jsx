@@ -8,6 +8,7 @@ const AdminApp        = lazy(() => import('./admin/AdminApp.jsx'))
 const CompanyAdminApp = lazy(() => import('./company-admin/CompanyAdminApp.jsx'))
 const VerifyEmail     = lazy(() => import('./components/screens/VerifyEmailScreen.jsx'))
 const AboutScreen     = lazy(() => import('./components/screens/AboutScreen.jsx'))
+const ArcadeApp       = lazy(() => import('./arcade/ArcadeApp.jsx'))
 
 const Loader = () => (
   <div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">
@@ -46,6 +47,14 @@ function Root() {
           element={
             <div className="min-h-screen bg-slate-950 relative">
               <Suspense fallback={<Loader />}><AboutScreen /></Suspense>
+            </div>
+          }
+        />
+        <Route
+          path="/arcade"
+          element={
+            <div className="min-h-screen bg-black relative">
+              <Suspense fallback={<Loader />}><ArcadeApp /></Suspense>
             </div>
           }
         />
