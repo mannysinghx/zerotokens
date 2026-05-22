@@ -1,3 +1,4 @@
+// v2
 /**
  * POST /api/admin/invite
  * Body: { email, username, companyId }

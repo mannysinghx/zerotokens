@@ -1,3 +1,4 @@
+// v2
 /**
  * POST /api/auth/register
  * Register a new individual learner with email + password.
