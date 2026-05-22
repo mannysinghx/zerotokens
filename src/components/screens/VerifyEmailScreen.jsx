@@ -10,7 +10,7 @@ const Spinner = () => (
 )
 
 export default function VerifyEmailScreen() {
-  const { goTo } = useGameStore()
+  const { goTo, restoreFromSession } = useGameStore()
   const [status,    setStatus]    = useState('loading')
   const [apiError,  setApiError]  = useState('')
   const [token,     setToken]     = useState('')
@@ -27,8 +27,20 @@ export default function VerifyEmailScreen() {
       .then(r => r.json())
       .then(data => {
         if (data.error) { setStatus('error'); setApiError(data.error); return }
-        if (data.needsPassword) { setStatus('needsPassword') }
-        else { setStatus('verified'); setTimeout(() => goTo('companyLogin'), 2500) }
+        if (data.needsPassword) {
+          setStatus('needsPassword')
+        } else {
+          // Individual signup: server returned a session — log them in directly.
+          if (data.sessionToken && data.user) {
+            restoreFromSession(data.user, data.sessionToken)
+            setStatus('verified')
+            setTimeout(() => goTo('landing'), 2000)
+          } else {
+            // Company re-verify fallback (no session yet): send to login.
+            setStatus('verified')
+            setTimeout(() => goTo('companyLogin'), 2000)
+          }
+        }
       })
       .catch(() => { setStatus('error'); setApiError('Network error. Please try again.') })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -118,7 +130,7 @@ export default function VerifyEmailScreen() {
               <h2 className="text-xl font-black text-neon-red" style={{ fontFamily: 'Exo 2' }}>Verification Failed</h2>
               <p className="text-slate-400 font-mono text-sm leading-relaxed">{apiError || 'This link may have expired or is invalid.'}</p>
               <hr className="glow-divider" />
-              <button onClick={() => goTo('companyLogin')} className="btn-neon w-full text-sm">Back to Login</button>
+              <button onClick={() => goTo('userType')} className="btn-neon w-full text-sm">Back to Start</button>
             </motion.div>
           )}
         </AnimatePresence>

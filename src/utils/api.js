@@ -27,7 +27,7 @@ function adminHeaders(password) {
 
 // ── Auth ─────────────────────────────────────────────────────────────────────
 
-/** Register a new individual user. Returns { user, sessionToken }. */
+/** Register a new individual user. Returns { message } — no session until email is verified. */
 export async function apiRegister(username, email, password) {
   return request('/auth/register', {
     method: 'POST',

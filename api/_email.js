@@ -86,6 +86,58 @@ export async function sendInvitationEmail({ to, username, companyName, verifyTok
 }
 
 /**
+ * Send an email verification link to a self-registered individual user.
+ */
+export async function sendVerificationEmail({ to, username, verifyToken }) {
+  const link = `${APP_URL}/verify?token=${verifyToken}`
+  const transporter = getTransporter()
+  await transporter.sendMail({
+    from:    FROM,
+    to,
+    subject: 'Verify your Token Quest email',
+    html: `
+      <!DOCTYPE html>
+      <html>
+      <body style="font-family: Arial, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px;">
+        <div style="max-width: 480px; margin: 0 auto; background: #1e293b; border-radius: 16px; padding: 40px; border: 1px solid #334155;">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <div style="font-size: 48px;">🎮</div>
+            <h1 style="color: #00d4ff; font-size: 28px; margin: 8px 0;">TOKEN<span style="color: #a855f7">QUEST</span></h1>
+            <p style="color: #64748b; font-size: 12px; margin: 0;">by ZeroTokens.ai</p>
+          </div>
+
+          <h2 style="color: #f1f5f9; font-size: 20px; margin-bottom: 8px;">Hi ${username},</h2>
+          <p style="color: #94a3b8; line-height: 1.6;">
+            Thanks for signing up! Click the button below to verify your email address and start your Token Quest.
+          </p>
+
+          <div style="text-align: center; margin: 32px 0;">
+            <a href="${link}"
+               style="background: linear-gradient(90deg, #0284c7, #a855f7); color: white;
+                      text-decoration: none; padding: 14px 32px; border-radius: 12px;
+                      font-weight: bold; font-size: 16px; display: inline-block;">
+              ⚡ Verify Email & Play
+            </a>
+          </div>
+
+          <p style="color: #475569; font-size: 12px; line-height: 1.6;">
+            Or copy this link into your browser:<br/>
+            <a href="${link}" style="color: #00d4ff; word-break: break-all;">${link}</a>
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #334155; margin: 24px 0;" />
+          <p style="color: #334155; font-size: 11px; text-align: center; margin: 0;">
+            Token Quest · ZeroTokens.ai · This link expires in 24 hours.
+          </p>
+        </div>
+      </body>
+      </html>
+    `,
+    text: `Hi ${username},\n\nVerify your Token Quest email: ${link}\n\nThis link expires in 24 hours.\n\nToken Quest · ZeroTokens.ai`,
+  })
+}
+
+/**
  * Send a password reset email.
  */
 export async function sendPasswordResetEmail({ to, username, resetToken }) {

@@ -17,40 +17,21 @@
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion)
-[![Zustand](https://img.shields.io/badge/Zustand-4-brown?style=for-the-badge)](https://zustand-demo.pmnd.rs)
+[![Neon](https://img.shields.io/badge/Neon-PostgreSQL-00E5A0?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech)
+[![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![No API Keys](https://img.shields.io/badge/No_API_Keys-Required-brightgreen?style=for-the-badge)](https://github.com/mannysinghx/zerotokens)
-[![100% Client Side](https://img.shields.io/badge/100%25-Client--Side-blue?style=for-the-badge)](https://github.com/mannysinghx/zerotokens)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-ff69b4?style=for-the-badge)](https://github.com/mannysinghx/zerotokens/pulls)
 
 <br/>
 
-> **TokenQuest** is a browser-based gamified learning experience that teaches you to write lean, powerful AI prompts.
+> **TokenQuest** is a gamified learning platform that teaches you to write lean, powerful AI prompts.
 > Fight 11 token-waste villains, unlock 13 zero-waste superpowers, and climb the ranks from Beginner to Master.
-> Runs entirely in your browser — no account, no API key, no data leaves your device.
+> Available for **individual learners** (self-signup) and **corporate teams** (admin-managed with field training certification).
 
 <br/>
 
-[▶ Play Now](#-getting-started) · [🎮 Game Modes](#-game-modes) · [👾 Villain Roster](#-villain-roster) · [⚡ Powers](#-zero-waste-powers) · [🗂 Architecture](#-architecture)
-
-</div>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-| Landing | Game Screen | Results |
-|:---:|:---:|:---:|
-| ![Landing](docs/landing.png) | ![Game](docs/game.png) | ![Results](docs/results.png) |
-| **Welcome back** screen with live stats | **A/B/C choice cards** — pick the best prompt | **S-rank** with confetti + badge unlocks |
-
-| Villain Screen | Arsenal | Level Map |
-|:---:|:---:|:---:|
-| ![Villains](docs/villains.png) | ![Arsenal](docs/arsenal.png) | ![Map](docs/levelmap.png) |
-| 11 villains with HP bars | 13 unlockable zero-waste powers | 25 challenges across 6 levels |
+[▶ Play Now](https://www.zerotokens.ai) · [🎮 Game Modes](#-game-modes) · [🏗 Architecture](#-architecture) · [🔐 Auth System](#-authentication) · [🗄 Database](#-database-schema) · [⚙️ Setup](#-getting-started)
 
 </div>
 
@@ -64,18 +45,18 @@
 ├──────────────────────────┬──────────────────────────────────────────┤
 │  🎮  25 Challenges        │  6 difficulty levels (Beginner → Expert) │
 │  🎯  3 Game Modes         │  Fix Prompt / Choose Best / Token Budget  │
-│  👾  11 Villains          │  Each maps to specific prompt-waste traps │
+│  👾  11 Villains          │  Each maps to a specific prompt-waste trap│
 │  ⚡  13 Powers            │  Zero-waste architecture patterns         │
-│  🏅  12 Badges            │  Achievement system with conditions       │
+│  🏅  12 Badges            │  Achievement system with unlock conditions│
 │  🐉  Boss Battle          │  5-round HP gauntlet                      │
-│  🔥  Streak Tracking      │  Daily play streaks with rewards          │
-│  💥  Combo Multiplier     │  Chain correct answers for bonus coins    │
-│  👤  User Profiles        │  Username + session history               │
-│  💾  Persistent Progress  │  Full localStorage persistence            │
-│  🕵️  Hidden Archive       │  Every attempt logged for agent training  │
-│  🔊  Sound FX             │  Web Audio API synthesized effects        │
+│  🔥  Streak Tracking      │  Daily play streaks                       │
+│  💥  Combo Multiplier     │  Chain correct answers for bonus XP       │
+│  🔐  Full Auth System     │  Email verification, sessions, PBKDF2     │
+│  🏢  Corporate Mode       │  Admin panel, field training, cert reports│
+│  📊  Admin Dashboard      │  Stats, employee management, responses    │
+│  💾  Cloud Save           │  Game state synced to Neon PostgreSQL     │
+│  📬  Email Verification   │  Nodemailer + Gmail SMTP                  │
 │  🌟  Neon CRT Aesthetic   │  Starfield, scanlines, glow effects       │
-│  📱  Responsive           │  Mobile-first design                      │
 └──────────────────────────┴──────────────────────────────────────────┘
 ```
 
@@ -84,15 +65,9 @@
 ## 🎮 Game Modes
 
 ### ⚔️ Fix Prompt
-> *"The villain has corrupted this prompt with filler, vagueness, and repetition. Rewrite it."*
+You're shown a bloated prompt. Three rewritten versions appear as option cards. Pick the one that saves the most tokens while preserving full intent.
 
-You're shown a bloated, inefficient prompt. Three rewritten versions appear as option cards (A, B, C). Pick the one that:
-- Saves the most tokens
-- Preserves full intent
-- Uses clear action verbs, output formats, and specificity
-
-The **scoring engine** grades your pick across 4 dimensions:
-
+**Scoring (local heuristic engine — zero AI API calls):**
 ```
 Token Savings  ████████████████████████████████  40%
 Clarity        ████████████████████████          30%
@@ -100,92 +75,276 @@ Intent         ████████████████                 
 Specificity    ████████                          10%
 ```
 
----
-
 ### 🎯 Choose Best
-> *"Three prompts walk into a bar. Only one gets a useful answer."*
-
-Given a weak base prompt, three alternatives are presented. You must identify the one with:
-- A clear action verb
-- Specified output format (list, table, JSON…)
-- Constrained scope (word count, number of items, target audience)
-
----
+Three prompt variants for the same task. Identify the one with a clear action verb, specified output format, and constrained scope.
 
 ### ⏱️ Token Budget
-> *"Say everything you need to say — in under N tokens."*
-
-A bloated prompt is shown alongside a strict token budget. Three options display real-time token count pills:
+A bloated prompt + a strict token budget. Pick the option that fits within budget *and* covers all required concepts.
 
 ```
-  A  │ What is blockchain and how does it work in simple terms…  │ 17t ✗  ← OVER BUDGET
-  B  │ Blockchain for beginners.                                 │  4t ✓  ← Too vague
-  C  │ Summarize blockchain in simple terms for a beginner.      │ 11t ✓  ← CORRECT
+  A  │ What is blockchain and how does it work in simple terms…  │ 17t ✗  OVER BUDGET
+  B  │ Blockchain for beginners.                                 │  4t ✓  Too vague
+  C  │ Summarize blockchain in simple terms for a beginner.      │ 11t ✓  CORRECT
 ```
-
-Only one option fits the budget **and** covers all required concepts.
-
----
 
 ### 🐉 Boss Battle
-> *"The Token Boss has 100 HP. You have 5 rounds. Go."*
+5-round HP gauntlet. Each correct answer deals damage:
 
-A gauntlet of 5 advanced challenges back-to-back. Each correct answer deals damage:
-
-| Score | Damage | Message |
-|-------|--------|---------|
-| ≥ 85  | 30 HP  | CRITICAL HIT! 💥 |
-| ≥ 70  | 20 HP  | STRONG HIT! ⚡ |
-| ≥ 55  | 12 HP  | Good hit! ✨ |
-| ≥ 40  | 6 HP   | Weak hit… |
-| < 40  | 0 HP   | MISS! Boss attacks! 👾 |
+| Score | Damage |
+|-------|--------|
+| ≥ 85  | 30 HP — CRITICAL HIT! 💥 |
+| ≥ 70  | 20 HP — STRONG HIT! ⚡ |
+| ≥ 55  | 12 HP — Good hit ✨ |
+| ≥ 40  | 6 HP  — Weak hit |
+| < 40  | 0 HP  — MISS! |
 
 ---
 
 ## 👾 Villain Roster
 
-Each villain represents a **real token-waste behavior** observed in AI prompts. Defeat all challenges linked to a villain to unlock their corresponding Zero-Waste Power.
-
-| # | Villain | Emoji | Waste Pattern | Challenges | Power Unlocked |
-|---|---------|-------|---------------|------------|----------------|
-| 1 | **Verbosity Vampire** | 🧛 | Filler words, hedging language, excessive politeness | 1, 2, 9 | 🔪 Surgical Scalpel |
-| 2 | **Déjà Vu Demon** | 👁️ | Repeating the same instruction multiple times | 4, 6 | 🔄 Deduplication Shield |
-| 3 | **File Loop Phantom** | 👻 | Feeding entire files when only snippets are needed | 8, 14 | 📎 Surgical Context Clip |
-| 4 | **Memory Hoarder** | 🐘 | Dumping full conversation history unnecessarily | 13, 19 | 🗜️ Context Compressor |
-| 5 | **Context Goblin** | 👺 | Over-explaining background instead of stating the task | 5, 10 | 🎯 Zero-Shot Sniper |
-| 6 | **Overengineered Overlord** | 🤖 | Multi-step prompts that could be one clean request | 11, 18 | 🧩 Atomic Decomposer |
-| 7 | **Agent Anarchist** | 🔥 | Undefined agent loops with no exit conditions | 23, 25 | 🛑 Loop Breaker |
-| 8 | **Infinite Reflector** | ♾️ | Asking AI to evaluate its own outputs repeatedly | 21, 24 | 🪞 One-Pass Oracle |
-| 9 | **Analysis Paralytic** | 🧠 | Requesting exhaustive analysis when a summary suffices | 16, 22 | 📊 ROI Ranger |
-| 10 | **History Hog** | 📚 | Injecting irrelevant prior context into every prompt | 3, 7, 12, 17 | 🗂️ Sliding Window Warden |
-| 11 | **Overkill Oracle** | 💣 | Using 500-token prompts for tasks needing 20 | 15, 20 | ⚖️ Token Budget Master |
+| # | Villain | Waste Pattern | Power Unlocked |
+|---|---------|---------------|----------------|
+| 1 | 🧛 Verbosity Vampire | Filler words, hedging language | 🔪 Surgical Scalpel |
+| 2 | 👁️ Déjà Vu Demon | Repeating the same instruction | 🔄 Deduplication Shield |
+| 3 | 👻 File Loop Phantom | Feeding entire files unnecessarily | 📎 Surgical Context Clip |
+| 4 | 🐘 Memory Hoarder | Dumping full conversation history | 🗜️ Context Compressor |
+| 5 | 👺 Context Goblin | Over-explaining background | 🎯 Zero-Shot Sniper |
+| 6 | 🤖 Overengineered Overlord | Multi-step prompts that could be one | 🧩 Atomic Decomposer |
+| 7 | 🔥 Agent Anarchist | Undefined agent loops | 🛑 Loop Breaker |
+| 8 | ♾️ Infinite Reflector | AI evaluating its own outputs repeatedly | 🪞 One-Pass Oracle |
+| 9 | 🧠 Analysis Paralytic | Exhaustive analysis when a summary suffices | 📊 ROI Ranger |
+| 10 | 📚 History Hog | Injecting irrelevant prior context | 🗂️ Sliding Window Warden |
+| 11 | 💣 Overkill Oracle | 500-token prompts for 20-token tasks | ⚖️ Token Budget Master |
 
 ---
 
-## ⚡ Zero-Waste Powers
+## 🏗 Architecture
 
-Defeat villains to unlock these **13 architectural patterns** — the arsenal of a prompt engineer who never wastes a token.
+```
+TokenSaver/
+├── api/                          # Vercel serverless functions
+│   ├── _auth.js                  # PBKDF2 hashing, session tokens, getSessionUser
+│   ├── _db.js                    # Neon SQL client, CORS, admin auth header
+│   ├── _email.js                 # Nodemailer SMTP (verification + invites + reset)
+│   │
+│   ├── auth/
+│   │   ├── register.js           # POST — create individual account, send verify email
+│   │   ├── login.js              # POST — email + password login
+│   │   ├── verify-email.js       # POST — validate token, auto-login if password set
+│   │   ├── set-password.js       # POST — set password for invited employees
+│   │   ├── me.js                 # GET  — validate session, return user
+│   │   └── logout.js             # POST — delete session
+│   │
+│   ├── admin/
+│   │   ├── invite.js             # POST — create company employee, send invite email
+│   │   ├── employees.js          # GET  — list company employees (with profiles)
+│   │   ├── individuals.js        # GET  — list individual learners separately
+│   │   ├── companies.js          # GET/POST — manage companies
+│   │   ├── assign.js             # POST — assign employee to training category
+│   │   ├── responses.js          # GET  — view question responses (admin)
+│   │   └── stats.js              # GET  — dashboard stats split by user type
+│   │
+│   ├── employees/
+│   │   └── assignment.js         # GET  — fetch active training assignment for user
+│   │
+│   ├── game/
+│   │   └── progress.js           # POST — persist game_state to DB
+│   │
+│   ├── questions/
+│   │   └── field.js              # GET  — fetch randomised field-training questions
+│   │
+│   └── responses/
+│       └── save.js               # POST — save a completed question response
+│
+├── db/
+│   ├── schema.sql                # Legacy schema (categories, questions)
+│   ├── migration_002_auth.sql    # Auth tables (users, sessions, email_verifications)
+│   ├── migration_003_separate_users.sql  # Splits employee_profiles out of users
+│   └── migrate.js                # Migration runner script
+│
+├── src/                          # React frontend (Vite)
+│   ├── App.jsx                   # Screen router with AnimatePresence
+│   ├── store/gameStore.js        # Zustand — auth state + game progress
+│   ├── utils/
+│   │   ├── api.js                # All fetch calls to /api/* routes
+│   │   ├── storage.js            # localStorage helpers
+│   │   ├── scorer.js             # Local heuristic scoring engine
+│   │   └── elo.js / spacedRepetition.js / leaderboard.js
+│   └── components/
+│       ├── screens/
+│       │   ├── LandingScreen.jsx
+│       │   ├── UserTypeScreen.jsx          # individual vs company selector
+│       │   ├── IndividualSignupScreen.jsx  # sign up + login tabs
+│       │   ├── CompanyLoginScreen.jsx      # company employee login
+│       │   ├── VerifyEmailScreen.jsx       # email verification + password setup
+│       │   ├── EmployeeRegistrationScreen.jsx
+│       │   ├── LevelMapScreen.jsx
+│       │   ├── GameScreen.jsx
+│       │   ├── BossScreen.jsx
+│       │   └── ResultsScreen.jsx
+│       └── ui/  Header, Starfield, RobotGuide, ScoreRing, TokenMeter, CoinBurst
+│
+├── .env.local                    # Environment variables (never committed)
+└── vite.config.js
+```
 
-<details>
-<summary><strong>🔓 Click to expand full powers list</strong></summary>
+---
 
-| Power | Emoji | Concept | Unlocked By |
-|-------|-------|---------|-------------|
-| **Surgical Scalpel** | 🔪 | Reference only the relevant file section, not the whole file | Verbosity Vampire |
-| **Deduplication Shield** | 🔄 | State each instruction once; trust the model to remember it | Déjà Vu Demon |
-| **Surgical Context Clip** | 📎 | Pass a summarized diff or function signature, not the full source | File Loop Phantom |
-| **Context Compressor** | 🗜️ | Summarize prior turns into a compact state block before continuing | Memory Hoarder |
-| **Zero-Shot Sniper** | 🎯 | State the task directly with no preamble or backstory | Context Goblin |
-| **Atomic Decomposer** | 🧩 | Break complex multi-part requests into single-purpose prompts | Overengineered Overlord |
-| **Loop Breaker** | 🛑 | Define explicit exit conditions for every agent or agentic loop | Agent Anarchist |
-| **One-Pass Oracle** | 🪞 | Trust the first structured output; avoid reflexive re-evaluation | Infinite Reflector |
-| **Sliding Window Warden** | 🗂️ | Maintain only a rolling N-message window of conversation history | History Hog |
-| **Token Budget Master** | ⚖️ | Set explicit token limits per response in your prompt | Overkill Oracle |
-| **Schema Enforcer** | 📐 | Use JSON Schema or typed output to eliminate clarification rounds | Analysis Paralytic |
-| **The Watcher** | 👁️ | Monitor token usage across sessions to catch drift early | Always Active |
-| **ROI Ranger** | 📊 | Measure output quality per token to justify prompt investment | Always Active |
+## 🔐 Authentication
 
-</details>
+Two distinct user types share the same auth infrastructure but are stored in separate tables.
+
+### Individual Learners (self-service)
+
+```
+1. POST /api/auth/register
+   └─ Creates user (email_verified=FALSE), inserts email_verifications token
+   └─ Sends "Verify Email & Play" email (24-hour link)
+   └─ Returns { message } — NO session issued yet
+
+2. User clicks link → /verify?token=...
+   └─ POST /api/auth/verify-email
+   └─ Marks email_verified=TRUE, marks token used
+   └─ Creates 30-day session → returns { user, sessionToken }
+   └─ Frontend auto-logs user in → landing screen
+
+3. Subsequent visits: session token in localStorage
+   └─ GET /api/auth/me validates against sessions table
+```
+
+### Company Employees (admin-invited)
+
+```
+1. Admin: POST /api/admin/invite { email, username, companyId }
+   └─ Creates user (user_type='company', email_verified=FALSE)
+   └─ Creates employee_profiles row (company_id)
+   └─ Sends "Accept Invitation" email (7-day link)
+
+2. Employee clicks link → /verify?token=...
+   └─ POST /api/auth/verify-email → { needsPassword: true }
+   └─ Employee sets password via VerifyEmailScreen form
+
+3. POST /api/auth/set-password { token, password }
+   └─ Hashes password (PBKDF2-SHA256, 100k iterations)
+   └─ Marks email_verified=TRUE, token used
+   └─ Creates session → returns { user, sessionToken }
+```
+
+### Session & Password Security
+
+| Mechanism | Detail |
+|-----------|--------|
+| Password hashing | PBKDF2-SHA256, 100,000 iterations, 16-byte random salt |
+| Session tokens | 96-char hex (48 random bytes via Web Crypto) |
+| Session storage | `sessions` table with 30-day expiry — server-side invalidation |
+| Verification tokens | `email_verifications` table — one-time use, time-limited |
+| CORS | Locked to `zerotokens.ai` + `localhost` in dev |
+
+---
+
+## 🗄 Database Schema
+
+Hosted on **Neon PostgreSQL** (serverless). Two migrations bring the full schema.
+
+### Core tables
+
+```sql
+-- Auth identity (shared by both user types)
+users (
+  id, email, username,
+  password_hash, password_salt,
+  user_type        TEXT  CHECK ('individual' | 'company'),
+  email_verified   BOOLEAN,
+  game_state       JSONB,
+  created_at, updated_at
+)
+
+-- Company-specific data — separated from users in migration 003
+employee_profiles (
+  id, user_id → users(id),
+  company_id → companies(id),
+  team, role,
+  created_at, updated_at
+)
+
+-- Auth sessions (30-day bearer tokens)
+sessions (
+  id, user_id → users(id),
+  token  TEXT UNIQUE,
+  expires_at TIMESTAMPTZ
+)
+
+-- One-time email verification tokens
+email_verifications (
+  id, user_id → users(id),
+  token  TEXT UNIQUE,
+  expires_at TIMESTAMPTZ,
+  used  BOOLEAN DEFAULT FALSE
+)
+
+-- Corporate company accounts
+companies (id, name, domain, created_at)
+
+-- Admin-assigned training categories per employee
+assignments (
+  id, user_id → users(id),
+  category_id, sub_function, role,
+  assigned_at, active BOOLEAN
+)
+
+-- Field training question responses
+responses (
+  id, user_id → users(id),
+  question_id → questions(id),
+  category_id, user_answer, correct_answer,
+  is_correct, total_score, grade, tokens_saved,
+  answered_at
+)
+```
+
+### Why `employee_profiles` is separate
+
+`users` is a clean auth table — email, password hash, verification state, game progress.
+Company-specific fields (`company_id`, `team`, `role`) live in `employee_profiles`, joined only when needed. Individual learners have **zero NULL columns** from corporate data.
+
+---
+
+## 📡 API Reference
+
+All routes live under `/api/`. Edge runtime unless noted.
+
+### Auth
+
+| Method | Route | Auth | Description |
+|--------|-------|------|-------------|
+| `POST` | `/api/auth/register` | — | Register individual user, send verify email |
+| `POST` | `/api/auth/login` | — | Email + password login |
+| `POST` | `/api/auth/verify-email` | — | Validate token; auto-login if password set |
+| `POST` | `/api/auth/set-password` | — | Set password for invited employee |
+| `GET`  | `/api/auth/me` | Bearer | Return current user from session |
+| `POST` | `/api/auth/logout` | Bearer | Invalidate session |
+
+### Game
+
+| Method | Route | Auth | Description |
+|--------|-------|------|-------------|
+| `POST` | `/api/game/progress` | Bearer | Persist `game_state` JSON to DB |
+| `GET`  | `/api/questions/field` | — | Random field-training questions by category |
+| `POST` | `/api/responses/save` | Bearer | Save a completed question response |
+| `GET`  | `/api/employees/assignment` | Bearer | Get active training assignment |
+
+### Admin (`x-admin-password` header required)
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `POST` | `/api/admin/invite` | Create employee + send invite email |
+| `GET`  | `/api/admin/employees` | List company employees (with profiles) |
+| `GET`  | `/api/admin/individuals` | List individual self-registered learners |
+| `GET`  | `/api/admin/companies` | List all companies with employee counts |
+| `POST` | `/api/admin/companies` | Create a company |
+| `POST` | `/api/admin/assign` | Assign employee to a training category |
+| `GET`  | `/api/admin/responses` | View responses (filterable by user/category) |
+| `GET`  | `/api/admin/stats` | Dashboard stats split by user type |
 
 ---
 
@@ -208,152 +367,94 @@ Defeat villains to unlock these **13 architectural patterns** — the arsenal of
 
 ---
 
-## 📊 Scoring Engine
+## 🔌 Tech Stack
 
-TokenQuest uses a **fully local, heuristic scoring engine** — zero AI API calls required.
-
-```js
-// src/utils/scorer.js
-
-totalScore =
-  savingsScore   × 0.40   // Token reduction vs. original
-  clarityScore   × 0.30   // Action verbs, output formats, tone, length constraints
-  intentScore    × 0.20   // Required concepts coverage
-  specificityScore × 0.10  // Structured output or length spec present
-
-grade = totalScore >= 90 ? 'S'
-      : totalScore >= 75 ? 'A'
-      : totalScore >= 60 ? 'B'
-      : totalScore >= 40 ? 'C' : 'D'
-```
-
-**Token estimation:** `estimateTokens(text) = Math.ceil(wordCount × 1.3)`
+| Layer | Technology | Notes |
+|-------|-----------|-------|
+| Frontend | React 18 + Vite 5 | Fast HMR, ESM native |
+| Styling | Tailwind CSS 3 | Custom neon palette |
+| Animation | Framer Motion 11 | Spring animations, `AnimatePresence` |
+| State | Zustand 4 | Auth + game state, localStorage sync |
+| Backend | Vercel Serverless | Edge + Node.js functions |
+| Database | Neon PostgreSQL | Serverless, HTTP-based via `@neondatabase/serverless` |
+| Auth | Custom sessions | PBKDF2-SHA256, bearer tokens, DB-backed sessions |
+| Email | Nodemailer + Gmail SMTP | Verification, invitations, password reset |
 
 ---
 
-## 🗂 Architecture
-
-```
-zerotokens/
-│
-├── index.html                    # Vite entry point
-├── vite.config.js                # Build config
-├── tailwind.config.js            # Neon color palette + custom keyframes
-│
-└── src/
-    ├── main.jsx                  # React root
-    ├── App.jsx                   # Screen router (AnimatePresence)
-    ├── index.css                 # Starfield, neon glow, CRT scanlines
-    │
-    ├── components/
-    │   ├── screens/
-    │   │   ├── LandingScreen.jsx     # First-time hero / Welcome-back dashboard
-    │   │   ├── UsernameScreen.jsx    # First-play username entry
-    │   │   ├── LevelMapScreen.jsx    # 25-challenge grid by level
-    │   │   ├── GameScreen.jsx        # Unified A/B/C choice UI (all modes)
-    │   │   ├── BossScreen.jsx        # 5-round HP boss gauntlet
-    │   │   ├── ResultsScreen.jsx     # Score + badge + villain damage reveal
-    │   │   ├── VillainsScreen.jsx    # Villain roster + powers arsenal
-    │   │   └── BadgeShelfScreen.jsx  # Achievement collection
-    │   │
-    │   └── ui/
-    │       ├── Header.jsx            # Nav bar with stats chips
-    │       ├── Starfield.jsx         # Animated CSS star particles
-    │       ├── RobotGuide.jsx        # Animated robot mascot + speech bubble
-    │       ├── ScoreRing.jsx         # Animated SVG grade ring
-    │       ├── TokenMeter.jsx        # Before/after token bar comparison
-    │       └── CoinBurst.jsx         # Coin particle burst animation
-    │
-    ├── data/
-    │   ├── challenges.json           # 25 challenges with A/B/C options
-    │   └── villains.js               # 11 villains + 13 powers + progress helpers
-    │
-    ├── store/
-    │   └── gameStore.js              # Zustand store — all game state + actions
-    │
-    └── utils/
-        ├── scorer.js                 # Local heuristic scoring (no API)
-        ├── tokenizer.js              # Word-count token estimator
-        ├── sound.js                  # Web Audio API synth effects
-        └── storage.js                # localStorage: active save + hidden archive
-```
-
----
-
-## 🧠 State & Persistence
-
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                        localStorage                              │
-├──────────────────────────┬───────────────────────────────────────┤
-│  token-quest-save        │  Active session (wiped on reset)      │
-│                          │  username, coins, xp, streak,         │
-│                          │  completedChallenges, badges,         │
-│                          │  totalTokensSaved, theme, sound       │
-├──────────────────────────┼───────────────────────────────────────┤
-│  token-quest-archive     │  Hidden — NEVER wiped                 │
-│                          │  ├─ sessions[]  ← full snapshot on    │
-│                          │  │              every reset           │
-│                          │  └─ attempts[]  ← every challenge     │
-│                          │                 submission with:      │
-│                          │                 originalPrompt        │
-│                          │                 userInput (picked)    │
-│                          │                 correctAnswer         │
-│                          │                 grade, score, tokens  │
-└──────────────────────────┴───────────────────────────────────────┘
-```
-
-> **Training Data Design:** Every challenge attempt is stored as a structured prompt-optimization pair. When integrated with a backend, `loadArchive()` from `storage.js` returns the full dataset ready for fine-tuning pipelines.
-
-```js
-// Example training record
-{
-  username:       "Token Hero",
-  challengeId:    1,
-  mode:           "fix_prompt",
-  villain:        "verbosity_vampire",
-  difficulty:     "beginner",
-  originalPrompt: "Can you please maybe help me write something kind of like...",
-  userInput:      "Write a concise professional email to my boss summarizing...",
-  correctAnswer:  "Write a concise professional email to my boss summarizing...",
-  isCorrect:      true,
-  totalScore:     100,
-  grade:          "S",
-  tokensSaved:    35,
-  _timestamp:     "2026-05-21T21:32:28.259Z"
-}
-```
-
----
-
-## 🚀 Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm 9+
+- A [Neon](https://neon.tech) PostgreSQL database
+- A Gmail account with an [App Password](https://support.google.com/accounts/answer/185833) for SMTP
+- [Vercel CLI](https://vercel.com/docs/cli) for local API development
 
-### Install & Run
+### 1 — Clone & install
 
 ```bash
-# Clone the repo
 git clone https://github.com/mannysinghx/zerotokens.git
 cd zerotokens
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
 ```
 
-Open **http://localhost:5173** in your browser.
+### 2 — Environment variables
 
-### Build for Production
+Create `.env.local` in the project root:
+
+```env
+# Neon database (get from Neon dashboard → Connection Details)
+DATABASE_URL=postgresql://user:pass@ep-xxx.neon.tech/neondb?sslmode=require
+POSTGRES_URL_NON_POOLING=postgresql://user:pass@ep-xxx.neon.tech/neondb?sslmode=require
+
+# Admin panel password (choose something secure)
+ADMIN_PASSWORD=your-admin-password
+
+# Gmail SMTP — use an App Password, not your account password
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=you@gmail.com
+SMTP_PASSWORD=xxxx xxxx xxxx xxxx
+SMTP_FROM=Token Quest <you@gmail.com>
+
+# Your deployment URL (used in email links)
+APP_URL=http://localhost:3000
+```
+
+### 3 — Run database migrations
+
+Open your [Neon SQL Editor](https://console.neon.tech) and run each migration in order:
+
+```bash
+# Or use the migration runner:
+node db/migrate.js       # migration 002 — auth system
+```
+
+For migration 003 (user data separation), run `db/migration_003_separate_users.sql` directly in the Neon dashboard SQL editor.
+
+### 4 — Start the development server
+
+```bash
+# Frontend only (no API)
+npm run dev
+
+# Frontend + API routes together (requires Vercel CLI)
+vercel dev
+```
+
+Open **http://localhost:5173** (Vite) or **http://localhost:3000** (Vercel dev).
+
+### 5 — Build for production
 
 ```bash
 npm run build       # outputs to /dist
-npm run preview     # preview the production build locally
+npm run preview     # preview production build locally
+```
+
+Deploy to Vercel:
+```bash
+vercel --prod
 ```
 
 ---
@@ -372,80 +473,54 @@ Neon Red     #ef4444   ████   Villains, errors, over-budget
 
 ### Typography
 
-- **Display:** Exo 2 (Google Fonts) — headings, titles, logo
-- **Mono:** JetBrains Mono (Google Fonts) — stats, scores, prompts
+- **Display:** Exo 2 — headings, titles, logo
+- **Mono:** JetBrains Mono — stats, scores, prompts, code
 
 ### Visual Effects
 
 | Effect | Implementation |
-|--------|---------------|
+|--------|----------------|
 | Starfield | 80 CSS `<div>` particles with `--dur` / `--op` custom properties |
-| Neon glow | `text-shadow` + `box-shadow` CSS utility classes |
+| Neon glow | `text-shadow` + `box-shadow` utility classes |
 | CRT scanlines | Repeating linear-gradient overlay at 2px intervals |
-| Glitch | CSS `@keyframes glitch` with clip-path animation |
 | Screen transitions | Framer Motion `AnimatePresence` with slide + fade |
 | Confetti | `canvas-confetti` on S/A grade results |
-| Sound FX | Web Audio API oscillator synthesis (no audio files) |
-
----
-
-## 🔌 Tech Stack
-
-| Layer | Library | Version | Why |
-|-------|---------|---------|-----|
-| UI Framework | React | 18 | Concurrent features, hooks |
-| Build Tool | Vite | 5 | Fast HMR, ESM native |
-| Styling | Tailwind CSS | 3 | Utility-first, custom design tokens |
-| Animation | Framer Motion | 11 | Declarative spring animations |
-| State | Zustand | 4 | Minimal boilerplate, devtools-ready |
-| Confetti | canvas-confetti | latest | Lightweight canvas burst |
-| Fonts | Google Fonts | — | Exo 2 + JetBrains Mono |
-
-**Zero runtime dependencies** beyond the above. No AI API. No backend. No auth.
+| Sound FX | Web Audio API oscillator synthesis — no audio files |
 
 ---
 
 ## 🗺️ Roadmap
 
-- [ ] **Leaderboard** — sync scores to Supabase / PocketBase
-- [ ] **Daily Challenge** — one fresh prompt per day with global rankings
-- [ ] **Custom Challenges** — community-submitted villain patterns
-- [ ] **Training Export** — one-click CSV/JSONL export of the hidden archive for fine-tuning
-- [ ] **Backend API** — flush `token-quest-archive` to a database for agent training pipelines
-- [ ] **PWA** — installable offline-first app
-- [ ] **More Villains** — multimodal waste patterns (image tokens, audio transcripts)
-- [ ] **Dark / Light themes** — additional color palettes
+- [x] Gamified prompt learning (25 challenges, 3 modes, boss battle)
+- [x] Full authentication — email verification, PBKDF2, 30-day sessions
+- [x] Corporate mode — admin panel, company management, employee invites
+- [x] Field training — category assignments, question bank, response tracking
+- [x] Separated data model — `employee_profiles` decoupled from `users`
+- [x] Cloud save — game state persisted to Neon
+- [ ] Daily Challenge — one fresh prompt per day with global rankings
+- [ ] Custom Challenges — community-submitted villain patterns
+- [ ] Training Export — one-click CSV/JSONL export for fine-tuning pipelines
+- [ ] PWA — installable offline-first app
+- [ ] More Villains — multimodal waste patterns (image tokens, audio)
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first.
+Pull requests are welcome. For major changes please open an issue first.
 
 ```bash
-# Fork → clone → branch
 git checkout -b feature/my-villain
-
-# Make changes, then
-npm run dev     # verify locally
+npm run dev        # verify locally
 git commit -m "feat: add The Emoji Spammer villain"
 git push origin feature/my-villain
 # → open PR
 ```
 
-### Adding a New Challenge
+### Adding a challenge
 
-1. Add an entry to `src/data/challenges.json`
-2. Set `mode` to `fix_prompt`, `choose_best`, or `token_budget`
-3. Add exactly 3 `options` — one `correctOption` index, two distractors
-4. Set a `villain` id from `src/data/villains.js`
-5. That's it — the game engine handles everything else
-
-### Adding a New Villain
-
-1. Add to the `VILLAINS` array in `src/data/villains.js`
-2. Link `challengeIds` to your new challenges
-3. Set a `power` id that matches an entry in `POWERS`
+1. Add an entry to `src/data/challenges.json` with `mode`, 3 `options`, `correctOption`, and `villain`
+2. The game engine handles everything else automatically
 
 ---
 
@@ -459,7 +534,7 @@ MIT © [mannysinghx](https://github.com/mannysinghx)
 
 **Built with 🤖 + ⚡ to make every token count.**
 
-*No login · No API keys · 100% client-side · Open source*
+*Live at [zerotokens.ai](https://www.zerotokens.ai)*
 
 [![GitHub stars](https://img.shields.io/github/stars/mannysinghx/zerotokens?style=social)](https://github.com/mannysinghx/zerotokens)
 [![GitHub forks](https://img.shields.io/github/forks/mannysinghx/zerotokens?style=social)](https://github.com/mannysinghx/zerotokens/fork)

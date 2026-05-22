@@ -21,9 +21,11 @@ export default async function handler(request) {
 
     // Find the verification record
     const rows = await sql`
-      SELECT ev.*, u.id AS uid, u.email, u.username, u.user_type, u.company_id
+      SELECT ev.*, u.id AS uid, u.email, u.username, u.user_type,
+             ep.company_id
       FROM   email_verifications ev
       JOIN   users u ON u.id = ev.user_id
+      LEFT JOIN employee_profiles ep ON ep.user_id = u.id
       WHERE  ev.token = ${token}
         AND  ev.used  = FALSE
       LIMIT  1
@@ -51,9 +53,12 @@ export default async function handler(request) {
 
     // Fetch full user (with company name)
     const userRows = await sql`
-      SELECT u.*, c.name AS company_name
+      SELECT u.*,
+             ep.company_id, ep.team, ep.role,
+             c.name AS company_name
       FROM   users u
-      LEFT JOIN companies c ON c.id = u.company_id
+      LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+      LEFT JOIN companies         c  ON c.id       = ep.company_id
       WHERE  u.id = ${v.uid}
       LIMIT  1
     `

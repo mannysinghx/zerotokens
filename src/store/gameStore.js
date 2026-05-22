@@ -466,22 +466,8 @@ const useGameStore = create((set, get) => {
      */
     async register(username, email, password) {
       try {
-        const { user, sessionToken } = await apiRegister(username, email, password)
-        const save    = loadSave()
-        const updated = {
-          ...save,
-          userId:          user.id,
-          userType:        user.user_type,
-          email:           user.email,
-          companyId:       null,
-          companyName:     null,
-          username:        user.username,
-          sessionToken,
-          isAuthenticated: true,
-        }
-        writeSave(updated)
-        set({ ...updated, isAuthenticated: true })
-        return { success: true }
+        await apiRegister(username, email, password)
+        return { success: true, needsVerification: true }
       } catch (err) {
         return { success: false, error: err.message }
       }

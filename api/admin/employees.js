@@ -1,6 +1,8 @@
 /**
  * GET /api/admin/employees
- * Returns all users with their latest assignment and company info.
+ * Returns company employees only (user_type = 'company') with their
+ * company profile, latest assignment, and company name.
+ * Individual learners are excluded — use /api/admin/individuals for those.
  * Requires x-admin-password header.
  */
 import { sql, jsonResponse, handleOptions, isAdmin } from '../_db.js'
@@ -18,26 +20,29 @@ export default async function handler(request) {
         u.id,
         u.email,
         u.username,
-        u.user_type,
-        u.team,
         u.email_verified,
         u.created_at,
-        c.name   AS company_name,
+        ep.team,
+        ep.role        AS profile_role,
+        c.name         AS company_name,
+        c.id           AS company_id,
         a.category_id,
         a.sub_function,
-        a.role,
+        a.role         AS assigned_role,
         a.assigned_at,
-        cat.name AS category_name_assigned
-      FROM users u
-      LEFT JOIN companies c ON c.id = u.company_id
-      LEFT JOIN LATERAL (
+        cat.name       AS category_name_assigned
+      FROM   users u
+      INNER JOIN employee_profiles ep ON ep.user_id = u.id
+      INNER JOIN companies         c  ON c.id       = ep.company_id
+      LEFT  JOIN LATERAL (
         SELECT * FROM assignments
-        WHERE user_id = u.id AND active = TRUE
-        ORDER BY assigned_at DESC
-        LIMIT 1
+        WHERE  user_id = u.id AND active = TRUE
+        ORDER  BY assigned_at DESC
+        LIMIT  1
       ) a ON TRUE
       LEFT JOIN categories cat ON cat.id = a.category_id
-      ORDER BY u.created_at DESC
+      WHERE  u.user_type = 'company'
+      ORDER  BY c.name ASC, u.created_at DESC
     `
 
     return jsonResponse({ employees: rows }, 200, request)

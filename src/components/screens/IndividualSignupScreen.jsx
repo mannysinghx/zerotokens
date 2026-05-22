@@ -36,15 +36,16 @@ function ErrorMsg({ error }) {
 
 export default function IndividualSignupScreen() {
   const { goTo, login, register } = useGameStore()
-  const [mode, setMode]     = useState('signup')
-  const [un,   setUn]       = useState('')
-  const [em,   setEm]       = useState('')
-  const [pw,   setPw]       = useState('')
-  const [cpw,  setCpw]      = useState('')
-  const [lem,  setLem]      = useState('')
-  const [lpw,  setLpw]      = useState('')
-  const [err,  setErr]      = useState('')
+  const [mode, setMode]       = useState('signup')
+  const [un,   setUn]         = useState('')
+  const [em,   setEm]         = useState('')
+  const [pw,   setPw]         = useState('')
+  const [cpw,  setCpw]        = useState('')
+  const [lem,  setLem]        = useState('')
+  const [lpw,  setLpw]        = useState('')
+  const [err,  setErr]        = useState('')
   const [loading, setLoading] = useState(false)
+  const [sentTo,  setSentTo]  = useState('')
 
   const strength = pw ? pwStrength(pw) : null
   const [sColor, sBars, sLabel] = strength ? STRENGTH[strength] : []
@@ -61,7 +62,8 @@ export default function IndividualSignupScreen() {
     setErr(''); setLoading(true)
     try {
       const r = await register(un.trim(), em.trim(), pw, 'individual')
-      r?.success ? goTo('landing') : setErr(r?.error ?? 'Registration failed.')
+      if (r?.success) { setSentTo(em.trim()) }
+      else { setErr(r?.error ?? 'Registration failed.') }
     } catch { setErr('Something went wrong.') } finally { setLoading(false) }
   }
 
@@ -94,56 +96,79 @@ export default function IndividualSignupScreen() {
           <p className="text-slate-500 text-sm font-mono">{mode === 'signup' ? 'Create your free account' : 'Welcome back'}</p>
         </div>
 
-        {/* Mode tabs */}
-        <div className="flex gap-1 mb-5 bg-slate-900 border border-slate-800 rounded-xl p-1">
-          {['signup', 'login'].map(m => (
-            <button key={m} type="button" onClick={() => { setMode(m); setErr('') }}
-              className="flex-1 py-2 rounded-lg text-sm font-mono font-bold transition-all"
-              style={{ background: mode === m ? 'linear-gradient(135deg,#0284c7,#7c3aed)' : 'transparent', color: mode === m ? '#fff' : '#64748b' }}>
-              {m === 'signup' ? 'Sign Up' : 'Log In'}
-            </button>
-          ))}
-        </div>
-
-        <AnimatePresence mode="wait">
-          {mode === 'signup' ? (
-            <motion.form key="signup" initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 12 }}
-              onSubmit={handleSignup} className="card p-6 space-y-4">
-              <Field label="Username" type="text" value={un} onChange={e => { setUn(e.target.value); clr() }} placeholder="TokenHunter" autoFocus autoComplete="username" />
-              <Field label="Email" type="email" value={em} onChange={e => { setEm(e.target.value); clr() }} placeholder="you@example.com" autoComplete="email" />
-              <div>
-                <Field label="Password" type="password" value={pw} onChange={e => { setPw(e.target.value); clr() }} placeholder="Min 8 characters" autoComplete="new-password" />
-                {strength && (
-                  <div className="mt-2 space-y-1">
-                    <div className="flex gap-1">
-                      {[1, 2, 3].map(i => <div key={i} className="flex-1 h-1.5 rounded-full transition-all" style={{ background: i <= sBars ? sColor : 'rgba(255,255,255,0.08)' }} />)}
-                    </div>
-                    <p className="text-xs font-mono" style={{ color: sColor }}>{sLabel}</p>
-                  </div>
-                )}
-              </div>
-              <Field label="Confirm Password" type="password" value={cpw} onChange={e => { setCpw(e.target.value); clr() }} placeholder="Repeat password" autoComplete="new-password"
-                extra={{ borderColor: cpw && cpw !== pw ? 'var(--neon-red)' : undefined }} />
-              {cpw && cpw !== pw && <p className="text-neon-red text-xs font-mono -mt-2">Passwords do not match.</p>}
-              <ErrorMsg error={err} />
-              <button type="submit" disabled={loading} className="btn-primary w-full disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none">
-                {loading ? 'Creating account…' : '⚡ Create Free Account'}
+        {/* Email sent confirmation */}
+        <AnimatePresence>
+          {sentTo && (
+            <motion.div key="sent" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+              className="card p-8 text-center space-y-4">
+              <div className="text-5xl">📬</div>
+              <h2 className="text-xl font-black text-neon-green neon-text" style={{ fontFamily: 'Exo 2' }}>Check Your Email</h2>
+              <p className="text-slate-400 text-sm font-mono leading-relaxed">
+                We sent a verification link to<br/>
+                <span className="text-neon-blue">{sentTo}</span>
+              </p>
+              <p className="text-slate-600 text-xs font-mono">Click the link to verify your account and start playing. The link expires in 24 hours.</p>
+              <hr className="glow-divider" />
+              <button onClick={() => { setSentTo(''); setMode('login') }}
+                className="btn-neon w-full text-sm">
+                Already verified? Log In
               </button>
-              <p className="text-center text-xs text-slate-700 font-mono">Free forever · No credit card needed</p>
-            </motion.form>
-          ) : (
-            <motion.form key="login" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }}
-              onSubmit={handleLogin} className="card p-6 space-y-4">
-              <Field label="Email" type="email" value={lem} onChange={e => { setLem(e.target.value); clr() }} placeholder="you@example.com" autoFocus autoComplete="email" />
-              <Field label="Password" type="password" value={lpw} onChange={e => { setLpw(e.target.value); clr() }} placeholder="••••••••" autoComplete="current-password" />
-              <ErrorMsg error={err} />
-              <button type="submit" disabled={loading || !lem.trim() || !lpw}
-                className="btn-primary w-full disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none">
-                {loading ? 'Signing in…' : '⚡ Log In'}
-              </button>
-            </motion.form>
+            </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Mode tabs + forms — hidden once verification email is sent */}
+        {!sentTo && (<>
+          <div className="flex gap-1 mb-5 bg-slate-900 border border-slate-800 rounded-xl p-1">
+            {['signup', 'login'].map(m => (
+              <button key={m} type="button" onClick={() => { setMode(m); setErr('') }}
+                className="flex-1 py-2 rounded-lg text-sm font-mono font-bold transition-all"
+                style={{ background: mode === m ? 'linear-gradient(135deg,#0284c7,#7c3aed)' : 'transparent', color: mode === m ? '#fff' : '#64748b' }}>
+                {m === 'signup' ? 'Sign Up' : 'Log In'}
+              </button>
+            ))}
+          </div>
+
+          <AnimatePresence mode="wait">
+            {mode === 'signup' ? (
+              <motion.form key="signup" initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 12 }}
+                onSubmit={handleSignup} className="card p-6 space-y-4">
+                <Field label="Username" type="text" value={un} onChange={e => { setUn(e.target.value); clr() }} placeholder="TokenHunter" autoFocus autoComplete="username" />
+                <Field label="Email" type="email" value={em} onChange={e => { setEm(e.target.value); clr() }} placeholder="you@example.com" autoComplete="email" />
+                <div>
+                  <Field label="Password" type="password" value={pw} onChange={e => { setPw(e.target.value); clr() }} placeholder="Min 8 characters" autoComplete="new-password" />
+                  {strength && (
+                    <div className="mt-2 space-y-1">
+                      <div className="flex gap-1">
+                        {[1, 2, 3].map(i => <div key={i} className="flex-1 h-1.5 rounded-full transition-all" style={{ background: i <= sBars ? sColor : 'rgba(255,255,255,0.08)' }} />)}
+                      </div>
+                      <p className="text-xs font-mono" style={{ color: sColor }}>{sLabel}</p>
+                    </div>
+                  )}
+                </div>
+                <Field label="Confirm Password" type="password" value={cpw} onChange={e => { setCpw(e.target.value); clr() }} placeholder="Repeat password" autoComplete="new-password"
+                  extra={{ borderColor: cpw && cpw !== pw ? 'var(--neon-red)' : undefined }} />
+                {cpw && cpw !== pw && <p className="text-neon-red text-xs font-mono -mt-2">Passwords do not match.</p>}
+                <ErrorMsg error={err} />
+                <button type="submit" disabled={loading} className="btn-primary w-full disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none">
+                  {loading ? 'Creating account…' : '⚡ Create Free Account'}
+                </button>
+                <p className="text-center text-xs text-slate-700 font-mono">Free forever · No credit card needed</p>
+              </motion.form>
+            ) : (
+              <motion.form key="login" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }}
+                onSubmit={handleLogin} className="card p-6 space-y-4">
+                <Field label="Email" type="email" value={lem} onChange={e => { setLem(e.target.value); clr() }} placeholder="you@example.com" autoFocus autoComplete="email" />
+                <Field label="Password" type="password" value={lpw} onChange={e => { setLpw(e.target.value); clr() }} placeholder="••••••••" autoComplete="current-password" />
+                <ErrorMsg error={err} />
+                <button type="submit" disabled={loading || !lem.trim() || !lpw}
+                  className="btn-primary w-full disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none">
+                  {loading ? 'Signing in…' : '⚡ Log In'}
+                </button>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </>)}
       </motion.div>
     </motion.div>
   )

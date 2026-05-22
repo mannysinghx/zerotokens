@@ -16,11 +16,13 @@ export default async function handler(request) {
     const [totals, responsesToday, categoryStats] = await Promise.all([
       sql`
         SELECT
-          (SELECT COUNT(*) FROM users)::int                             AS total_employees,
-          (SELECT COUNT(*) FROM assignments WHERE active = TRUE)::int   AS active_assignments,
-          (SELECT COUNT(*) FROM responses)::int                         AS total_responses,
+          (SELECT COUNT(*) FROM users WHERE user_type = 'individual')::int  AS total_individuals,
+          (SELECT COUNT(*) FROM users WHERE user_type = 'company')::int     AS total_employees,
+          (SELECT COUNT(*) FROM users)::int                                  AS total_users,
+          (SELECT COUNT(*) FROM assignments WHERE active = TRUE)::int        AS active_assignments,
+          (SELECT COUNT(*) FROM responses)::int                              AS total_responses,
           (SELECT ROUND(AVG(total_score)) FROM responses
-           WHERE total_score IS NOT NULL)::int                          AS avg_score
+           WHERE total_score IS NOT NULL)::int                               AS avg_score
       `,
       sql`
         SELECT COUNT(*)::int AS count

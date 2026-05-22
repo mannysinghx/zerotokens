@@ -39,17 +39,22 @@ export default async function handler(request) {
 
     // Create user (no password until email verified)
     const userRows = await sql`
-      INSERT INTO users (email, username, user_type, company_id, email_verified)
+      INSERT INTO users (email, username, user_type, email_verified)
       VALUES (
         ${email.toLowerCase().trim()},
         ${username.trim()},
         'company',
-        ${companyId},
         FALSE
       )
-      RETURNING id, email, username, user_type, company_id, created_at
+      RETURNING id, email, username, user_type, created_at
     `
     const user = userRows[0]
+
+    // Create company-specific profile in the separate employee_profiles table
+    await sql`
+      INSERT INTO employee_profiles (user_id, company_id)
+      VALUES (${user.id}, ${companyId})
+    `
 
     // Generate secure 48-byte token
     const token      = randomBytes(48).toString('hex')

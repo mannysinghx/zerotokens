@@ -19,9 +19,12 @@ export default async function handler(request) {
     const emailLower = email.trim().toLowerCase()
 
     const rows = await sql`
-      SELECT u.*, c.name AS company_name
+      SELECT u.*,
+             ep.company_id, ep.team, ep.role,
+             c.name AS company_name
       FROM   users u
-      LEFT JOIN companies c ON c.id = u.company_id
+      LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+      LEFT JOIN companies         c  ON c.id       = ep.company_id
       WHERE  u.email = ${emailLower}
       LIMIT  1
     `

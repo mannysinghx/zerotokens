@@ -26,7 +26,8 @@ export default async function handler(request) {
                q.title AS question_title, q.sub_function
         FROM responses r
         JOIN users u      ON u.id = r.user_id
-        LEFT JOIN companies c ON c.id = u.company_id
+        LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+        LEFT JOIN companies c ON c.id = ep.company_id
         JOIN questions q  ON q.id = r.question_id
         WHERE r.user_id = ${userId} AND r.category_id = ${categoryId}
         ORDER BY r.answered_at DESC
@@ -38,7 +39,8 @@ export default async function handler(request) {
                q.title AS question_title, q.sub_function
         FROM responses r
         JOIN users u      ON u.id = r.user_id
-        LEFT JOIN companies c ON c.id = u.company_id
+        LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+        LEFT JOIN companies c ON c.id = ep.company_id
         JOIN questions q  ON q.id = r.question_id
         WHERE r.user_id = ${userId}
         ORDER BY r.answered_at DESC
@@ -50,7 +52,8 @@ export default async function handler(request) {
                q.title AS question_title, q.sub_function
         FROM responses r
         JOIN users u      ON u.id = r.user_id
-        LEFT JOIN companies c ON c.id = u.company_id
+        LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+        LEFT JOIN companies c ON c.id = ep.company_id
         JOIN questions q  ON q.id = r.question_id
         WHERE r.category_id = ${categoryId}
         ORDER BY r.answered_at DESC
@@ -62,7 +65,8 @@ export default async function handler(request) {
                q.title AS question_title, q.sub_function
         FROM responses r
         JOIN users u      ON u.id = r.user_id
-        LEFT JOIN companies c ON c.id = u.company_id
+        LEFT JOIN employee_profiles ep ON ep.user_id = u.id
+        LEFT JOIN companies c ON c.id = ep.company_id
         JOIN questions q  ON q.id = r.question_id
         ORDER BY r.answered_at DESC
         LIMIT ${limit}

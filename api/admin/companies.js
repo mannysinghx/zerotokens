@@ -15,11 +15,11 @@ export default async function handler(request) {
       const rows = await sql`
         SELECT
           c.*,
-          COUNT(DISTINCT u.id)::int          AS employee_count,
+          COUNT(DISTINCT ep.user_id)::int    AS employee_count,
           COUNT(DISTINCT r.id)::int          AS response_count
         FROM companies c
-        LEFT JOIN users u ON u.company_id = c.id
-        LEFT JOIN responses r ON r.user_id = u.id
+        LEFT JOIN employee_profiles ep ON ep.company_id = c.id
+        LEFT JOIN responses r ON r.user_id = ep.user_id
         GROUP BY c.id
         ORDER BY c.created_at DESC
       `

@@ -1,12 +1,16 @@
 /**
  * POST /api/auth/register
  * Register a new individual learner with email + password.
+ * Creates an unverified account, sends a verification email, and returns
+ * a prompt to check email — no session is issued until the link is clicked.
  * Company employees are created via /api/admin/invite.
+ *
+ * Node.js runtime (no edge config) — nodemailer requires Node.js.
  */
+import { randomBytes } from 'node:crypto'
 import { sql, jsonResponse, handleOptions } from '../_db.js'
-import { generateSalt, hashPassword, createSession } from '../_auth.js'
-
-export const config = { runtime: 'edge' }
+import { generateSalt, hashPassword } from '../_auth.js'
+import { sendVerificationEmail } from '../_email.js'
 
 export default async function handler(request) {
   if (request.method === 'OPTIONS') return handleOptions(request)
@@ -22,7 +26,6 @@ export default async function handler(request) {
 
     const emailLower = email.trim().toLowerCase()
 
-    // Check email not already taken
     const existing = await sql`SELECT id FROM users WHERE email = ${emailLower} LIMIT 1`
     if (existing.length > 0) {
       return jsonResponse({ error: 'An account with this email already exists.' }, 409, request)
@@ -33,15 +36,33 @@ export default async function handler(request) {
 
     const rows = await sql`
       INSERT INTO users (email, username, password_hash, password_salt, user_type, email_verified)
-      VALUES (${emailLower}, ${username.trim()}, ${hash}, ${salt}, 'individual', TRUE)
+      VALUES (${emailLower}, ${username.trim()}, ${hash}, ${salt}, 'individual', FALSE)
       RETURNING id, email, username, user_type, company_id, created_at
     `
-    const user  = rows[0]
-    const token = await createSession(user.id)
+    const user = rows[0]
 
-    return jsonResponse({ user, sessionToken: token }, 201, request)
+    const verifyToken = randomBytes(48).toString('hex')
+    const expiresAt   = new Date(Date.now() + 24 * 60 * 60_000).toISOString() // 24 hours
+
+    await sql`
+      INSERT INTO email_verifications (user_id, token, expires_at)
+      VALUES (${user.id}, ${verifyToken}, ${expiresAt})
+    `
+
+    await sendVerificationEmail({
+      to:          user.email,
+      username:    user.username,
+      verifyToken,
+    })
+
+    return jsonResponse({ message: 'Check your email to verify your account.' }, 201, request)
   } catch (err) {
     console.error('register error:', err)
-    return jsonResponse({ error: `Registration failed: ${err.message}` }, 500, request)
+    const isEmailErr = /SMTP|ECONNREFUSED|auth|login|password/i.test(err.message ?? '')
+    return jsonResponse({
+      error: isEmailErr
+        ? `Failed to send verification email: ${err.message}`
+        : `Registration failed: ${err.message}`,
+    }, 500, request)
   }
 }

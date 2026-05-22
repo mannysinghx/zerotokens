@@ -70,11 +70,13 @@ export async function getSessionUser(request) {
 
   const rows = await sql`
     SELECT u.*,
+           ep.company_id, ep.team, ep.role,
            c.name AS company_name,
            s.expires_at AS session_expires
     FROM   sessions s
-    JOIN   users    u ON u.id = s.user_id
-    LEFT JOIN companies c ON c.id = u.company_id
+    JOIN   users             u  ON u.id  = s.user_id
+    LEFT JOIN employee_profiles ep ON ep.user_id  = u.id
+    LEFT JOIN companies      c  ON c.id  = ep.company_id
     WHERE  s.token = ${token}
       AND  s.expires_at > NOW()
     LIMIT  1
