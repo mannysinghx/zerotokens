@@ -44,7 +44,7 @@ async function smtpSend({ from, to, subject, html, text }) {
   const host = process.env.SMTP_HOST     ?? 'smtp.gmail.com'
   const port = parseInt(process.env.SMTP_PORT ?? '587')
   const user = process.env.SMTP_USER     ?? ''
-  const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '')
+  const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\\n/g, '').replace(/\s/g, '')
 
   return new Promise((resolve, reject) => {
     const done  = (err) => err ? reject(err) : resolve()
