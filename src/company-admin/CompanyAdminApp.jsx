@@ -3,14 +3,15 @@
  * Root of the /company-admin panel.
  * Checks sessionStorage for co_admin_token; shows login if absent.
  */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import CompanyAdminLogin from './CompanyAdminLogin.jsx'
 import CompanyAdminNav from './CompanyAdminNav.jsx'
 import CoDashboard from './pages/CoDashboard.jsx'
 import CoEmployees from './pages/CoEmployees.jsx'
-import { coAdminMe } from '../utils/api.js'
-import { apiLogin } from '../utils/api.js'
+import IdleWarningModal from '../components/ui/IdleWarningModal.jsx'
+import { useIdleTimer } from '../hooks/useIdleTimer.js'
+import { coAdminMe, apiLogin } from '../utils/api.js'
 
 export default function CompanyAdminApp() {
   const [token,     setToken]     = useState(null)
@@ -55,6 +56,13 @@ export default function CompanyAdminApp() {
     setAdminUser(null)
   }
 
+  // ── Idle logout timer ──────────────────────────────────────────────────────
+  const handleIdleLogout = useCallback(() => { handleLogout() }, [])
+  const { showWarning, secondsLeft, keepAlive } = useIdleTimer({
+    onLogout: handleIdleLogout,
+    enabled:  Boolean(token && adminUser),
+  })
+
   if (checking) {
     return (
       <div className="min-h-screen flex items-center justify-center text-slate-500 font-mono text-sm">
@@ -74,6 +82,14 @@ export default function CompanyAdminApp() {
 
   return (
     <div className="flex min-h-screen bg-slate-950 text-slate-100">
+      {showWarning && (
+        <IdleWarningModal
+          secondsLeft={secondsLeft}
+          username={adminUser?.username}
+          onKeepAlive={keepAlive}
+          onLogout={handleLogout}
+        />
+      )}
       <CompanyAdminNav adminUser={adminUser} onLogout={handleLogout} />
       <main className="flex-1 overflow-y-auto p-6">
         <Routes>

@@ -1,6 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import useGameStore from './store/gameStore.js'
+import { useIdleTimer } from './hooks/useIdleTimer.js'
+import IdleWarningModal from './components/ui/IdleWarningModal.jsx'
 import Starfield from './components/ui/Starfield.jsx'
 import Header from './components/ui/Header.jsx'
 import LandingScreen  from './components/screens/LandingScreen.jsx'
@@ -24,7 +26,7 @@ const AUTH_SCREENS = new Set(['userType', 'companyLogin', 'individualSignup'])
 const NO_HEADER    = new Set(['landing', 'username', 'userType', 'companyLogin', 'individualSignup'])
 
 export default function App() {
-  const { screen, theme, restoreSession } = useGameStore()
+  const { screen, theme, restoreSession, isAuthenticated, username, logout } = useGameStore()
 
   useEffect(() => {
     document.body.className = theme ? `theme-${theme}` : ''
@@ -35,12 +37,30 @@ export default function App() {
     restoreSession()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── Idle logout timer ──────────────────────────────────────────────────────
+  const handleIdleLogout = useCallback(async () => { await logout() }, [logout])
+
+  const { showWarning, secondsLeft, keepAlive } = useIdleTimer({
+    onLogout: handleIdleLogout,
+    enabled:  isAuthenticated,
+  })
+
   return (
     <div className="min-h-screen bg-bg-primary relative">
       <div className="scanlines" />
       <Starfield />
 
       {!NO_HEADER.has(screen) && <Header />}
+
+      {/* Idle session warning — only shown after 25 min of inactivity */}
+      {showWarning && (
+        <IdleWarningModal
+          secondsLeft={secondsLeft}
+          username={username}
+          onKeepAlive={keepAlive}
+          onLogout={logout}
+        />
+      )}
 
       <AnimatePresence mode="wait">
         {screen === 'landing'  && <LandingScreen  key="landing"  />}

@@ -476,11 +476,13 @@ const useGameStore = create((set, get) => {
       }
     },
 
-    /** Log out: invalidate server session, clear local auth state. */
+    /** Log out: save progress to DB, invalidate server session, clear local auth state. */
     async logout() {
       const save = loadSave()
       if (save.sessionToken) {
-        try { await apiLogout(save.sessionToken) } catch { /* ignore */ }
+        // Save current game state to DB before logging out so nothing is lost
+        try { await apiSaveProgress(save.sessionToken, save) } catch { /* ignore */ }
+        try { await apiLogout(save.sessionToken) }             catch { /* ignore */ }
       }
       const cleared = {
         ...save,
@@ -489,6 +491,7 @@ const useGameStore = create((set, get) => {
         email:           null,
         companyId:       null,
         companyName:     null,
+        isCompanyAdmin:  false,
         sessionToken:    null,
         isAuthenticated: false,
       }
