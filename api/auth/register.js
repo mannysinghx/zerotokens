@@ -1,16 +1,12 @@
-// v2
 /**
  * POST /api/auth/register
  * Register a new individual learner with email + password.
- * Creates an unverified account, sends a verification email, and returns
- * a prompt to check email — no session is issued until the link is clicked.
+ * Creates an unverified account, sends a verification email via Gmail SMTP,
+ * and returns a prompt to check email — no session until link is clicked.
  * Company employees are created via /api/admin/invite.
- *
- * Node.js runtime (no edge config) — nodemailer requires Node.js.
  */
-import { randomBytes } from 'node:crypto'
 import { sql, jsonResponse, handleOptions } from '../_db.js'
-import { generateSalt, hashPassword } from '../_auth.js'
+import { generateSalt, hashPassword, generateToken } from '../_auth.js'
 import { sendVerificationEmail } from '../_email.js'
 
 export default async function handler(request) {
@@ -38,32 +34,29 @@ export default async function handler(request) {
     const rows = await sql`
       INSERT INTO users (email, username, password_hash, password_salt, user_type, email_verified)
       VALUES (${emailLower}, ${username.trim()}, ${hash}, ${salt}, 'individual', FALSE)
-      RETURNING id, email, username, user_type, company_id, created_at
+      RETURNING id, email, username, user_type, created_at
     `
     const user = rows[0]
 
-    const verifyToken = randomBytes(48).toString('hex')
-    const expiresAt   = new Date(Date.now() + 24 * 60 * 60_000).toISOString() // 24 hours
+    // Generate secure token (24-hour expiry)
+    const verifyToken = generateToken()
+    const expiresAt   = new Date(Date.now() + 24 * 60 * 60_000).toISOString()
 
     await sql`
       INSERT INTO email_verifications (user_id, token, expires_at)
       VALUES (${user.id}, ${verifyToken}, ${expiresAt})
     `
 
+    // Send verification email
     await sendVerificationEmail({
-      to:          user.email,
-      username:    user.username,
+      to:       user.email,
+      username: user.username,
       verifyToken,
     })
 
     return jsonResponse({ message: 'Check your email to verify your account.' }, 201, request)
   } catch (err) {
     console.error('register error:', err)
-    const isEmailErr = /SMTP|ECONNREFUSED|auth|login|password/i.test(err.message ?? '')
-    return jsonResponse({
-      error: isEmailErr
-        ? `Failed to send verification email: ${err.message}`
-        : `Registration failed: ${err.message}`,
-    }, 500, request)
+    return jsonResponse({ error: err.message }, 500, request)
   }
 }
