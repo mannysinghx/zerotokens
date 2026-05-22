@@ -138,6 +138,10 @@ export async function adminInviteEmployee(password, { email, username, companyId
   })
 }
 
+export async function adminFetchIndividuals(password) {
+  return request('/admin/individuals', { headers: adminHeaders(password) })
+}
+
 // ── Legacy (kept for backward compat, no-op on server) ───────────────────────
 export async function upsertEmployee() {
   return { success: true }

@@ -10,6 +10,7 @@ import AdminNav from './AdminNav.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
 import CompanyManager from './pages/CompanyManager.jsx'
 import EmployeeManager from './pages/EmployeeManager.jsx'
+import IndividualUsers from './pages/IndividualUsers.jsx'
 import QuestionBank from './pages/QuestionBank.jsx'
 import ResponseViewer from './pages/ResponseViewer.jsx'
 
@@ -40,6 +41,7 @@ export default function AdminApp() {
           <Route path="/"            element={<AdminDashboard   password={password} />} />
           <Route path="/companies"   element={<CompanyManager   password={password} />} />
           <Route path="/employees"   element={<EmployeeManager  password={password} />} />
+          <Route path="/individuals" element={<IndividualUsers  password={password} />} />
           <Route path="/questions"   element={<QuestionBank     password={password} />} />
           <Route path="/responses"   element={<ResponseViewer   password={password} />} />
           <Route path="*"            element={<Navigate to="/admin" replace />} />

@@ -86,6 +86,9 @@ export default function AdminNav({ onLogout }) {
           </div>
         </div>
 
+        {/* Individual Users — independent of company/employee */}
+        <NavItem to="/admin/individuals" icon="🎮" label="Individuals" />
+
         {/* Questions */}
         <NavItem to="/admin/questions" icon="📚" label="Questions" />
 
