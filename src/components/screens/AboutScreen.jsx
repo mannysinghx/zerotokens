@@ -90,7 +90,12 @@ export default function AboutScreen() {
           TOKEN<span style={{ color: '#a855f7' }}>QUEST</span>
         </a>
         <div className="flex items-center gap-5">
-          <span className="text-xs font-mono text-slate-500 tracking-widest uppercase">About</span>
+          <span
+            className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full"
+            style={{ fontFamily: 'Exo 2', color: '#a855f7', background: '#a855f714', border: '1px solid #a855f740', textShadow: '0 0 12px #a855f788' }}
+          >
+            About Us
+          </span>
           <a href="/"
             className="text-sm font-mono px-4 py-2 rounded-xl border transition-colors"
             style={{ borderColor: '#00d4ff44', color: '#00d4ff', background: '#00d4ff0d' }}>
@@ -389,12 +394,16 @@ export default function AboutScreen() {
               zerotokensai@gmail.com
             </a>
           </p>
-          <p className="text-slate-800 font-mono text-xs mt-2">
-            <a href="/about" className="hover:text-slate-600 transition-colors">About</a>
+          <p className="text-slate-700 font-mono text-xs mt-2">
+            <a href="/about"
+              className="font-black hover:opacity-80 transition-opacity"
+              style={{ color: '#a855f7', fontFamily: 'Exo 2' }}>
+              About Us
+            </a>
             {' · '}
-            <a href="/" className="hover:text-slate-600 transition-colors">Play</a>
+            <a href="/" className="hover:text-slate-500 transition-colors">Play</a>
             {' · '}
-            <a href="https://github.com/mannysinghx/zerotokens" target="_blank" rel="noreferrer" className="hover:text-slate-600 transition-colors">GitHub</a>
+            <a href="https://github.com/mannysinghx/zerotokens" target="_blank" rel="noreferrer" className="hover:text-slate-500 transition-colors">GitHub</a>
           </p>
         </footer>
 

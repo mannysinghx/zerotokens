@@ -130,7 +130,8 @@ export default function UserTypeScreen() {
       >
         <a
           href="/about"
-          className="text-slate-700 hover:text-slate-400 transition-colors"
+          className="font-black transition-opacity hover:opacity-75"
+          style={{ color: '#a855f7', fontFamily: 'Exo 2', textShadow: '0 0 14px #a855f766', fontSize: '0.8rem', letterSpacing: '0.04em' }}
         >
           About Token Quest →
         </a>
