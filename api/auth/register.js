@@ -4,29 +4,39 @@
  * Creates an unverified account, sends a verification email via Gmail SMTP,
  * and returns a prompt to check email — no session until link is clicked.
  * Company employees are created via /api/admin/invite.
+ * Node.js runtime (req/res style) — SMTP requires TCP/TLS.
  */
-import { sql, jsonResponse, handleOptions } from '../_db.js'
+import { sql } from '../_db.js'
 import { generateSalt, hashPassword, generateToken } from '../_auth.js'
 import { sendVerificationEmail } from '../_email.js'
 
-export default async function handler(request) {
-  if (request.method === 'OPTIONS') return handleOptions(request)
-  if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405, request)
+const ALLOWED_ORIGINS = ['https://www.zerotokens.ai', 'https://zerotokens.ai', 'http://localhost:5173', 'http://localhost:3000']
+
+function cors(req, res) {
+  const origin = req.headers.origin ?? ''
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGINS.includes(origin) ? origin : 'https://www.zerotokens.ai')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-admin-password')
+  res.setHeader('Vary', 'Origin')
+}
+
+export default async function handler(req, res) {
+  cors(req, res)
+  if (req.method === 'OPTIONS') return res.status(204).end()
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
 
   try {
-    const { username, email, password } = await request.json()
+    const { username, email, password } = req.body ?? {}
 
-    if (!username?.trim())   return jsonResponse({ error: 'Username is required' }, 400, request)
-    if (!email?.trim())      return jsonResponse({ error: 'Email is required' }, 400, request)
-    if (!password)           return jsonResponse({ error: 'Password is required' }, 400, request)
-    if (password.length < 8) return jsonResponse({ error: 'Password must be at least 8 characters' }, 400, request)
+    if (!username?.trim())   return res.status(400).json({ error: 'Username is required' })
+    if (!email?.trim())      return res.status(400).json({ error: 'Email is required' })
+    if (!password)           return res.status(400).json({ error: 'Password is required' })
+    if (password.length < 8) return res.status(400).json({ error: 'Password must be at least 8 characters' })
 
     const emailLower = email.trim().toLowerCase()
 
     const existing = await sql`SELECT id FROM users WHERE email = ${emailLower} LIMIT 1`
-    if (existing.length > 0) {
-      return jsonResponse({ error: 'An account with this email already exists.' }, 409, request)
-    }
+    if (existing.length > 0) return res.status(409).json({ error: 'An account with this email already exists.' })
 
     const salt = generateSalt()
     const hash = await hashPassword(password, salt)
@@ -41,22 +51,14 @@ export default async function handler(request) {
     // Generate secure token (24-hour expiry)
     const verifyToken = generateToken()
     const expiresAt   = new Date(Date.now() + 24 * 60 * 60_000).toISOString()
-
-    await sql`
-      INSERT INTO email_verifications (user_id, token, expires_at)
-      VALUES (${user.id}, ${verifyToken}, ${expiresAt})
-    `
+    await sql`INSERT INTO email_verifications (user_id, token, expires_at) VALUES (${user.id}, ${verifyToken}, ${expiresAt})`
 
     // Send verification email
-    await sendVerificationEmail({
-      to:       user.email,
-      username: user.username,
-      verifyToken,
-    })
+    await sendVerificationEmail({ to: user.email, username: user.username, verifyToken })
 
-    return jsonResponse({ message: 'Check your email to verify your account.' }, 201, request)
+    return res.status(201).json({ message: 'Check your email to verify your account.' })
   } catch (err) {
     console.error('register error:', err)
-    return jsonResponse({ error: err.message }, 500, request)
+    return res.status(500).json({ error: err.message })
   }
 }
