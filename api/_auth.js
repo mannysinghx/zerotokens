@@ -70,7 +70,7 @@ export async function getSessionUser(request) {
 
   const rows = await sql`
     SELECT u.*,
-           ep.company_id, ep.team, ep.role,
+           ep.company_id, ep.team, ep.role, ep.is_company_admin,
            c.name AS company_name,
            s.expires_at AS session_expires
     FROM   sessions s

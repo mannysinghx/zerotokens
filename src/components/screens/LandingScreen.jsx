@@ -21,7 +21,7 @@ function WelcomeBack() {
     totalTokensSaved, badges, sessions, joinedAt,
     team, company, certifications = [], newCerts = [],
     assignment, fieldLoading, fieldError,
-    isAuthenticated, userType, companyName, email,
+    isAuthenticated, userType, companyName, email, isCompanyAdmin,
     startChallenge, goTo, soundEnabled, resetProgress, recordSession,
     initEmployee, startFieldSession, logout,
   } = useGameStore()
@@ -290,6 +290,30 @@ function WelcomeBack() {
             👾 Villains
           </button>
         </motion.div>
+
+        {/* Company Admin Panel button — only visible to promoted company admins */}
+        {isCompanyAdmin && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.42 }}
+            className="mb-4"
+          >
+            <button
+              onClick={() => { window.location.href = '/company-admin' }}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-mono font-bold text-sm border transition-colors"
+              style={{
+                background: 'linear-gradient(90deg, #3b0764cc, #581c87cc)',
+                borderColor: '#a855f7',
+                color: '#e9d5ff',
+              }}
+            >
+              <span>👑</span>
+              <span>Company Admin Panel</span>
+              <span className="text-xs opacity-60">→</span>
+            </button>
+          </motion.div>
+        )}
 
         {/* Corporate action row */}
         <motion.div

@@ -66,7 +66,7 @@ export default async function handler(request) {
     // Fetch full user (with company name)
     const userRows = await sql`
       SELECT u.*,
-             ep.company_id, ep.team, ep.role,
+             ep.company_id, ep.team, ep.role, ep.is_company_admin,
              c.name AS company_name
       FROM   users u
       LEFT JOIN employee_profiles ep ON ep.user_id = u.id

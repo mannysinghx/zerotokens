@@ -18,9 +18,12 @@ export default async function handler(request) {
 
     const emailLower = email.trim().toLowerCase()
 
+    // Ensure is_company_admin column exists (idempotent no-op after first run)
+    await sql`ALTER TABLE employee_profiles ADD COLUMN IF NOT EXISTS is_company_admin BOOLEAN NOT NULL DEFAULT FALSE`
+
     const rows = await sql`
       SELECT u.*,
-             ep.company_id, ep.team, ep.role,
+             ep.company_id, ep.team, ep.role, ep.is_company_admin,
              c.name AS company_name
       FROM   users u
       LEFT JOIN employee_profiles ep ON ep.user_id = u.id
