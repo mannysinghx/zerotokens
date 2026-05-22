@@ -8,7 +8,7 @@ import { sql, jsonResponse, handleOptions, isAdmin } from '../_db.js'
 export const config = { runtime: 'edge' }
 
 export default async function handler(request) {
-  if (request.method === 'OPTIONS') return handleOptions()
+  if (request.method === 'OPTIONS') return handleOptions(request)
   if (!isAdmin(request)) return jsonResponse({ error: 'Unauthorized' }, 401)
   if (request.method !== 'GET') return jsonResponse({ error: 'Method not allowed' }, 405)
 
@@ -52,6 +52,13 @@ export default async function handler(request) {
     })
   } catch (err) {
     console.error('admin stats error:', err)
-    return jsonResponse({ error: 'Database error' }, 500)
+    // Surface the real DB error so it's visible in the admin UI during setup
+    const msg = err?.message ?? 'Unknown error'
+    const isTableMissing = msg.includes('does not exist') || msg.includes('relation')
+    return jsonResponse({
+      error: isTableMissing
+        ? 'Database tables not found. Run db/schema.sql in your Neon dashboard first.'
+        : `Database error: ${msg}`,
+    }, 500)
   }
 }
