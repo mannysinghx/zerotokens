@@ -5,11 +5,13 @@
  */
 
 export const MODELS = [
-  { id: 'gpt4o',        name: 'GPT-4o',          pricePerK: 0.005  },
-  { id: 'gpt4o_mini',   name: 'GPT-4o mini',      pricePerK: 0.00015 },
-  { id: 'claude3_opus', name: 'Claude 3 Opus',    pricePerK: 0.015  },
-  { id: 'claude3_5',    name: 'Claude 3.5 Sonnet', pricePerK: 0.003  },
-  { id: 'gemini15pro',  name: 'Gemini 1.5 Pro',   pricePerK: 0.00125 },
+  { id: 'gpt41',          name: 'GPT-4.1',           pricePerK: 0.002    },
+  { id: 'gpt41_mini',     name: 'GPT-4.1 mini',      pricePerK: 0.0004   },
+  { id: 'o3',             name: 'OpenAI o3',          pricePerK: 0.010    },
+  { id: 'claude_opus4',   name: 'Claude Opus 4',      pricePerK: 0.015    },
+  { id: 'claude_s45',     name: 'Claude Sonnet 4.5',  pricePerK: 0.003    },
+  { id: 'gemini25pro',    name: 'Gemini 2.5 Pro',     pricePerK: 0.00125  },
+  { id: 'gemini25flash',  name: 'Gemini 2.5 Flash',   pricePerK: 0.00015  },
 ]
 
 /**
@@ -40,7 +42,7 @@ export function calcSavings(tokensSaved) {
  */
 export function lifetimeSavingsProjection(totalTokensSaved) {
   const savings = calcSavings(totalTokensSaved)
-  const gpt4oEntry = savings.find(s => s.id === 'gpt4o')
+  const gpt4oEntry = savings.find(s => s.id === 'gpt41')
   const base = gpt4oEntry?.savedUSD ?? 0
   return {
     perDay:   base,

@@ -314,7 +314,7 @@ export default function AnalyticsScreen() {
         className="card p-5 mb-6 border-neon-green/20 bg-green-900/5"
       >
         <h3 className="text-xs uppercase tracking-widest text-neon-green font-mono mb-3">
-          💰 Lifetime Savings (GPT-4o estimate)
+          💰 Lifetime Savings (GPT-4.1 estimate)
         </h3>
         <div className="grid grid-cols-3 gap-3 text-center">
           {[
@@ -329,7 +329,7 @@ export default function AnalyticsScreen() {
           ))}
         </div>
         <p className="text-xs text-slate-700 font-mono mt-3">
-          Based on {totalTokensSaved.toLocaleString()} tokens saved · $0.005/1K tokens
+          Based on {totalTokensSaved.toLocaleString()} tokens saved · $0.002/1K tokens (GPT-4.1)
         </p>
       </motion.div>
 
