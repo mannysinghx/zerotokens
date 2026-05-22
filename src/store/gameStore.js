@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 import { loadSave, writeSave, updateStreak, archiveSession, logAttempt } from '../utils/storage.js'
+import { calcNewElo, ELO_START } from '../utils/elo.js'
+import { sm2Update, defaultProgress } from '../utils/spacedRepetition.js'
 import challenges from '../data/challenges.json'
 
 const BADGES = [
@@ -52,6 +54,9 @@ const useGameStore = create((set, get) => {
     combo:    0,
     maxCombo: initialSave.maxCombo || 0,
 
+    // ── Elo ──
+    _lastEloDelta: 0,
+
     // ── Newly unlocked badges this session ──
     newBadges: [],
 
@@ -91,6 +96,21 @@ const useGameStore = create((set, get) => {
         ? [...(newStreak.completedChallenges || []), state.challenge.id]
         : (newStreak.completedChallenges || [])
 
+      // ── Elo update ──────────────────────────────────────────────────────
+      const currentElo   = newStreak.playerElo ?? ELO_START
+      const { newElo, delta: eloDelta } = state.challenge
+        ? calcNewElo(currentElo, state.challenge.difficulty, score.totalScore)
+        : { newElo: currentElo, delta: 0 }
+
+      // ── Spaced repetition update ─────────────────────────────────────────
+      const prevProgress = (newStreak.challengeProgress || {})[state.challenge?.id] ?? defaultProgress
+      const updatedProgress = state.challenge
+        ? sm2Update(prevProgress, score.totalScore)
+        : prevProgress
+      const newChallengeProgress = state.challenge
+        ? { ...(newStreak.challengeProgress || {}), [state.challenge.id]: updatedProgress }
+        : (newStreak.challengeProgress || {})
+
       const updatedSave = {
         ...newStreak,
         coins:              (newStreak.coins || 0) + finalCoins,
@@ -99,6 +119,8 @@ const useGameStore = create((set, get) => {
         completedChallenges: newCompleted,
         maxCombo,
         bossDefeated:       newStreak.bossDefeated || false,
+        playerElo:          newElo,
+        challengeProgress:  newChallengeProgress,
       }
 
       const newBadges = checkBadges(updatedSave, { ...score, comboBonus })
@@ -135,6 +157,7 @@ const useGameStore = create((set, get) => {
         ...updatedSave,
         combo,
         maxCombo,
+        _lastEloDelta: eloDelta,
         lastScore: { ...score, comboBonus, finalCoins },
         newBadges,
         screen: 'results',
@@ -251,6 +274,8 @@ const useGameStore = create((set, get) => {
         streak: 0, lastPlayedDate: null,
         totalTokensSaved: 0, highScores: {},
         maxCombo: 0, bossDefeated: false,
+        playerElo:         ELO_START,
+        challengeProgress: {},
       }
       writeSave(fresh)
       set({ ...fresh, screen: 'landing', challenge: null, lastScore: null, combo: 0 })

@@ -11,6 +11,7 @@ import ResultsScreen  from './components/screens/ResultsScreen.jsx'
 import BadgeShelfScreen  from './components/screens/BadgeShelfScreen.jsx'
 import VillainsScreen    from './components/screens/VillainsScreen.jsx'
 import UsernameScreen    from './components/screens/UsernameScreen.jsx'
+import AnalyticsScreen   from './components/screens/AnalyticsScreen.jsx'
 
 export default function App() {
   const { screen, theme } = useGameStore()
@@ -42,6 +43,7 @@ export default function App() {
         {screen === 'badges'   && <BadgeShelfScreen key="badges"   />}
         {screen === 'villains' && <VillainsScreen   key="villains" />}
         {screen === 'username' && <UsernameScreen   key="username" />}
+        {screen === 'stats'    && <AnalyticsScreen  key="stats"    />}
       </AnimatePresence>
     </div>
   )

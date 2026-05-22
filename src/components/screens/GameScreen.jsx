@@ -4,13 +4,19 @@ import useGameStore from '../../store/gameStore.js'
 import { estimateTokens } from '../../utils/tokenizer.js'
 import { scorePrompt } from '../../utils/scorer.js'
 import RobotGuide from '../ui/RobotGuide.jsx'
+import FillerHighlight from '../ui/FillerHighlight.jsx'
 import { playClick, playError, playSuccess } from '../../utils/sound.js'
 import { VILLAINS, getVillainProgress } from '../../data/villains.js'
+import { hasPower, findFillerWords, getConceptCoverage, classifyDistractor } from '../../utils/powerEffects.js'
 
 // ── Unified choice component for all three game modes ───────────────────────
-function ChoiceMode({ challenge, onSubmit, soundEnabled }) {
+function ChoiceMode({ challenge, onSubmit, soundEnabled, completedChallenges = [] }) {
   const [selected,  setSelected]  = useState(null)
   const [revealed,  setRevealed]  = useState(false)
+
+  const powerScalpel = hasPower('surgical_scalpel', completedChallenges)
+  const powerSniper  = hasPower('zero_shot_sniper',  completedChallenges)
+  const powerLooper  = hasPower('loop_breaker',      completedChallenges)
 
   const modeLabel = {
     fix_prompt:   'Which rewrite best fixes this prompt?',
@@ -38,11 +44,15 @@ function ChoiceMode({ challenge, onSubmit, soundEnabled }) {
       <div>
         <label className="text-xs text-slate-500 uppercase tracking-widest font-mono mb-2 block">
           Original Prompt · {estimateTokens(challenge.originalPrompt)} tokens
+          {powerScalpel && challenge.mode === 'fix_prompt' && findFillerWords(challenge.originalPrompt).length > 0 && (
+            <span className="ml-2 text-neon-red">✂ Scalpel active</span>
+          )}
         </label>
         <div className="card p-4 border-neon-red/20 bg-red-900/5">
-          <p className="font-mono text-sm text-slate-300 leading-relaxed">
-            {challenge.originalPrompt}
-          </p>
+          {powerScalpel && challenge.mode === 'fix_prompt'
+            ? <FillerHighlight text={challenge.originalPrompt} />
+            : <p className="font-mono text-sm text-slate-300 leading-relaxed">{challenge.originalPrompt}</p>
+          }
         </div>
       </div>
 
@@ -93,6 +103,24 @@ function ChoiceMode({ challenge, onSubmit, soundEnabled }) {
                   )}
                 </div>
 
+                {/* Zero-Shot Sniper: concept coverage */}
+                {powerSniper && challenge.mode === 'token_budget' && !revealed && (() => {
+                  const { pct } = getConceptCoverage(challenge.originalPrompt, opt)
+                  return (
+                    <div className="mt-1 text-xs font-mono text-slate-500">
+                      🎯 Concept coverage: <span style={{ color: pct >= 80 ? '#10b981' : pct >= 50 ? '#f59e0b' : '#ef4444' }}>{pct}%</span>
+                    </div>
+                  )
+                })()}
+
+                {/* Loop Breaker: anti-pattern explanation */}
+                {powerLooper && !revealed && (() => {
+                  const msg = classifyDistractor(opt)
+                  return msg ? (
+                    <div className="mt-1 text-xs font-mono text-neon-amber opacity-75">{msg}</div>
+                  ) : null
+                })()}
+
                 {/* Reveal feedback */}
                 <AnimatePresence>
                   {revealed && i === challenge.correctOption && (
@@ -125,7 +153,7 @@ function ChoiceMode({ challenge, onSubmit, soundEnabled }) {
 
 // ── Main game screen ─────────────────────────────────────────────────────────
 export default function GameScreen() {
-  const { challenge, combo, goTo, submitAnswer, soundEnabled } = useGameStore()
+  const { challenge, combo, goTo, submitAnswer, soundEnabled, completedChallenges } = useGameStore()
   const [robotMsg,  setRobotMsg]  = useState('')
   const [robotExpr, setRobotExpr] = useState('idle')
 
@@ -307,6 +335,7 @@ export default function GameScreen() {
           challenge={challenge}
           onSubmit={handleSubmit}
           soundEnabled={soundEnabled}
+          completedChallenges={completedChallenges}
         />
       </div>
     </motion.div>

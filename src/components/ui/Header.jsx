@@ -76,6 +76,13 @@ export default function Header() {
             >
               🏅 Badges
             </button>
+            <button
+              onClick={() => { playClick(); goTo('stats') }}
+              className="btn-neon text-xs px-3 py-1.5 hidden sm:flex items-center gap-1"
+              style={{ borderColor: '#a855f7', color: '#a855f7' }}
+            >
+              📊 Stats
+            </button>
           </>
         )}
 

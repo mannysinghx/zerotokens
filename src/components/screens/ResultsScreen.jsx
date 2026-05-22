@@ -5,6 +5,8 @@ import ScoreRing from '../ui/ScoreRing.jsx'
 import TokenMeter from '../ui/TokenMeter.jsx'
 import CoinBurst from '../ui/CoinBurst.jsx'
 import RobotGuide from '../ui/RobotGuide.jsx'
+import CostBadge from '../ui/CostBadge.jsx'
+import EloChip from '../ui/EloChip.jsx'
 import { playLevelUp, playSuccess, playError } from '../../utils/sound.js'
 import { VILLAINS, POWERS, getVillainProgress } from '../../data/villains.js'
 
@@ -45,6 +47,7 @@ export default function ResultsScreen() {
   const {
     lastScore, newBadges, combo, nextChallenge, goTo,
     soundEnabled, getBadges, challenge,
+    playerElo, _lastEloDelta,
   } = useGameStore()
 
   // Freeze all display data in local state on mount. When the user clicks
@@ -56,6 +59,7 @@ export default function ResultsScreen() {
   const [frozenBadges]   = useState(newBadges)
   const [frozenChallenge]= useState(challenge)
   const [frozenCompleted]= useState(() => useGameStore.getState().completedChallenges)
+  const [frozenElo]      = useState({ elo: playerElo, delta: _lastEloDelta })
 
   if (!score) {
     goTo('levelMap')
@@ -113,6 +117,9 @@ export default function ResultsScreen() {
         {frozenChallenge && (
           <p className="text-slate-500 text-sm">{frozenChallenge.title}</p>
         )}
+        <div className="flex justify-center mt-2">
+          <EloChip elo={frozenElo.elo} delta={frozenElo.delta} size="sm" />
+        </div>
       </div>
 
       {/* Main score card */}
@@ -176,6 +183,17 @@ export default function ResultsScreen() {
           className="card p-5 mb-4"
         >
           <TokenMeter original={score.originalTokens} optimized={score.optimizedTokens} />
+        </motion.div>
+      )}
+
+      {/* Cost savings badge */}
+      {score.tokensSaved > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.55 }}
+        >
+          <CostBadge tokensSaved={score.tokensSaved} />
         </motion.div>
       )}
 

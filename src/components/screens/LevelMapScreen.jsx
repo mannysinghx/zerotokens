@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import useGameStore from '../../store/gameStore.js'
 import { playClick } from '../../utils/sound.js'
 import { VILLAINS, getVillainProgress } from '../../data/villains.js'
+import { isDue } from '../../utils/spacedRepetition.js'
+import { getEloRank } from '../../utils/elo.js'
+import EloChip from '../ui/EloChip.jsx'
 
 const DIFFICULTY_COLOR = {
   beginner:     'text-neon-green',
@@ -17,7 +20,11 @@ const MODE_ICON = {
 }
 
 export default function LevelMapScreen() {
-  const { completedChallenges, goTo, startChallenge, startBoss, soundEnabled, coins, getChallenges } = useGameStore()
+  const {
+    completedChallenges, goTo, startChallenge, startBoss,
+    soundEnabled, coins, getChallenges,
+    challengeProgress = {}, playerElo = 1000,
+  } = useGameStore()
   const challenges = getChallenges()
 
   const levelGroups = challenges.reduce((acc, c) => {
@@ -60,6 +67,7 @@ export default function LevelMapScreen() {
             <span>👾</span>
             <span>{defeatedVillains}/{VILLAINS.length} Villains Slain</span>
           </button>
+          <EloChip elo={playerElo} size="sm" />
         </div>
         <div className="flex items-center gap-3">
           <div className="flex-1 token-bar">
@@ -93,6 +101,7 @@ export default function LevelMapScreen() {
             {lvlChallenges.map(c => {
               const done      = completedChallenges.includes(c.id)
               const unlocked  = isUnlocked(c)
+              const dueReview = done && isDue(challengeProgress[c.id])
 
               return (
                 <button
@@ -123,6 +132,7 @@ export default function LevelMapScreen() {
                           {c.difficulty}
                         </span>
                         {done && <span className="text-neon-green text-xs">✓</span>}
+                        {dueReview && <span className="text-neon-amber text-xs" title="Due for review">📅</span>}
                         {!unlocked && <span className="text-slate-600 text-xs">🔒</span>}
                       </div>
                       <h3 className="font-bold text-sm text-slate-200 truncate">{c.title}</h3>

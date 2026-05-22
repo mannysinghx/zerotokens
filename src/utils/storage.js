@@ -16,6 +16,8 @@ const DEFAULT_SAVE = {
   soundEnabled: true,
   highScores: {},
   sessions: 0,
+  playerElo: 1000,          // Elo rating (starts at 1000)
+  challengeProgress: {},    // SM-2 spaced repetition per challenge id
 }
 
 // ── Active save ─────────────────────────────────────────────────────────────
