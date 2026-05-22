@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import KidsGame      from './KidsGame.jsx'
 import LaserSwordGame from './LaserSwordGame.jsx'
 
 const STARS = Array.from({ length: 60 }, (_, i) => ({
@@ -39,7 +40,8 @@ function ModeCard({ emoji, title, sub, age, tagline, color, glow, onClick }) {
 export default function ArcadeApp() {
   const [mode, setMode] = useState(null)
 
-  if (mode) return <LaserSwordGame mode={mode} onExit={() => setMode(null)} />
+  if (mode === 'kids')   return <KidsGame      onExit={() => setMode(null)} />
+  if (mode === 'normal') return <LaserSwordGame mode="normal" onExit={() => setMode(null)} />
 
   return (
     <div
