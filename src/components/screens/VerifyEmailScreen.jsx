@@ -34,11 +34,11 @@ export default function VerifyEmailScreen() {
           if (data.sessionToken && data.user) {
             restoreFromSession(data.user, data.sessionToken)
             setStatus('verified')
-            setTimeout(() => goTo('landing'), 2000)
+            setTimeout(() => { window.location.href = '/' }, 2000)
           } else {
             // Company re-verify fallback (no session yet): send to login.
             setStatus('verified')
-            setTimeout(() => goTo('companyLogin'), 2000)
+            setTimeout(() => { window.location.href = '/' }, 2000)
           }
         }
       })

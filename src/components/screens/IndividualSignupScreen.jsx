@@ -108,6 +108,9 @@ export default function IndividualSignupScreen() {
                 <span className="text-neon-blue">{sentTo}</span>
               </p>
               <p className="text-slate-600 text-xs font-mono">Click the link to verify your account and start playing. The link expires in 24 hours.</p>
+              <p className="text-slate-500 text-xs font-mono">
+                📁 Can't find it? Check your <span className="text-neon-amber">Spam</span> or <span className="text-neon-amber">Junk</span> folder.
+              </p>
               <hr className="glow-divider" />
               <button onClick={() => { setSentTo(''); setMode('login') }}
                 className="btn-neon w-full text-sm">
