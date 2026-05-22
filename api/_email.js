@@ -11,16 +11,23 @@
  *   SMTP_FROM      e.g. "Token Quest <zerotokensai@gmail.com>"
  *   APP_URL        e.g. https://www.zerotokens.ai
  */
-import nodemailer from 'nodemailer'
+import { createRequire } from 'module'
+const require  = createRequire(import.meta.url)
+const nodemailer = require('nodemailer')
 
 function makeTransport() {
-  const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '')
+  const user = (process.env.SMTP_USER     ?? '').trim()
+  const pass = (process.env.SMTP_PASSWORD ?? '').replace(/\s/g, '').trim()
+
+  if (!user || !pass) throw new Error(`SMTP env vars missing (user:${!!user} pass:${!!pass})`)
+
   return nodemailer.createTransport({
     host:   'smtp.gmail.com',
     port:   465,
-    secure: true,          // direct SSL — no STARTTLS negotiation
+    secure: true,
     auth: {
-      user: process.env.SMTP_USER ?? '',
+      type: 'LOGIN',
+      user,
       pass,
     },
   })
